@@ -38,6 +38,52 @@ footer{
     background-color:#ECECEC;
     color:#800040;
     width:100%;
-    height:200px;
+    height:330px;
 
+}
+
+/* Estilos Eloy */ 
+#tope .bloque-1{
+    margin-top: 1em;
+    border-right: 1px #d3d3d3 dotted;
+}
+
+#tope h3{
+    font-size: 12px;
+}
+
+#tope h4{
+    font-size: 12px;
+}
+
+#tope img{
+    width: 40%;
+    background: #fff;
+    margin-top: 10px;
+    margin left: 10px;
+}
+
+#tope .bloque-2{
+    margin-top: 1em;
+    border-right: 1px #d3d3d3 dotted;
+    margin-left: 5px;
+}
+
+#medio bloque.3 {
+    margin-top: 1em;
+}
+#medio h3{
+    font-size: 12px;
+}
+
+#medio h4{
+    font-size: 12px;
+}
+
+#abajo{
+    text-align: center;
+}
+
+#abajo p{
+font-size: 12px;
 }
