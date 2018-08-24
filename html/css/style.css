@@ -2,16 +2,22 @@ nav #barra-principal {
     height: 100px !important;
     background-color:#494949 !important;
     color:#fff;
+    padding-top:1em !important;
 }
 
 #barra-principal .logo{
     width: 4em;
     height: 64px;
 }
-
+#barra-principal .float-right{ float:right;}
 #barra-principal span{
   display: inline;
   margin-left: 10px;
+}
+#barra-principal .btnb{
+    margin-left:-10px;
+    border-top-left-radius: 0;
+    border-bottom-right-radius: 5px;
 }
 
 #barra-principal i{
