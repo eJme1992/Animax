@@ -13,6 +13,19 @@ class Panel extends CI_Controller {
 		$this->load->view('panel/header');
 		$this->load->view('panel/menu/menu');
 		$this->load->view('panel/menu/menufooter');
+		//
+		$this->load->view('panel/footer');
+	}
+
+	public function newserie()
+	{
+		
+		$DATOS ['user'] = $this->MUser->getJugador($user);
+
+		$this->load->view('panel/header', $DATOS);
+		$this->load->view('panel/menu/menu');
+		$this->load->view('panel/menu/menufooter');
+        $this->load->view('panel/secciones/newserie');
 		$this->load->view('panel/footer');
 	}
 }
