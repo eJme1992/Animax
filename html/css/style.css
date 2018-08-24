@@ -2,16 +2,22 @@ nav #barra-principal {
     height: 100px !important;
     background-color:#494949 !important;
     color:#fff;
+    padding-top:1em !important;
 }
 
 #barra-principal .logo{
     width: 4em;
     height: 64px;
 }
-
+#barra-principal .float-right{ float:right;}
 #barra-principal span{
   display: inline;
   margin-left: 10px;
+}
+#barra-principal .btnb{
+    margin-left:-10px;
+    border-top-left-radius: 0;
+    border-bottom-right-radius: 5px;
 }
 
 #barra-principal i{
@@ -38,6 +44,52 @@ footer{
     background-color:#ECECEC;
     color:#800040;
     width:100%;
-    height:200px;
+    height:330px;
 
+}
+
+/* Estilos Eloy */ 
+#tope .bloque-1{
+    margin-top: 1em;
+    border-right: 1px #d3d3d3 dotted;
+}
+
+#tope h3{
+    font-size: 12px;
+}
+
+#tope h4{
+    font-size: 12px;
+}
+
+#tope img{
+    width: 40%;
+    background: #fff;
+    margin-top: 10px;
+    margin left: 10px;
+}
+
+#tope .bloque-2{
+    margin-top: 1em;
+    border-right: 1px #d3d3d3 dotted;
+    margin-left: 5px;
+}
+
+#medio bloque.3 {
+    margin-top: 1em;
+}
+#medio h3{
+    font-size: 12px;
+}
+
+#medio h4{
+    font-size: 12px;
+}
+
+#abajo{
+    text-align: center;
+}
+
+#abajo p{
+font-size: 12px;
 }

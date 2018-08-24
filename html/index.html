@@ -9,9 +9,9 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">    <title>Document</title>
 </head>
 <body>
-    <nav id="barra-principal">
-      <div class="container">
-        <div class="row">
+    <nav id="barra-principal" class="navbar nav">
+      <div class="container-fluid">
+        <div class="row" style="width:100%;">
             <div class="col-md-2"> 
                 <a href="#"><img class="logo" src="./img/logo.png"></a>
             </div>
@@ -19,13 +19,17 @@
                 <span><a href="#">Inicio</a></span>
                 <span><a href="#">Mas informacion</a></span>
             </div>
-            <div class="col-md-3">
-                <form>
-                <input type="text" placeholder="">
-                <i class="fas fa-search"></i>
-                </form>
-            </div>
             <div class="col-md-4">
+                <form class="form-inline" action="/action_page.php">
+                    <input type="text" class="form-control" placeholder="Username">
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text btnb"><i class="fas fa-search"></i></span>
+                      </div>
+                    </div>
+                  </form>
+            </div>
+            <div class="col-md-3">
                <span><a href="#">Series</a></span>
                <span><a href="#">Noticias</a></span>
                <i class="fas fa-search"></i>
@@ -161,10 +165,92 @@
         </div>
     </section>
     <footer>
-    <div class="container">
-        <h1>FOOTER</h1>
-    </div>
-    </footer>
+        <section id="tope">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-2">
+                        <div class="bloque-1">
+                        <h3><a href="">lorem</a></h3>
+                        <h4><a href="#">Ipsum</a> <a href="#">lorem</a></h4>
+                        <h4><a href="#">lorem</a></h4>
+                        </div>
+                    </div>
+                    <div class="col-sm-2">
+                        <div class="bloque-2">
+                            <h3><a href="">lorem</a></h3>
+                            <h4><a href="">lorem</a> <a href="#">lorem</a></h4>
+                            <h4><a href="#">Ipsum</a> <a href="#">lorem</a></h4>
+                            <h4><a href="#">lorem</a></h4> 
+                        </div>      
+                    </div> 
+                    <div class="col-sm-2">
+                        <div class="bloque-2"> 
+                            <h3><a href="">lorem</a></h3>
+                            <h4><a href="#">Ipsum</a></h4>
+                            <h4><a href="#">lorem</a></h4>
+                        </div>
+                    </div>   
+                    <div class="col-sm-2">
+                        <div class="bloque-2"> 
+                            <h3><a href="">lorem</a></h3>
+                            <h4><a href="#">Ipsum</a></h4>
+                        </div>
+                    </div> 
+                    <div class="col-sm-2">
+                            <div class="bloque-2">
+                                <h3><a href="">lorem</a></h3>
+                                <h4><a href="">lorem</a>   <a href="#">lorem</a>   <a href="#">lorem</a></h4>
+                                <h4><a href="#">Ipsum</a> <a href="#">lorem</a></h4>
+                            </div>      
+                        </div> 
+                    <div class="col-sm-2">
+                            <img src="./img/31.png">
+                        </div>
+                </div>
+            </div>
+            </section>
+            <section id="medio">
+                    <div class="container">
+                            <div class="row">
+                                <div class="col-sm-2">
+                                    <div class="bloque-3">
+                                    <h3><a href="">lorem</a></h3>
+                                    <h4><a href="#">Ipsum</a> <a href="#">lorem</a></h4>
+                                    <h4><a href="#">lorem</a></h4>
+                                    </div>
+                                </div>
+                                <div class="col-sm-2">
+                                    <div class="bloque-3">
+                                        <h3><a href="">lorem</a></h3>
+                                        <h4><a href="">lorem</a> <a href="#">lorem</a></h4>
+                                        <h4><a href="#">Ipsum</a> <a href="#">lorem</a></h4>
+                                        <h4><a href="#">lorem</a></h4> 
+                                    </div>      
+                                </div> 
+                                <div class="col-sm-2">
+                                    <div class="bloque-3"> 
+                                        <h3><a href="">lorem</a></h3>
+                                        <h4><a href="#">Ipsum</a></h4>
+                                        <h4><a href="#">lorem</a></h4>
+                                    </div>
+                                </div>   
+                                <div class="col-sm-2">
+                                        <div class="bloque-3"> 
+                                            <h3><a href="">lorem</a></h3>
+                                            <h4><a href="#">Ipsum</a></h4>
+                                            <h4><a href="#">lorem</a></h4>
+                                        </div>
+                                    </div>   
+                            </div>
+                        </div>
+            </section>
+            <section id="abajo">
+                <div class="pie-pagina">
+                    <h3>AcFun</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nec ligula est. Integer bibendum, </p>
+                </div>
+            </section>
+        </footer>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
