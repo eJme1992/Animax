@@ -5,6 +5,7 @@ class Panel extends CI_Controller {
 
     public function __construct() {
         parent::__construct();
+        $this->load->library('session');
     }
     
 	public function index()
@@ -20,12 +21,12 @@ class Panel extends CI_Controller {
 	public function newserie()
 	{
 		
-		$DATOS ['user'] = $this->MUser->getJugador($user);
-
+		$DATOS['user'] = $this->session->userdata('id');
+     
 		$this->load->view('panel/header', $DATOS);
 		$this->load->view('panel/menu/menu');
 		$this->load->view('panel/menu/menufooter');
         $this->load->view('panel/secciones/newserie');
-		$this->load->view('panel/footer');
+		$this->load->view('panel/footer'); 
 	}
 }

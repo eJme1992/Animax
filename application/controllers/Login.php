@@ -21,7 +21,9 @@ class Login extends CI_Controller
             $consulta  = end($consultas);
             if ($consulta != false) {
                 if ($consulta->pass == $password) {
-                    $this->session->set_userdata('user', '$consulta');
+                    $data_login = array('id'        => $consulta,
+                                        'login'     => TRUE);
+                    $this->session-> set_userdata($data_login);
                     $response['status'] = 'ok';
                     $response['code']   = "Bienvenido";
                 } else {
