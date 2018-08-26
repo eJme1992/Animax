@@ -170,9 +170,7 @@
            }
          })
          .done(function(data, textStatus, jqXHR) {
-           var getData = jqXHR.responseJSON; // dejar esta linea
-            alert(data.mensaje)
-            console.log(data.status);
+            var getData = jqXHR.responseJSON; // dejar esta linea
            if(data.status=='ok'){
             $("#resultado").html('<div class="alert alert-success">'+data.code+'</div>');
              window.location.href ='<?=base_url();?>/panel';

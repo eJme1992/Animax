@@ -44,53 +44,20 @@ class Panel extends CI_Controller {
 
      public function categorias()
 	{
-		$csrf = array(
+		$this->load->model('MCategoria'); // Carga el modelo de categorías 
+        $DATOS['categorias'] = $this->MCategoria->lista();// consulta categorías existente  
+        // SEGURIDAS
+        $csrf = array(
         'name' => $this->security->get_csrf_token_name(),
         'hash' => $this->security->get_csrf_hash()
         );
-		 $DATOS['csrf'] = $csrf;
-		$this->load->model('MCategoria'); // Carga el modelo de categorías 
-        $DATOS['categorias'] = $this->MCategoria->lista();// consulta categorías existente      
+        $DATOS['csrf'] = $csrf;
+
         $this->load->view('panel/secciones/categorias', $DATOS );
 		$this->load->view('panel/footer'); 
 	}
 
-	   public function eliminar_categoria($id)
-	{
-		$this->load->model('MCategoria'); // Carga el modelo de categorías 
-        $DATOS['categorias'] = $this->MCategoria->eliminar($id);// consulta categorías existente 
-	}
-
-	   public function editar_categoria()
-	{
-		$id = $this->input->post('id');
-		$nombre = $this->input->post('nombre');
-		$this->load->model('MCategoria'); //
-        $id = $this->MCategoria->crear($nombre,$id);// 
-        if ($id != false) { 
-                $response['status'] = 'ok';
-                $response['mensaje'] = "La categoría ha sido creada con éxito";
-        }else{
-                $response['status'] = 0;
-                $response['error'] = "Ya existe una categoría con este nombre";
-        }
-        echo json_encode($response); 
-	}
-
-	   public function crear_categoria()
-	{
-		$nombre = $this->input->post('nombre');
-		$this->load->model('MCategoria'); //
-        $id = $this->MCategoria->crear($nombre);// 
-        if ($id != false) { 
-                $response['status'] = 'ok';
-                $response['mensaje'] = "La categoría ha sido creada con éxito";
-        }else{
-                $response['status'] = 0;
-                $response['error'] = "Ya existe una categoría con este nombre";
-        }
-        echo json_encode($response);
-	}
+	  
 
 
 
