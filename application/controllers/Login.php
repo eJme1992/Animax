@@ -9,8 +9,14 @@ class Login extends CI_Controller
         $this->load->library('session');
     }
     public function index()
-    {
-        $this->load->view('login/login');
+    {   
+        //TOTEN DE SEGURIDAD
+        $csrf = array(
+        'name' => $this->security->get_csrf_token_name(),
+        'hash' => $this->security->get_csrf_hash()
+        );
+        $DATOS['csrf'] = $csrf;
+        $this->load->view('login/login',$DATOS);
     }
     public function ingreso()
     {

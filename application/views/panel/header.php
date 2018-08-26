@@ -7,9 +7,22 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>AdminLTE 2 | Starter</title>
+  <title>Administacion de la web</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+   <!-- COMPLEMENTO PARA TEXTAREA -->
+  <script src="https://cdn.ckeditor.com/ckeditor5/11.0.1/classic/ckeditor.js"></script>
+  <style> 
+
+   .ck-content { min-height:160px; }
+  </style>
+ <!-- COMPLEMENTO PARA TABLAS -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+
+<link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.11/css/jquery.dataTables.css">
+<script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.11/js/jquery.dataTables.js">
+</script>
+ <!-- FIN COMPLEMENTO PARA TABLAS -->
   <link rel="stylesheet" href="<?=base_url();?>plantilla/panel/bower_components/bootstrap/dist/css/bootstrap.min.css">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="<?=base_url();?>plantilla/panel/bower_components/font-awesome/css/font-awesome.min.css">
@@ -21,7 +34,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
         page. However, you can choose any other skin. Make sure you
         apply the skin class to the body tag so the changes take effect. -->
   <link rel="stylesheet" href="<?=base_url();?>plantilla/panel/dist/css/skins/skin-blue.min.css">
-
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs/jq-3.3.1/dt-1.10.18/datatables.min.css"/>
+ 
+<script type="text/javascript" src="https://cdn.datatables.net/v/bs/jq-3.3.1/dt-1.10.18/datatables.min.js"></script>
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
   <!--[if lt IE 9]>
@@ -92,7 +107,11 @@ desired effect
                     <a href="<?=base_url();?>plantilla/panel/#">
                       <div class="pull-left">
                         <!-- User Image -->
-                        <img src="<?=base_url();?>plantilla/panel/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                       <?php if($user->foto==''){ ?>
+            <img src="<?=base_url();?>plantilla/panel/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+           <?php }else{ ?>
+            <img src="<?=$user->foto;?>" class="img-circle" alt="User Image">
+           <?php } ?>
                       </div>
                       <!-- Message title and timestamp -->
                       <h4>
@@ -136,83 +155,43 @@ desired effect
             </ul>
           </li>
           <!-- Tasks Menu -->
-          <li class="dropdown tasks-menu">
-            <!-- Menu Toggle Button -->
-            <a href="<?=base_url();?>plantilla/panel/#" class="dropdown-toggle" data-toggle="dropdown">
-              <i class="fa fa-flag-o"></i>
-              <span class="label label-danger">9</span>
-            </a>
-            <ul class="dropdown-menu">
-              <li class="header">You have 9 tasks</li>
-              <li>
-                <!-- Inner menu: contains the tasks -->
-                <ul class="menu">
-                  <li><!-- Task item -->
-                    <a href="<?=base_url();?>plantilla/panel/#">
-                      <!-- Task title and progress text -->
-                      <h3>
-                        Design some buttons
-                        <small class="pull-right">20%</small>
-                      </h3>
-                      <!-- The progress bar -->
-                      <div class="progress xs">
-                        <!-- Change the css width attribute to simulate progress -->
-                        <div class="progress-bar progress-bar-aqua" style="width: 20%" role="progressbar"
-                             aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
-                          <span class="sr-only">20% Complete</span>
-                        </div>
-                      </div>
-                    </a>
-                  </li>
-                  <!-- end task item -->
-                </ul>
-              </li>
-              <li class="footer">
-                <a href="<?=base_url();?>plantilla/panel/#">View all tasks</a>
-              </li>
-            </ul>
-          </li>
+      
           <!-- User Account Menu -->
           <li class="dropdown user user-menu">
             <!-- Menu Toggle Button -->
             <a href="<?=base_url();?>plantilla/panel/#" class="dropdown-toggle" data-toggle="dropdown">
               <!-- The user image in the navbar-->
-              <img src="<?=base_url();?>plantilla/panel/dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
+             <?php if($user->foto==''){ ?>
+            <img src="<?=base_url();?>plantilla/panel/dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
+           <?php }else{ ?>
+            <img src="<?=$user->foto;?>" class="user-image" alt="User Image">
+           <?php } ?>
               <!-- hidden-xs hides the username on small devices so only the image appears. -->
-              <span class="hidden-xs">Alexander Pierce</span>
+              <span class="hidden-xs"><?=$user->nombre;?></span>
             </a>
             <ul class="dropdown-menu">
               <!-- The user image in the menu -->
               <li class="user-header">
-                <img src="<?=base_url();?>plantilla/panel/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                <?php if($user->foto==''){ ?>
+            <img src="<?=base_url();?>plantilla/panel/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+           <?php }else{ ?>
+            <img src="<?=$user->foto;?>" class="img-circle" alt="User Image">
+           <?php } ?>
 
                 <p>
-                  Alexander Pierce - Web Developer
-                  <small>Member since Nov. 2012</small>
+                  <?=$user->nombre?>
+                 
                 </p>
               </li>
               <!-- Menu Body -->
-              <li class="user-body">
-                <div class="row">
-                  <div class="col-xs-4 text-center">
-                    <a href="<?=base_url();?>plantilla/panel/#">Followers</a>
-                  </div>
-                  <div class="col-xs-4 text-center">
-                    <a href="<?=base_url();?>plantilla/panel/#">Sales</a>
-                  </div>
-                  <div class="col-xs-4 text-center">
-                    <a href="<?=base_url();?>plantilla/panel/#">Friends</a>
-                  </div>
-                </div>
-                <!-- /.row -->
-              </li>
+       
               <!-- Menu Footer-->
               <li class="user-footer">
                 <div class="pull-left">
-                  <a href="<?=base_url();?>plantilla/panel/#" class="btn btn-default btn-flat">Profile</a>
+                  <a href="<?=base_url();?>plantilla/panel/#" class="btn btn-default btn-flat">Editar Perfil</a>
                 </div>
                 <div class="pull-right">
-                  <a href="<?=base_url();?>plantilla/panel/#" class="btn btn-default btn-flat">Sign out</a>
+                  <a href="<?=base_url();?>plantilla/panel/#" class="btn btn-default btn-flat">Cerra sección</a>
                 </div>
               </li>
             </ul>
@@ -241,9 +220,9 @@ desired effect
            <?php } ?>
         </div>
         <div class="pull-left info">
-          <p><?=$user->user;?></p>
+          <p><?=$user->nombre;?></p>
           <!-- Status -->
-          <a href="<?=base_url();?>plantilla/panel/#"><i class="fa fa-circle text-success"></i> Online</a>
+        <i class="fa fa-circle text-success"></i>Usuario:<b> <?=$user->user;?></b>
         </div>
       </div>
 

@@ -46,6 +46,7 @@
                      <i class="fa fa-lock" aria-hidden="true"></i>
                      </span>
                   </div>
+                  <input type="hidden" name="<?=$csrf['name'];?>" value="<?=$csrf['hash'];?>" />
                   <div class="container-login100-form-btn">
                      <button type="submit" id="enviar" name="enviar" class="btn btn-primary btn-round btn-lg btn-block login100-form-btn ">INGRESAR</button>
                   </div>
