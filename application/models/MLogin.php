@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class MLogin2 extends CI_Model {
+class MLogin extends CI_Model {
 
 
 	 function consultar($user)
@@ -11,7 +11,7 @@ class MLogin2 extends CI_Model {
     }
     
     function registrar($user, $mail, $password){
-        $regis = $this->db->insert("")
+        //$regis = $this->db->insert("")
     }
 	
 }

@@ -29,7 +29,7 @@
     </label>
     <a class="fp" href="#"><p class="forgot-pass">¿Olvidaste tu contraseña?</p></a>
     <button type="submit" id="enviar" name="enviar" class="submit">Iniciar sesión</button>
-    <button type="button" class="fb-btn">Conectarse con <span>facebook</span></button>
+   
     <div class="col-md-12" id="resultado" style="margin-top:15px;"></div>
   </form>
   </div>
@@ -64,7 +64,7 @@
         <input type="password" id="contrasena" name="contrasena" />
       </label>
       <button type="button" class="submit">Registrarte</button>
-      <button type="button" class="fb-btn">Unirte usando <span>facebook</span></button>
+     
       </form>
     </div>
   </div>
