@@ -33,14 +33,6 @@ class Panel extends CI_Controller {
 		$this->load->view('panel/footer'); 
 	}
 
-		public function series()
-	{
-		$this->load->model('MCategoria'); // Carga el modelo de categorías 
-        $DATOS['categorias'] = $this->MCategoria->lista();// consulta categorías existente
-        
-        $this->load->view('panel/secciones/tabla', $DATOS );
-		$this->load->view('panel/footer'); 
-	}
 
      public function categorias()
 	{
@@ -53,9 +45,40 @@ class Panel extends CI_Controller {
         );
         $DATOS['csrf'] = $csrf;
 
-        $this->load->view('panel/secciones/categorias', $DATOS );
+        $this->load->view('panel/secciones/categorias',$DATOS);
 		$this->load->view('panel/footer'); 
 	}
+
+	  public function generos()
+	{
+		$this->load->model('MGenero'); // Carga el modelo de categorías 
+        $DATOS['generos'] = $this->MGenero->lista();// consulta categorías existente  
+        // SEGURIDAS
+        $csrf = array(
+        'name' => $this->security->get_csrf_token_name(),
+        'hash' => $this->security->get_csrf_hash()
+        );
+        $DATOS['csrf'] = $csrf;
+
+        $this->load->view('panel/secciones/generos',$DATOS);
+		$this->load->view('panel/footer'); 
+	}
+
+          public function series()
+    {
+        $this->load->model('Mserie'); // Carga el modelo de categorías 
+        $DATOS['series'] = $this->Mserie->lista();// consulta categorías existente  
+        // SEGURIDAS
+        $csrf = array(
+        'name' => $this->security->get_csrf_token_name(),
+        'hash' => $this->security->get_csrf_hash()
+        );
+        $DATOS['csrf'] = $csrf;
+
+        $this->load->view('panel/secciones/series',$DATOS);
+        $this->load->view('panel/footer'); 
+    }
+
 
 	  
 

@@ -1,29 +1,29 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-class Categorias extends CI_Controller
+class series extends CI_Controller
 {
     public function __construct()
     {
         parent::__construct();
-        $this->load->model('MCategoria');
+        $this->load->model('Mserie');
         $this->load->library('session');
     }
     
 
-     public function eliminar_categoria($id)
+     public function eliminar_serie($id)
     {
-        $var = $this->MCategoria->eliminar($id);// consulta categorías existente 
+        $var = $this->Mserie->eliminar($id);// consulta series existente 
         if ($var == true) {
-         header("Location:" . base_url() . "panel/categorias");
+         header("Location:" . base_url() . "panel/series");
          exit; 
         }
     }
 
-       public function editar_categoria()
+       public function editar_serie()
     {
         $id = $this->input->post('id');
         $nombre = $this->input->post('nombre');
-        $var = $this->MCategoria->editar($nombre,$id);// 
+        $var = $this->Mserie->editar($nombre,$id);// 
         if ($var != false) { 
               $response['status'] = 'ok';
               $response['code']   = "Edición hecha correctamente recargue la pagina para actualizar la tabla";
@@ -34,17 +34,17 @@ class Categorias extends CI_Controller
         echo json_encode($response); 
     }
 
-       public function crear_categoria()
+       public function crear_serie()
     {
         $nombre = $this->input->post('nombre');
         
-        $var = $this->MCategoria->crear($nombre);// 
+        $var = $this->Mserie->crear($nombre);// 
         if ($var != false) { 
                 $response['status'] = 'ok';
-                $response['code'] = "La categoría ha sido creada de forma";
+                $response['code'] = "La serie ha sido creada de forma";
         }else{
                 $response['status'] = 0;
-                $response['error'] = "Ya existe una categoría con este nombre";
+                $response['error'] = "Ya existe una serie con este nombre";
         }
         echo json_encode($response);
     }
