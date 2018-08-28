@@ -31,6 +31,7 @@
     <button type="submit" id="enviar" name="enviar" class="submit">Iniciar sesión</button>
    
     <div class="col-md-12" id="resultado" style="margin-top:15px;"></div>
+    <input type="hidden" name="<?=$csrf['name'];?>" value="<?=$csrf['hash'];?>" />
   </form>
   </div>
   <div class="sub-cont">
@@ -64,7 +65,12 @@
         <input type="password" id="contrasena" name="contrasena" />
       </label>
       <button type="button" class="submit">Registrarte</button>
+<<<<<<< HEAD:application/views/login2/login2.php
+      <button type="button" class="fb-btn">Unirte usando <span>facebook</span></button>
+      <input type="hidden" name="<?=$csrf['name'];?>" value="<?=$csrf['hash'];?>" />
+=======
      
+>>>>>>> 9a745fa4c8cbde99f2605d87c55570ceb339eb35:application/views/login/login.php
       </form>
     </div>
   </div>
