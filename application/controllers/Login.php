@@ -9,8 +9,14 @@ class Login extends CI_Controller
         $this->load->library('session'); // para usar sesiones 
     }
     public function index()
-    {
-        $this->load->view('login/login'); //Primero la carpeta de la view y segundo el archivo
+    {   
+         // SEGURIDAS
+        $csrf = array(
+        'name' => $this->security->get_csrf_token_name(),
+        'hash' => $this->security->get_csrf_hash()
+        );
+        $DATOS['csrf'] = $csrf;
+        $this->load->view('login/login',$DATOS); //Primero la carpeta de la view y segundo el archivo
     }
     public function ingreso()
     {
