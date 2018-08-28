@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Mgenero extends CI_Model {
+class MGenero extends CI_Model {
 
 
 	 function lista()
@@ -28,11 +28,11 @@ class Mgenero extends CI_Model {
 	{    
 		$query = $this->db->query("SELECT * FROM `generos` WHERE nombre='$nombre'");
         if ($query->num_rows() == 0) {
-        	$fecha_c = $fecha_m = date("Y-m-d");
+        	$fecha_c = $fecha_m = date("Y-m-d"); // agarra las fechas
             $query = $this->db->query("INSERT INTO `generos` (`nombre`, `fecha_c`, `fecha_m`) VALUES ('$nombre','$fecha_c','$fecha_m')");
             if ($query == true) {
                 $id = $this->db->insert_id();
-                return $id;
+                return $id; // 0
             } else {
                 return false;
             }

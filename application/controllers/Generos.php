@@ -5,14 +5,14 @@ class generos extends CI_Controller
     public function __construct()
     {
         parent::__construct();
-        $this->load->model('Mgenero');
+        $this->load->model('MGenero');
         $this->load->library('session');
     }
     
 
      public function eliminar_genero($id)
     {
-        $var = $this->Mgenero->eliminar($id);// consulta Generos existente 
+        $var = $this->MGenero->eliminar($id);// consulta Generos existente 
         if ($var == true) {
          header("Location:" . base_url() . "panel/generos");
          exit; 
@@ -23,7 +23,7 @@ class generos extends CI_Controller
     {
         $id = $this->input->post('id');
         $nombre = $this->input->post('nombre');
-        $var = $this->Mgenero->editar($nombre,$id);// 
+        $var = $this->MGenero->editar($nombre,$id);// 
         if ($var != false) { 
               $response['status'] = 'ok';
               $response['code']   = "Edición hecha correctamente recargue la pagina para actualizar la tabla";
@@ -38,7 +38,7 @@ class generos extends CI_Controller
     {
         $nombre = $this->input->post('nombre');
         
-        $var = $this->Mgenero->crear($nombre);// 
+        $var = $this->MGenero->crear($nombre);// 
         if ($var != false) { 
                 $response['status'] = 'ok';
                 $response['code'] = "La Genero ha sido creada de forma";
