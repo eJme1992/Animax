@@ -13,15 +13,15 @@
     <link href="assets/css/bootstrap.css" rel="stylesheet">
     <!--external css-->
     <link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
-    <link rel="stylesheet" type="text/css" href="<?=base_url();?>/plantilla/perfil/theme/assets/css/zabuto_calendar.css">
-    <link rel="stylesheet" type="text/css" href="<?=base_url();?><?=base_url();?>/plantilla/perfil/theme/assets/js/gritter/css/jquery.gritter.css" />
-    <link rel="stylesheet" type="text/css" href="<?=base_url();?>/plantilla/perfil/theme/assets/lineicons/style.css">    
+    <link rel="stylesheet" type="text/css" href="<?=base_url();?>plantilla/perfil/assets/css/zabuto_calendar.css">
+    <link rel="stylesheet" type="text/css" href="<?=base_url();?>plantilla/perfil/assets/js/gritter/css/jquery.gritter.css" />
+    <link rel="stylesheet" type="text/css" href="<?=base_url();?>plantilla/perfil/assets/lineicons/style.css">    
     
     <!-- Custom styles for this template -->
-    <link href="<?=base_url();?>/plantilla/perfil/theme/assets/css/style.css" rel="stylesheet">
-    <link href="<?=base_url();?>/plantilla/perfil/theme/assets/css/style-responsive.css" rel="stylesheet">
+    <link href="<?=base_url();?>plantilla/perfil/assets/css/style.css" rel="stylesheet">
+    <link href="<?=base_url();?>plantilla/perfil/assets/css/style-responsive.css" rel="stylesheet">
 
-    <script src="<?=base_url();?>/plantilla/perfil/theme/assets/js/chart-master/Chart.js"></script>
+    <script src="<?=base_url();?>plantilla/perfil/assets/js/chart-master/Chart.js"></script>
     
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -165,7 +165,7 @@
                             </li>
                             <li>
                                 <a href="index.html#">
-                                    <span class="photo"><img alt="avatar" src="assets/img/ui-sherman.jpg"></span>
+                                    <span class="photo"><img alt="avatar" src="<?=base_url();?>plantilla/perfil/assets/img/ui-sherman.jpg"></span>
                                     <span class="subject">
                                     <span class="from">Dj Sherman</span>
                                     <span class="time">4 hrs.</span>
@@ -201,7 +201,7 @@
               <!-- sidebar menu start-->
               <ul class="sidebar-menu" id="nav-accordion">
               
-              	  <p class="centered"><a href="profile.html"><img src="assets/img/ui-sam.jpg" class="img-circle" width="60"></a></p>
+              	  <p class="centered"><a href="profile.html"><img src="<?=base_url();?>plantilla/perfil/assets/img/ui-sam.jpg" class="img-circle" width="60"></a></p>
               	  <h5 class="centered">Marcel Newman</h5>
               	  	
                   <li class="mt">
@@ -373,7 +373,7 @@
 									<div class="col-sm-6 col-xs-6"></div>
 	                      		</div>
 	                      		<div class="centered">
-										<img src="assets/img/product.png" width="120">
+										<img src="<?=base_url();?>plantilla/perfil/assets/img/product.png" width="120">
 	                      		</div>
                       		</div>
                       	</div><!-- /col-md-4 -->
@@ -384,7 +384,7 @@
 								<div class="white-header">
 									<h5>TOP USER</h5>
 								</div>
-								<p><img src="assets/img/ui-zac.jpg" class="img-circle" width="80"></p>
+								<p><img src="<?=base_url();?>plantilla/perfil/assets/img/ui-zac.jpg" class="img-circle" width="80"></p>
 								<p><b>Zac Snider</b></p>
 								<div class="row">
 									<div class="col-md-6">
@@ -581,7 +581,7 @@
                       <!-- First Member -->
                       <div class="desc">
                       	<div class="thumb">
-                      		<img class="img-circle" src="assets/img/ui-divya.jpg" width="35px" height="35px" align="">
+                      		<img class="img-circle" src="<?=base_url();?>plantilla/perfil/plantilla/perfil/assets/img/ui-divya.jpg" width="35px" height="35px" align="">
                       	</div>
                       	<div class="details">
                       		<p><a href="#">DIVYA MANIAN</a><br/>
@@ -592,7 +592,7 @@
                       <!-- Second Member -->
                       <div class="desc">
                       	<div class="thumb">
-                      		<img class="img-circle" src="assets/img/ui-sherman.jpg" width="35px" height="35px" align="">
+                      		<img class="img-circle" src="<?=base_url();?>plantilla/perfil/assets/img/ui-sherman.jpg" width="35px" height="35px" align="">
                       	</div>
                       	<div class="details">
                       		<p><a href="#">DJ SHERMAN</a><br/>
@@ -603,7 +603,7 @@
                       <!-- Third Member -->
                       <div class="desc">
                       	<div class="thumb">
-                      		<img class="img-circle" src="assets/img/ui-danro.jpg" width="35px" height="35px" align="">
+                      		<img class="img-circle" src="<?=base_url();?>plantilla/perfil/assets/img/ui-danro.jpg" width="35px" height="35px" align="">
                       	</div>
                       	<div class="details">
                       		<p><a href="#">DAN ROGERS</a><br/>
@@ -614,7 +614,7 @@
                       <!-- Fourth Member -->
                       <div class="desc">
                       	<div class="thumb">
-                      		<img class="img-circle" src="assets/img/ui-zac.jpg" width="35px" height="35px" align="">
+                      		<img class="img-circle" src="<?=base_url();?>plantilla/perfil/assets/img/ui-zac.jpg" width="35px" height="35px" align="">
                       	</div>
                       	<div class="details">
                       		<p><a href="#">Zac Sniders</a><br/>
@@ -625,7 +625,7 @@
                       <!-- Fifth Member -->
                       <div class="desc">
                       	<div class="thumb">
-                      		<img class="img-circle" src="assets/img/ui-sam.jpg" width="35px" height="35px" align="">
+                      		<img class="img-circle" src="<?=base_url();?>plantilla/perfil/assets/img/ui-sam.jpg" width="35px" height="35px" align="">
                       	</div>
                       	<div class="details">
                       		<p><a href="#">Marcel Newman</a><br/>
@@ -667,24 +667,24 @@
   </section>
 
     <!-- js placed at the end of the document so the pages load faster -->
-    <script src="assets/js/jquery.js"></script>
-    <script src="assets/js/jquery-1.8.3.min.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
-    <script class="include" type="text/javascript" src="assets/js/jquery.dcjqaccordion.2.7.js"></script>
-    <script src="assets/js/jquery.scrollTo.min.js"></script>
-    <script src="assets/js/jquery.nicescroll.js" type="text/javascript"></script>
-    <script src="assets/js/jquery.sparkline.js"></script>
+    <script src="<?=base_url();?>plantilla/perfil/assets/js/jquery.js"></script>
+    <script src="<?=base_url();?>plantilla/perfil/assets/js/jquery-1.8.3.min.js"></script>
+    <script src="<?=base_url();?>plantilla/perfil/assets/js/bootstrap.min.js"></script>
+    <script class="include" type="text/javascript" src="<?=base_url();?>plantilla/perfil/assets/js/jquery.dcjqaccordion.2.7.js"></script>
+    <script src="<?=base_url();?>plantilla/perfil/assets/js/jquery.scrollTo.min.js"></script>
+    <script src="<?=base_url();?>plantilla/perfil/assets/js/jquery.nicescroll.js" type="text/javascript"></script>
+    <script src="<?=base_url();?>plantilla/perfil/assets/js/jquery.sparkline.js"></script>
 
 
     <!--common script for all pages-->
-    <script src="assets/js/common-scripts.js"></script>
+    <script src="<?=base_url();?>plantilla/perfil/assets/js/common-scripts.js"></script>
     
-    <script type="text/javascript" src="assets/js/gritter/js/jquery.gritter.js"></script>
-    <script type="text/javascript" src="assets/js/gritter-conf.js"></script>
+    <script type="text/javascript" src="<?=base_url();?>plantilla/perfil/assets/js/gritter/js/jquery.gritter.js"></script>
+    <script type="text/javascript" src="<?=base_url();?>plantilla/perfil/assets/js/gritter-conf.js"></script>
 
     <!--script for this page-->
-    <script src="assets/js/sparkline-chart.js"></script>    
-	<script src="assets/js/zabuto_calendar.js"></script>	
+    <script src="<?=base_url();?>plantilla/perfil/assets/js/sparkline-chart.js"></script>    
+	<script src="<?=base_url();?>plantilla/perfil/assets/js/zabuto_calendar.js"></script>	
 	
 	<script type="text/javascript">
         $(document).ready(function () {

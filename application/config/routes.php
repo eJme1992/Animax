@@ -52,7 +52,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $route['default_controller'] = 'welcome';
 
 $route['login'] ='Login';
-
+$route['perfil'] = "Perfil"; //derecha direccion izq controlador
 $route['admin'] = 'Admin';
 
 $route['panel'] = 'Panel';

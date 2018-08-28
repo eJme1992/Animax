@@ -5,39 +5,27 @@ class Login extends CI_Controller
     public function __construct()
     {
         parent::__construct();
-        $this->load->model('MLogin');
+        $this->load->model('MLogin');//Para cargar el Modelo include
         $this->load->library('session'); // para usar sesiones 
     }
-<<<<<<< HEAD:application/controllers/Login2.php
-    public function index(){
-        // SEGURIDAS
-        $csrf = array(
-            'name' => $this->security->get_csrf_token_name(),
-            'hash' => $this->security->get_csrf_hash()
-            );
-            $DATOS['csrf'] = $csrf;
-            
-        $this->load->view('Login2/login2'); //Primero la carpeta de la view y segundo el archivo
-=======
     public function index()
     {
         $this->load->view('login/login'); //Primero la carpeta de la view y segundo el archivo
->>>>>>> 9a745fa4c8cbde99f2605d87c55570ceb339eb35:application/controllers/Login.php
     }
     public function ingreso()
     {
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-            $usuario      = $this->input->post('email');
+            $usuario   = $this->input->post('email');
             $password  = $this->input->post('pass');
             $consultas = $this->MLogin->consultar($usuario);
-            $consulta  = end($consultas);
+            $consulta  = end($consultas); //funcion que me trae el ultimo registro de la consulta
             if ($consulta != false) {
-                if ($consulta->pass == $password) {
-                    $data_login = array('id'        => $consulta,
-                                        'login'     => TRUE);
-                    $this->session-> set_userdata($data_login);
-                    $response['status'] = 'ok';
-                    $response['code']   = "Bienvenido";
+                if ($consulta->pass == $password) //pass celda en bd {
+                    $data_login = array('id'        => $consulta, // Se crea el arreglo para la sesion
+                                        'login'     => TRUE); 
+                    $this->session-> set_userdata($data_login); //se crea la sesion con los datod del arreglo
+                    $response['status'] = 'ok'; //Arreglo para el json
+                    $response['code']   = "Bienvenido"; //mis clave del arreglo
                 } else {
                     $response['status'] = 0;
                     $response['error']  = ' La contraseña es incorrecta';
@@ -50,10 +38,23 @@ class Login extends CI_Controller
         }
     }
     public function registrar(){
-        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-            $newuser = $this->input->post('contrasena');
+
+          ($_SERVER['REQUEST_METHOD'] == 'POST'){ //Por seguridad, que venga del post 
+            $newuser = $this->input->post('nombre'); //Recibiendo los datosque vienen del form
             $newmail = $this->input->post('mail');
             $newpassword =$this->input->post('contrasena');
+
+
+            $existe = $this->MLogin->registrar($newuser,$newemail, $newpassword);
+            if($existe != false){
+                $response['status'] = 'ok'; //Creando un objeto Json
+                $response['code'] = "El usuario ha sido creado exitosamente";
+        }else{
+                $response['status'] = 0;
+                $response['error'] = "Email existente. Pruebe con otro";
+        }
+        echo json_encode($response);
+            }
             
     }
 

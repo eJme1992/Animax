@@ -31,7 +31,7 @@
     <button type="submit" id="enviar" name="enviar" class="submit">Iniciar sesión</button>
    
     <div class="col-md-12" id="resultado" style="margin-top:15px;"></div>
-    <input type="hidden" name="<?=$csrf['name'];?>" value="<?=$csrf['hash'];?>" />
+    
   </form>
   </div>
   <div class="sub-cont">
@@ -65,55 +65,90 @@
         <input type="password" id="contrasena" name="contrasena" />
       </label>
       <button type="button" class="submit">Registrarte</button>
-<<<<<<< HEAD:application/views/login2/login2.php
-      <button type="button" class="fb-btn">Unirte usando <span>facebook</span></button>
-      <input type="hidden" name="<?=$csrf['name'];?>" value="<?=$csrf['hash'];?>" />
-=======
      
->>>>>>> 9a745fa4c8cbde99f2605d87c55570ceb339eb35:application/views/login/login.php
       </form>
     </div>
   </div>
 </div>
 
-  
-  <script >
-         $('.js-tilt').tilt({
-         	scale: 1.1
-         })
-      </script>
-      <script >
-         jQuery(document).ready(function() {
-               jQuery("#formu").submit(function(event) {
-               event.preventDefault();
+ 
+      <script > //Ajax para mi form ingresar
+         jQuery(document).ready(function() { //Cuando el doc se cargue, hacelas ejecuciones siguientes
+               jQuery("#formu").submit(function(event) {  //Se activa el form, activa el ajax
+               event.preventDefault(); 
          
-             var msj = '1';
+             var msj = '1'; 
          //validaciones con js
          
-        if (msj === "1") {
-         var formData = new FormData(jQuery('#formu') [0]);
+        if (msj === "1") { //tres igual para decir que es identico
+         var formData = new FormData(jQuery('#formu') [0]); //Se crea el arreglo con los datos del form
          jQuery.ajax({
-           url: '<?=base_url();?>login/ingreso',
-           type: 'POST',
+           url: '<?=base_url();?>login/ingreso', // Al controlador donde van mis datos 
+           type: 'POST', 
            contentType: false,
-           processData: false,
+           processData: false, //Le dice que tipo de dato va a recibir
            dataType: 'json',
-           data: formData,
+           data: formData,  
            beforeSend: function() {
              $("#resultado").html('<div class="alert alert-success">Procesando...!</div>');
            }
          })
          .done(function(data, textStatus, jqXHR) {
-           var getData = jqXHR.responseJSON; // dejar esta linea
+           var getData = jqXHR.responseJSON; // vguarda los errores si los hay en la ejecucion del js
          
-           if(data.status=='ok'){
-            $("#resultado").html('<div class="alert alert-success">'+data.code+'</div>');
-             window.location.href ='<?=base_url();?>/panel';
+           if(data.status=='ok'){ //ver controlador, status es el nombre la clave cuando se creo
+            $("#resultado").html('<div class="alert alert-success">'+data.code+'</div>'); //controlador
+             window.location.href ='<?=base_url();?>/perfil'; //te manda la direccion a donde vas
            }else{
            $("#resultado").html('<div class="alert alert-danger"><strong>ERROR!</strong>'+data.error+'</div>');
            }
          })
-               .fail(function(jqXHR, textStatus, errorThrown) {
+               .fail(function(jqXHR, textStatus, errorThrown) { //Si ocurre errores el jquery
+                 var getErr = jqXHR.responseText;
+                 console.log(getErr);
+         
+               })
+          // Fin de ajax
+          } else {
+              swal("¡Error! ", msj, "error");
+          }
+          });
+         
+         });//fin ready
+      </script>
+
+      <script > //Ajax para mi form registrar
+         jQuery(document).ready(function() { //Cuando el doc se cargue, hacelas ejecuciones siguientes
+               jQuery("#formr").submit(function(event) {  //Se activa el form, activa el ajax
+               event.preventDefault(); 
+         
+             var msj = '1'; 
+         //validaciones con js
+         
+        if (msj === "1") { //tres igual para decir que es identico
+         var formData = new FormData(jQuery('#formr') [0]); //Se crea el arreglo con los datos del form
+         jQuery.ajax({
+           url: '<?=base_url();?>login/registrar', // Al controlador donde van mis datos y la funcion que los ejecuta
+           type: 'POST', 
+           contentType: false,
+           processData: false, //Le dice que tipo de dato va a recibir
+           dataType: 'json',
+           data: formData,  
+           beforeSend: function() {
+             $("#resultado").html('<div class="alert alert-success">Procesando...!</div>');
+           }
+         })
+         .done(function(data, textStatus, jqXHR) {
+           var getData = jqXHR.responseJSON; // guarda los errores si los hay en la ejecucion del js
+         
+           if(data.status=='ok'){ //ver controlador, status es el nombre la clave cuando se creo
+            $("#resultado").html('<div class="alert alert-success">'+data.code+'</div>'); //controlador
+             window.location.href ='<?=base_url();?>/perfil'; //te manda la direccion a donde vas
+           }else{
+           $("#resultado").html('<div class="alert alert-danger"><strong>ERROR!</strong>'+data.error+'</div>');
+           }
+         })
+               .fail(function(jqXHR, textStatus, errorThrown) { //Si ocurre errores el jquery
                  var getErr = jqXHR.responseText;
                  console.log(getErr);
          
