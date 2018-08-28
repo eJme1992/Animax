@@ -22,7 +22,7 @@
 <section class="content container-fluid">
    <nav class="nav" style="margin-bottom:25px;">
       <div class="btn-group">
-         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Nueva serie <i class="fa fa-plus-circle"></i></button>
+         <a href="<?=base_url();?>panel/newserie"><button type="button" class="btn btn-primary">Nueva serie <i class="fa fa-plus-circle"></i></button></a>
       </div>
    </nav>
    <table id="grid" class="table table-striped table-bordered" cellspacing="0" width="100%">
@@ -155,51 +155,6 @@
 </div>
 <!-- /.content -->
 
-<!-- NUEVAS serieS -->
-      <script >
-         jQuery(document).ready(function() {
-               jQuery("#nuevacap").submit(function(event) {
-               event.preventDefault();
-         
-             var msj = '1';
-         //validaciones con js
-         
-        if (msj === "1") {
-         var formData = new FormData(jQuery('#nuevacap') [0]);
-         jQuery.ajax({
-           url: '<?=base_url();?>series/crear_serie',
-           type: 'POST',
-           contentType: false,
-           processData: false,
-           dataType: 'json',
-           data: formData,
-           beforeSend: function() {
-             $("#resultado").html('<div class="alert alert-success">Procesando...!</div>');
-           }
-         })
-         .done(function(data, textStatus, jqXHR) {
-            var getData = jqXHR.responseJSON; // dejar esta linea
-           if(data.status=='ok'){
-            $("#resultado").html('<div class="alert alert-success">'+data.code+'</div>');
-             window.location.href ='<?=base_url();?>/panel/series';
-           }else{
-           $("#resultado").html('<div class="alert alert-danger"><strong>ERROR!</strong>'+data.error+'</div>');
-           }
-         })
-               .fail(function(jqXHR, textStatus, errorThrown) {
-                 var getErr = jqXHR.responseText;
-                 
-                 console.log(getErr);
-         
-               })
-          // Fin de ajax
-          } else {
-              swal("¡Error! ", msj, "error");
-          }
-          });
-         
-         });//fin ready
-      </script>
 
       <!-- EDITAR serieS -->
       <script >

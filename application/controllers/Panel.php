@@ -28,7 +28,9 @@ class Panel extends CI_Controller {
 	public function newserie()
 	{
 		$this->load->model('MCategoria'); // Carga el modelo de categorías 
-        $DATOS['categorias'] = $this->MCategoria->lista();// consulta categorías existente   	
+        $this->load->model('MGenero'); // Carga el modelo de categorías 
+        $DATOS['categorias'] = $this->MCategoria->lista();// consulta categorías existente  
+        $DATOS['generos'] = $this->MGenero->lista();// consulta categorías existente   	
         $this->load->view('panel/secciones/newserie', $DATOS );
 		$this->load->view('panel/footer'); 
 	}

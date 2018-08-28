@@ -7,7 +7,7 @@
               </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="<?=base_url();?>panel/serie"><b>Todas mis series</b></a></li>
+            <li><a href="<?=base_url();?>panel/series"><b>Todas mis series</b></a></li>
             <li><a href="<?=base_url();?>panel/newserie">Nueva serie</a></li>
             <li><a href="<?=base_url();?>panel/generos">Géneros</a></li>
             <li><a href="<?=base_url();?>panel/categorias">Categorías</a></li>
