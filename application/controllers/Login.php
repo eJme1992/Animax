@@ -36,10 +36,10 @@ class Login extends CI_Controller
             }
             echo json_encode($response);
         }
-    }
+    
     public function registrar(){
 
-          ($_SERVER['REQUEST_METHOD'] == 'POST'){ //Por seguridad, que venga del post 
+           if($_SERVER['REQUEST_METHOD'] == 'POST'){ //Por seguridad, que venga del post 
             $newuser = $this->input->post('nombre'); //Recibiendo los datosque vienen del form
             $newmail = $this->input->post('mail');
             $newpassword =$this->input->post('contrasena');
@@ -58,5 +58,4 @@ class Login extends CI_Controller
             
     }
 
-}
 }

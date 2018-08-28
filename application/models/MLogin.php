@@ -28,4 +28,4 @@ class MLogin extends CI_Model {
 	}
     }
 	
-}
+
