@@ -10,19 +10,19 @@
 
 
    <h1>
-      Categorías
+      series
       <small>Category</small>
    </h1>
    <ol class="breadcrumb">
       <li><a href="<?=base_url();?>plantilla/panel/#"><i class="fa fa-dashboard"></i>Series</a></li>
-      <li class="active">Categorías</li>
+      <li class="active">series</li>
    </ol>
 </section>
 <!-- Main content -->
 <section class="content container-fluid">
    <nav class="nav" style="margin-bottom:25px;">
       <div class="btn-group">
-         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Nueva Categoría <i class="fa fa-plus-circle"></i></button>
+         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Nueva serie <i class="fa fa-plus-circle"></i></button>
       </div>
    </nav>
    <table id="grid" class="table table-striped table-bordered" cellspacing="0" width="100%">
@@ -47,7 +47,7 @@
          </tr>
       </tfoot>
       <tbody>
-         <?php foreach ($categorias as $key) { ?>
+         <?php foreach ($series as $key) { ?>
          <tr>
             <td><?=$key->id;?></td>
             <td><?=$key->nombre;?></td>
@@ -66,7 +66,7 @@
                   <div class="modal-content">
                      <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4 class="modal-title">Editar categoría</h4>
+                        <h4 class="modal-title">Editar serie</h4>
                      </div>
                      <div class="modal-body">
                         <form id="editar<?=$key->id;?>" onsubmit="realizaProceso(
@@ -74,7 +74,7 @@
                                 );return false; ">
                            <div class="row">
                               <div class="col-sm-12">
-                                 <label>Nombre de la categoría</label>
+                                 <label>Nombre de la serie</label>
                                  <input type="text" name="nombre" id="nombre" value="<?=$key->nombre;?>" required="" class="form-control" placeholder="Ej: Anime">
                                  <input type="hidden" name="id" id="id" value="<?=$key->id;?>">
                                  
@@ -106,10 +106,10 @@
                   <!-- Modal content-->
                   <div class="modal-content">
                      <div class="modal-body text-center">
-                        <h3> ¿Esta Seguro que desea eliminar la categoría: <b><?=$key->nombre;?></b>?</h3>
+                        <h3> ¿Esta Seguro que desea eliminar la serie: <b><?=$key->nombre;?></b>?</h3>
                      </div>
                      <div class="modal-footer">
-                        <a href="<?=base_url();?>Categorias/eliminar_categoria/<?=$key->id;?>"><button type="button" class="btn btn-danger">Si</button></a>
+                        <a href="<?=base_url();?>series/eliminar_serie/<?=$key->id;?>"><button type="button" class="btn btn-danger">Si</button></a>
                         <button type="button" class="btn btn-default" data-dismiss="modal">no</button>
                      </div>
                   </div>
@@ -128,13 +128,13 @@
       <div class="modal-content">
          <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal">&times;</button>
-            <h4 class="modal-title">Nueva categoría</h4>
+            <h4 class="modal-title">Nueva serie</h4>
          </div>
          <div class="modal-body">
             <form id="nuevacap">
                <div class="row">
                   <div class="col-sm-12">
-                     <label>Nombre de la categoría</label>
+                     <label>Nombre de la serie</label>
                      <input type="text" name="nombre" id="nombre" required="" class="form-control" placeholder="Ej: Anime">
                   </div>
                   <div class="col-md-12" id="resultado" style="margin-top:15px;"></div>
@@ -155,7 +155,7 @@
 </div>
 <!-- /.content -->
 
-<!-- NUEVAS CATEGORIAS -->
+<!-- NUEVAS serieS -->
       <script >
          jQuery(document).ready(function() {
                jQuery("#nuevacap").submit(function(event) {
@@ -167,7 +167,7 @@
         if (msj === "1") {
          var formData = new FormData(jQuery('#nuevacap') [0]);
          jQuery.ajax({
-           url: '<?=base_url();?>Categorias/crear_categoria',
+           url: '<?=base_url();?>series/crear_serie',
            type: 'POST',
            contentType: false,
            processData: false,
@@ -181,7 +181,7 @@
             var getData = jqXHR.responseJSON; // dejar esta linea
            if(data.status=='ok'){
             $("#resultado").html('<div class="alert alert-success">'+data.code+'</div>');
-             window.location.href ='<?=base_url();?>/panel';
+             window.location.href ='<?=base_url();?>/panel/series';
            }else{
            $("#resultado").html('<div class="alert alert-danger"><strong>ERROR!</strong>'+data.error+'</div>');
            }
@@ -201,7 +201,7 @@
          });//fin ready
       </script>
 
-      <!-- EDITAR CATEGORIAS -->
+      <!-- EDITAR serieS -->
       <script >
         
       function realizaProceso(id) {
@@ -212,7 +212,7 @@
         if (msj === "1") {
          var formData = new FormData(jQuery('#editar'+id) [0]);
          jQuery.ajax({
-           url: '<?=base_url();?>Categorias/editar_categoria',
+           url: '<?=base_url();?>series/editar_serie',
            type: 'POST',
            contentType: false,
            processData: false,

@@ -7,8 +7,9 @@
               </span>
           </a>
           <ul class="treeview-menu">
+            <li><a href="<?=base_url();?>panel/serie"><b>Todas mis series</b></a></li>
             <li><a href="<?=base_url();?>panel/newserie">Nueva serie</a></li>
-            <li><a href="<?=base_url();?>panel/categorias">Géneros</a></li>
+            <li><a href="<?=base_url();?>panel/generos">Géneros</a></li>
             <li><a href="<?=base_url();?>panel/categorias">Categorías</a></li>
           </ul>
         </li>
@@ -19,6 +20,7 @@
               </span>
           </a>
           <ul class="treeview-menu">
+            <li><a href="<?=base_url();?>panel/newserie"><b>Todas mis películas</b></a></li>
             <li><a href="<?=base_url();?>panel/newserie">Nueva Película</a></li>
             <li><a href="<?=base_url();?>plantilla/panel/#">Géneros</a></li>
           </ul>
@@ -29,8 +31,9 @@
                 <i class="fa fa-angle-left pull-right"></i>
               </span>
           </a>
-          <ul class="treeview-menu">
-            <li><a href="<?=base_url();?>panel/newserie">Crear serie</a></li>
+        <ul class="treeview-menu">
+            <li><a href="<?=base_url();?>panel/newserie"><b>Todas mis Noticias</b></a></li>
+            <li><a href="<?=base_url();?>panel/newserie">Crear Noticia</a></li>
             <li><a href="<?=base_url();?>plantilla/panel/#">Categorías</a></li>
           </ul>
         </li>
