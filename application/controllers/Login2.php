@@ -8,8 +8,14 @@ class Login2 extends CI_Controller
         $this->load->model('MLogin2');
         $this->load->library('session'); // para usar sesiones 
     }
-    public function index()
-    {
+    public function index(){
+        // SEGURIDAS
+        $csrf = array(
+            'name' => $this->security->get_csrf_token_name(),
+            'hash' => $this->security->get_csrf_hash()
+            );
+            $DATOS['csrf'] = $csrf;
+            
         $this->load->view('Login2/login2'); //Primero la carpeta de la view y segundo el archivo
     }
     public function ingreso()
@@ -42,6 +48,7 @@ class Login2 extends CI_Controller
             $newuser = $this->input->post('contrasena');
             $newmail = $this->input->post('mail');
             $newpassword =$this->input->post('contrasena');
+            
     }
 
 }

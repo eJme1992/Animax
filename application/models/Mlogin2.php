@@ -6,12 +6,12 @@ class MLogin2 extends CI_Model {
 
 	 function consultar($user)
 	{    
-		$query = $this->db->query("SELECT * FROM `admin` WHERE user='$user'");
+		$query = $this->db->query("SELECT * FROM `user` WHERE user='$user'");
 		return $query->result();
     }
     
-    function registrar($user, $mail, $password){
+    /*function registrar($user, $mail, $password){
         $regis = $this->db->insert("")
-    }
+    }*/
 	
 }
