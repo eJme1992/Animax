@@ -24,7 +24,7 @@ class Mserie extends CI_Model {
 		return $query;
 	}
 
-	 function crear($nombre)
+	 function crear($nombre,$descripcion,$imagenurl,$categoria,$estado)
 	{    
 		$query = $this->db->query("SELECT * FROM `serie` WHERE nombre='$nombre'");
         if ($query->num_rows() == 0) {
