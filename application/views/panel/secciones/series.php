@@ -30,6 +30,10 @@
          <tr>
             <th>ID</th>
             <th>Nombre</th>
+            <th>Estado</th>
+            <th>Categoría</th>
+            <th>Duración</th>
+            <th>Estreno</th>
             <th>Fecha de creación</th>
             <th>Fecha de modificación</th>
             <th>#</th>
@@ -40,6 +44,10 @@
          <tr>
             <th>ID</th>
             <th>Nombre</th>
+            <th>Estado</th>
+            <th>Categoría</th>
+            <th>Duración</th>
+            <th>Estreno</th>
             <th>Fecha de creación</th>
             <th>Fecha de modificación</th>
             <th>#</th>
@@ -51,54 +59,20 @@
          <tr>
             <td><?=$key->id;?></td>
             <td><?=$key->nombre;?></td>
+            <td><?=$key->estado;?></td>
+            <td><?=$key->categoria;?></td>
+            <td><?=$key->duracion;?></td>
+            <td><?=$key->estreno;?></td>
             <td><?=$key->fecha_c;?></td>
             <td><?=$key->fecha_m;?></td>
             <td>
-               <p data-placement="top" data-toggle="tooltip" title="Edit"><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit<?=$key->id;?>" ><span class="glyphicon glyphicon-pencil"></span></button></p>
+              <a href="<?=base_url();?>panel/viewserie/<?=$key->id;?>"> <p data-placement="top" data-toggle="tooltip" title="Edit"><button class="btn btn-primary btn-xs"><span class="glyphicon glyphicon-pencil"></span></button></p></a>
             </td>
             <td>
                <p data-placement="top" data-toggle="tooltip" title="Delete"><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete<?=$key->id;?>" ><span class="glyphicon glyphicon-trash"></span></button></p>
             </td>
             <!-- Modal Editar-->
-            <div id="edit<?=$key->id;?>" class="modal fade " role="dialog">
-               <div class="modal-dialog" style="margin-top:10vw;">
-                  <!-- Modal content-->
-                  <div class="modal-content">
-                     <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4 class="modal-title">Editar serie</h4>
-                     </div>
-                     <div class="modal-body">
-                        <form id="editar<?=$key->id;?>" onsubmit="realizaProceso(
-                                $('#id<?=$key->id;?>').val() 
-                                );return false; ">
-                           <div class="row">
-                              <div class="col-sm-12">
-                                 <label>Nombre de la serie</label>
-                                 <input type="text" name="nombre" id="nombre" value="<?=$key->nombre;?>" required="" class="form-control" placeholder="Ej: Anime">
-                                 <input type="hidden" name="id" id="id" value="<?=$key->id;?>">
-                                 
-                                 <input type="hidden" name="id<?=$key->id;?>" id="id<?=$key->id;?>" value="<?=$key->id;?>">
-
-                                 <input type="hidden" name="lugar" id="lugar" value="series">
-                                 
-                                 <input type="hidden" name="<?=$csrf['name'];?>" value="<?=$csrf['hash'];?>" />
-                              </div>
-                              <div class="col-md-12" id="resultado2<?=$key->id;?>" style="margin-top:15px;"></div>
-                              <div class="col-sm-12" style="margin-top:20px;">
-                                 <button class="btn btn-lg btn-block btn-primary" type="submit">
-                                 Editar
-                                 </button>
-                              </div>
-                           </div>
-                        </form>
-                     </div>
-                     <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">cerrar</button>
-                     </div>
-                  </div>
-               </div>
-            </div>
+            
             <!-- /.content -->
             <!-- Modal ELIMINAR -->
             <div id="delete<?=$key->id;?>" class="modal fade " role="dialog">

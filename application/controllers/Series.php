@@ -1,4 +1,4 @@
-<?php
+ <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 class series extends CI_Controller
 {
@@ -7,68 +7,79 @@ class series extends CI_Controller
         parent::__construct();
         $this->load->model('Mserie');
         $this->load->library('session');
+        $this->load->model('MFunctionsg'); // CARGA LAS FUNCIONES GENERALES PARA EL PANEL
+        
     }
     
-
-     public function eliminar_serie($id)
+    
+    public function eliminar_serie($id)
     {
-        $var = $this->Mserie->eliminar($id);// consulta series existente 
+        $var = $this->Mserie->eliminar($id); // consulta series existente 
         if ($var == true) {
-         header("Location:" . base_url() . "panel/series");
-         exit; 
+            header("Location:" . base_url() . "panel/series");
+            exit;
         }
     }
-
-       public function editar_serie()
+    
+    public function editar_serie()
     {
-        $id = $this->input->post('id');
+        $id     = $this->input->post('id');
         $nombre = $this->input->post('nombre');
-        $var = $this->Mserie->editar($nombre,$id);// 
-        if ($var != false) { 
-              $response['status'] = 'ok';
-              $response['code']   = "Edición hecha correctamente recargue la pagina para actualizar la tabla";
-        }else{
-               $response['status'] = 0;
-               $response['error']  = 'No se edito correctamente';
-        }
-        echo json_encode($response); 
-    }
-
-       public function crear_serie()
-    {
-        // Recibe datos 
-        $nombre = $this->input->post('nombre');
-        $descripcion = $this->input->post('descripcion');
-        $categoria  = $this->input->post('categoria');
-        $estado = $this->input->post('estado');
-        //$tipo = $this->input->post('tipo');
-        $genero  = $this->input->post('genero');
-        $imagen = $_FILES['imagen'];
-
-         //guardar fotos
-            $config['upload_path'] = base_url() .'/img/';
-            $config['allowed_types'] = 'gif|jpg|png';
-            $config['max_size'] = 8000;
-            $config['max_width'] = 1024;
-            $config['max_height'] = 768;
-            $config['encrypt_name'] = TRUE;
-            $this->load->library('upload', $config);
-            $this->upload->do_upload('imagen');
-            $data = $this->upload->data();
-
-            $imagenurl = $data['file_name'];
-            if (empty($imagenurl)) {
-                $imagenurl = "default.jpg";
-            }
-
-        $var = $this->Mserie->crear($nombre,$descripcion,$imagenurl,$categoria,$estado);// 
-        if ($var != false) { 
-                $response['status'] = 'ok';
-                $response['code'] = "La serie ha sido creada de forma";
-        }else{
-                $response['status'] = 0;
-                $response['error'] = "Ya existe una serie con este nombre";
+        $var    = $this->Mserie->editar($nombre, $id); // 
+        if ($var != false) {
+            $response['status'] = 'ok';
+            $response['code']   = "Edición hecha correctamente recargue la pagina para actualizar la tabla";
+        } else {
+            $response['status'] = 0;
+            $response['error']  = 'No se edito correctamente';
         }
         echo json_encode($response);
     }
-}
+    
+    public function crear_serie()
+    {
+        // Recibe datos 
+        $nombre      = $this->input->post('nombre');
+        $descripcion = $this->input->post('content');
+        $categoria   = $this->input->post('categoria');
+        $estado      = $this->input->post('estado');
+        $fecha       = $this->input->post('fecha');
+        $dias        = $this->input->post('dias');
+        $duracion     = $this->input->post('duracion');
+        //$tipo = $this->input->post('tipo');
+        $genero      = $this->input->post('genero');
+        $imagen      = $_FILES['imagen'];
+        
+        //guardar fotos
+        $mensaje   = '';
+        $imagenurl = $this->MFunctionsg->archivo($imagen, $mensaje, 'img', 'img');
+        
+        
+        if ($imagenurl != false) {
+
+            $var = $this->Mserie->crear($nombre, $descripcion, $imagenurl, $categoria, $estado,$fecha,$dias,$duracion); // 
+            if ($var != false) {
+                $response['status'] = 'ok';
+                $response['code']   = "La serie ha sido creada de forma";
+            } else {
+                $response['status'] = 0;
+                $response['error']  = "Ya existe una serie con este nombre";
+            }
+        
+        if ($var) { 
+                foreach ($genero as $key ) {
+                  $datos = array(
+                    'id_serie' => $var,
+                    'id_genero' => $key
+                );
+                  $this->Mserie->setgenero($datos);
+                }
+        }
+
+        } else {
+            $response['status'] = 0;
+            $response['error']  = $mensaje;
+        }
+        echo json_encode($response); 
+    }
+} 

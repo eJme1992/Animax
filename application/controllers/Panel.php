@@ -29,11 +29,41 @@ class Panel extends CI_Controller {
 	{
 		$this->load->model('MCategoria'); // Carga el modelo de categorías 
         $this->load->model('MGenero'); // Carga el modelo de categorías 
+         // SEGURIDAS
+      
+        $csrf = array(
+        'name' => $this->security->get_csrf_token_name(),
+        'hash' => $this->security->get_csrf_hash()
+        );
+        $DATOS['csrf'] = $csrf;
+
         $DATOS['categorias'] = $this->MCategoria->lista();// consulta categorías existente  
         $DATOS['generos'] = $this->MGenero->lista();// consulta categorías existente   	
         $this->load->view('panel/secciones/newserie', $DATOS );
 		$this->load->view('panel/footer'); 
 	}
+
+    public function viewserie($id)
+    {
+        $this->load->model('Mserie'); // Carga el modelo de categorías 
+        $this->load->model('MCategoria'); // Carga el modelo de categorías 
+        $this->load->model('MGenero'); // Carga el modelo de categorías 
+         // SEGURIDAS
+        
+        $csrf = array(
+        'name' => $this->security->get_csrf_token_name(),
+        'hash' => $this->security->get_csrf_hash()
+        );
+        $DATOS['csrf'] = $csrf;
+        
+        $consultas = $this->Mserie->consultar($id);
+        $DATOS['serie'] = end($consultas);
+
+        $DATOS['categorias'] = $this->MCategoria->lista();// consulta categorías existente  
+        $DATOS['generos'] = $this->MGenero->lista();// consulta categorías existente    
+        $this->load->view('panel/secciones/viewseries', $DATOS );
+        $this->load->view('panel/footer'); 
+    }
 
 
      public function categorias()
