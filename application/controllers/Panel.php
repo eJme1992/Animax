@@ -23,6 +23,11 @@ class Panel extends CI_Controller {
 		// PANEL
 		$this->load->view('panel/footer');
 	}
+
+    public function salir() {
+        session_destroy();
+        echo "<script>location.href ='" . base_url() . "';</script>";
+    }
     
     // **SERIES**
 	public function newserie()

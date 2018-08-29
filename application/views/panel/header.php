@@ -75,11 +75,8 @@ desired effect
   <header class="main-header">
 
     <!-- Logo -->
-    <a href="<?=base_url();?>plantilla/panel/index2.html" class="logo">
-      <!-- mini logo for sidebar mini 50x50 pixels -->
-      <span class="logo-mini"><b>A</b>LT</span>
-      <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg"><b>Admin</b>LTE</span>
+    <a href="<?=base_url();?>panel" class="logo">
+      ANIMAX
     </a>
 
     <!-- Header Navbar -->
@@ -191,7 +188,7 @@ desired effect
                   <a href="<?=base_url();?>plantilla/panel/#" class="btn btn-default btn-flat">Editar Perfil</a>
                 </div>
                 <div class="pull-right">
-                  <a href="<?=base_url();?>plantilla/panel/#" class="btn btn-default btn-flat">Cerra sección</a>
+                  <a href="<?=base_url();?>panel/salir" class="btn btn-default btn-flat">Cerra sección</a>
                 </div>
               </li>
             </ul>
