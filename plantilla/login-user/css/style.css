@@ -81,6 +81,7 @@ button {
   width: 260px;
   height: 100%;
   padding-top: 360px;
+  background-size:COVER;
 }
 .img:before {
   content: '';

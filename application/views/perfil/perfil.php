@@ -10,9 +10,9 @@
     <title>DASHGUM - FREE Bootstrap Admin Template</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="assets/css/bootstrap.css" rel="stylesheet">
+    <link href="<?=base_url();?>plantilla/perfil/assets/css/bootstrap.css" rel="stylesheet">
     <!--external css-->
-    <link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link href="<?=base_url();?>plantilla/perfil/assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
     <link rel="stylesheet" type="text/css" href="<?=base_url();?>plantilla/perfil/assets/css/zabuto_calendar.css">
     <link rel="stylesheet" type="text/css" href="<?=base_url();?>plantilla/perfil/assets/js/gritter/css/jquery.gritter.css" />
     <link rel="stylesheet" type="text/css" href="<?=base_url();?>plantilla/perfil/assets/lineicons/style.css">    
@@ -129,7 +129,7 @@
                             </li>
                             <li>
                                 <a href="index.html#">
-                                    <span class="photo"><img alt="avatar" src="assets/img/ui-zac.jpg"></span>
+                                    <span class="photo"><img alt="avatar" src="<?=base_url();?>plantilla/perfil/assets/img/ui-zac.jpg"></span>
                                     <span class="subject">
                                     <span class="from">Zac Snider</span>
                                     <span class="time">Just now</span>
@@ -141,7 +141,7 @@
                             </li>
                             <li>
                                 <a href="index.html#">
-                                    <span class="photo"><img alt="avatar" src="assets/img/ui-divya.jpg"></span>
+                                    <span class="photo"><img alt="avatar" src="<?=base_url();?>plantilla/perfil/assets/img/ui-divya.jpg"></span>
                                     <span class="subject">
                                     <span class="from">Divya Manian</span>
                                     <span class="time">40 mins.</span>
@@ -153,7 +153,7 @@
                             </li>
                             <li>
                                 <a href="index.html#">
-                                    <span class="photo"><img alt="avatar" src="assets/img/ui-danro.jpg"></span>
+                                    <span class="photo"><img alt="avatar" src="<?=base_url();?>plantilla/perfil/assets/img/ui-danro.jpg"></span>
                                     <span class="subject">
                                     <span class="from">Dan Rogers</span>
                                     <span class="time">2 hrs.</span>

@@ -7,6 +7,10 @@
   <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans'>
   <link rel="stylesheet" href="<?=base_url();?>plantilla/login-user/css/style.css">
   <link href="https://fonts.googleapis.com/css?family=Amaranth" rel="stylesheet"> 
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
   <!-- jQuery library -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
@@ -31,7 +35,7 @@
     </label>
     <a class="fp" href="#"><p class="forgot-pass">¿Olvidaste tu contraseña?</p></a>
     <button type="submit" id="enviar" name="enviar" class="submit">Iniciar sesión</button>
-   
+    <input type="hidden" name="<?=$csrf['name'];?>" value="<?=$csrf['hash'];?>" />
     <div class="col-md-12" id="resultado" style="margin-top:15px;"></div>
     
   </form>
@@ -55,19 +59,40 @@
       <h2>Es tiempo de sentirte como en casa</h2>
       <form id="formr">
       <label>
-        <span>Name</span>
+        <span>Nombre</span>
         <input type="text" id="nombre" name="nombre" />
       </label>
+      <label>
+        <span>Apellido</span>
+        <input type="text" id="apellido" name="apellido" />
+      </label>
+     
+     
       <label>
         <span>Email</span>
         <input type="email" id="mail" name="mail" />
       </label>
       <label>
-        <span>Password</span>
+        <span>Contraseña</span>
         <input type="password" id="contrasena" name="contrasena" />
       </label>
-      <button type="button" class="submit">Registrarte</button>
-     
+      <label>
+        <span>Fecha de nacimiento</span>
+        <input type="date" id="fecha_n" name="fecha_n" />
+      </label>
+      <div class=" ">
+        <label class="form-check-label">
+          <input type="radio" class="form-check-input" name="sexo" id="sexo" value="F">Femenino
+        </label>
+      </div>
+      <div class=" ">
+        <label class="form-check-label">
+          <input type="radio" class="form-check-input" name="sexo" id="sexo" value="M">Masculino
+        </label>
+      </div>
+
+      <button type="submit" class="submit">Registrarte</button>
+      <input type="hidden" name="<?=$csrf['name'];?>" value="<?=$csrf['hash'];?>" />
       </form>
     </div>
   </div>
@@ -100,7 +125,7 @@
          
            if(data.status=='ok'){ //ver controlador, status es el nombre la clave cuando se creo
             $("#resultado").html('<div class="alert alert-success">'+data.code+'</div>'); //controlador
-             window.location.href ='<?=base_url();?>/perfil'; //te manda la direccion a donde vas
+             window.location.href ='<?=base_url();?>perfil'; //te manda la direccion a donde vas
            }else{
            $("#resultado").html('<div class="alert alert-danger"><strong>ERROR!</strong>'+data.error+'</div>');
            }
@@ -145,7 +170,7 @@
          
            if(data.status=='ok'){ //ver controlador, status es el nombre la clave cuando se creo
             $("#resultado").html('<div class="alert alert-success">'+data.code+'</div>'); //controlador
-             window.location.href ='<?=base_url();?>/perfil'; //te manda la direccion a donde vas
+             window.location.href ='<?=base_url();?>perfil'; //te manda la direccion a donde vas
            }else{
            $("#resultado").html('<div class="alert alert-danger"><strong>ERROR!</strong>'+data.error+'</div>');
            }

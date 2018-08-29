@@ -28,7 +28,7 @@ class Login extends CI_Controller
             if ($consulta != false) {
                 if ($consulta->pass == $password) //pass celda en bd {
                     $data_login = array('id'        => $consulta, // Se crea el arreglo para la sesion
-                                        'login'     => TRUE); 
+                                        'login2'     => TRUE); 
                     $this->session-> set_userdata($data_login); //se crea la sesion con los datod del arreglo
                     $response['status'] = 'ok'; //Arreglo para el json
                     $response['code']   = "Bienvenido"; //mis clave del arreglo
@@ -47,11 +47,14 @@ class Login extends CI_Controller
 
            if($_SERVER['REQUEST_METHOD'] == 'POST'){ //Por seguridad, que venga del post 
             $newuser = $this->input->post('nombre'); //Recibiendo los datosque vienen del form
+            $apellido = $this->input->post('apellido');
             $newmail = $this->input->post('mail');
-            $newpassword =$this->input->post('contrasena');
+            $newpassword = $this->input->post('contrasena');
+            $fecha_n =$this->input->post('fecha_n');
+            $sexo =$this->input->post('sexo');
+            
 
-
-            $existe = $this->MLogin->registrar($newuser,$newemail, $newpassword);
+            $existe = $this->MLogin->registrar($newuser, $apellido, $newmail, $newpassword, $fecha_n, $sexo);
             if($existe != false){
                 $response['status'] = 'ok'; //Creando un objeto Json
                 $response['code'] = "El usuario ha sido creado exitosamente";
