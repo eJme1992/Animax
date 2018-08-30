@@ -76,22 +76,23 @@
         <span>Contraseña</span>
         <input type="password" id="contrasena" name="contrasena" />
       </label>
-      <label>
+      <label class="lp"style="width:90%;">
         <span>Fecha de nacimiento</span>
         <input type="date" id="fecha_n" name="fecha_n" />
       </label>
-      <div class=" ">
-        <label class="form-check-label">
+      <div class="container">
+      <div class="form-check-inline">
+        <label class="form-check-label" style="width:100%;">
           <input type="radio" class="form-check-input" name="sexo" id="sexo" value="F">Femenino
         </label>
       </div>
-      <div class=" ">
-        <label class="form-check-label">
+      <div class="form-check-inline">
+        <label class="form-check-label" style="width:100%;">
           <input type="radio" class="form-check-input" name="sexo" id="sexo" value="M">Masculino
         </label>
       </div>
-
-      <button type="submit" class="submit">Registrarte</button>
+</div>
+<div class="centrar-b"><button type="submit" class="submit">Registrarte</button></div>
       <input type="hidden" name="<?=$csrf['name'];?>" value="<?=$csrf['hash'];?>" />
       </form>
     </div>
