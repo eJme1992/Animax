@@ -52,7 +52,8 @@ class Panel extends CI_Controller {
     {
         $this->load->model('Mserie'); // Carga el modelo de categorías 
         $this->load->model('MCategoria'); // Carga el modelo de categorías 
-        $this->load->model('MGenero'); // Carga el modelo de categorías 
+        $this->load->model('MGenero'); // Carga el modelo de categorías
+        $this->load->model('MTemporada'); // Carga el modelo de categorías  
          // SEGURIDAS
         
         $csrf = array(
@@ -63,6 +64,9 @@ class Panel extends CI_Controller {
         
         $consultas = $this->Mserie->consultar($id);
         $DATOS['serie'] = end($consultas);
+
+         $DATOS['temporada'] = $this->MTemporada->lista($id);
+    
 
         $DATOS['categorias'] = $this->MCategoria->lista();// consulta categorías existente  
         $DATOS['generos'] = $this->MGenero->lista();// consulta categorías existente    
