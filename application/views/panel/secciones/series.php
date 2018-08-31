@@ -7,8 +7,6 @@
       });
       // Code that uses other library's $ can follow here.
    </script>
-
-
    <h1>
       series
       <small>Category</small>
@@ -66,13 +64,16 @@
             <td><?=$key->fecha_c;?></td>
             <td><?=$key->fecha_m;?></td>
             <td>
-              <a href="<?=base_url();?>panel/viewserie/<?=$key->id;?>"> <p data-placement="top" data-toggle="tooltip" title="Edit"><button class="btn btn-primary btn-xs"><span class="glyphicon glyphicon-pencil"></span></button></p></a>
+               <a href="<?=base_url();?>panel/viewserie/<?=$key->id;?>">
+                  <p data-placement="top" data-toggle="tooltip" title="Edit"><button class="btn btn-primary btn-xs"><i class="fa fa-eye" aria-hidden="true"></i>
+                     </button>
+                  </p>
+               </a>
             </td>
             <td>
                <p data-placement="top" data-toggle="tooltip" title="Delete"><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete<?=$key->id;?>" ><span class="glyphicon glyphicon-trash"></span></button></p>
             </td>
             <!-- Modal Editar-->
-            
             <!-- /.content -->
             <!-- Modal ELIMINAR -->
             <div id="delete<?=$key->id;?>" class="modal fade " role="dialog">
@@ -128,49 +129,4 @@
    </div>
 </div>
 <!-- /.content -->
-
-
-      <!-- EDITAR serieS -->
-      <script >
-        
-      function realizaProceso(id) {
-
-          var msj = '1';
-         //validaciones con js
-         
-        if (msj === "1") {
-         var formData = new FormData(jQuery('#editar'+id) [0]);
-         jQuery.ajax({
-           url: '<?=base_url();?>series/editar_serie',
-           type: 'POST',
-           contentType: false,
-           processData: false,
-           dataType: 'json',
-           data: formData,
-           beforeSend: function() {
-             $("#resultado2"+id).html('<div class="alert alert-success">Procesando...!</div>');
-           }
-         })
-         .done(function(data, textStatus, jqXHR) {
-            var getData = jqXHR.responseJSON; // dejar esta linea
-           if(data.status=='ok'){
-            $("#resultado2"+id).html('<div class="alert alert-success">'+data.code+'</div>');
-            // window.location.href ='<?=base_url();?>/panel';
-           }else{
-           $("#resultado2"+id).html('<div class="alert alert-danger"><strong>ERROR!</strong>'+data.error+'</div>');
-           }
-         })
-               .fail(function(jqXHR, textStatus, errorThrown) {
-                 var getErr = jqXHR.responseText;
-                 
-                 console.log(getErr);
-         
-               })
-          // Fin de ajax
-          } else {
-              swal("¡Error! ", msj, "error");
-          }
-          };
-         
-        
-      </script>
+<!-- EDITAR serieS -->

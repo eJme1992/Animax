@@ -3,7 +3,7 @@
 <script>
    $.noConflict();
    jQuery( document ).ready(function( $ ) {
-       $('#tem').DataTable();
+       $('#cap').DataTable();
    });
    // Code that uses other library's $ can follow here.
 </script>
@@ -122,7 +122,9 @@
          <p><?=$serie->descripcion;?></p>
       </div>
       <div class="col-md-8">
-         <h3>Temporadas <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Nueva Temporada <i class="fa fa-plus-circle"></i></button></h3>
+         <div class="btn-group">
+         <h3>Temporadas <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Nueva Temporada <i class="fa fa-plus-circle"></i></button><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Nueva capitulo <i class="fa fa-plus-circle"></i></button></h3>
+       </div>
          <div style="max-height:500px; overflow:scroll">
          <table class="table" >
             <thead>
@@ -170,7 +172,53 @@
        </div>
       </div>
    </div>
+   <div id='menu1'  class="content container-fluid tab-pane fade row">
+    <table class="table" id="cap">
+            <thead>
+               <tr>
+                  <th>ID</th>
+                  <th>Numero</th>
+                  <th>Estreno</th>
+                  <th>Ultimo cambio</th>
+                  <th>#</th>
+               </tr>
+            </thead>
+            <tbody>
+               <?php foreach ($temporada as $key) { ?>
+               <tr>
+                  <td><?=$key->id;?></td>
+                  <td><?=$key->numero;?></td>
+                  <td><?=$key->fecha_estreno;?></td>
+                  <td><?=$key->fecha_m;?></td>
+                  <td>
+                     <a href="<?=base_url();?>panel/viewserie/<?=$key->id;?>"><button class="btn btn-primary btn-xs"><span class="glyphicon glyphicon-pencil"></span></button></a>
+                     <button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete<?=$key->id;?>" ><span class="glyphicon glyphicon-trash"></span></button>
+                  </td>
+                  <!-- Modal Editar-->
+                  <!-- /.content -->
+                  <!-- Modal ELIMINAR -->
+                  <div id="delete<?=$key->id;?>" class="modal fade " role="dialog">
+                     <div class="modal-dialog" style="margin-top:10vw;">
+                        <!-- Modal content-->
+                        <div class="modal-content">
+                           <div class="modal-body text-center">
+                              <h3> ¿Esta Seguro que desea eliminar la serie: <b><?=$key->numero;?></b>?</h3>
+                           </div>
+                           <div class="modal-footer">
+                              <a href="<?=base_url();?>series/eliminar_serie/<?=$key->id;?>"><button type="button" class="btn btn-danger">Si</button></a>
+                              <button type="button" class="btn btn-default" data-dismiss="modal">no</button>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <!-- /.content -->
+               </tr>
+               <?php }  ?>  
+            </tbody>
+         </table>
+   </div>
 </div>
+</section>
 <!-- /.content -->
 <!-- NUEVAS serieS -->
 <script >
