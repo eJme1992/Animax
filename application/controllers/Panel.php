@@ -10,6 +10,7 @@ class Panel extends CI_Controller {
         $this->load->library('session'); // CARGA LAS SESSIONES
         // VERIFICA QUE EL USER ESTE LOGUEADO (La función esta dentro de Mfuntionsg)
         $this->MFunctionsg->comprobar_sesion($this->session->userdata('login')); 
+        $this->MFunctionsg->comprobar_tipo($this->session->userdata('tipo')); 
         $DATOS['user'] = $this->session->userdata('id'); // PASO LOS DATOS DEL USUARIO 
        
         $this->load->view('panel/header', $DATOS);	// LLAMA AL LA SECCION DE VISTA NAV DE LA WEB

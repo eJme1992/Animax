@@ -12,6 +12,15 @@ class MFunctionsg  extends CI_Model {
        }
 	 }
 
+     function comprobar_tipo($rev)
+   {    
+    if ($rev != 1) {
+         header("Location:" . base_url() . "");
+         exit; 
+      // echo $rev;
+       }
+   }
+
             function archivo($documento,&$mensaje,$file='',$name ='file')
             {
                $ruta                = "file/".$file."/"; //ruta carpeta donde queremos copiar las  

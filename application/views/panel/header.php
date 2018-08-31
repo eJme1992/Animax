@@ -164,7 +164,7 @@ desired effect
             <img src="<?=$user->foto;?>" class="user-image" alt="User Image">
            <?php } ?>
               <!-- hidden-xs hides the username on small devices so only the image appears. -->
-              <span class="hidden-xs"><?=$user->nombre;?></span>
+              <span class="hidden-xs"><?=$user->nombre;?> <?=$user->apellido;?></span>
             </a>
             <ul class="dropdown-menu">
               <!-- The user image in the menu -->
@@ -176,7 +176,7 @@ desired effect
            <?php } ?>
 
                 <p>
-                  <?=$user->nombre?>
+                  <?=$user->nombre?> <?=$user->apellido;?>
                  
                 </p>
               </li>
@@ -217,9 +217,9 @@ desired effect
            <?php } ?>
         </div>
         <div class="pull-left info">
-          <p><?=$user->nombre;?></p>
+          <p><?=$user->nombre;?> <?=$user->apellido;?></p>
           <!-- Status -->
-        <i class="fa fa-circle text-success"></i>Usuario:<b> <?=$user->user;?></b>
+        <i class="fa fa-circle text-success"></i>Usuario:<b> <?=$user->nickname;?></b>
         </div>
       </div>
 

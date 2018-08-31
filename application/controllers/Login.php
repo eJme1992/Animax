@@ -27,8 +27,9 @@ class Login extends CI_Controller
             $consulta  = end($consultas); //funcion que me trae el ultimo registro de la consulta
             if ($consulta != false) {
                 if ($consulta->pass == $password) //pass celda en bd {
-                    $data_login = array('id'        => $consulta, // Se crea el arreglo para la sesion
-                                        'login2'     => TRUE); 
+                    $data_login = array('id'        => $consulta,
+                                        'tipo'      => $consulta->tipo, 
+                                        'login'     => TRUE); 
                     $this->session-> set_userdata($data_login); //se crea la sesion con los datod del arreglo
                     $response['status'] = 'ok'; //Arreglo para el json
                     $response['code']   = "Bienvenido"; //mis clave del arreglo
