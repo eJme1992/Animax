@@ -5,8 +5,10 @@ class Login extends CI_Controller
     public function __construct()
     {
         parent::__construct();
+        $this->load->model('MFunctionsg'); // CARGA LAS FUNCIONES GENERALES PARA EL PANEL
         $this->load->model('MLogin');//Para cargar el Modelo include
         $this->load->library('session'); // para usar sesiones 
+        $this->MFunctionsg->comprobar_sesion2($this->session->userdata('login')); 
     }
     public function index()
     {   

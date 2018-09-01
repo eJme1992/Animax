@@ -10,11 +10,11 @@ class Capitulo extends CI_Controller
     }
     
 
-     public function eliminar_capitulo($id)
+     public function eliminar_capitulo($id,$id_serie)
     {
         $var = $this->MCapitulo->eliminar($id);// consulta capitulos existente 
         if ($var == true) {
-         header("Location:" . base_url() . "panel/viewserie");
+         header("Location:" . base_url() . "panel/viewserie/".$id_serie);
          exit; 
         }
     }

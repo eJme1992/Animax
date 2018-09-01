@@ -6,8 +6,9 @@ class MCapitulo extends CI_Model {
 
 	 function lista($id=false)
 	{    
-		if ($id==false){$var='';}else{$var="WHERE id_temporada='$id'";}
-		$query = $this->db->query("SELECT * FROM `capitulo` $var");
+
+		if ($id==false){$var='';}else{$var="INNER JOIN temporada ON temporada.id=capitulo.id_temporada INNER JOIN serie ON serie.id=temporada.id_serie WHERE serie.id='$id'";}
+		    $query = $this->db->query("SELECT capitulo.id as 'id', id_temporada, capitulo.numero as 'numero', capitulo.nombre as 'nombre', capitulo.duracion, capitulo.fecha_estreno, capitulo.fecha_m, temporada.numero as 'temporada' FROM `capitulo` $var");
 		return $query->result();
 	}
 

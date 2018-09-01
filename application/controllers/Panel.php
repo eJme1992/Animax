@@ -31,6 +31,22 @@ class Panel extends CI_Controller {
     }
     
     // **SERIES**
+
+           public function series()
+    {
+        $this->load->model('Mserie'); // Carga el modelo de categorías 
+        $DATOS['series'] = $this->Mserie->lista();// consulta categorías existente  
+        // SEGURIDAS
+        $csrf = array(
+        'name' => $this->security->get_csrf_token_name(),
+        'hash' => $this->security->get_csrf_hash()
+        );
+        $DATOS['csrf'] = $csrf;
+
+        $this->load->view('panel/secciones/series',$DATOS);
+        $this->load->view('panel/footer'); 
+    }
+
 	public function newserie()
 	{
 		$this->load->model('MCategoria'); // Carga el modelo de categorías 
@@ -67,8 +83,8 @@ class Panel extends CI_Controller {
         $consultas = $this->Mserie->consultar($id);
         $DATOS['serie'] = end($consultas);
 
-         $DATOS['temporada'] = $this->MTemporada->lista($id);
-         $DATOS['capitulo'] = $this->MCapitulo->lista($id);
+        $DATOS['temporada'] = $this->MTemporada->lista($id);
+        $DATOS['capitulo'] = $this->MCapitulo->lista($id);
     
 
         $DATOS['categorias'] = $this->MCategoria->lista();// consulta categorías existente  
@@ -77,7 +93,7 @@ class Panel extends CI_Controller {
         $this->load->view('panel/footer'); 
     }
 
-
+    // CATEGORIAS
      public function categorias()
 	{
 		$this->load->model('MCategoria'); // Carga el modelo de categorías 
@@ -92,6 +108,8 @@ class Panel extends CI_Controller {
         $this->load->view('panel/secciones/categorias',$DATOS);
 		$this->load->view('panel/footer'); 
 	}
+
+    //GENERO
 
 	  public function generos()
 	{
@@ -108,6 +126,7 @@ class Panel extends CI_Controller {
 		$this->load->view('panel/footer'); 
 	}
 
+<<<<<<< HEAD
     public function series()
     {
         $this->load->model('Mserie'); // Carga el modelo de categorías 
@@ -122,6 +141,9 @@ class Panel extends CI_Controller {
         $this->load->view('panel/secciones/series',$DATOS);
         $this->load->view('panel/footer'); 
     }
+=======
+   
+>>>>>>> a4dc18542c80251eed29013efc0a568004e8002c
 
 
 	  

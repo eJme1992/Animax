@@ -19,12 +19,17 @@ class MTemporada extends CI_Model {
 		return $query;
 	}
 
-	 function editar($numero,$id,$estreno)
+	 function editar($numero,$id,$estreno,$id_serie)
 	{    
-		
+		$query = $this->db->query("SELECT * FROM `temporada` WHERE numero='$numero' and id_serie='$id_serie'");
+        if ($query->num_rows() == 0) {		
 		$fecha_m = date("Y-m-d");
 		$query = $this->db->query("UPDATE `temporada` Set numero='$numero',fecha_estreno='$estreno', fecha_m='$fecha_m' WHERE `temporada`.`id`='$id'");
 		return $query;
+		} else {
+            $id = false;
+            return $id;
+        }
 	}
 
 	 function crear($numero,$id_serie,$fecha)
