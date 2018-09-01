@@ -25,12 +25,12 @@ class MCapitulo extends CI_Model {
 		return $query;
 	}
 
-	 function crear($numero,$fecha_estreno)
+	 function crear($id_temporada,$numero,$nombre,$duracion,$fecha_estreno)
 	{    
-		$query = $this->db->query("SELECT * FROM `capitulo` WHERE numero='$numero'");
+		$query = $this->db->query("SELECT * FROM `capitulo` WHERE numero='$numero' and id_temporada='$id_temporada'");
         if ($query->num_rows() == 0) {
         	$fecha_c = $fecha_m = date("Y-m-d");
-            $query = $this->db->query("INSERT INTO `capitulo` (`numero`,`fecha_estreno`,`fecha_c`, `fecha_m`) VALUES ('$numero','$fecha_estreno',$fecha_c','$fecha_m')");
+            $query = $this->db->query("INSERT INTO `capitulo` (`id_temporada`,`numero`,`nombre`,`duracion`,`fecha_estreno`,`fecha_c`, `fecha_m`) VALUES ('$id_temporada','$numero','$nombre','$duracion','$fecha_estreno','$fecha_c','$fecha_m')");
             if ($query == true) {
                 $id = $this->db->insert_id();
                 return $id;

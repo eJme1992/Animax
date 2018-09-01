@@ -39,12 +39,13 @@ class Capitulo extends CI_Controller
 
        public function crear_capitulo()
     {
-        $id_temporada   = $this->input->post('id_temporada');
+        $id_temporada   = $this->input->post('temporada');
         $numero   = $this->input->post('numero');
         $nombre   = $this->input->post('nombre');
         $duracion = $this->input->post('duracion');
+        $fecha_estreno = $this->input->post('fecha_estreno');
         
-        $var = $this->MCapitulo->crear($numero,$nombre,$duracion,$id_temporada);// 
+        $var = $this->MCapitulo->crear($id_temporada,$numero,$nombre,$duracion,$fecha_estreno);// 
         if ($var != false) { 
                 $response['status'] = 'ok';
                 $response['code'] = "La capitulo ha sido creada de forma";

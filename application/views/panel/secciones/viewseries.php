@@ -23,54 +23,50 @@
 <div class="tab-content">
    <div id="menu2" class="content container-fluid tab-pane fade">
       <form id="nuevaser">
-         <div class="form-group col-md-6">
+         <div class="form-group col-md-12">
             <label>Nombre:</label>
-            <input type="text" class="form-control" id="nombre" name="nombre" required="" placeholder="Nombre">
-         </div>
-         <div class="form-group col-md-6">
-            <label>Portada:</label>
-            <input type="file" class="form-control" id="imagen" name="imagen" required="">
+            <input type="text" class="form-control" id="nombre" name="nombre" required="" placeholder="Nombre" value="<?=$serie->nombre;?>">
          </div>
          <div class="form-group col-md-4">
             <label>Estado:</label>
             <select  class="form-control" id="estado" name="estado" required="" >
-               <option value="Por estrenar">Por estrenar</option>
-               <option value="En emisión">En emisión</option>
-               <option value="Finalizada">Finalizada</option>
+               <option value="Por estrenar" <?php if($serie->estado=='Por estrenar') echo 'selected';?>>Por estrenar</option>
+               <option value="En emisión" <?php if($serie->estado=='En emisión') echo 'selected';?>>En emisión</option>
+               <option value="Finalizada" <?php if($serie->estado=='Finalizada') echo 'selected';?>>Finalizada</option>
             </select>
          </div>
          <div class="form-group col-md-4">
             <label>Categoría:</label>
             <select  class="form-control" id="categoria" name="categoria" required="">
                <?php foreach ($categorias as $key) { ?>
-               <option value="<?=$key->nombre;?>"><?=$key->nombre;?></option>
+               <option value="<?=$key->nombre;?>" <?php if($serie->estado==$key->nombre) echo 'selected';?>><?=$key->nombre;?></option>
                <?php }  ?>   
             </select>
          </div>
          <div class="form-group col-md-4">
             <label>Días de estreno:</label>
             <select  class="form-control" id="dias" name="dias" required="">
-               <option>Sin precisar</option>
-               <option>Lunes</option>
-               <option>Martes</option>
-               <option>Miércoles</option>
-               <option>Jueves</option>
-               <option>Viernes</option>
-               <option>Sábado</option>
-               <option>Domingo</option>
+               <option <?php if($serie->dias=='Sin precisar') echo 'selected';?>>Sin precisar</option>
+               <option <?php if($serie->dias=='Lunes') echo 'selected';?>>Lunes</option>
+               <option <?php if($serie->dias=='Martes') echo 'selected';?>>Martes</option>
+               <option <?php if($serie->dias=='Miércoles') echo 'selected';?>>Miércoles</option>
+               <option <?php if($serie->dias=='Jueves') echo 'selected';?>>Jueves</option>
+               <option <?php if($serie->dias=='Viernes') echo 'selected';?>>Viernes</option>
+               <option <?php if($serie->dias=='Sábado') echo 'selected';?>>Sábado</option>
+               <option <?php if($serie->dias=='Domingo') echo 'selected';?>>Domingo</option>
             </select>
          </div>
          <div class="form-group col-md-6">
             <label>Duración:</label>
-            <input type="text" class="form-control" id="duracion" name="duracion" required="" placeholder="De 20 a 40min">
+            <input type="text" class="form-control" id="duracion" name="duracion" required="" placeholder="De 20 a 40min" value="<?=$serie->duracion;?>">
          </div>
          <div class="form-group col-md-6">
             <label>Fecha de estreno:</label>
-            <input type="date" class="form-control" id="fecha" name="fecha" required="">
+            <input type="date" class="form-control" id="fecha" name="fecha" required="" value="<?=$serie->estreno;?>">
          </div>
          <div class="form-group col-md-12">
             <label>Sinopsis:</label>
-            <textarea name="content" id="sinopsis" name="sinopsis" required="">
+            <textarea name="content" id="sinopsis" name="sinopsis" required="" value="<?=$serie->descripcion;?>">
         
     </textarea>
             <script>
@@ -86,7 +82,7 @@
             <?php foreach ($generos as $key) { ?>
             <div class="form-check-inline">
                <label class="form-check-label">
-               <input type="checkbox" class="form-check-input" id='genero[]' name="genero[]" value="<?=$key->id;?>"> <?=$key->nombre;?>
+               <input type="checkbox" class="form-check-input" id='genero[]' name="genero[]" value="<?=$key->id;?>" <?php if($serie->estado==$key->nombre) echo 'checked';?>> <?=$key->nombre;?>
                </label>
             </div>
             <?php }  ?>  
@@ -102,8 +98,11 @@
    <div id="home" class="content container-fluid tab-pane fade row in active">
       <div class="col-md-4">
          <img src="<?=base_url().$serie->imagen;?>" class="img-responsive">
-         <form action="" method="">
+         <form id="seriesimagen" onsubmit="realizaProceso2();return false; ">
             <input type="file" name="imagen" id="imagen" class="form-control" required="">
+             <input type="hidden" name="id" id="id" value="<?=$serie->id;?>" />
+           <input type="hidden" name="<?=$csrf['name'];?>" value="<?=$csrf['hash'];?>" />
+             <div class="col-md-12" id="resultado2"></div>
             <button type="submit" name="enviar" class="form-control">Editar</button>
          </form>
       </div>
@@ -116,14 +115,15 @@
          <i class="fa fa-star" aria-hidden="true"></i> <span>2944</span> Calificaciones &nbsp;
          <i class="fa fa-check" aria-hidden="true"></i> <span>2944</span> Suscritos &nbsp;
          <hr>
-      </div>
-      <div class="col-md-2">
          <h3>Sinopsis</h3>
          <p><?=$serie->descripcion;?></p>
       </div>
+      <div class="col-md-2">
+         
+      </div>
       <div class="col-md-8">
          <div class="btn-group">
-         <h3>Temporadas <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Nueva Temporada <i class="fa fa-plus-circle"></i></button><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Nueva capitulo <i class="fa fa-plus-circle"></i></button></h3>
+         <h3>Temporadas <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ntm">Nueva Temporada <i class="fa fa-plus-circle"></i></button><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#nuevocap">Nueva capitulo <i class="fa fa-plus-circle"></i></button></h3>
        </div>
          <div style="max-height:500px; overflow:scroll">
          <table class="table" >
@@ -144,10 +144,52 @@
                   <td><?=$key->fecha_estreno;?></td>
                   <td><?=$key->fecha_m;?></td>
                   <td>
-                     <a href="<?=base_url();?>panel/viewserie/<?=$key->id;?>"><button class="btn btn-primary btn-xs"><span class="glyphicon glyphicon-pencil"></span></button></a>
+                     <button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit1<?=$key->id;?>" ><span class="glyphicon glyphicon-pencil"></span></button>
                      <button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete<?=$key->id;?>" ><span class="glyphicon glyphicon-trash"></span></button>
                   </td>
                   <!-- Modal Editar-->
+                <div id="edit1<?=$key->id;?>" class="modal fade " role="dialog">
+               <div class="modal-dialog" style="margin-top:10vw;">
+                  <!-- Modal content-->
+                  <div class="modal-content">
+                     <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Editar temporada</h4>
+                     </div>
+                     <div class="modal-body">
+                        <form id="editart<?=$key->id;?>" onsubmit="realizaProcesot(
+                                $('#id<?=$key->id;?>').val() 
+                                );return false; ">
+                           <div class="row">
+                              <div class="col-sm-12">
+                     <label>Numero</label>
+                     <input type="text" name="numero" id="numero" required="" class="form-control" placeholder="Ej: Anime" value="<?=$key->numero;?>">
+                     <label>Fecha de estreno</label>
+                     <input type="date" name="fecha" id="fecha" required="" class="form-control" placeholder="Ej: Anime" value="<?=$key->fecha_estreno;?>">
+                  </div>
+                                 <input type="hidden" name="id" id="id" value="<?=$key->id;?>">
+                                 
+                                 <input type="hidden" name="id<?=$key->id;?>" id="id<?=$key->id;?>" value="<?=$key->id;?>">
+
+                                 <input type="hidden" name="lugar" id="lugar" value="series">
+                                 
+                                 <input type="hidden" name="<?=$csrf['name'];?>" value="<?=$csrf['hash'];?>" />
+                              
+                              <div class="col-md-12" id="resultado2<?=$key->id;?>" style="margin-top:15px;"></div>
+                              <div class="col-sm-12" style="margin-top:20px;">
+                                 <button class="btn btn-lg btn-block btn-primary" type="submit">
+                                 Editar
+                                 </button>
+                              </div>
+                           </div>
+                        </form>
+                     </div>
+                     <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">cerrar</button>
+                     </div>
+                  </div>
+               </div>
+            </div>
                   <!-- /.content -->
                   <!-- Modal ELIMINAR -->
                   <div id="delete<?=$key->id;?>" class="modal fade " role="dialog">
@@ -155,10 +197,10 @@
                         <!-- Modal content-->
                         <div class="modal-content">
                            <div class="modal-body text-center">
-                              <h3> ¿Esta Seguro que desea eliminar la serie: <b><?=$key->numero;?></b>?</h3>
+                              <h3> ¿Esta Seguro que desea eliminar la temporada numero: <b><?=$key->numero;?></b>? También se eliminara la lista de capítulos asociados a esta temporada</h3>
                            </div>
                            <div class="modal-footer">
-                              <a href="<?=base_url();?>series/eliminar_serie/<?=$key->id;?>"><button type="button" class="btn btn-danger">Si</button></a>
+                              <a href="<?=base_url();?>temporada/eliminar_temporada/<?=$key->id;?>/<?=$serie->id;?>"><button type="button" class="btn btn-danger">Si</button></a>
                               <button type="button" class="btn btn-default" data-dismiss="modal">no</button>
                            </div>
                         </div>
@@ -184,18 +226,57 @@
                </tr>
             </thead>
             <tbody>
-               <?php foreach ($temporada as $key) { ?>
+               <?php foreach ($capitulo as $key) { ?>
                <tr>
                   <td><?=$key->id;?></td>
                   <td><?=$key->numero;?></td>
                   <td><?=$key->fecha_estreno;?></td>
                   <td><?=$key->fecha_m;?></td>
                   <td>
-                     <a href="<?=base_url();?>panel/viewserie/<?=$key->id;?>"><button class="btn btn-primary btn-xs"><span class="glyphicon glyphicon-pencil"></span></button></a>
+                    <button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit<?=$key->id;?>" ><span class="glyphicon glyphicon-pencil"></span></button>
                      <button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete<?=$key->id;?>" ><span class="glyphicon glyphicon-trash"></span></button>
                   </td>
+                  <!-- DF -->
                   <!-- Modal Editar-->
-                  <!-- /.content -->
+            <div id="edit<?=$key->id;?>" class="modal fade " role="dialog">
+               <div class="modal-dialog" style="margin-top:10vw;">
+                  <!-- Modal content-->
+                  <div class="modal-content">
+                     <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Editar Genero</h4>
+                     </div>
+                     <div class="modal-body">
+                        <form id="editart<?=$key->id;?>" onsubmit="realizaProceso(
+                                $('#id<?=$key->id;?>').val() 
+                                );return false; ">
+                           <div class="row">
+                              <div class="col-sm-12">
+                                 <label>Nombre de la Genero</label>
+                                 <input type="text" name="nombre" id="nombre" value="<?=$key->nombre;?>" required="" class="form-control" placeholder="Ej: Anime">
+                                 <input type="hidden" name="id" id="id" value="<?=$key->id;?>">
+                                 
+                                 <input type="hidden" name="id<?=$key->id;?>" id="id<?=$key->id;?>" value="<?=$key->id;?>">
+
+                                 <input type="hidden" name="lugar" id="lugar" value="series">
+                                 
+                                 <input type="hidden" name="<?=$csrf['name'];?>" value="<?=$csrf['hash'];?>" />
+                              </div>
+                              <div class="col-md-12" id="resultado2<?=$key->id;?>" style="margin-top:15px;"></div>
+                              <div class="col-sm-12" style="margin-top:20px;">
+                                 <button class="btn btn-lg btn-block btn-primary" type="submit">
+                                 Editar
+                                 </button>
+                              </div>
+                           </div>
+                        </form>
+                     </div>
+                     <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">cerrar</button>
+                     </div>
+                  </div>
+               </div>
+            </div>
                   <!-- Modal ELIMINAR -->
                   <div id="delete<?=$key->id;?>" class="modal fade " role="dialog">
                      <div class="modal-dialog" style="margin-top:10vw;">
@@ -219,49 +300,248 @@
    </div>
 </div>
 </section>
+ 
+<!-- Modal -->
+<div id="ntm" class="modal fade " role="dialog">
+   <div class="modal-dialog" style="margin-top:10vw;">
+      <!-- Modal content-->
+      <div class="modal-content">
+         <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">Nueva Temporada</h4>
+         </div>
+         <div class="modal-body">
+            <form id="nt" onsubmit="realizaProceso();return false;"> 
+               <div class="row">
+                  <div class="col-sm-12">
+                     <label>Numero</label>
+                     <input type="text" name="numero" id="numero" required="" class="form-control" placeholder="Ej: Anime">
+                     <label>Fecha de estreno</label>
+                     <input type="date" name="fecha" id="fecha" required="" class="form-control" placeholder="Ej: Anime">
+                  </div>
+                  <div class="col-md-12" id="resultadont" style="margin-top:15px;"></div>
+                  <input type="hidden" name="id_serie" id="id_serie" value="<?=$serie->id;?>" />
+                  <input type="hidden" name="<?=$csrf['name'];?>" value="<?=$csrf['hash'];?>" />
+                  <div class="col-sm-12" style="margin-top:20px;">
+                     <button class="btn btn-lg btn-block btn-primary">
+                     Crear
+                     </button>
+                  </div>
+               </div>
+            </form>
+         </div>
+         <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">cerrar</button>
+         </div>
+      </div>
+   </div>
+</div>
+<!-- Modal -->
+<div id="nuevocap" class="modal fade " role="dialog">
+   <div class="modal-dialog" style="margin-top:10vw;">
+      <!-- Modal content-->
+      <div class="modal-content">
+         <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">Nueva Capitulo</h4>
+         </div>
+         <div class="modal-body">
+             <form id="nc" onsubmit="realizaProceso1();return false;">
+               <div class="row">
+                  <div class="col-sm-12">
+                     <label>Numero</label>
+                     <input type="number" name="numero" id="numero" required="" class="form-control" placeholder="Numero">
+
+                     <label>Nombre</label>
+                     <input type="text" name="nombre" id="nombre" required="" class="form-control" placeholder="Ej: Venganza">
+                     <label>Duración (En minutos)</label>
+                       <input type="number" name="duracion" id="duracion" required="" class="form-control" >
+                       <label>Fecha de estreno</label>
+                       <input type="date" name="fecha_estreno" id="fecha_estreno" required="" class="form-control" >
+                     <label>Temporada</label>
+                     <select id="temporada" name="temporada" class="form-control" required="">
+                       <?php foreach ($temporada as $key ) { ?>
+                        <option value="<?=$key->id;?>"><?=$key->numero; ?></option>
+                       <?php  } ?>
+                     </select>
+
+                  </div>
+                  <div class="col-md-12" id="resultadonc" style="margin-top:15px;"></div>
+                  <input type="hidden" name="<?=$csrf['name'];?>" value="<?=$csrf['hash'];?>" />
+                  <div class="col-sm-12" style="margin-top:20px;">
+                     <button  type="submit" class="btn btn-lg btn-block btn-primary">
+                     Crear
+                     </button>
+                  </div>
+               </div>
+            </form>
+         </div>
+         <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">cerrar</button>
+         </div>
+      </div>
+   </div>
+</div>
 <!-- /.content -->
-<!-- NUEVAS serieS -->
-<script >
-   jQuery(document).ready(function() {
-         jQuery("#nuevaser").submit(function(event) {
-         event.preventDefault();
-   
-       var msj = '1';
-   //validaciones con js
-   
-   if (msj === "1") {
-   var formData = new FormData(jQuery('#nuevaser') [0]);
-   jQuery.ajax({
-     url: '<?=base_url();?>series/crear_serie',
-     type: 'POST',
-     contentType: false,
-     processData: false,
-     dataType: 'json',
-     data: formData,
-     beforeSend: function() {
-       $("#resultado").html('<div class="alert alert-success">Procesando...!</div>');
-     }
-   })
-   .done(function(data, textStatus, jqXHR) {
-      var getData = jqXHR.responseJSON; // dejar esta linea
-     if(data.status=='ok'){
-      $("#resultado").html('<div class="alert alert-success">'+data.code+'</div>');
-       window.location.href ='<?=base_url();?>/panel/series';
-     }else{
-     $("#resultado").html('<div class="alert alert-danger"><strong>ERROR!</strong>'+data.error+'</div>');
-     }
-   })
-         .fail(function(jqXHR, textStatus, errorThrown) {
-           var getErr = jqXHR.responseText;
-           
-           console.log(getErr);
-   
+
+<script>  
+      function realizaProceso() {
+          var msj = '1';
+         //validaciones con js
+         
+        if (msj === "1") {
+         var formData = new FormData(jQuery('#nt') [0]);
+         jQuery.ajax({
+           url: '<?=base_url();?>temporada/crear_temporada',
+           type: 'POST',
+           contentType: false,
+           processData: false,
+           dataType: 'json',
+           data: formData,
+           beforeSend: function() {
+             $("#resultadont").html('<div class="alert alert-success">Procesando...!</div>');
+           }
          })
-    // Fin de ajax
-    } else {
-        swal("¡Error! ", msj, "error");
-    }
-    });
-   
-   });//fin ready
-</script>
+         .done(function(data, textStatus, jqXHR) {
+            var getData = jqXHR.responseJSON; // dejar esta linea
+           if(data.status=='ok'){
+            $("#resultadont").html('<div class="alert alert-success">'+data.code+'</div>');
+            window.location.href ='<?=base_url();?>panel/viewserie/<?=$serie->id;?>';
+           }else{
+           $("#resultadont").html('<div class="alert alert-danger"><strong>ERROR!</strong>'+data.error+'</div>');
+           }
+         })
+               .fail(function(jqXHR, textStatus, errorThrown) {
+                 var getErr = jqXHR.responseText;
+                 
+                 console.log(getErr);
+         
+               })
+          // Fin de ajax
+          } else {
+              swal("¡Error! ", msj, "error");
+          }
+          };
+      </script>
+       <script>  
+      function realizaProceso1() {
+          var msj = '1';
+         //validaciones con js
+         
+        if (msj === "1") {
+         var formData = new FormData(jQuery('#nc') [0]);
+         jQuery.ajax({
+           url: '<?=base_url();?>capitulo/crear_capitulo',
+           type: 'POST',
+           contentType: false,
+           processData: false,
+           dataType: 'json',
+           data: formData,
+           beforeSend: function() {
+             $("#resultadonc").html('<div class="alert alert-success">Procesando...!</div>');
+           }
+         })
+         .done(function(data, textStatus, jqXHR) {
+            var getData = jqXHR.responseJSON; // dejar esta linea
+           if(data.status=='ok'){
+            $("#resultadonc").html('<div class="alert alert-success">'+data.code+'</div>');
+             window.location.href ='<?=base_url();?>panel/viewserie/<?=$serie->id;?>';
+           }else{
+           $("#resultadonc").html('<div class="alert alert-danger"><strong>ERROR!</strong>'+data.error+'</div>');
+           }
+         })
+               .fail(function(jqXHR, textStatus, errorThrown) {
+                 var getErr = jqXHR.responseText;
+                 
+                 console.log(getErr);
+         
+               })
+          // Fin de ajax
+          } else {
+              swal("¡Error! ", msj, "error");
+          }
+          };
+      </script>
+         <script>  
+      function realizaProceso2() {
+          var msj = '1';
+         //validaciones con js
+         
+        if (msj === "1") {
+         var formData = new FormData(jQuery('#seriesimagen') [0]);
+         jQuery.ajax({
+           url: '<?=base_url();?>series/editar_imagen',
+           type: 'POST',
+           contentType: false,
+           processData: false,
+           dataType: 'json',
+           data: formData,
+           beforeSend: function() {
+             $("#resultado2").html('<div class="alert alert-success">Procesando...!</div>');
+           }
+         })
+         .done(function(data, textStatus, jqXHR) {
+            var getData = jqXHR.responseJSON; // dejar esta linea
+           if(data.status=='ok'){
+            $("#resultado2").html('<div class="alert alert-success">'+data.code+'</div>');
+            window.location.href ='<?=base_url();?>panel/viewserie/<?=$serie->id;?>';
+           }else{
+           $("#resultado2").html('<div class="alert alert-danger"><strong>ERROR!</strong>'+data.error+'</div>');
+           }
+         })
+               .fail(function(jqXHR, textStatus, errorThrown) {
+                 var getErr = jqXHR.responseText;
+                 
+                 console.log(getErr);
+         
+               })
+          // Fin de ajax
+          } else {
+              swal("¡Error! ", msj, "error");
+          }
+          };
+      </script>
+      <!-- EDITAR generoS -->
+      <script >
+        
+      function realizaProcesot(id) {
+
+          var msj = '1';
+         //validaciones con js
+         
+        if (msj === "1") {
+         var formData = new FormData(jQuery('#editart'+id) [0]);
+         jQuery.ajax({
+           url: '<?=base_url();?>temporada/editar_temporada',
+           type: 'POST',
+           contentType: false,
+           processData: false,
+           dataType: 'json',
+           data: formData,
+           beforeSend: function() {
+             $("#resultado2"+id).html('<div class="alert alert-success">Procesando...!</div>');
+           }
+         })
+         .done(function(data, textStatus, jqXHR) {
+            var getData = jqXHR.responseJSON; // dejar esta linea
+           if(data.status=='ok'){
+            $("#resultado2"+id).html('<div class="alert alert-success">'+data.code+'</div>');
+            // window.location.href ='<?=base_url();?>/panel';
+           }else{
+           $("#resultado2"+id).html('<div class="alert alert-danger"><strong>ERROR!</strong>'+data.error+'</div>');
+           }
+         })
+               .fail(function(jqXHR, textStatus, errorThrown) {
+                 var getErr = jqXHR.responseText;
+                 
+                 console.log(getErr);
+         
+               })
+          // Fin de ajax
+          } else {
+              swal("¡Error! ", msj, "error");
+          }
+          };
+         
+        
+      </script>

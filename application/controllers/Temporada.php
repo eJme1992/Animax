@@ -10,11 +10,11 @@ class Temporada extends CI_Controller
     }
     
 
-     public function eliminar_temporada($id)
+     public function eliminar_temporada($id,$id_serie)
     {
         $var = $this->MTemporada->eliminar($id);// consulta temporadas existente 
         if ($var == true) {
-         header("Location:" . base_url() . "panel/viewserie");
+         header("Location:" . base_url() . "panel/viewserie/".$id_serie);
          exit; 
         }
     }
@@ -23,7 +23,7 @@ class Temporada extends CI_Controller
     {
         $id = $this->input->post('id');
         $numero = $this->input->post('numero');
-        $estreno = $this->input->post('estreno');
+        $estreno = $this->input->post('fecha');
         $var = $this->MTemporada->editar($numero,$id,$estreno);// 
         if ($var != false) { 
               $response['status'] = 'ok';
@@ -38,8 +38,9 @@ class Temporada extends CI_Controller
        public function crear_temporada()
     {
         $numero = $this->input->post('numero');
-        
-        $var = $this->MTemporada->crear($numero);// 
+        $id = $this->input->post('id_serie');
+        $fecha = $this->input->post('fecha');
+        $var = $this->MTemporada->crear($numero,$id,$fecha);// 
         if ($var != false) { 
                 $response['status'] = 'ok';
                 $response['code'] = "La temporada ha sido creada de forma";

@@ -13,6 +13,8 @@ class MTemporada extends CI_Model {
 
 	 function eliminar($id)
 	{    
+    
+		$query = $this->db->query("DELETE FROM `capitulo` WHERE id_temporada='$id'");
 		$query = $this->db->query("DELETE FROM `temporada` WHERE id='$id'");
 		return $query;
 	}
@@ -21,16 +23,16 @@ class MTemporada extends CI_Model {
 	{    
 		
 		$fecha_m = date("Y-m-d");
-		$query = $this->db->query("UPDATE `temporada` Set numero='$numero',fecha_estreno='estreno' fecha_m='$fecha_m' WHERE `temporada`.`id`='$id'");
+		$query = $this->db->query("UPDATE `temporada` Set numero='$numero',fecha_estreno='$estreno', fecha_m='$fecha_m' WHERE `temporada`.`id`='$id'");
 		return $query;
 	}
 
-	 function crear($numero,$fecha_estreno)
+	 function crear($numero,$id_serie,$fecha)
 	{    
-		$query = $this->db->query("SELECT * FROM `temporada` WHERE numero='$numero'");
+		$query = $this->db->query("SELECT * FROM `temporada` WHERE numero='$numero' and id_serie='$id_serie'");
         if ($query->num_rows() == 0) {
         	$fecha_c = $fecha_m = date("Y-m-d");
-            $query = $this->db->query("INSERT INTO `temporada` (`numero`,`fecha_estreno`,`fecha_c`, `fecha_m`) VALUES ('$numero','$fecha_estreno',$fecha_c','$fecha_m')");
+            $query = $this->db->query("INSERT INTO `temporada` (`numero`,`id_serie`,`fecha_estreno`,`fecha_c`, `fecha_m`) VALUES ('$numero','$id_serie','$fecha','$fecha_c','$fecha_m')");
             if ($query == true) {
                 $id = $this->db->insert_id();
                 return $id;

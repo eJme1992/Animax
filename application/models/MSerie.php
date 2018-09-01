@@ -30,6 +30,13 @@ class Mserie extends CI_Model {
 		return $query;
 	}
 
+	 function editarimg($img,$id)
+	{    
+		$fecha_m = date("Y-m-d");
+		$query = $this->db->query("UPDATE `serie` Set imagen='$img', fecha_m='$fecha_m' WHERE `serie`.`id`='$id'");
+		return $query;
+	}
+
 	 function crear($nombre,$descripcion,$imagenurl,$categoria,$estado,$fecha,$dias,$duracion)
 	{    
 		$query = $this->db->query("SELECT * FROM `serie` WHERE nombre='$nombre'");
