@@ -24,13 +24,14 @@ class Temporada extends CI_Controller
         $id = $this->input->post('id');
         $numero = $this->input->post('numero');
         $estreno = $this->input->post('fecha');
-        $var = $this->MTemporada->editar($numero,$id,$estreno);// 
+        $id_serie = $this->input->post('id_serie');
+        $var = $this->MTemporada->editar($numero,$id,$estreno,$id_serie);// 
         if ($var != false) { 
               $response['status'] = 'ok';
               $response['code']   = "Edición hecha correctamente recargue la pagina para actualizar la tabla";
         }else{
                $response['status'] = 0;
-               $response['error']  = 'No se edito correctamente';
+               $response['error']  = 'La Temporada ya existe';
         }
         echo json_encode($response); 
     }

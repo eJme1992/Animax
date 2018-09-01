@@ -12,6 +12,14 @@ class MFunctionsg  extends CI_Model {
        }
 	 }
 
+    function comprobar_sesion2($rev)
+   {    
+    if ($rev == true) {
+         header("Location:" . base_url() . "");
+         exit; 
+       }
+   }
+
      function comprobar_tipo($rev)
    {    
     if ($rev != 1) {
