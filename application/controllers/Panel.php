@@ -108,7 +108,7 @@ class Panel extends CI_Controller {
 		$this->load->view('panel/footer'); 
 	}
 
-          public function series()
+    public function series()
     {
         $this->load->model('Mserie'); // Carga el modelo de categorías 
         $DATOS['series'] = $this->Mserie->lista();// consulta categorías existente  

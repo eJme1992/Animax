@@ -185,10 +185,10 @@ desired effect
               <!-- Menu Footer-->
               <li class="user-footer">
                 <div class="pull-left">
-                  <a href="<?=base_url();?>panel/perfil" class="btn btn-default btn-flat">Editar Perfil</a>
+                  <a href="<?=base_url();?>panel/user" class="btn btn-default btn-flat">Editar Perfil</a>
                 </div>
                 <div class="pull-right">
-                  <a href="<?=base_url();?>panel/salir" class="btn btn-default btn-flat">Cerra sección</a>
+                  <a href="<?=base_url();?>panel/salir" class="btn btn-default btn-flat">Cerrar sesión</a>
                 </div>
               </li>
             </ul>
