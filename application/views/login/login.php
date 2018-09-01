@@ -1,106 +1,118 @@
 <!DOCTYPE html>
-<html lang="en" >
-
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Login</title>
-  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans'>
-  <link rel="stylesheet" href="<?=base_url();?>plantilla/login-user/css/style.css">
-  <link href="https://fonts.googleapis.com/css?family=Amaranth" rel="stylesheet"> 
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
-  <!-- jQuery library -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
-
-  
+	 <title>Iniciar sesion</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->	
+	<link rel="icon" type="image/png" href="<?=base_url();?>plantilla/admin/images/icons/favicon.ico"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="<?=base_url();?>plantilla/admin/vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="<?=base_url();?>plantilla/admin/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="<?=base_url();?>plantilla/admin/vendor/animate/animate.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="<?=base_url();?>plantilla/admin/vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="<?=base_url();?>plantilla/admin/vendor/select2/select2.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="<?=base_url();?>plantilla/admin/css/util.css">
+	<link rel="stylesheet" type="text/css" href="<?=base_url();?>plantilla/admin/css/main.css">
+<!--===============================================================================================-->
 </head>
-
 <body>
+	
+	<div class="limiter">
+		<div class="container-login100" style="background-image:url('<?=base_url();?>plantilla/admin/images/nime.jpeg');" >
+			<div class="wrap-login100">
+				<div class="login100-pic js-tilt" data-tilt>
+          <img src="<?=base_url();?>plantilla/admin/images/img-01.png" alt="IMG" id="img">
+         <div  id="imgr"> <h3 class="login100-form-title ">Inicia con nosotros y no te pierdas ni una aventura más</h3>
+          <img src="<?=base_url();?>plantilla/admin/images/death-note.jpg" alt="IMG"></div>
+				</div>
+        
+				<form class="login100-form validate-form" id="formu">
+                  <span class="login100-form-title">
+                  Inicia sesion para disfrutar del mejor contenido
+                  </span>
+                  <form id="formu">
+                  <div class="wrap-input100 validate-input" >
+                     <input type="email" id="email" name="email" class="form-control input100" placeholder="Ingresar email" >
+                     <span class="focus-input100"></span>
+                     <span class="symbol-input100">
+                     <i class="fa fa-envelope" aria-hidden="true"></i>
+                     </span>
+                  </div>
+                  <div class="wrap-input100 validate-input">
+                     <input  type="password" id="pass" name="pass" placeholder="Clave" class="form-control input100"   />
+                     <span class="focus-input100"></span>
+                     <span class="symbol-input100">
+                     <i class="fa fa-lock" aria-hidden="true"></i>
+                     </span>
+                  </div>
+                  <div class="container-login100-form-btn">
+                     <button type="submit" id="enviar" name="enviar" class="btn btn-primary btn-round btn-lg btn-block login100-form-btn ">INGRESAR</button>
+                     <input type="hidden" name="<?=$csrf['name'];?>" value="<?=$csrf['hash'];?>" />
+                      <div class="col-md-12" id="resultado" style="margin-top:15px;"></div>
+                     <button type="submit" id="registrar" name="registrar" onclick="doble()" class="btn btn-primary btn-round btn-lg btn-block btn-regi ">REGISTRARSE</button>
+                  </div>
+                  <div class="col-md-12" id="resultado" style="margin-top:15px;"></div>
+                  <div class="text-center p-t-12">
+                     <span class="txt1">
+                     Olvido su
+                     </span>
+                     <a class="txt2" href="<?=base_url();?>plantilla/admin/#">
+                     Usuario / Contraseña?
+                     </a>
+                  </div>
+               </form>
 
-
-<div class="cont">
-  <div class="form sign-in">
-    <h2>Bienvenido</h2>
-    <form id="formu">
-    <label>
-      <span>Email</span>
-      <input type="email" id="email" name="email"/>
-    </label>
-    <label>
-      <span>Contraseña</span>
-      <input type="password" id="pass" name="pass" />
-    </label>
-    <a class="fp" href="#"><p class="forgot-pass">¿Olvidaste tu contraseña?</p></a>
-    <button type="submit" id="enviar" name="enviar" class="submit">Iniciar sesión</button>
-    <input type="hidden" name="<?=$csrf['name'];?>" value="<?=$csrf['hash'];?>" />
-    <div class="col-md-12" id="resultado" style="margin-top:15px;"></div>
-    
-  </form>
-  </div>
-  <div class="sub-cont">
-    <div class="img" style="background-image: url('<?=base_url();?>plantilla/login-user/img/images.jpg');">
-      <div class="img__text m--up">
-        <h2>¿Eres un nuevo miembro?</h2>
-        <p>Registrate y ve todo el increible contenido que tenemos </p>
-      </div>
-      <div class="img__text m--in">
-        <h2>¿Eres uno de nosotros?</h2>
-        <p>Si ya tienes una cuenta incia sesión. Te extrañamos!</p>
-      </div>
-      <div class="img__btn">
-        <span class="m--up">Comenzar</span>
-        <span class="m--in">Iniciar Sesión</span>
-      </div>
-    </div>
-    <div class="form sign-up">
-      <h2>Es tiempo de sentirte como en casa</h2>
-      <form id="formr">
-      <label>
-        <span>Nombre</span>
-        <input type="text" id="nombre" name="nombre" />
-      </label>
-      <label>
-        <span>Apellido</span>
-        <input type="text" id="apellido" name="apellido" />
-      </label>
-     
-     
-      <label>
-        <span>Email</span>
-        <input type="email" id="mail" name="mail" />
-      </label>
-      <label>
-        <span>Contraseña</span>
-        <input type="password" id="contrasena" name="contrasena" />
-      </label>
-      <label class="lp"style="width:90%;">
-        <span>Fecha de nacimiento</span>
-        <input type="date" id="fecha_n" name="fecha_n" />
-      </label>
-      <div class="container">
-      <div class="form-check-inline">
-        <label class="form-check-label" style="width:100%;">
-          <input type="radio" class="form-check-input" name="sexo" id="sexo" value="F">Femenino
-        </label>
-      </div>
-      <div class="form-check-inline">
-        <label class="form-check-label" style="width:100%;">
-          <input type="radio" class="form-check-input" name="sexo" id="sexo" value="M">Masculino
-        </label>
-      </div>
-</div>
-<div class="centrar-b"><button type="submit" class="submit">Registrarte</button></div>
-      <input type="hidden" name="<?=$csrf['name'];?>" value="<?=$csrf['hash'];?>" />
-      </form>
-    </div>
-  </div>
-</div>
-
- 
-      <script > //Ajax para mi form ingresar
+               <form id="formr" class="validate-form login100-form" >
+                 
+                  <input type="text" id="nombre" name="nombre" class="form-control input100 in-t" placeholder="Nombre" required="">
+                  <input type="text" id="apellido" name="apellido" class="form-control input100 in-t" placeholder="Apellido" required="">
+                  <input  type="email" id="mail" name="mail" class="form-control input100 in-t" placeholder="Email" required="">
+                   <input type="password" id="contrasena" name="contrasena" class="form-control input100 in-t" placeholder="Contraseña" required="">
+                   <input type="date" id="fecha_n" name="fecha_n"  class="form-control input100 in-t"  required="">
+                   <div class="container">
+                <div class="form-check-inline">
+                  <label class="form-check-label" style="width:100%;">
+                    <input type="radio" class="form-check-input" name="sexo" id="sexo" value="F">Femenino
+                  </label>
+                </div>
+                <div class="form-check-inline">
+                  <label class="form-check-label" style="width:100%;">
+                    <input type="radio" class="form-check-input" name="sexo" id="sexo" value="M">Masculino
+                  </label>
+                </div>
+              </div>
+      
+                   <button type="submit" id="registrar" name="registrar"  class="btn btn-primary btn-round btn-lg btn-block btn-regi ">REGISTRARSE</button>
+                    <h3 class="login100-form-title ">Ya tienes una cuenta? Inicia sesion</h3>
+                   <button type="submit" onclick="oculta()" id="ini" class="btn btn-primary btn-round btn-lg btn-block btn-regi  ">Inicia sesion</button>
+      
+              
+                </form>
+               <script>
+                 function doble(){
+                  document.getElementById("formr").style.display="block";
+                  document.getElementById("formu").style.display="none";
+                  document.getElementById("img").style.display="none";
+                  document.getElementById("imgr").style.display="block";
+                 }
+                 function oculta(){
+                  document.getElementById("formr").style.display="none";
+                  document.getElementById("formu").style.display="block";
+                  document.getElementById("img").style.display="block";
+                  document.getElementById("imgr").style.display="none";
+                 }
+               </script>
+			</div>
+		</div>
+	</div>
+	
+  <script > //Ajax para mi form ingresar
          jQuery(document).ready(function() { //Cuando el doc se cargue, hacelas ejecuciones siguientes
                jQuery("#formu").submit(function(event) {  //Se activa el form, activa el ajax
                event.preventDefault(); 
@@ -190,11 +202,24 @@
          });//fin ready
       </script>
 
-    <script  src="<?=base_url();?>plantilla/login-user/js/index.js"></script>
-
-
-
+	
+<!--===============================================================================================-->	
+	<script src="<?=base_url();?>plantilla/admin/vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="<?=base_url();?>plantilla/admin/vendor/bootstrap/js/popper.js"></script>
+	<script src="<?=base_url();?>plantilla/admin/vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="<?=base_url();?>plantilla/admin/vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+	<script src="<?=base_url();?>plantilla/admin/vendor/tilt/tilt.jquery.min.js"></script>
+	<script >
+		$('.js-tilt').tilt({
+			scale: 1.1
+		})
+	</script>
+	  
+<!--===============================================================================================-->
+	<script src="<?=base_url();?>plantilla/admin/js/main.js"></script>
 
 </body>
-
 </html>
