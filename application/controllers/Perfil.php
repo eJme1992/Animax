@@ -17,7 +17,7 @@ class Perfil extends CI_Controller {
     // **PAGINA DE INICIO DEL HOME**
 	public function index()
 	{
-		// PANEL
+		
 		$this->load->view('perfil/perfil'); //Mi carpeta perfil archivo perfil
 	}
     
