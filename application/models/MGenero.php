@@ -4,7 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class MGenero extends CI_Model {
 
 
-	 function lista()
+	function lista()
 	{    
 		$query = $this->db->query("SELECT * FROM `generos`");
 		return $query->result();
