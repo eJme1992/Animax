@@ -36,7 +36,7 @@
                   <span class="login100-form-title">
                   Inicia sesion para disfrutar del mejor contenido
                   </span>
-                  <form id="formu">
+               
                   <div class="wrap-input100 validate-input" >
                      <input type="email" id="email" name="email" class="form-control input100" placeholder="Ingresar email" >
                      <span class="focus-input100"></span>
