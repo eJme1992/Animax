@@ -39,14 +39,14 @@
                   Inicia sesion para disfrutar del mejor contenido
                   </span>
                   <div class="wrap-input100 validate-input" >
-                     <input type="email" id="email" name="email" class="form-control input100" placeholder="Ingresar email" >
+                     <input type="email" id="email" name="email" class="form-control input100" placeholder="Ingresar email"  required="">
                      <span class="focus-input100"></span>
                      <span class="symbol-input100">
                      <i class="fa fa-envelope" aria-hidden="true"></i>
                      </span>
                   </div>
                   <div class="wrap-input100 validate-input">
-                     <input  type="password" id="pass" name="pass" placeholder="Clave" class="form-control input100"   />
+                     <input  type="password" id="pass" name="pass" placeholder="Clave" class="form-control input100"  required=""  />
                      <span class="focus-input100"></span>
                      <span class="symbol-input100">
                      <i class="fa fa-lock" aria-hidden="true"></i>
@@ -77,6 +77,7 @@
                   <input  type="email" id="mail" name="mail" class="form-control input100 in-t" placeholder="Email" required="">
                   <input type="password" id="contrasena" name="contrasena" class="form-control input100 in-t" placeholder="Contraseña" required="">
                   <input type="date" id="fecha_n" name="fecha_n"  class="form-control input100 in-t"  required="">
+                   <input type="hidden" name="<?=$csrf['name'];?>" value="<?=$csrf['hash'];?>" />
                   <div class="container">
                      <div class="form-check-inline">
                         <label class="form-check-label" style="width:100%;">
@@ -89,9 +90,10 @@
                         </label>
                      </div>
                   </div>
+                  <div class="col-md-12" id="resultado2" style="margin-top:15px;"></div>
                   <button type="submit" id="registrar" name="registrar"  class="btn btn-primary btn-round btn-lg btn-block btn-regi ">REGISTRARSE</button>
                   <h3 class="login100-form-title ">Ya tienes una cuenta? Inicia sesion</h3>
-                  <button type="submit" onclick="oculta()" id="ini" class="btn btn-primary btn-round btn-lg btn-block btn-regi  ">Inicia sesion</button>
+                  <button type="button" onclick="oculta()" id="ini" class="btn btn-primary btn-round btn-lg btn-block btn-regi  ">Inicia sesion</button>
                </form>
                <script>
                   function doble(){
