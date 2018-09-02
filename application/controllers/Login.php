@@ -47,6 +47,7 @@ class Login extends CI_Controller
         }
     
     public function registrar(){
+              $this->load->model('MUser');//Para cargar el Modelo user include
 
            if($_SERVER['REQUEST_METHOD'] == 'POST'){ //Por seguridad, que venga del post 
             $newuser = $this->input->post('nombre'); //Recibiendo los datosque vienen del form
@@ -56,9 +57,14 @@ class Login extends CI_Controller
             $fecha_n =$this->input->post('fecha_n');
             $sexo =$this->input->post('sexo');
             
-
-            $existe = $this->MLogin->registrar($newuser, $apellido, $newmail, $newpassword, $fecha_n, $sexo);
-            if($existe != false){
+            $id = $this->MLogin->registrar($newuser, $apellido, $newmail, $newpassword, $fecha_n, $sexo);
+            if($id != false){
+              $consultas = $this->MUser->consultar($id);
+               $consulta  = end($consultas); //Damelo como un objeto
+                 $data_login = array('id'        => $consulta,
+                                        'tipo'      => $consulta->tipo, 
+                                        'login'     => TRUE); 
+                    $this->session-> set_userdata($data_login);
                 $response['status'] = 'ok'; //Creando un objeto Json
                 $response['code'] = "El usuario ha sido creado exitosamente";
         }else{

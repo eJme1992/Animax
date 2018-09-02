@@ -21,6 +21,10 @@ class MUser extends CI_Model {
 
 	
  
-
+	 function consultar($user)
+	{    
+		$query = $this->db->query("SELECT * FROM `user` WHERE id='$user'");
+		return $query->result();
+    }
 
   }
