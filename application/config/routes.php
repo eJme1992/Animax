@@ -49,10 +49,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | Examples:	my-controller/index	-> my_controller/index
 |		my-controller/my-method	-> my_controller/my_method
 */
-$route['default_controller'] = 'welcome';
 $route['login']  = 'Login';
 $route['perfil'] = "Perfil"; //derecha direccion izq controlador
 $route['admin']  = 'Admin';
 $route['panel']  = 'Panel';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
+$route['default_controller'] = 'home';
+
