@@ -32,7 +32,7 @@ class Panel extends CI_Controller {
     
     // **SERIES**
 
-           public function series()
+    public function series()
     {
         $this->load->model('Mserie'); // Carga el modelo de categorías 
         $DATOS['series'] = $this->Mserie->lista();// consulta categorías existente  
@@ -126,31 +126,8 @@ class Panel extends CI_Controller {
 		$this->load->view('panel/footer'); 
 	}
 
-<<<<<<< HEAD
-    public function series()
-    {
-        $this->load->model('Mserie'); // Carga el modelo de categorías 
-        $DATOS['series'] = $this->Mserie->lista();// consulta categorías existente  
-        // SEGURIDAS
-        $csrf = array(
-        'name' => $this->security->get_csrf_token_name(),
-        'hash' => $this->security->get_csrf_hash()
-        );
-        $DATOS['csrf'] = $csrf;
 
-        $this->load->view('panel/secciones/series',$DATOS);
-        $this->load->view('panel/footer'); 
-    }
-=======
-   
->>>>>>> a4dc18542c80251eed29013efc0a568004e8002c
-
-
-	  
-
-
-
-
+ 
 
 
 
