@@ -76,7 +76,7 @@
         <div class="container">
             <div class="bgi" style="background-image:url('<?=base_url();?>plantilla/perfil/assets/img/bgi.jpg');">
             <img src="<?=base_url()?>file/img/user/default.png" class="rounded-circle cic">
-            <h3 class="user-name"></h3>
+            <h3 class="user-name"><?=$user->nombre;?></h3>
         </div>
         <nav id="second-nav" class="navbar navbar-expand-sm bg-light">
         <ul class="navbar-nav">
