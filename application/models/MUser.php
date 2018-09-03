@@ -11,7 +11,7 @@ class MUser extends CI_Model {
 	}
 
 
-	 function editar($id, $mail, $nickname, $pass, $nombre, $apellido, $nacimiento, $sexo, $foto, $tipo)
+	 function editar_perfil($id, $mail, $nickname, $pass, $nombre, $apellido, $nacimiento, $sexo, $foto, $tipo)
 	{    
 		
 		$fecha_m = date("Y-m-d");
@@ -21,9 +21,9 @@ class MUser extends CI_Model {
 
 	
  
-	 function consultar($user)
+	 function consultar()
 	{    
-		$query = $this->db->query("SELECT * FROM `user` WHERE id='$user'");
+		$query = $this->db->query("SELECT * FROM `user` ");
 		return $query->result();
     }
 

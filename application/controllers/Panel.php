@@ -126,9 +126,36 @@ class Panel extends CI_Controller {
 		$this->load->view('panel/footer'); 
 	}
 
+    public function user()
+    {
+        $user = $this->session->userdata('id');
+        $this->load->model('MUser'); // Carga el modelo de usuario 
+        $DATOS['user'] = $this->MUser->perfil($user->id);// Trae datos del perfil
+        // SEGURIDAS
+        $csrf = array(
+        'name' => $this->security->get_csrf_token_name(),
+        'hash' => $this->security->get_csrf_hash()
+        );
+        $DATOS['csrf'] = $csrf;
 
+        $this->load->view('panel/secciones/user',$DATOS);
+        $this->load->view('panel/footer'); 
+    }
  
+    public function usuarios()
+    {
+        $this->load->model('MUser'); // Carga el modelo de usuario 
+        $DATOS['datos'] = $this->MUser->consultar();// Trae datos del perfil
+        // SEGURIDAS
+        $csrf = array(
+        'name' => $this->security->get_csrf_token_name(),
+        'hash' => $this->security->get_csrf_hash()
+        );
+        $DATOS['csrf'] = $csrf;
 
+        $this->load->view('panel/secciones/usuarios',$DATOS);
+        $this->load->view('panel/footer'); 
+    }
 
 
 
