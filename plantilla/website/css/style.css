@@ -1,67 +1,46 @@
 
 
-/* navbar Eloy */ 
-#barra-principal{
-    background: #000 !important;
-}
-#barra-principal .logo{
-    margin-top:7px;
-    margin-left: -2em;
-} 
-
-#barra-principal img{
-    height: 26px;
-} 
-
-#barra-principal .menu{
-    margin-top:13px;
-    margin-left: -1em;
-
+body {
+    color: #797979;
+    background: #f2f2f2;
+    padding: 0px !important;
+    margin: 0px !important;
+    font-size:13px;
 }
 
-#barra-principal h3{
-    font-size:15px;
-    word-spacing: 12px;
-    color: #000000 !important;
+ul li {
+    list-style: none;
 }
 
-#barra-principal a{
+a, a:hover, a:focus {
     text-decoration: none;
-    color: #fff !important;
+    outline: none;
 }
+::selection {
 
-#barra-principal a:hover{
-    color: #ffc966;
+    background: #68dff0;
+    color: #fff;
 }
-
-#barra-principal .buscador {
-    margin-top: 9px;
-    margin-left: 6rem;
+::-moz-selection {
+    background: #68dff0;
+    color: #fff;
 }
-
-#barra-principal input{
-    width: 80%;
-    height: 30px;
+nav li a{
+    color:#000;
 }
-
-
-#barra-principal .menu2{
-  margin-left: 7rem;
-   margin-top: 15px;
+nav{
+    background-color:#000;
+    color:#fff;
 }
-.rounded{
-    margin-bottom:50px;
-}
-footer{
-    background-color:#ECECEC;
-    width:100%;
-    height:330px;
-
-}
+/*Para ocultar y el responsive*/
+.font-s{ display:none; }
+@media (max-width:550px){
+    .font-s{ display:block; }
+    #buscar{ display: none; }
 
 /*footer Eloy */ 
 
-*{
+{
     color: #000000 !important;
     font-weight: bold;
 }
