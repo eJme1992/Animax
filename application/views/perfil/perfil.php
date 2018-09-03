@@ -28,50 +28,9 @@
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
   </head>
+<body>
+ 
 
-  <body>
-<header>
-<nav class="navbar navbar-expand-sm bg-light">
-<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-    <span class="navbar-toggler-icon" ><i class="fas fa-bars" style="color:#000;"></i></span>
-</button>
-<div class="collapse navbar-collapse" id="collapsibleNavbar">
-  <ul class="navbar-nav">
-    <li class="nav-item">
-      <a class="nav-link" href="#">Maestro</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#">Audiofrecuencia</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#">Game Center</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#">Vivo</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#">Los miembros compran</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#">BML</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#">Mengzhan</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#">Mengzhan</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#"><i class="fas fa-mobile fa-lg"></i>Descargar App</a>
-    </li>
-  </ul>
-</div>
-  <form class="form-inline" action="/action_page.php">
-    <input class="form-control mr-sm-2" type="text" placeholder="Search">
-    <button class="btn btn-success" type="submit">Search</button>
-  </form>
-</nav>
-</header>
   
         <div class="container">
             <div class="bgi" style="background-image:url('<?=base_url();?>plantilla/perfil/assets/img/bgi.jpg');">

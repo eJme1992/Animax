@@ -6,9 +6,11 @@ body {
     font-size:13px;
 }
 
-ul li {
-    list-style: none;
+#second-nav li a{
+    color:#000;
 }
+#second-nav li a i{padding-right:0.5em;}
+.level{ color:#000; }
 
 a, a:hover, a:focus {
     text-decoration: none;
@@ -24,12 +26,7 @@ a, a:hover, a:focus {
     color: #fff;
 }
 
-nav{
-    background-color:#fff;
-    color:#000;
-}
-nav li a{ color:#000 !important;}
-nav li a i {padding-right:1.5vmin; }
+
 .bgi{
     background-size: cover;
     background-repeat: no-repeat;
@@ -49,7 +46,7 @@ nav li a i {padding-right:1.5vmin; }
 .fa-youtube{color:#ff0000;}
 .fa-heart{color:#ff00ff;}
 .user-name{
-    color:#fff;
+    color:#000;
     position:relative;
     top:1em;
     left:4.5em;

@@ -6,23 +6,20 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" type="text/css" href="<?=base_url();?>plantilla/website/css/style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">    
-    <title>Document</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>    
+    <title>Animax</title>
 </head>
 <body>
   <header>
-<nav class="navbar navbar-expand-sm bg-light">
-    <div class="container-fluid row">
-    
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-    <span class="navbar-toggler-icon" ><i class="fas fa-bars" style="color:#000;"></i></span>
-</button>
-  <div class="col-9">
-<div class="collapse navbar-collapse" id="collapsibleNavbar">
+<nav class="navbar navbar-expand-sm">
+    <div class="container-fluid">
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#cNavbar" >
+            <i class="fas fa-bars" style="color:#000;"></i>
+        </button>
+<div class="collapse navbar-collapse" id="cNavbar">
   <ul class="navbar-nav">
-     <li class="nav-item logo">
-                        <a href=""><img src="<?=base_url();?>plantilla/website/img/logo.png"></a>
-                   </li>
+     <li class="nav-item logo"> <a href="#"><img src="<?=base_url();?>plantilla/website/img/logo.png"></a></li>
     <li class="nav-item">
       <a class="nav-link" href="#">Maestro</a>
     </li>
@@ -52,22 +49,39 @@
     </li>
   </ul>
 </div>
-</div>
-    <div class="col-3">
       <button onclick="oculta()" class="font-s"><i class="fas fa-search"></i></button>
-      <div id="buscar">
+      <div id="buscar" class="ocultar">
         <form class="form-inline" action="/action_page.php">
             <input class="form-control mr-sm-2" type="text" placeholder="Search">
-            <button class="btn btn-success" type="submit">Search</button>
+            <button class="btn btn-success" type="submit">Buscar</button>
         </form>
-    </div>
     </div>
 </div>
 </nav>
 </header>
  
 <script type="text/javascript">
-  function oculta(){
-  document.getElementById("buscar").style.display:'block';
-}
+  //Funcion para ocultar y mostrar el menu
+   $(document).ready(function(){
+    $("#mostrar").on( "click", function() {
+      $('#cNavbar').show(); //muestro mediante id
+     });
+    $("#ocultar").on( "click", function() {
+      $('#cNavbar').hide(); //oculto mediante id
+    });
+  })
+//Funcion para ocultar y mostrar la barra de busqueda
+  
+    function oculta() {
+  
+             var x = document.getElementById("buscar");
+             if (x.className.indexOf("mostrar") == -1) {
+                 x.className += " mostrar";
+             } else { 
+                 x.className = x.className.replace(" mostrar", "");
+                
+             }
+         }
+
+
 </script>
