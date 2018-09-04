@@ -14,12 +14,12 @@
   <header>
 <nav class="navbar navbar-expand-sm">
     <div class="container-fluid">
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#cNavbar" >
+      <a href="#"><img src="<?=base_url();?>plantilla/website/img/logo.png"></a>
+           <button  id="boton-menu" class="btn" type="button" onclick="ocultar()"/>
             <i class="fas fa-bars" style="color:#000;"></i>
         </button>
-<div class="collapse navbar-collapse" id="cNavbar">
+<div class=" mi-menu" id="cNavbar">
   <ul class="navbar-nav">
-     <li class="nav-item logo"> <a href="#"><img src="<?=base_url();?>plantilla/website/img/logo.png"></a></li>
     <li class="nav-item">
       <a class="nav-link" href="#">Maestro</a>
     </li>
@@ -28,28 +28,12 @@
     </li>
     <li class="nav-item">
       <a class="nav-link" href="#">Game Center</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#">Vivo</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#">Los miembros compran</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#">BML</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#">Mengzhan</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#">Mengzhan</a>
-    </li>
     <li class="nav-item">
       <a class="nav-link" href="#"><i class="fas fa-mobile fa-lg"></i>Descargar App</a>
     </li>
   </ul>
 </div>
-      <button onclick="oculta()" class="font-s"><i class="fas fa-search"></i></button>
+      <button onclick="oculta()" class="font-s btn"><i class="fas fa-search"></i></button>
       <div id="buscar" class="ocultar">
         <form class="form-inline" action="/action_page.php">
             <input class="form-control mr-sm-2" type="text" placeholder="Search">
@@ -61,15 +45,16 @@
 </header>
  
 <script type="text/javascript">
-  //Funcion para ocultar y mostrar el menu
-   $(document).ready(function(){
-    $("#mostrar").on( "click", function() {
-      $('#cNavbar').show(); //muestro mediante id
-     });
-    $("#ocultar").on( "click", function() {
-      $('#cNavbar').hide(); //oculto mediante id
-    });
-  })
+ //Funcion para ocultar y mostrar el menu
+ function ocultar(){
+  var x = document.getElementById("cNavbar");
+             if (x.className.indexOf("mostrar") == -1) {
+                 x.className += " mostrar";
+             } else { 
+                 x.className = x.className.replace(" mostrar", "");
+                
+             }
+ }
 //Funcion para ocultar y mostrar la barra de busqueda
   
     function oculta() {
