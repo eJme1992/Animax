@@ -1,5 +1,3 @@
-
-
 body {
     color: #797979;
     background: #fff;
@@ -36,7 +34,7 @@ nav{
 }
 #boton-menu{ display:none; }
 .mostrar{ display: block !important; }
-/*Para ocultar y el responsive*/
+/Para ocultar y el responsive/
 .font-s{ display: none; }
 @media (max-width:550px){
    .ocultar{display: none;}
@@ -110,7 +108,7 @@ footer{
 }
 .pie-pagina  p{margin-bottom:0; padding-bottom:1.5em;}
 
-/*Sofia estilos*/
+/Sofia estilos/
 #barra-secundaria{
     background-color:#808080;
     color:#fff;

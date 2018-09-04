@@ -42,3 +42,14 @@
           <a href="<?=base_url();?>panel/usuarios"><i class="fa fa-users"></i> <span>USUARIOS</span>
           </a>
         </li>
+         <li class="treeview">
+          <a href="#"><i class="fa fa-tv"></i> <span>Configuración</span>
+            <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="<?=base_url();?>panel/series"><b>Menús</b></a></li>
+            <li><a href="<?=base_url();?>panel/newserie">Datos del sitio</a></li>
+          </ul>
+        </li>
