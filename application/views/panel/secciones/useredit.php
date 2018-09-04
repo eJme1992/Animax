@@ -65,8 +65,7 @@
         
          <input type="hidden" name="id" id="id" value="<?=$key->id;?>">
          <input type="hidden" name="<?=$csrf['name'];?>" value="<?=$csrf['hash'];?>" />
-         <div class="col-
-            md-12" id="resultado" style="margin-top:15px;"></div>
+         <div class="col-md-12" id="resultado" style="margin-top:15px;"></div>
          <div class="form-group col-md-12">
             <hr>
             <button type="submit" class="btn btn-default btn-lg">Enviar</button>
