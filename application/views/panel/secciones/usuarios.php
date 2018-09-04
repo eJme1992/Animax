@@ -20,7 +20,7 @@
 <section class="content container-fluid">
    <nav class="nav" style="margin-bottom:25px;">
       <div class="btn-group">
-         <a href="<?=base_url();?>panel/nuevo-usuario"><button type="button" class="btn btn-primary">Nuevo Usuario <i class="fa fa-plus-circle"></i></button></a>
+         <a href="<?=base_url();?>panel/nuevo_usuario"><button type="button" class="btn btn-primary">Nuevo Usuario <i class="fa fa-plus-circle"></i></button></a>
       </div>
    </nav>
    <table id="grid" class="table table-striped table-bordered" cellspacing="0" width="100%">
@@ -73,7 +73,6 @@
             <td>
                <p data-placement="top" data-toggle="tooltip" title="Delete"><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete<?=$key->id;?>" ><span class="glyphicon glyphicon-trash"></span></button></p>
             </td>
-            <!-- Modal Editar-->
             <!-- /.content -->
             <!-- Modal ELIMINAR -->
             <div id="delete<?=$key->id;?>" class="modal fade " role="dialog">

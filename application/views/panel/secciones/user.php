@@ -48,24 +48,37 @@
          <input type="date" class="form-control" id="nacimiento" name="nacimiento" required="<?=$key->nacimiento;?>">
       </div>
       <div class="form-group col-md-6">
-         <label>Foto:</label>
-         <input type="file" class="form-control" id="foto" name="foto" >
+         <label>Tipo:</label>
+         <?php if ($_SERVER['REQUEST_URI'] == '/series/panel/user'): ?>
+           <select  class="form-control" id="tipo" name="tipo" disabled>
+           <?php if ($key->tipo == '1'): ?>
+              <option value="1">Admin</option>
+              <option value="0">User</option>
+            <?php elseif($key->tipo == '0'): ?>
+              <option value="0">User</option>
+              <option value="1">Admin</option>
+            <?php endif ?>
+           </select>
+         <?php else: ?>
+          <select  class="form-control" id="tipo" name="tipo">
+           <?php if ($key->tipo == '1'): ?>
+              <option value="1">Admin</option>
+              <option value="0">User</option>
+            <?php elseif($key->tipo == '0'): ?>
+              <option value="0">User</option>
+              <option value="1">Admin</option>
+            <?php endif ?>
+           </select>
+         <?php endif ?>
       </div>
       <div class="form-group col-md-6">
-         <label>Tipo:</label>
-         <select  class="form-control" id="tipo" name="tipo" disabled>
-         <?php if ($key->tipo == '1'): ?>
-            <option value="1">Admin</option>
-            <option value="0">User</option>
-          <?php elseif($key->tipo == '0'): ?>
-            <option value="0">User</option>
-            <option value="1">Admin</option>
-          <?php endif ?>
-         </select>
+         <label>Cambiar imagen:</label>
+         <a href="#" class="btn  form-control" data-title="imagen" data-toggle="modal" data-target="#imagen" >Cambiar imagen</a>
       </div>
       <input type="hidden" name="id" id="id" value="<?=$key->id;?>">
       <input type="hidden" name="<?=$csrf['name'];?>" value="<?=$csrf['hash'];?>" />
-      <div class="col-md-12" id="resultado" style="margin-top:15px;"></div>
+      <div class="col-
+      md-12" id="resultado" style="margin-top:15px;"></div>
       <div class="form-group col-md-12">
          <hr>
          <button type="submit" class="btn btn-default btn-lg">Enviar</button>
@@ -73,6 +86,31 @@
    </form>
 
 </section>
+<!-- /.content -->
+<!-- Modal ELIMINAR -->
+<div id="imagen" class="modal fade " role="dialog">
+   <div class="modal-dialog" style="margin-top:10vw;">
+      <!-- Modal content-->
+      <div class="modal-content">
+         <div class="modal-body text-center">
+          <form id="subir_imagen" >
+            <h4>Subir imagen</h4>
+            <div class="form-group">
+                 <input type="file" name="imagen" id="imagen" class="form-control" required="">
+                 <input type="hidden" name="id" id="id" value="<?=$key->id;?>" />
+                 <input type="hidden" name="<?=$csrf['name'];?>" value="<?=$csrf['hash'];?>" />
+                 <div class="col-md-12" id="resultado2"></div>
+            </div>  
+
+         </div>
+         <div class="modal-footer">
+            <button type="submit" name="enviar" class="btn btn-info">Subir imagen</button>
+            <button type="reset" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+         </div>
+        </form>
+      </div>
+   </div>
+</div>
 <!-- /.content -->
 <script >
    jQuery(document).ready(function() {
@@ -114,8 +152,45 @@
           } else {
               swal("¡Error! ", msj, "error");
           }
-          });
-         
+      });
+      jQuery("#subir_imagen").submit(function(event) {
+         event.preventDefault();
+         var msj = '1';
+        //validaciones con js
+        
+       if (msj === "1") {
+        var formData = new FormData(jQuery('#subir_imagen') [0]);
+        jQuery.ajax({
+          url: '<?=base_url();?>user/editar_img',
+          type: 'POST',
+          contentType: false,
+          processData: false,
+          dataType: 'json',
+          data: formData,
+          beforeSend: function() {
+            $("#resultado2").html('<div class="alert alert-success">Procesando...!</div>');
+          }
+        })
+        .done(function(data, textStatus, jqXHR) {
+           var getData = jqXHR.responseJSON; // dejar esta linea
+          if(data.status=='ok'){
+           $("#resultado2").html('<div class="alert alert-success">'+data.code+'</div>');
+           window.location.href ='<?=base_url();?>panel/usuario/<?=$key->id;?>';
+          }else{
+          $("#resultado2").html('<div class="alert alert-danger"><strong>ERROR!</strong>'+data.error+'</div>');
+          }
+        })
+              .fail(function(jqXHR, textStatus, errorThrown) {
+                var getErr = jqXHR.responseText;
+                
+                console.log(getErr);
+        
+              })
+         // Fin de ajax
+         } else {
+             swal("¡Error! ", msj, "error");
+         }
+       });
    });//fin ready
  <?php }  ?>  
 </script>

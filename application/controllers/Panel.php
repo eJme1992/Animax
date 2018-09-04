@@ -12,7 +12,7 @@ class Panel extends CI_Controller {
         $this->MFunctionsg->comprobar_sesion($this->session->userdata('login')); 
         $this->MFunctionsg->comprobar_tipo($this->session->userdata('tipo')); 
         $DATOS['user'] = $this->session->userdata('id'); // PASO LOS DATOS DEL USUARIO 
-       
+        
         $this->load->view('panel/header', $DATOS);	// LLAMA AL LA SECCION DE VISTA NAV DE LA WEB
         $this->load->view('panel/menu/menu');
 		$this->load->view('panel/menu/menufooter');	
@@ -157,6 +157,33 @@ class Panel extends CI_Controller {
         $this->load->view('panel/footer'); 
     }
 
+    public function usuario($id)
+    {   
+        $this->load->model('MUser'); // Carga el modelo de usuario 
+        $DATOS['user'] = $this->MUser->perfil($id);// Trae datos del perfil
+        // SEGURIDAS
+        $csrf = array(
+        'name' => $this->security->get_csrf_token_name(),
+        'hash' => $this->security->get_csrf_hash()
+        );
+        $DATOS['csrf'] = $csrf;
+
+        $this->load->view('panel/secciones/user',$DATOS);
+        $this->load->view('panel/footer'); 
+    }
+
+    public function nuevo_usuario()
+    {   
+        
+        $csrf = array(
+        'name' => $this->security->get_csrf_token_name(),
+        'hash' => $this->security->get_csrf_hash()
+        );
+        $DATOS['csrf'] = $csrf;
+
+        $this->load->view('panel/secciones/newuser',$DATOS);
+        $this->load->view('panel/footer'); 
+    }
 
 
 }
