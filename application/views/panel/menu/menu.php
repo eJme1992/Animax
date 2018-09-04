@@ -1,9 +1,6 @@
 <li class="header">MENU DE ADMINISTRACION</li>
         <!-- Optionally, you can add icons to the links -->
-        <li class="trw">
-          <a href="<?=base_url();?>panel/usuarios"><i class="fa fa-users"></i> <span>USUARIOS</span>
-          </a>
-        </li>
+        
         <li class="treeview">
           <a href="#"><i class="fa fa-tv"></i> <span>SERIES</span>
             <span class="pull-right-container">
@@ -40,4 +37,8 @@
             <li><a href="<?=base_url();?>panel/newserie">Crear Noticia</a></li>
             <li><a href="<?=base_url();?>plantilla/panel/#">Categorías</a></li>
           </ul>
+        </li>
+        <li class="trw">
+          <a href="<?=base_url();?>panel/usuarios"><i class="fa fa-users"></i> <span>USUARIOS</span>
+          </a>
         </li>

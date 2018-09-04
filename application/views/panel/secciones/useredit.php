@@ -58,20 +58,11 @@
             <label>Fecha de nacimiento:</label>
             <input type="date" class="form-control" id="nacimiento" name="nacimiento" required value="<?=$key->nacimiento;?>">
          </div>
-         <div class="form-group col-md-6">
-            <label>Tipo:</label>
             
-            <select  class="form-control" id="tipo" name="tipo">
-               <?php if ($key->tipo == '1'): ?>
-               <option value="1">Admin</option>
-               <option value="0">User</option>
-               <?php elseif($key->tipo == '0'): ?>
-               <option value="0">User</option>
-               <option value="1">Admin</option>
-               <?php endif ?>
-            </select>
+            <input type="hidden" class="form-control" id="tipo" name="tipo" value="$key->tipo;">
+               
             
-         </div>
+        
          <input type="hidden" name="id" id="id" value="<?=$key->id;?>">
          <input type="hidden" name="<?=$csrf['name'];?>" value="<?=$csrf['hash'];?>" />
          <div class="col-
