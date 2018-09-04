@@ -54,6 +54,9 @@
     <li class="nav-item">
       <a class="nav-link" href="#"><i class="fas fa-heart fa-lg"></i>Suscripcion</a>
     </li>
+    <li  class="nav-item">
+    <a href="<?=base_url();?>perfil/salir" class="btn btn-default btn-flat">Cerrar sesión</a>
+  </li>
   </ul>
         <h3  class="level">Level</h3>
         </nav>

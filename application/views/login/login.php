@@ -78,7 +78,7 @@
                   <input type="password" id="contrasena" name="contrasena" class="form-control input100 in-t" placeholder="Contraseña" required="">
                   <input type="date" id="fecha_n" name="fecha_n"  class="form-control input100 in-t"  required="">
                    <input type="hidden" name="<?=$csrf['name'];?>" value="<?=$csrf['hash'];?>" />
-                  <div class="container">
+                  <div class="container" style="padding-left:3em;">
                      <div class="form-check-inline">
                         <label class="form-check-label" style="width:100%;">
                         <input type="radio" class="form-check-input" name="sexo" id="sexo" value="F">Femenino
