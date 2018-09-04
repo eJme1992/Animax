@@ -226,11 +226,27 @@
                   <td><?=$key->fecha_estreno;?></td>
                   <td><?=$key->fecha_m;?></td>
                   <td>
-                     <button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete<?=$key->id;?>" ><span class="glyphicon glyphicon-trash"></span></button>
+                    
                      <button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit<?=$key->id;?>" ><span class="glyphicon glyphicon-pencil"></span></button>
                      <button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete<?=$key->id;?>" ><span class="glyphicon glyphicon-trash"></span></button>
                   </td>
                   <!-- DF -->
+                  <!-- Modal ELIMINAR -->
+                  <div id="delete<?=$key->id;?>" class="modal fade " role="dialog">
+                     <div class="modal-dialog" style="margin-top:10vw;">
+                        <!-- Modal content-->
+                        <div class="modal-content">
+                           <div class="modal-body text-center">
+                              <h3> ¿Esta Seguro que desea eliminar el capitulo numero: <b><?=$key->numero;?></b>?</h3>
+                           </div>
+                           <div class="modal-footer">
+                              <a href="<?=base_url();?>capitulo/eliminar_capitulo/<?=$key->id;?>/<?=$serie->id;?>"><button type="button" class="btn btn-danger">Si</button></a>
+                              <button type="button" class="btn btn-default" data-dismiss="modal">no</button>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <!-- /.content -->
                   <!-- Modal Editar-->
                   <div id="edit<?=$key->id;?>" class="modal fade " role="dialog">
                      <div class="modal-dialog" style="margin-top:10vw;">
@@ -276,22 +292,7 @@
                         </div>
                      </div>
                   </div>
-                  <!-- Modal ELIMINAR -->
-                  <div id="delete<?=$key->id;?>" class="modal fade " role="dialog">
-                     <div class="modal-dialog" style="margin-top:10vw;">
-                        <!-- Modal content-->
-                        <div class="modal-content">
-                           <div class="modal-body text-center">
-                              <h3> ¿Esta Seguro que desea eliminar el capitulo numero: <b><?=$key->numero;?></b>?</h3>
-                           </div>
-                           <div class="modal-footer">
-                              <a href="<?=base_url();?>capitulo/eliminar_capitulo/<?=$key->id;?>/<?=$serie->id;?>"><button type="button" class="btn btn-danger">Si</button></a>
-                              <button type="button" class="btn btn-default" data-dismiss="modal">no</button>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-                  <!-- /.content -->
+                  
                </tr>
                <?php }  ?>  
             </tbody>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3306
--- Tiempo de generación: 01-09-2018 a las 17:25:55
+-- Tiempo de generación: 04-09-2018 a las 15:51:22
 -- Versión del servidor: 5.7.21
 -- Versión de PHP: 5.6.35
 
@@ -39,14 +39,32 @@ CREATE TABLE IF NOT EXISTS `capitulo` (
   `fecha_c` date NOT NULL,
   `fecha_m` date NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `capitulo`
 --
 
 INSERT INTO `capitulo` (`id`, `id_temporada`, `numero`, `nombre`, `duracion`, `fecha_estreno`, `fecha_c`, `fecha_m`) VALUES
-(4, 0, 97, 'Unde in consequuntur quia', '00:00:00.00000', '2018-04-15', '2018-09-01', '2018-09-01');
+(6, 8, 44, 'Eveniet magna sint eum mi', '00:00:42.00000', '1989-07-03', '2018-09-01', '2018-09-01');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `capitulo_video`
+--
+
+DROP TABLE IF EXISTS `capitulo_video`;
+CREATE TABLE IF NOT EXISTS `capitulo_video` (
+  `id` int(15) NOT NULL AUTO_INCREMENT,
+  `id_capitulo` int(15) NOT NULL,
+  `url_video` varchar(400) NOT NULL,
+  `tipo` varchar(2) NOT NULL,
+  `provedor` varchar(400) NOT NULL,
+  `fecha_c` date NOT NULL,
+  `fecha_m` date NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -127,6 +145,21 @@ INSERT INTO `serie` (`id`, `nombre`, `descripcion`, `dias`, `duracion`, `imagen`
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `series_destacadas`
+--
+
+DROP TABLE IF EXISTS `series_destacadas`;
+CREATE TABLE IF NOT EXISTS `series_destacadas` (
+  `id` int(15) NOT NULL AUTO_INCREMENT,
+  `id_serie` int(15) NOT NULL,
+  `fecha_c` date NOT NULL,
+  `fecha_m` date NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `serie_genero`
 --
 
@@ -162,14 +195,15 @@ CREATE TABLE IF NOT EXISTS `temporada` (
   `fecha_c` date NOT NULL,
   `fecha_m` date NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `temporada`
 --
 
 INSERT INTO `temporada` (`id`, `id_serie`, `numero`, `fecha_estreno`, `fecha_c`, `fecha_m`) VALUES
-(8, 3, 1, '2018-08-10', '2018-09-01', '2018-09-01');
+(9, 3, 1, '2018-09-13', '2018-09-01', '2018-09-01'),
+(8, 3, 2, '2018-08-10', '2018-09-01', '2018-09-01');
 
 -- --------------------------------------------------------
 
@@ -200,28 +234,9 @@ CREATE TABLE IF NOT EXISTS `user` (
 
 INSERT INTO `user` (`id`, `mail`, `nickname`, `pass`, `nombre`, `apellido`, `nacimiento`, `sexo`, `foto`, `tipo`, `fecha_c`, `fecha_m`) VALUES
 (1, 'sofiasinger19@gmail.com', '', '12345', 'sofia', 'singer', '1997-08-19', 'f', '', 0, '2018-08-18', '2018-08-26'),
-(2, 'rodriguez@hotmail.com', '', '123456', 'paola', 'rodriguez', '1998-12-16', 'F', '', 0, '2018-08-28', '2018-08-28'),
-(3, 'edwin.jme@gmail.com', 'eJme1992', '2664265', 'Edwin', 'Mogollon', '1992-07-10', 'M', '', 1, '2018-08-01', '2018-08-01'),
+(3, 'edwin.jme@gmail.com', 'eJme1992', '2664265', 'Edwin', 'Mogollon', '1992-07-10', 'M', '', 0, '2018-08-01', '2018-09-04'),
 (4, 'wilber@gmail.com', '', '12345', 'wilber', 'mendoza', '2018-09-21', 'M', '', 1, '2018-09-01', '2018-09-01'),
 (5, 'mitet@mailinator.com', '', 'Pa$$w0rd!', 'Deleniti consequuntur ducimus ', 'Alias illo officiis illum fugi', '1990-03-04', 'M', '', 0, '2018-09-01', '2018-09-01');
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `video_serie`
---
-
-DROP TABLE IF EXISTS `video_serie`;
-CREATE TABLE IF NOT EXISTS `video_serie` (
-  `id` int(15) NOT NULL AUTO_INCREMENT,
-  `id_capitulo` int(15) NOT NULL,
-  `url` varchar(400) NOT NULL,
-  `tipo` int(2) NOT NULL COMMENT 'Descarga/Online ',
-  `estado` int(2) NOT NULL COMMENT 'Activo/Inactivo',
-  `fecha_c` date NOT NULL,
-  `fecha_m` date NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
