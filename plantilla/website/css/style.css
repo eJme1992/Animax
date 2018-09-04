@@ -56,6 +56,7 @@ nav{
 }
 @media (min-width:960px){
     .font-s{display:none !important;}
+    #boton-menu{ display:none !important; }
 }
 
 /*footer Eloy */ 
