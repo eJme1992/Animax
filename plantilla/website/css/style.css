@@ -34,16 +34,28 @@ nav{
     color:#fff;
  
 }
+#boton-menu{ display:none; }
 .mostrar{ display: block !important; }
 /*Para ocultar y el responsive*/
 .font-s{ display: none; }
-@media (max-width:600px){
+@media (max-width:550px){
    .ocultar{display: none;}
     #buscar input{width:60%; display:inline;}
     .font-s{display:block;}
     #buscar .form-inline form{ width:100% !important; }
      #buscar .form-inline input{ width:60% !important; }
    .font-s{margin-bottom: 1.5em; margin-top:1em; }
+   #boton-menu{display: block;}
+}
+@media (min-width:551px) and (max-width:960px){
+    #buton-r{display:block;}
+    .font-s{display:block;}
+    #buscar{display:none;}
+    .mi-menu{ display:none; }
+    #boton-menu{display: block;}
+}
+@media (min-width:960px){
+    .font-s{display:none !important;}
 }
 
 /*footer Eloy */ 
