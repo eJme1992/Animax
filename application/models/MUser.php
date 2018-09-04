@@ -11,12 +11,30 @@ class MUser extends CI_Model {
 	}
 
 
-	 function editar_usuario($id, $mail, $nickname,  $nombre, $apellido, $nacimiento, $sexo,  $tipo)
+	 function editar_usuario($id, $mail, $nickname,$nombre, $apellido, $nacimiento, $sexo,  $tipo='0')
 	{    
-		
-		$fecha_m = date("Y-m-d");
-		$query = $this->db->query("UPDATE `user` Set mail ='$mail', nickname = '$nickname',  nombre = '$nombre', apellido = '$apellido', nacimiento = '$nacimiento', sexo = '$sexo', tipo = '$tipo', fecha_m = '$fecha_m' WHERE `user`.`id`='$id'");
-		return $query;
+
+
+		$query = $this->db->query("SELECT * FROM `user` WHERE mail='$mail'"); //Selecciona la variable que tiene que ser distinta. El que dice email es la celda
+        if ($query->num_rows() == 0) {  //Me pregunta si existe el email
+		    $fecha_m = date("Y-m-d");
+            $query = $this->db->query("UPDATE `user` Set mail ='$mail', nickname = '$nickname',  nombre = '$nombre', apellido = '$apellido', nacimiento = '$nacimiento', sexo = '$sexo', tipo = '$tipo', fecha_m = '$fecha_m' WHERE `user`.`id`='$id'");
+            return $query;
+		} else {
+           $query = $this->db->query("SELECT * FROM `user` WHERE id='$id'");
+           $c = $query->result(); 
+           $query = end($c); 
+           if ($query->mail== $mail){ 
+            $fecha_m = date("Y-m-d");
+            $query = $this->db->query("UPDATE `user` Set mail ='$mail', nickname = '$nickname',  nombre = '$nombre', apellido = '$apellido', nacimiento = '$nacimiento', sexo = '$sexo', tipo = '$tipo', fecha_m = '$fecha_m' WHERE `user`.`id`='$id'");
+            return $query;
+           }else{ 
+            $id = false;
+            return $id;
+        }
+        }
+
+       
 	}
 
 	function crear($nombre, $apellido, $mail, $nickname, $pass,   $nacimiento, $sexo,  $tipo)

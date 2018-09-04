@@ -35,7 +35,7 @@
             <th>Fecha de creación</th>
             <th>Fecha de modificación</th>
             <th>#</th>
-            <th>#</th>
+ 
          </tr>
       </thead>
       <tfoot>
@@ -65,14 +65,24 @@
             <td><?=$key->fecha_m;?></td>
             <td>
                <a href="<?=base_url();?>panel/viewserie/<?=$key->id;?>">
-                  <p data-placement="top" data-toggle="tooltip" title="Edit"><button class="btn btn-primary btn-xs"><i class="fa fa-eye" aria-hidden="true"></i>
+                  <button class="btn btn-primary btn-xs"><i class="fa fa-eye" aria-hidden="true"></i>
                      </button>
-                  </p>
+                  
                </a>
-
-                <button class="btn btn-danger btn-xs" data-title="destacada" data-toggle="modal" data-target="#delete<?=$key->id;?>" ><span class="glyphicon glyphicon-trash"></span></button>
+               <button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete<?=$key->id;?>" ><span class="glyphicon glyphicon-trash"></span></button><br>
+                
+                
+                <?php 
+                $var = false;
+                foreach ($destacadas as $key2 ) { 
+                if ($key->id == $key2->id_serie) {
+                  $var = $key2->id;
+                }                   
+                } ?>
+                <a href="<?php if($var==false){ echo base_url().'Destacadas/crear/'.$key->id;}else{echo base_url().'Destacadas/eliminar/'.$var;}?>">
+                <button class="btn btn-default btn-xs" <?php if($var!=false){ echo 'style="background-color:#CAE898";color:#FCFC25;';}?> data-title="destacada"><i class="fa fa-star" aria-hidden="true"></i>
+                <?php if($var==false){ echo 'Destacar';}else{echo 'Destacada';} ?></button></a>
            
-               <button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete<?=$key->id;?>" ><span class="glyphicon glyphicon-trash"></span></button>
             </td>
             <!-- Modal Editar-->
             <!-- /.content -->

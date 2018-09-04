@@ -35,7 +35,9 @@ class Panel extends CI_Controller {
     public function series()
     {
         $this->load->model('Mserie'); // Carga el modelo de categorías 
+        $this->load->model('MDestacadas'); // Carga el modelo de categorías 
         $DATOS['series'] = $this->Mserie->lista();// consulta categorías existente  
+        $DATOS['destacadas'] = $this->MDestacadas->lista();
         // SEGURIDAS
         $csrf = array(
         'name' => $this->security->get_csrf_token_name(),
@@ -137,8 +139,7 @@ class Panel extends CI_Controller {
         'hash' => $this->security->get_csrf_hash()
         );
         $DATOS['csrf'] = $csrf;
-
-        $this->load->view('panel/secciones/user',$DATOS);
+        $this->load->view('panel/secciones/useredit',$DATOS);
         $this->load->view('panel/footer'); 
     }
  
@@ -152,7 +153,6 @@ class Panel extends CI_Controller {
         'hash' => $this->security->get_csrf_hash()
         );
         $DATOS['csrf'] = $csrf;
-
         $this->load->view('panel/secciones/usuarios',$DATOS);
         $this->load->view('panel/footer'); 
     }
@@ -167,20 +167,17 @@ class Panel extends CI_Controller {
         'hash' => $this->security->get_csrf_hash()
         );
         $DATOS['csrf'] = $csrf;
-
         $this->load->view('panel/secciones/user',$DATOS);
         $this->load->view('panel/footer'); 
     }
 
     public function nuevo_usuario()
-    {   
-        
+    {       
         $csrf = array(
         'name' => $this->security->get_csrf_token_name(),
         'hash' => $this->security->get_csrf_hash()
         );
         $DATOS['csrf'] = $csrf;
-
         $this->load->view('panel/secciones/newuser',$DATOS);
         $this->load->view('panel/footer'); 
     }

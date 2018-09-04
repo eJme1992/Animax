@@ -107,7 +107,7 @@ desired effect
                        <?php if($user->foto==''){ ?>
             <img src="<?=base_url();?>plantilla/panel/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
            <?php }else{ ?>
-            <img src="<?=$user->foto;?>" class="img-circle" alt="User Image">
+            <img src="<?=base_url().$user->foto;?>" class="img-circle" alt="User Image">
            <?php } ?>
                       </div>
                       <!-- Message title and timestamp -->
@@ -161,7 +161,7 @@ desired effect
              <?php if($user->foto==''){ ?>
             <img src="<?=base_url();?>plantilla/panel/dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
            <?php }else{ ?>
-            <img src="<?=$user->foto;?>" class="user-image" alt="User Image">
+            <img src="<?=base_url().$user->foto;?>" class="user-image" alt="User Image">
            <?php } ?>
               <!-- hidden-xs hides the username on small devices so only the image appears. -->
               <span class="hidden-xs"><?=$user->nombre;?> <?=$user->apellido;?></span>
@@ -172,7 +172,7 @@ desired effect
                 <?php if($user->foto==''){ ?>
             <img src="<?=base_url();?>plantilla/panel/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
            <?php }else{ ?>
-            <img src="<?=$user->foto;?>" class="img-circle" alt="User Image">
+            <img src="<?=base_url().$user->foto;?>" class="img-circle" alt="User Image">
            <?php } ?>
 
                 <p>
@@ -213,7 +213,7 @@ desired effect
           <?php if($user->foto==''){ ?>
             <img src="<?=base_url();?>plantilla/panel/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
            <?php }else{ ?>
-            <img src="<?=$user->foto;?>" class="img-circle" alt="User Image">
+            <img src="<?=base_url().$user->foto;?>" class="img-circle" alt="User Image">
            <?php } ?>
         </div>
         <div class="pull-left info">

@@ -5,44 +5,27 @@ class Destacadas extends CI_Controller
     public function __construct()
     {
         parent::__construct();
-        $this->load->model('Mdestacada');
+        $this->load->model('MDestacadas');
         $this->load->library('session');
     }
     
 
-     public function eliminar_destacada($id)
+     public function eliminar($id)
     {
-        $var = $this->Mdestacada->eliminar($id);// consulta destacadas existente 
+        $var = $this->MDestacadas->eliminar($id);// consulta destacadas existente 
         if ($var == true) {
-         header("Location:" . base_url() . "panel/destacadas");
+         header("Location:" . base_url() . "panel/series");
          exit; 
         }
     }
 
-       public function editar_destacada()
-    {
-        $id = $this->input->post('id');       
-        $var = $this->Mdestacada->editar($id);// 
-        if ($var != false) { 
-              $response['status'] = 'ok';
-              $response['code']   = "Edición hecha correctamente recargue la pagina para actualizar la tabla";
-        }else{
-               $response['status'] = 0;
-               $response['error']  = 'No se edito correctamente';
-        }
-        echo json_encode($response); 
-    }
-
-       public function crear_destacada($id)
+     
+       public function crear($id)
     {        
-        $var = $this->Mdestacada->crear($id);// 
-        if ($var != false) { 
-                $response['status'] = 'ok';
-                $response['code'] = "La destacada ha sido creada de forma";
-        }else{
-                $response['status'] = 0;
-                $response['error'] = "Ya existe una destacada con este nombre";
+        $var = $this->MDestacadas->crear($id);// 
+        if ($var == true) {
+         header("Location:" . base_url() . "panel/series");
+         exit; 
         }
-        echo json_encode($response);
-    }
+      }
 }
