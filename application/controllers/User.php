@@ -69,6 +69,7 @@ class User extends CI_Controller
         $id         = $this->input->post('id');      
         $nickname   = $this->input->post('nickname');
         $var = $this->MUser->editar_usuario($id,$nickname);
+        if ($var != false) {
             $response['status'] = 'ok';
             $response['code']   = "Datos editados exitosamente";
         } else {
