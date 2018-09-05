@@ -33,6 +33,15 @@ class Perfil extends CI_Controller {
      
 
     }
+    public function usuario($id){
+            $this->load->model('MUser'); // Carga el modelo de usuario 
+        $DATOS['user'] = $this->MUser->perfil($id);// Trae datos del perfil
+        // SEGURIDAS
+        $csrf = array(
+        'name' => $this->security->get_csrf_token_name(),
+        'hash' => $this->security->get_csrf_hash()
+        );
+    }
 
 
 

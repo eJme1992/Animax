@@ -4,38 +4,38 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class MMenu extends CI_Model {
 
 
-	function lista($id)
+	function lista()
 	{    
-		$query = $this->db->query("SELECT * FROM `menu` WHERE id_menus='$id'");
+		$query = $this->db->query("SELECT * FROM `st_menu` ");
+		return $query->result();
+	}
+	function menus()
+	{    
+		$query = $this->db->query("SELECT * FROM `st_menus` ");
 		return $query->result();
 	}
 
 	 function eliminar($id)
 	{    
-		$query = $this->db->query("DELETE FROM `menu` WHERE id='$id'");
+		$query = $this->db->query("DELETE FROM `st_menu` WHERE id='$id'");
 		return $query;
 	}
 
-	 function editar($nombre,$id)
+	 function editar($id,$nombre, $url, $id_menus,$posicion)
 	{    
 		
 		$fecha_m = date("Y-m-d");
-		$query = $this->db->query("UPDATE `menu` Set nombre='$nombre', fecha_m='$fecha_m' WHERE `menus`.`id`='$id'");
+		$query = $this->db->query("UPDATE `st_menu` Set nombre='$nombre', url='$url', id_menus='$id_menus', posicion='$posicion' WHERE `menus`.`id`='$id'");
 		return $query;
 	}
 
-	 function crear($nombre)
+	 function crear_menu($nombre, $url, $id_menus,$posicion)
 	{    
-		$query = $this->db->query("SELECT * FROM `menu` WHERE nombre='$nombre'");
+		$query = $this->db->query("SELECT * FROM `st_menu` WHERE nombre='$nombre'");
         if ($query->num_rows() == 0) {
-        	$fecha_c = $fecha_m = date("Y-m-d"); // agarra las fechas
-            $query = $this->db->query("INSERT INTO `menus` (`nombre`, `fecha_c`, `fecha_m`) VALUES ('$nombre','$fecha_c','$fecha_m')");
-            if ($query == true) {
-                $id = $this->db->insert_id();
-                return $id; // 0
-            } else {
-                return false;
-            }
+            $query = $this->db->query("INSERT INTO `st_menu` (`id`, `id_menus`, `nombre`, `url`, `posicion`) VALUES (NULL,'$id_menus', '$nombre','$url','$posicion')");
+        
+        	return $query;
         } else {
             $id = false;
             return $id;
