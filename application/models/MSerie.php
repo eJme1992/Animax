@@ -56,6 +56,14 @@ class Mserie extends CI_Model {
         }
 	}
 
+	 function listades($LIMIT='2')
+	{    
+		//if ($id==false){$var='';}else{$var="";}
+		    $query = $this->db->query("SELECT * FROM `series_destacadas` INNER JOIN serie ON serie.id=series_destacadas.id_serie LIMIT $LIMIT");
+		return $query->result();
+	}
+
+
     function setgenero($datos) {
         $this->db->insert('serie_genero', $datos);
     }

@@ -50,10 +50,8 @@
 
          <div class="col-md-7">
             <div class="row">
-              <?php foreach ($capitulo as $key){?>
-                 
-            
-               <div class="col-sm-4">
+              <?php foreach ($capitulo as $key){?> 
+               <div class="col-sm-4" id="cap">
                   <div class="card">
                   <a href="#" data-toggle="tooltip" title="<?=$key->name;?> <?=$key->temporada;?>-<?=$key->numero;?>"> <img src="<?=base_url().$key->imagen2;?>" class="img-fluid cap-es"></a>
                   <span class="span Capi">
@@ -64,31 +62,39 @@
                   </span>
                   </div>
                </div>
-                <?php } ?>
-
-                  
-
-
-             
+                <?php } ?>             
             </div>
          </div>
          
          <!--Diva para la barra lateral 3-->
          <div class="col-md-9 row">
-          
-         <div class="col-sm-4">
-            
-
-         </div>
+          <div class="col-md-12">
+         <h2>SERIES DESTACAS</h2>
+          </div>
+              <?php foreach ($series as $key){?> 
+               <div class="col-sm-4" id='destacadas'>
+                  <div class="card">
+                  <a href="#" data-toggle="tooltip" title="<?=$key->nombre;?>"> <img src="<?=base_url().$key->imagen;?>" class="img-fluid tem-es"></a>
+                  <span class="span Capi">
+                     DESTACA <i class="fas fa-star"></i></i>
+                  </span>
+                  <span class="Title">
+                    <?=$key->nombre;?> 
+                  </span>
+                  </div>
+               </div>
+                <?php } ?>             
+         
 
 
          </div>
          <div class="col-md-3">
             <div class="col-md-12">
-               <h3 class="sub-t" style='text-align:center;'>Noticias</h3>
+               <h2 class="sub-t" style='text-align:center;'>NOTICIAS</h2>
             </div>
             <a href="#"> <img src="<?=base_url();?>plantilla/website/img/jp.jpg" class="img-fluid"></a>
          </div>
+
       </div>
    </div>
 </section>

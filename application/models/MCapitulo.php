@@ -12,11 +12,10 @@ class MCapitulo extends CI_Model {
 		return $query->result();
 	}
 
-	 function listacap()
+	 function listacap($LIMIT='2')
 	{    
-
 		//if ($id==false){$var='';}else{$var="";}
-		    $query = $this->db->query("SELECT capitulo.id as 'id', id_temporada, capitulo.numero as 'numero', capitulo.nombre as 'nombre', capitulo.duracion, capitulo.fecha_estreno, capitulo.fecha_m, temporada.numero as 'temporada', serie.imagen, serie.imagen2,serie.nombre as 'name' FROM `capitulo` INNER JOIN temporada ON temporada.id=capitulo.id_temporada INNER JOIN serie ON serie.id=temporada.id_serie ");
+		    $query = $this->db->query("SELECT capitulo.id as 'id', id_temporada, capitulo.numero as 'numero', capitulo.nombre as 'nombre', capitulo.duracion, capitulo.fecha_estreno, capitulo.fecha_m, temporada.numero as 'temporada', serie.imagen, serie.imagen2,serie.nombre as 'name' FROM `capitulo` INNER JOIN temporada ON temporada.id=capitulo.id_temporada INNER JOIN serie ON serie.id=temporada.id_serie LIMIT $LIMIT");
 		return $query->result();
 	}
 

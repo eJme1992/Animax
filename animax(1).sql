@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3306
--- Tiempo de generación: 05-09-2018 a las 00:57:50
+-- Tiempo de generación: 05-09-2018 a las 23:02:50
 -- Versión del servidor: 5.7.21
 -- Versión de PHP: 5.6.35
 
@@ -39,14 +39,19 @@ CREATE TABLE IF NOT EXISTS `capitulo` (
   `fecha_c` date NOT NULL,
   `fecha_m` date NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `capitulo`
 --
 
 INSERT INTO `capitulo` (`id`, `id_temporada`, `numero`, `nombre`, `duracion`, `fecha_estreno`, `fecha_c`, `fecha_m`) VALUES
-(6, 8, 44, 'Eveniet magna sint eum mi', '00:00:42.00000', '1989-07-03', '2018-09-01', '2018-09-01');
+(7, 10, 1, 'Fullmetal Alchemist: Brot', '00:00:40.00000', '2018-09-05', '2018-09-05', '2018-09-05'),
+(6, 8, 44, 'Eveniet magna sint eum mi', '00:00:42.00000', '1989-07-03', '2018-09-01', '2018-09-01'),
+(8, 11, 1, 'Shingeki no Kyojin', '00:00:30.00000', '2018-09-20', '2018-09-05', '2018-09-05'),
+(9, 12, 33, 'Dolorem modi qui praesent', '00:00:02.00000', '2003-11-14', '2018-09-05', '2018-09-05'),
+(10, 13, 48, 'Dolorum cupidatat et mole', '00:00:00.00000', '1980-10-22', '2018-09-05', '2018-09-05'),
+(11, 14, 82, 'Non quo laboriosam tempor', '00:00:32.00000', '1987-05-05', '2018-09-05', '2018-09-05');
 
 -- --------------------------------------------------------
 
@@ -126,6 +131,7 @@ CREATE TABLE IF NOT EXISTS `serie` (
   `dias` varchar(15) NOT NULL,
   `duracion` varchar(15) NOT NULL,
   `imagen` varchar(400) NOT NULL,
+  `imagen2` varchar(200) NOT NULL,
   `categoria` varchar(15) NOT NULL,
   `estado` varchar(15) NOT NULL,
   `tipo` int(2) NOT NULL,
@@ -133,14 +139,19 @@ CREATE TABLE IF NOT EXISTS `serie` (
   `fecha_c` date NOT NULL,
   `fecha_m` date NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `serie`
 --
 
-INSERT INTO `serie` (`id`, `nombre`, `descripcion`, `dias`, `duracion`, `imagen`, `categoria`, `estado`, `tipo`, `estreno`, `fecha_c`, `fecha_m`) VALUES
-(3, 'Naturo', 'DDD', 'Viernes', '2omin', 'file/img/img2018_09_04_10.jpg', 'Anime', 'Por estrenar', 0, '2018-08-08', '2018-09-01', '2018-09-04');
+INSERT INTO `serie` (`id`, `nombre`, `descripcion`, `dias`, `duracion`, `imagen`, `imagen2`, `categoria`, `estado`, `tipo`, `estreno`, `fecha_c`, `fecha_m`) VALUES
+(3, 'Naturo', 'DDD', 'Viernes', '2omin', 'file/img/img2018_09_04_10.jpg', 'file/img/img2018_09_05_12.jpg', 'Anime', 'Por estrenar', 0, '2018-08-08', '2018-09-01', '2018-09-05'),
+(4, 'Fullmetal Alchemist: Brotherho', '<p>Fullmetal Alchemist: Brotherhood es la segunda serie de anime de la franquicia Fullmetal Alchemist, no obstante el título de esta serie continúa siendo «Fullmetal Alchemist» en la versión japonesa.</p>', 'Sin precisar', '40min', 'file/img/img2018_09_05_22.jpg', 'file/img/img2018_09_05_11.jpg', 'Anime', 'Finalizada', 0, '2009-04-05', '2018-09-05', '2018-09-05'),
+(5, 'Shingeki no Kyojin', '<p><i><strong>Shingeki no Kyojin </strong></i>(????? <i>Shingeki no Kyojin</i><a href=\"https://es.wikipedia.org/wiki/Ayuda:Idioma_japon%C3%A9s\">?</a>), conocida en inglés como <i><strong>Attack on Titan</strong></i> y en <a href=\"https://es.wikipedia.org/wiki/Idioma_espa%C3%B1ol\">habla hispana</a> como <i><strong>Ataque a los titanes</strong></i>', 'Domingo', '20min', 'file/img/img2018_09_05_53.jpg', 'file/img/img2018_09_05_02.jpeg', 'Anime', 'En emisión', 0, '2018-09-01', '2018-09-05', '2018-09-05'),
+(6, 'Dragon Ball Super', '<p>El dios de la Destrucción ha despertado, y se está dedicando a aniquilar planetas y acaba de descubrir la Tierra. Cuando lo descubre, el guerrero Goku pide ayuda de sus amigos para convertirse en un legendario Super Saiyajin y poder derrotarlo.</p>', 'Lunes', '20min', 'file/img/img2018_09_05_42.jpg', 'file/img/img2018_09_05_46.jpg', 'Anime', 'En emisión', 0, '2018-09-06', '2018-09-05', '2018-09-05'),
+(7, 'Tokyo Ghoul', '<p>Tokyo Ghoul es una serie de manga japonesa escrita e ilustrada por Sui Ishida, serializada en la revista seinen Young Jump, con entrega semanal desde septiembre del 2011. Compilado en 14 volúmenes a partir de junio del 2014.</p>', 'Sin precisar', '20min', 'file/img/img2018_09_05_02.jpg', 'file/img/img2018_09_05_14.jpeg', 'Anime', 'Finalizada', 0, '1192-08-10', '2018-09-05', '2018-09-05'),
+(8, 'Death note', '<p>Death Note es una serie de manga escrita por Tsugumi ?ba e ilustrada por Takeshi Obata, y cuya adaptación al anime fue dirigida por Tetsur? Araki. Cuenta, además, con varias películas y videojuegos.</p>', 'Sin precisar', '30min', 'file/img/img2018_09_05_32.jpg', 'file/img/img2018_09_05_26.jpg', 'Anime', 'Finalizada', 0, '2018-09-05', '2018-09-05', '2018-09-05');
 
 -- --------------------------------------------------------
 
@@ -155,14 +166,16 @@ CREATE TABLE IF NOT EXISTS `series_destacadas` (
   `fecha_c` date NOT NULL,
   `fecha_m` date NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `series_destacadas`
 --
 
 INSERT INTO `series_destacadas` (`id`, `id_serie`, `fecha_c`, `fecha_m`) VALUES
-(3, 3, '2018-09-04', '2018-09-04');
+(3, 3, '2018-09-04', '2018-09-04'),
+(4, 5, '2018-09-05', '2018-09-05'),
+(5, 8, '2018-09-05', '2018-09-05');
 
 -- --------------------------------------------------------
 
@@ -176,7 +189,7 @@ CREATE TABLE IF NOT EXISTS `serie_genero` (
   `id_serie` int(15) NOT NULL,
   `id_genero` int(15) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `serie_genero`
@@ -185,7 +198,12 @@ CREATE TABLE IF NOT EXISTS `serie_genero` (
 INSERT INTO `serie_genero` (`id`, `id_serie`, `id_genero`) VALUES
 (1, 1, 1),
 (2, 2, 3),
-(3, 3, 3);
+(3, 3, 3),
+(4, 4, 3),
+(5, 5, 3),
+(6, 6, 3),
+(7, 7, 3),
+(8, 8, 3);
 
 -- --------------------------------------------------------
 
@@ -204,7 +222,14 @@ CREATE TABLE IF NOT EXISTS `st_datos` (
   `correo` varchar(40) NOT NULL,
   `telefono` varchar(9) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `st_datos`
+--
+
+INSERT INTO `st_datos` (`id`, `nombre`, `descripcion`, `logo`, `logo2`, `icon`, `correo`, `telefono`) VALUES
+(1, 'Animex', 'Animex', '', '', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -220,7 +245,14 @@ CREATE TABLE IF NOT EXISTS `st_menu` (
   `url` varchar(200) NOT NULL,
   `posicion` int(20) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `st_menu`
+--
+
+INSERT INTO `st_menu` (`id`, `id_menus`, `nombre`, `url`, `posicion`) VALUES
+(1, '1', 'inicio', 'wwww', 1);
 
 -- --------------------------------------------------------
 
@@ -259,15 +291,20 @@ CREATE TABLE IF NOT EXISTS `temporada` (
   `fecha_c` date NOT NULL,
   `fecha_m` date NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=15 DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `temporada`
 --
 
 INSERT INTO `temporada` (`id`, `id_serie`, `numero`, `fecha_estreno`, `fecha_c`, `fecha_m`) VALUES
+(11, 5, 3, '2018-09-05', '2018-09-05', '2018-09-05'),
+(10, 4, 1, '2018-09-01', '2018-09-05', '2018-09-05'),
 (9, 3, 1, '2018-09-13', '2018-09-01', '2018-09-01'),
-(8, 3, 2, '2018-08-10', '2018-09-01', '2018-09-01');
+(12, 8, 1, '1993-03-20', '2018-09-05', '2018-09-05'),
+(8, 3, 2, '2018-08-10', '2018-09-01', '2018-09-01'),
+(13, 7, 1, '2018-09-21', '2018-09-05', '2018-09-05'),
+(14, 6, 2, '2018-09-16', '2018-09-05', '2018-09-05');
 
 -- --------------------------------------------------------
 
@@ -298,7 +335,7 @@ CREATE TABLE IF NOT EXISTS `user` (
 
 INSERT INTO `user` (`id`, `mail`, `nickname`, `pass`, `nombre`, `apellido`, `nacimiento`, `sexo`, `foto`, `tipo`, `fecha_c`, `fecha_m`) VALUES
 (1, 'sofiasinger19@gmail.com', '', '12345', 'sofia', 'singer', '1997-08-19', 'f', '', 0, '2018-08-18', '2018-08-26'),
-(3, 'edwin.jme@gmail.com', 'JHOO', '2664265', 'Edwin Jose', 'Mogollon E.', '1992-07-10', 'M', 'file/img/img2018_09_05_49.jpg', 0, '2018-08-01', '2018-09-05'),
+(3, 'edwin.jme@gmail.com', 'JHOO', '2664265', 'Edwin Jose', 'Mogollon E.', '1992-07-10', 'M', 'file/img/img2018_09_05_49.jpg', 1, '2018-08-01', '2018-09-05'),
 (4, 'wilber@gmail.com', '', '12345', 'wilber', 'mendoza', '2018-09-21', 'M', '', 1, '2018-09-01', '2018-09-01');
 COMMIT;
 

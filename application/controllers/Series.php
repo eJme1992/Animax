@@ -10,6 +10,7 @@ class series extends CI_Controller
         $this->load->model('MFunctionsg'); // CARGA LAS FUNCIONES GENERALES PARA EL PANEL
         
     }
+  
     
     
     public function eliminar_serie($id)
