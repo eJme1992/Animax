@@ -73,5 +73,13 @@ a, a:hover, a:focus {
 .change-p{
     margin-bottom:2.5em;
 }
-.btn-cargar{ width:50% !important; background-color: #6633CC !important; color:#fff; font-size:1.5em; line-height: 1.5;}
+.btn-cargar{ width:60% !important; background-color: #6633CC !important; 
+    color:#fff; 
+    font-size:1.5em; 
+    line-height: 1.5;
+    margin-bottom: 1em;
+}
 .fa-angle-right{ color:#fff; font-size: 1.5em; }
+.fa-users-cog{color:#82C91E;}
+.fa-user-lock{color:#f3c200;}
+.subt-editar{color:#000; text-align: center; font-size: 1.5em; padding-top: 1em; 
