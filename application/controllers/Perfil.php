@@ -22,67 +22,26 @@ class Perfil extends CI_Controller {
 		$this->load->view('perfil/perfil'); //Mi carpeta perfil archivo perfil
 	}
     
-    // **SERIES**
-	public function newserie()
-	{
-		$this->load->model('MCategoria'); // Carga el modelo de categorías 
-        $DATOS['categorias'] = $this->MCategoria->lista();// consulta categorías existente   	
-        $this->load->view('panel/secciones/newserie', $DATOS );
-		$this->load->view('panel/footer'); 
-	}
-
-
-     public function categorias()
-	{
-		$this->load->model('MCategoria'); // Carga el modelo de categorías 
-        $DATOS['categorias'] = $this->MCategoria->lista();// consulta categorías existente  
-        // SEGURIDAS
-        $csrf = array(
-        'name' => $this->security->get_csrf_token_name(),
-        'hash' => $this->security->get_csrf_hash()
-        );
-        $DATOS['csrf'] = $csrf;
-
-        $this->load->view('panel/secciones/categorias',$DATOS);
-		$this->load->view('panel/footer'); 
-	}
-
-	  public function generos()
-	{
-		$this->load->model('MGenero'); // Carga el modelo de categorías 
-        $DATOS['generos'] = $this->MGenero->lista();// consulta categorías existente  
-        // SEGURIDAS
-        $csrf = array(
-        'name' => $this->security->get_csrf_token_name(),
-        'hash' => $this->security->get_csrf_hash()
-        );
-        $DATOS['csrf'] = $csrf;
-
-        $this->load->view('panel/secciones/generos',$DATOS);
-		$this->load->view('panel/footer'); 
-	}
-
-          public function series()
-    {
-        $this->load->model('Mserie'); // Carga el modelo de categorías 
-        $DATOS['series'] = $this->Mserie->lista();// consulta categorías existente  
-        // SEGURIDAS
-        $csrf = array(
-        'name' => $this->security->get_csrf_token_name(),
-        'hash' => $this->security->get_csrf_hash()
-        );
-        $DATOS['csrf'] = $csrf;
-
-        $this->load->view('panel/secciones/series',$DATOS);
-        $this->load->view('panel/footer'); 
-    }
   public function salir() {
         session_destroy();
         echo "<script>location.href ='" . base_url() . "';</script>";
     }
 	  
 
+    public function editar(){
+        $this->load->view('perfil/editar');
+     
 
+    }
+    public function usuario($id){
+            $this->load->model('MUser'); // Carga el modelo de usuario 
+        $DATOS['user'] = $this->MUser->perfil($id);// Trae datos del perfil
+        // SEGURIDAS
+        $csrf = array(
+        'name' => $this->security->get_csrf_token_name(),
+        'hash' => $this->security->get_csrf_hash()
+        );
+    }
 
 
 

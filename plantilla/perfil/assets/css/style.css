@@ -45,6 +45,8 @@ a, a:hover, a:focus {
 .fa-tv{ color:#ff8000;}
 .fa-youtube{color:#ff0000;}
 .fa-heart{color:#ff00ff;}
+.fa-power-off{color:#FF3300;}
+.fa-user-edit{color:#2b589b;}
 .user-name{
     color:#000;
     position:relative;
@@ -54,10 +56,20 @@ a, a:hover, a:focus {
 }
 .level{
     float:right;
-    width:30%;
+    width:25%;
     text-align:right;
 }
 #second-nav{
     margin-bottom:3em;
 }
 .col-md-4{ margin-bottom:1em;}
+/*Para la page de editar*/
+.user-titulo{
+    text-align:left;
+    margin-top: 2em !important;
+    margin-bottom: 1em;
+    font-size: 1.5em;
+}
+.change-p{
+    margin-bottom:1.5em;
+}

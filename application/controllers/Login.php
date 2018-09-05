@@ -28,7 +28,7 @@ class Login extends CI_Controller
             $consultas = $this->MLogin->consultar($usuario);
             $consulta  = end($consultas); //funcion que me trae el ultimo registro de la consulta
             if ($consulta != false) {
-                if ($consulta->pass == $password) //pass celda en bd {
+                if ($consulta->pass == $password){ //pass celda en bd {
                     $data_login = array('id'        => $consulta,
                                         'tipo'      => $consulta->tipo, 
                                         'login'     => TRUE); 
@@ -45,6 +45,7 @@ class Login extends CI_Controller
             }
             echo json_encode($response);
         }
+    }
     
     public function registrar(){
               $this->load->model('MUser');//Para cargar el Modelo user include
