@@ -17,7 +17,14 @@ class Home extends CI_Controller
     // **PAGINA DE INICIO DEL HOME**
 	public function index()
 	{	
-        $this->load->view('website/cuerpo-home');
+
+        $this->load->model('Mserie'); // Carga el modelo de categorías 
+        $this->load->model('MCategoria'); // Carga el modelo de categorías 
+        $this->load->model('MGenero'); // Carga el modelo de categorías
+        $this->load->model('MTemporada'); // Carga el modelo de categorías  
+        $this->load->model('MCapitulo'); // Carga el modelo de categorías  
+        $DATOS['capitulo'] = $this->MCapitulo->listacap();
+        $this->load->view('website/cuerpo-home',$DATOS);
         $this->load->view('website/footer');
 	}
  

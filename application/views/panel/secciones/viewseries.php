@@ -100,6 +100,7 @@
             <img src="<?=base_url().$serie->imagen;?>" class="img-responsive">
             <form id="seriesimagen" onsubmit="realizaProceso2();return false; ">
                <input type="file" name="imagen" id="imagen" class="form-control" required="">
+               <input type="hidden" name="lugar" id="lugar" value=""/>
                <input type="hidden" name="id" id="id" value="<?=$serie->id;?>" />
                <input type="hidden" name="<?=$csrf['name'];?>" value="<?=$csrf['hash'];?>" />
                <div class="col-md-12" id="resultado2"></div>
@@ -117,6 +118,15 @@
             <p><?=$serie->descripcion;?></p>
          </div>
          <div class="col-md-2">
+            <img src="<?=base_url().$serie->imagen2;?>" class="img-responsive">
+            <form id="seriesimagens" onsubmit="realizaProcesoimgs();return false; ">
+               <input type="file" name="imagen" id="imagen" class="form-control" required="">
+               <input type="hidden" name="id" id="id" value="<?=$serie->id;?>" />
+               <input type="hidden" name="lugar" id="lugar" value="2"/>
+               <input type="hidden" name="<?=$csrf['name'];?>" value="<?=$csrf['hash'];?>" />
+               <div class="col-md-12" id="resultadoimgs"></div>
+               <button type="submit" name="enviar" class="form-control">Editar</button>
+            </form>
          </div>
          <div class="col-md-8">
             <div class="btn-group">
@@ -483,6 +493,46 @@
          window.location.href ='<?=base_url();?>panel/viewserie/<?=$serie->id;?>';
         }else{
         $("#resultado2").html('<div class="alert alert-danger"><strong>ERROR!</strong>'+data.error+'</div>');
+        }
+      })
+            .fail(function(jqXHR, textStatus, errorThrown) {
+              var getErr = jqXHR.responseText;
+              
+              console.log(getErr);
+      
+            })
+       // Fin de ajax
+       } else {
+           swal("¡Error! ", msj, "error");
+       }
+       };
+</script>
+
+<script>  
+   function realizaProcesoimgs() {
+       var msj = '1';
+      //validaciones con js
+      
+     if (msj === "1") {
+      var formData = new FormData(jQuery('#seriesimagens') [0]);
+      jQuery.ajax({
+        url: '<?=base_url();?>series/editar_imagen',
+        type: 'POST',
+        contentType: false,
+        processData: false,
+        dataType: 'json',
+        data: formData,
+        beforeSend: function() {
+          $("#resultadoimgs").html('<div class="alert alert-success">Procesando...!</div>');
+        }
+      })
+      .done(function(data, textStatus, jqXHR) {
+         var getData = jqXHR.responseJSON; // dejar esta linea
+        if(data.status=='ok'){
+         $("#resultadoimgs").html('<div class="alert alert-success">'+data.code+'</div>');
+         window.location.href ='<?=base_url();?>panel/viewserie/<?=$serie->id;?>';
+        }else{
+        $("#resultadoimgs").html('<div class="alert alert-danger"><strong>ERROR!</strong>'+data.error+'</div>');
         }
       })
             .fail(function(jqXHR, textStatus, errorThrown) {

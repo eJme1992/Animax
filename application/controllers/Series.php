@@ -40,6 +40,7 @@ class series extends CI_Controller
     {
         $id        = $this->input->post('id');
         $imagen    = $_FILES['imagen'];
+        $lugar        = $this->input->post('lugar');
         //guardar fotos
         $mensaje   = '';
         $imagenurl = $this->MFunctionsg->archivo($imagen, $mensaje, 'img', 'img');
@@ -47,7 +48,7 @@ class series extends CI_Controller
         
         if ($imagenurl != false) {
             
-            $var = $this->Mserie->editarimg($imagenurl, $id); // 
+            $var = $this->Mserie->editarimg($imagenurl,$id,$lugar); // 
             if ($var != false) {
                 $response['status'] = 'ok';
                 $response['code']   = "Edición hecha correctamente recargue la pagina para actualizar la tabla";

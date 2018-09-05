@@ -50,86 +50,38 @@
 
          <div class="col-md-7">
             <div class="row">
+              <?php foreach ($capitulo as $key){?>
+                 
+            
                <div class="col-sm-4">
                   <div class="card">
-                  <a href="#"> <img src="<?=base_url();?>plantilla/website/img/15.jpg" class="img-fluid cap-es"></a>
+                  <a href="#" data-toggle="tooltip" title="<?=$key->name;?> <?=$key->temporada;?>-<?=$key->numero;?>"> <img src="<?=base_url().$key->imagen2;?>" class="img-fluid cap-es"></a>
                   <span class="span Capi">
-                     Extreno
+                     <b>Temp:</b><?=$key->temporada;?>-<b>Cap:</b><?=$key->numero;?> <i class="far fa-clock"></i>
                   </span>
                   <span class="Title">
-                    Nombre
+                    <?=$key->name;?> 
                   </span>
                   </div>
                </div>
+                <?php } ?>
 
-                   <div class="col-sm-4">
-                  <div class="card">
-                  <a href="#"> <img src="<?=base_url();?>plantilla/website/img/15.jpg" class="img-fluid cap-es"></a>
-                  <span class="span Capi">
-                     Extreno
-                  </span>
-                  <span class="Title">
-                    Nombre
-                  </span>
-                  </div>
-               </div>
+                  
 
-                   <div class="col-sm-4">
-                  <div class="card">
-                  <a href="#"> <img src="<?=base_url();?>plantilla/website/img/15.jpg" class="img-fluid cap-es"></a>
-                  <span class="span Capi">
-                     Extreno
-                  </span>
-                  <span class="Title">
-                    Nombre
-                  </span>
-                  </div>
-               </div>
 
-                   <div class="col-sm-4">
-                  <div class="card">
-                  <a href="#"> <img src="<?=base_url();?>plantilla/website/img/15.jpg" class="img-fluid cap-es"></a>
-                  <span class="span Capi">
-                     Extreno
-                  </span>
-                  <span class="Title">
-                    Nombre
-                  </span>
-                  </div>
-               </div>
-
-                   <div class="col-sm-4">
-                  <div class="card">
-                  <a href="#"> <img src="<?=base_url();?>plantilla/website/img/15.jpg" class="img-fluid cap-es"></a>
-                  <span class="span Capi">
-                     Extreno
-                  </span>
-                  <span class="Title">
-                    Nombre
-                  </span>
-                  </div>
-               </div>
-
-                   <div class="col-sm-4">
-                  <div class="card">
-                  <a href="#"> <img src="<?=base_url();?>plantilla/website/img/15.jpg" class="img-fluid cap-es"></a>
-                  <span class="span Capi">
-                     Extreno
-                  </span>
-                  <span class="Title">
-                    Nombre
-                  </span>
-                  </div>
-               </div>
-
-               
              
             </div>
          </div>
          
          <!--Diva para la barra lateral 3-->
-         <div class="col-md-9">
-          d  
+         <div class="col-md-9 row">
+          
+         <div class="col-sm-4">
+            
+
+         </div>
+
+
          </div>
          <div class="col-md-3">
             <div class="col-md-12">
@@ -140,3 +92,8 @@
       </div>
    </div>
 </section>
+<script>
+$(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip();   
+});
+</script>

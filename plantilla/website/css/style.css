@@ -16,9 +16,10 @@ box-shadow: 3px 10px 16px -4px rgba(0,0,0,0.52);
 }
 .span.Capi {
     position: absolute;
-    bottom:40px;
+    text-align: right;
+    bottom:30px;
     right:2px;
-    width: 50%;
+    width: 70%;
     font-weight:bold;
     line-height: 16px;
     background-color: #ff7e00;
@@ -37,6 +38,10 @@ box-shadow: 3px 10px 16px -4px rgba(0,0,0,0.52);
     color: #000;
     padding-right: 2px;
     padding-left: 2px;
+}
+
+.temporada{
+
 }
 ul li {
     list-style: none;
