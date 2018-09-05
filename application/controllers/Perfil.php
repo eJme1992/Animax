@@ -12,7 +12,7 @@ class Perfil extends CI_Controller {
 
         $this->MFunctionsg->comprobar_sesion($this->session->userdata('login'));//Busca la variable de sesion que sea login2 
         $DATOS['user'] = $this->session->userdata('id'); // PASO LOS DATOS DEL USUARIO 
-       $this->load->view('website/header', $DATOS);
+        $this->load->view('website/header', $DATOS);
     }
     
     // **PAGINA DE INICIO DEL HOME**
@@ -30,9 +30,8 @@ class Perfil extends CI_Controller {
 
     public function editar(){
         $this->load->view('perfil/editar');
-     
-
     }
+
     public function usuario($id){
             $this->load->model('MUser'); // Carga el modelo de usuario 
         $DATOS['user'] = $this->MUser->perfil($id);// Trae datos del perfil
