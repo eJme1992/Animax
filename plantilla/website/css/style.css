@@ -1,3 +1,5 @@
+
+
 body {
     color: #797979;
     background: #fff;
@@ -34,8 +36,9 @@ nav{
 }
 #boton-menu{ display:none; }
 .mostrar{ display: block !important; }
-/Para ocultar y el responsive/
-.font-s{ display: none; }
+/*Para ocultar y el responsive*/
+.font-s{ display: none !important; }
+
 @media (max-width:550px){
    .ocultar{display: none;}
     #buscar input{width:60%; display:inline;}
@@ -44,7 +47,7 @@ nav{
      #buscar .form-inline input{ width:60% !important; }
    .font-s{margin-bottom: 1.5em; margin-top:1em; }
    #boton-menu{display: block;}
-}
+   .mi-menu{display: none;}
 @media (min-width:551px) and (max-width:960px){
     #buton-r{display:block;}
     .font-s{display:block;}
@@ -108,7 +111,7 @@ footer{
 }
 .pie-pagina  p{margin-bottom:0; padding-bottom:1.5em;}
 
-/Sofia estilos/
+/*Sofia estilos*/
 #barra-secundaria{
     background-color:#808080;
     color:#fff;
