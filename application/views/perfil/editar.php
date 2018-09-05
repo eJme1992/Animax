@@ -4,6 +4,7 @@
 	<div class="row">
 		<div class="col-md-5">
 			<form id="change-img">
+				 <?php foreach ($user as $key) { ?>
 			<?php if($key->foto==''){ ?>
 			<img src="<?=base_url()?>file/img/user/default.png" class="rounded-circle change-p"/>
 			 <?php }else{ ?>
@@ -33,15 +34,15 @@
 			<form id="Form-cambio">
 				 <div class="form-group">
 				  	<label for="usr">Nombre:</label>
-				  <input type="text" class="form-control" id="nombre" name="name">
+				  <input type="text" class="form-control" id="nombre" name="name" placeholder="Nombre">
 				</div>
 				<div class="form-group">
 				  <label for="pwd">Apellido:</label>
-				  <input type="text" class="form-control" id="apellido" name="apellido">
+				  <input type="text" class="form-control" id="apellido" name="apellido" placeholder="Apellido">
 				</div>
 				<div class="form-group">
 				  <label for="pwd">Email:</label>
-				  <input type="Email" class="form-control" id="mail" name="mail">
+				  <input type="Email" class="form-control" id="mail" name="mail" placeholder="your@email.com">
 				</div>
 					<div class="form-group">
 				  <label for="pwd">Sexo:</label>
@@ -88,7 +89,7 @@
             var getData = jqXHR.responseJSON; // dejar esta linea
            if(data.status=='ok'){
             $("#resultado").html('<div class="alert alert-success">'+data.code+'</div>');
-             window.location.href ='<?=base_url();?>/panel/user';
+             window.location.href ='<?=base_url();?>/perfil/usuario';
            }else{
            $("#resultado").html('<div class="alert alert-danger"><strong>ERROR!</strong>'+data.error+'</div>');
            }
@@ -128,7 +129,7 @@
            var getData = jqXHR.responseJSON; // dejar esta linea
           if(data.status=='ok'){
            $("#resultado2").html('<div class="alert alert-success">'+data.code+'</div>');
-           window.location.href ='<?=base_url();?>panel/usuario/<?=$key->id;?>';
+           window.location.href ='<?=base_url();?>perfil/usuario/<?=$key->id;?>';
           }else{
           $("#resultado2").html('<div class="alert alert-danger"><strong>ERROR!</strong>'+data.error+'</div>');
           }
