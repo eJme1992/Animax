@@ -71,5 +71,7 @@ a, a:hover, a:focus {
     font-size: 1.5em;
 }
 .change-p{
-    margin-bottom:1.5em;
+    margin-bottom:2.5em;
 }
+.btn-cargar{ width:50% !important; background-color: #6633CC !important; color:#fff; font-size:1.5em; line-height: 1.5;}
+.fa-angle-right{ color:#fff; font-size: 1.5em; }
