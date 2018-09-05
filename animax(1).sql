@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3306
--- Tiempo de generación: 04-09-2018 a las 15:51:22
+-- Tiempo de generación: 05-09-2018 a las 00:57:50
 -- Versión del servidor: 5.7.21
 -- Versión de PHP: 5.6.35
 
@@ -140,7 +140,7 @@ CREATE TABLE IF NOT EXISTS `serie` (
 --
 
 INSERT INTO `serie` (`id`, `nombre`, `descripcion`, `dias`, `duracion`, `imagen`, `categoria`, `estado`, `tipo`, `estreno`, `fecha_c`, `fecha_m`) VALUES
-(3, 'Naturo', 'DDD', 'Viernes', '2omin', 'file/img/img2018_09_01_13.jpg', 'Anime', 'Por estrenar', 0, '2018-08-08', '2018-09-01', '2018-09-01');
+(3, 'Naturo', 'DDD', 'Viernes', '2omin', 'file/img/img2018_09_04_10.jpg', 'Anime', 'Por estrenar', 0, '2018-08-08', '2018-09-01', '2018-09-04');
 
 -- --------------------------------------------------------
 
@@ -155,7 +155,14 @@ CREATE TABLE IF NOT EXISTS `series_destacadas` (
   `fecha_c` date NOT NULL,
   `fecha_m` date NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `series_destacadas`
+--
+
+INSERT INTO `series_destacadas` (`id`, `id_serie`, `fecha_c`, `fecha_m`) VALUES
+(3, 3, '2018-09-04', '2018-09-04');
 
 -- --------------------------------------------------------
 
@@ -179,6 +186,63 @@ INSERT INTO `serie_genero` (`id`, `id_serie`, `id_genero`) VALUES
 (1, 1, 1),
 (2, 2, 3),
 (3, 3, 3);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `st_datos`
+--
+
+DROP TABLE IF EXISTS `st_datos`;
+CREATE TABLE IF NOT EXISTS `st_datos` (
+  `id` int(1) NOT NULL AUTO_INCREMENT,
+  `nombre` varchar(40) NOT NULL,
+  `descripcion` varchar(300) NOT NULL,
+  `logo` varchar(200) NOT NULL,
+  `logo2` varchar(200) NOT NULL,
+  `icon` varchar(200) NOT NULL,
+  `correo` varchar(40) NOT NULL,
+  `telefono` varchar(9) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `st_menu`
+--
+
+DROP TABLE IF EXISTS `st_menu`;
+CREATE TABLE IF NOT EXISTS `st_menu` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id_menus` varchar(10) NOT NULL,
+  `nombre` varchar(20) NOT NULL,
+  `url` varchar(200) NOT NULL,
+  `posicion` int(20) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `st_menus`
+--
+
+DROP TABLE IF EXISTS `st_menus`;
+CREATE TABLE IF NOT EXISTS `st_menus` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `nombre` varchar(10) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `st_menus`
+--
+
+INSERT INTO `st_menus` (`id`, `nombre`) VALUES
+(1, 'navbar'),
+(2, 'footer_1'),
+(3, 'footer_2');
 
 -- --------------------------------------------------------
 
@@ -234,9 +298,8 @@ CREATE TABLE IF NOT EXISTS `user` (
 
 INSERT INTO `user` (`id`, `mail`, `nickname`, `pass`, `nombre`, `apellido`, `nacimiento`, `sexo`, `foto`, `tipo`, `fecha_c`, `fecha_m`) VALUES
 (1, 'sofiasinger19@gmail.com', '', '12345', 'sofia', 'singer', '1997-08-19', 'f', '', 0, '2018-08-18', '2018-08-26'),
-(3, 'edwin.jme@gmail.com', 'eJme1992', '2664265', 'Edwin', 'Mogollon', '1992-07-10', 'M', '', 0, '2018-08-01', '2018-09-04'),
-(4, 'wilber@gmail.com', '', '12345', 'wilber', 'mendoza', '2018-09-21', 'M', '', 1, '2018-09-01', '2018-09-01'),
-(5, 'mitet@mailinator.com', '', 'Pa$$w0rd!', 'Deleniti consequuntur ducimus ', 'Alias illo officiis illum fugi', '1990-03-04', 'M', '', 0, '2018-09-01', '2018-09-01');
+(3, 'edwin.jme@gmail.com', 'JHOO', '2664265', 'Edwin Jose', 'Mogollon E.', '1992-07-10', 'M', 'file/img/img2018_09_05_49.jpg', 0, '2018-08-01', '2018-09-05'),
+(4, 'wilber@gmail.com', '', '12345', 'wilber', 'mendoza', '2018-09-21', 'M', '', 1, '2018-09-01', '2018-09-01');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
