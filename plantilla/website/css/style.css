@@ -3,8 +3,16 @@
 }
 
 #home .card {
-    margin-bottom:20px;
-    background-color:#f2f2f2;
+margin-bottom:20px; 
+background-color:#f2f2f2;
+-webkit-box-shadow: 3px 10px 16px -4px rgba(0,0,0,0.52);
+-moz-box-shadow: 3px 10px 16px -4px rgba(0,0,0,0.52);
+box-shadow: 3px 10px 16px -4px rgba(0,0,0,0.52);
+}
+.cap-es{
+    height:7.3vw !important;
+    width: 100%;
+    border-radius: 2% 2% 0px 0px;
 }
 .span.Capi {
     position: absolute;
@@ -28,6 +36,7 @@
     text-overflow: ellipsis;
     color: #000;
     padding-right: 2px;
+    padding-left: 2px;
 }
 ul li {
     list-style: none;

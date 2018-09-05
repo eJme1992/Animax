@@ -52,7 +52,7 @@
             <div class="row">
                <div class="col-sm-4">
                   <div class="card">
-                  <a href="#"> <img src="<?=base_url();?>plantilla/website/img/15.jpg" class="img-fluid" style="height:8.4vw;"></a>
+                  <a href="#"> <img src="<?=base_url();?>plantilla/website/img/15.jpg" class="img-fluid cap-es"></a>
                   <span class="span Capi">
                      Extreno
                   </span>
@@ -61,6 +61,68 @@
                   </span>
                   </div>
                </div>
+
+                   <div class="col-sm-4">
+                  <div class="card">
+                  <a href="#"> <img src="<?=base_url();?>plantilla/website/img/15.jpg" class="img-fluid cap-es"></a>
+                  <span class="span Capi">
+                     Extreno
+                  </span>
+                  <span class="Title">
+                    Nombre
+                  </span>
+                  </div>
+               </div>
+
+                   <div class="col-sm-4">
+                  <div class="card">
+                  <a href="#"> <img src="<?=base_url();?>plantilla/website/img/15.jpg" class="img-fluid cap-es"></a>
+                  <span class="span Capi">
+                     Extreno
+                  </span>
+                  <span class="Title">
+                    Nombre
+                  </span>
+                  </div>
+               </div>
+
+                   <div class="col-sm-4">
+                  <div class="card">
+                  <a href="#"> <img src="<?=base_url();?>plantilla/website/img/15.jpg" class="img-fluid cap-es"></a>
+                  <span class="span Capi">
+                     Extreno
+                  </span>
+                  <span class="Title">
+                    Nombre
+                  </span>
+                  </div>
+               </div>
+
+                   <div class="col-sm-4">
+                  <div class="card">
+                  <a href="#"> <img src="<?=base_url();?>plantilla/website/img/15.jpg" class="img-fluid cap-es"></a>
+                  <span class="span Capi">
+                     Extreno
+                  </span>
+                  <span class="Title">
+                    Nombre
+                  </span>
+                  </div>
+               </div>
+
+                   <div class="col-sm-4">
+                  <div class="card">
+                  <a href="#"> <img src="<?=base_url();?>plantilla/website/img/15.jpg" class="img-fluid cap-es"></a>
+                  <span class="span Capi">
+                     Extreno
+                  </span>
+                  <span class="Title">
+                    Nombre
+                  </span>
+                  </div>
+               </div>
+
+               
              
             </div>
          </div>
