@@ -5,14 +5,14 @@ class Menus extends CI_Controller
     public function __construct()
     {
         parent::__construct();
-        $this->load->model('MMenus');
+        $this->load->model('MMenu');
         $this->load->library('session');
     }
     
 
      public function eliminar_menu($id)
     {
-        $var = $this->MMenus->eliminar($id);// consulta menus existente 
+        $var = $this->MMenu->eliminar($id);// consulta menus existente 
         if ($var == true) {
          header("Location:" . base_url() . "panel/menus");
          exit; 
@@ -23,7 +23,11 @@ class Menus extends CI_Controller
     {
         $id = $this->input->post('id');
         $nombre = $this->input->post('nombre');
-        $var = $this->MMenus->editar($nombre,$id);// 
+        $url = $this->input->post('url');
+        $id_menus = $this->input->post('id_menus');
+        $posicion = $this->input->post('posicion');
+
+        $var = $this->MMenu->editar($id, $nombre, $url, $id_menus, $posicion);// 
         if ($var != false) { 
               $response['status'] = 'ok';
               $response['code']   = "Edición hecha correctamente recargue la pagina para actualizar la tabla";
@@ -37,7 +41,11 @@ class Menus extends CI_Controller
        public function crear_menu()
     {
         $nombre = $this->input->post('nombre');
-        $var = $this->MMenus->crear($nombre);// 
+        $url = $this->input->post('url');
+        $id_menus = $this->input->post('id_menus');
+        $posicion = $this->input->post('posicion');
+
+        $var = $this->MMenu->crear_menu($nombre, $url, $id_menus, $posicion);// 
         if ($var != false) { 
                 $response['status'] = 'ok';
                 $response['code'] = "La menu ha sido creada de forma";

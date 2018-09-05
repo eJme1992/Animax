@@ -30,8 +30,8 @@
          <tr>
             <th>ID</th>
             <th>Nombre</th>
-            <th>Fecha de creación</th>
-            <th>Fecha de modificación</th>
+            <th>Url</th>
+            <th>Posición</th>
             <th>#</th>
             <th>#</th>
          </tr>
@@ -40,19 +40,19 @@
          <tr>
             <th>ID</th>
             <th>Nombre</th>
-            <th>Fecha de creación</th>
-            <th>Fecha de modificación</th>
+            <th>Url</th>
+            <th>Posición</th>
             <th>#</th>
             <th>#</th>
          </tr>
       </tfoot>
       <tbody>
-         <?php foreach ($Menús as $key) { ?>
+         <?php foreach ($datos as $key) { ?>
          <tr>
             <td><?=$key->id;?></td>
             <td><?=$key->nombre;?></td>
-            <td><?=$key->fecha_c;?></td>
-            <td><?=$key->fecha_m;?></td>
+            <td><?=$key->url;?></td>
+            <td><?=$key->posicion;?></td>
             <td>
                <p data-placement="top" data-toggle="tooltip" title="Edit"><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit<?=$key->id;?>" ><span class="glyphicon glyphicon-pencil"></span></button></p>
             </td>
@@ -131,11 +131,31 @@
             <h4 class="modal-title">Nueva Menú</h4>
          </div>
          <div class="modal-body">
-            <form id="nuevacap">
+            <form id="nuevo_menu">
                <div class="row">
-                  <div class="col-sm-12">
-                     <label>Nombre de la Menú</label>
+                  <div class="form-group col-md-6">
+                     <label>Nombre del menú</label>
                      <input type="text" name="nombre" id="nombre" required="" class="form-control" placeholder="Ej: Anime">
+                  </div>
+                  <div class="form-group col-md-6">
+                     <label>Url del menú</label>
+                     <input type="text" name="url" id="url" required="" class="form-control" placeholder="Ej: Anime">
+                  </div>
+                  <div class="form-group col-md-6">
+                    <select name="id_menus" id="" class="form-control">
+                      <?php foreach ($menus as $key): ?>
+                        <option value="<?=$key->id?>"><?=$key->nombre?></option>
+                      <?php endforeach ?>
+                    </select>
+                  </div>
+                  <div class="form-group col-md-6">
+                    <select name="posicion" id="" class="form-control">
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>
+                    </select>
                   </div>
                   <div class="col-md-12" id="resultado" style="margin-top:15px;"></div>
                   <input type="hidden" name="<?=$csrf['name'];?>" value="<?=$csrf['hash'];?>" />
@@ -158,16 +178,16 @@
 <!-- NUEVAS MenúS -->
       <script >
          jQuery(document).ready(function() {
-               jQuery("#nuevacap").submit(function(event) {
+               jQuery("#nuevo_menu").submit(function(event) {
                event.preventDefault();
          
              var msj = '1';
          //validaciones con js
          
         if (msj === "1") {
-         var formData = new FormData(jQuery('#nuevacap') [0]);
+         var formData = new FormData(jQuery('#nuevo_menu') [0]);
          jQuery.ajax({
-           url: '<?=base_url();?>Menús/crear_Menú',
+           url: '<?=base_url();?>menus/crear_menu',
            type: 'POST',
            contentType: false,
            processData: false,
@@ -181,7 +201,7 @@
             var getData = jqXHR.responseJSON; // dejar esta linea
            if(data.status=='ok'){
             $("#resultado").html('<div class="alert alert-success">'+data.code+'</div>');
-             window.location.href ='<?=base_url();?>/panel/Menús';
+             window.location.href ='<?=base_url();?>/panel/menus';
            }else{
            $("#resultado").html('<div class="alert alert-danger"><strong>ERROR!</strong>'+data.error+'</div>');
            }

@@ -182,5 +182,22 @@ class Panel extends CI_Controller {
         $this->load->view('panel/footer'); 
     }
 
+    public function menus(){
+
+        $this->load->model('MMenu'); // Carga el modelo de menus 
+        $DATOS['datos'] = $this->MMenu->lista();// Trae datos del menu
+        $DATOS['menus'] = $this->MMenu->menus();// Trae datos del menu
+
+        $csrf = array(
+        'name' => $this->security->get_csrf_token_name(),
+        'hash' => $this->security->get_csrf_hash()
+        );
+        $DATOS['csrf'] = $csrf;
+        $this->load->view('panel/secciones/menus',$DATOS);
+        $this->load->view('panel/footer');
+
+
+    }
+
 
 }

@@ -49,7 +49,7 @@
               </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="<?=base_url();?>panel/series"><b>Menús</b></a></li>
-            <li><a href="<?=base_url();?>panel/newserie">Datos del sitio</a></li>
+            <li><a href="<?=base_url();?>panel/menus"><b>Menús</b></a></li>
+            <li><a href="<?=base_url();?>panel/datos_sitio">Datos del sitio</a></li>
           </ul>
         </li>
