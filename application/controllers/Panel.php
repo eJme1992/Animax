@@ -29,6 +29,12 @@ class Panel extends CI_Controller {
         session_destroy();
         echo "<script>location.href ='" . base_url() . "';</script>";
     }
+
+    public function datos() {
+        // PANEL
+        $this->load->view('panel/secciones/datos.php');
+        $this->load->view('panel/footer');
+    }
     
     // **SERIES**
 
