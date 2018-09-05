@@ -88,7 +88,8 @@
     });
 });
 
-jQuery(document).ready(function() {
+jQuery(document).ready(function(){
+
       jQuery("#Form-cambio").submit(function(event) {
          event.preventDefault();
          
@@ -128,6 +129,7 @@ jQuery(document).ready(function() {
               swal("¡Error! ", msj, "error");
           }
       });
+
       jQuery("#change-img").submit(function(event) {
          event.preventDefault();
          var msj = '1';
@@ -166,6 +168,7 @@ jQuery(document).ready(function() {
              swal("¡Error! ", msj, "error");
          }
        });
+ });
 
 
 
