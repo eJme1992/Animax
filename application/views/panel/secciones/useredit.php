@@ -104,13 +104,13 @@
       <!-- Modal content-->
       <div class="modal-content">
          <div class="modal-body text-center">
-            <form id="subir_imagen" >
+            <form id="editar_nick" >
                <h4>Nickname</h4>
                <div class="form-group">
-                  <input type="text" name="nick" id="nick" class="form-control" required="">
+                  <input type="text" name="nickname" id="nick" class="form-control" required="">
                   <input type="hidden" name="id" id="id" value="<?=$key->id;?>" />
                   <input type="hidden" name="<?=$csrf['name'];?>" value="<?=$csrf['hash'];?>" />
-                  <div class="col-md-12" id="resultado2"></div>
+                  <div class="col-md-12" id="resultado3"></div>
                </div>
          
          <div class="modal-footer">
@@ -189,6 +189,44 @@
            window.location.href ='<?=base_url();?>panel/usuario/<?=$key->id;?>';
           }else{
           $("#resultado2").html('<div class="alert alert-danger"><strong>ERROR!</strong>'+data.error+'</div>');
+          }
+        })
+              .fail(function(jqXHR, textStatus, errorThrown) {
+                var getErr = jqXHR.responseText;
+                
+                console.log(getErr);
+        
+              })
+         // Fin de ajax
+         } else {
+             swal("¡Error! ", msj, "error");
+         }
+       });
+      jQuery("#editar_nick").submit(function(event) {
+         event.preventDefault();
+         var msj = '1';
+        //validaciones con js
+        
+       if (msj === "1") {
+        var formData = new FormData(jQuery('#editar_nick') [0]);
+        jQuery.ajax({
+          url: '<?=base_url();?>user/editar_nick',
+          type: 'POST',
+          contentType: false,
+          processData: false,
+          dataType: 'json',
+          data: formData,
+          beforeSend: function() {
+            $("#resultado3").html('<div class="alert alert-success">Procesando...!</div>');
+          }
+        })
+        .done(function(data, textStatus, jqXHR) {
+           var getData = jqXHR.responseJSON; // dejar esta linea
+          if(data.status=='ok'){
+           $("#resultado3").html('<div class="alert alert-success">'+data.code+'</div>');
+           window.location.href ='<?=base_url();?>panel/user';
+          }else{
+          $("#resultado3").html('<div class="alert alert-danger"><strong>ERROR!</strong>'+data.error+'</div>');
           }
         })
               .fail(function(jqXHR, textStatus, errorThrown) {

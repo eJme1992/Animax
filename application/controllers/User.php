@@ -42,17 +42,16 @@ class User extends CI_Controller
     public function editar_usuario()
     {
         
-        // $id, $mail, $nickname, $pass, $nombre, $apellido, $nacimiento, $sexo, $foto, $tipo
+        // $id, $mail, $pass, $nombre, $apellido, $nacimiento, $sexo, $foto, $tipo
         $id         = $this->input->post('id');
         $mail       = $this->input->post('mail');
-        $nickname   = $this->input->post('nickname');
         $nombre     = $this->input->post('nombre');
         $apellido   = $this->input->post('apellido');
         $nacimiento = $this->input->post('nacimiento');
         $sexo       = $this->input->post('sexo');
         $tipo       = $this->input->post('tipo');
         
-        $var = $this->MUser->editar_usuario($id, $mail, $nickname, $nombre, $apellido, $nacimiento, $sexo, $tipo); // 
+        $var = $this->MUser->editar_usuario($id, $mail, $nombre, $apellido, $nacimiento, $sexo, $tipo); // 
         if ($var != false) {
             $response['status'] = 'ok';
             $response['code']   = "Datos editados exitosamente";
@@ -68,14 +67,14 @@ class User extends CI_Controller
     {         
         $id         = $this->input->post('id');      
         $nickname   = $this->input->post('nickname');
-        $var = $this->MUser->editar_usuario($id,$nickname);
+        $var = $this->MUser->editar_nick($id,$nickname);
         if ($var) {
             # code...
             $response['status'] = 'ok';
-            $response['code']   = "Datos editados exitosamente";
+            $response['code']   = "Nickname actualizado exitosamente";
         } else {
             $response['status'] = 0;
-            $response['error']  = " Lo sentimos $nickname ya esta en uso por otro cuenta";
+            $response['error']  = " Lo sentimos, $nickname ya está en uso por otro usuario";
         }
         echo json_encode($response);
     }
