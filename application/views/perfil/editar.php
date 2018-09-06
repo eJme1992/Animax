@@ -23,7 +23,7 @@
                </li>
                <li class="nav-item">
                   <a class="n-Pill" data-toggle="pill" href="#menu3">
-                     <h3 class="subt-editar">Cambiar Nickname <i class="fas fa-users-cog fa-lg"></i></h3>
+                     <h3 class="subt-editar">Cambiar Nickname <i class="fas fa-user-check fa-lg"></i></h3>
                   </a>
                </li>
             </ul>
@@ -114,7 +114,18 @@
             </div>
             <!--Final del tercero-->
             <div class="tab-pane container fade" id="menu3">
-               <h1>PRUEBA</h1>
+               <h3 class="subt-editar">Aqui podrás escoger tú nickname que aparecera en tu perfil y en las interacciones que hagas con tus series preferidas.</h3>
+               <form id="nickname">
+                       <div class="form-group">
+                <label for="pwd">Nickname</label>
+                        <input type="Email" class="form-control" id="nickname" name="nickname" required="">
+                      </div>
+                                <button type="button" class="btn btn-cargar mx-auto d-block">
+                     Guardar
+                     </button>
+                      <div class="col-md-12" id="resultado3"></div>
+                     </form>
+                   </div>
             </div>
          </div>
       </div>
@@ -213,6 +224,45 @@
          });
    });
    
-   
+   //Para el nickname
+    jQuery("#nickname").submit(function(event) {
+         event.preventDefault();
+         var msj = '1';
+        //validaciones con js
+        
+       if (msj === "1") {
+        var formData = new FormData(jQuery('#nickname') [0]);
+        jQuery.ajax({
+          url: '<?=base_url();?>user/editar_nick',
+          type: 'POST',
+          contentType: false,
+          processData: false,
+          dataType: 'json',
+          data: formData,
+          beforeSend: function() {
+            $("#resultado3").html('<div class="alert alert-success">Procesando...!</div>');
+          }
+        })
+        .done(function(data, textStatus, jqXHR) {
+           var getData = jqXHR.responseJSON; // dejar esta linea
+          if(data.status=='ok'){
+           $("#resultado3").html('<div class="alert alert-success">'+data.code+'</div>');
+           window.location.href ='<?=base_url();?>panel/user';
+          }else{
+          $("#resultado3").html('<div class="alert alert-danger"><strong>ERROR!</strong>'+data.error+'</div>');
+          }
+        })
+              .fail(function(jqXHR, textStatus, errorThrown) {
+                var getErr = jqXHR.responseText;
+                
+                console.log(getErr);
+        
+              })
+         // Fin de ajax
+         } else {
+             swal("¡Error! ", msj, "error");
+         }
+       });
+   });//fin ready
    
 </script>
