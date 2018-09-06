@@ -30,11 +30,7 @@ class Panel extends CI_Controller {
         echo "<script>location.href ='" . base_url() . "';</script>";
     }
 
-    public function datos() {
-        // PANEL
-        $this->load->view('panel/secciones/datos.php');
-        $this->load->view('panel/footer');
-    }
+    
     
     // **SERIES**
 
@@ -200,6 +196,22 @@ class Panel extends CI_Controller {
         );
         $DATOS['csrf'] = $csrf;
         $this->load->view('panel/secciones/menus',$DATOS);
+        $this->load->view('panel/footer');
+
+
+    }
+
+    public function datos_sitio(){
+
+        $this->load->model('MDatos'); // Carga el modelo de datos 
+        $DATOS['datos'] = $this->MDatos->lista();// Trae datos de la tabla
+
+         $csrf = array(
+        'name' => $this->security->get_csrf_token_name(),
+        'hash' => $this->security->get_csrf_hash()
+        );
+        $DATOS['csrf'] = $csrf;
+        $this->load->view('panel/secciones/datos',$DATOS);
         $this->load->view('panel/footer');
 
 

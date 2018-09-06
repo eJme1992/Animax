@@ -11,10 +11,10 @@
 
    <h1>
       Menús
-      <small>Category</small>
+      <small>Menús</small>
    </h1>
    <ol class="breadcrumb">
-      <li><a href="<?=base_url();?>plantilla/panel/#"><i class="fa fa-dashboard"></i>Series</a></li>
+      <li><a href="<?=base_url();?>plantilla/panel/#"><i class="fa fa-dashboard"></i>Menús</a></li>
       <li class="active">Menús</li>
    </ol>
 </section>
@@ -22,7 +22,7 @@
 <section class="content container-fluid">
    <nav class="nav" style="margin-bottom:25px;">
       <div class="btn-group">
-         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Nueva Menú <i class="fa fa-plus-circle"></i></button>
+         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Nuevo menú <i class="fa fa-plus-circle"></i></button>
       </div>
    </nav>
    <table id="grid" class="table table-striped table-bordered" cellspacing="0" width="100%">
@@ -73,17 +73,36 @@
                                 $('#id<?=$key->id;?>').val() 
                                 );return false; ">
                            <div class="row">
-                              <div class="col-sm-12">
-                                 <label>Nombre de la Menú</label>
+                              <div class="form-group col-md-6">
+                                 <label>Nombre del menu</label>
                                  <input type="text" name="nombre" id="nombre" value="<?=$key->nombre;?>" required="" class="form-control" placeholder="Ej: Anime">
+                              </div>
+                              <div class="form-group col-md-6">
+                                 <label>Url del menú</label>
+                                 <input type="text" name="url" id="url" required="" class="form-control" value="<?=$key->url;?>" placeholder="Ej: Anime">
+                              </div>
+                              <div class="form-group col-md-6">
+                                <select name="id_menus" id="" class="form-control">
+                                  <?php foreach ($menus as $menu): ?>
+                                    <option value="<?=$key->id?>"><?=$menu->nombre?></option>
+                                  <?php endforeach ?>
+                                </select>
+                              </div>
+                              <div class="form-group col-md-6">
+                                <select name="posicion" id="" class="form-control">
+                                  <option value="1">1</option>
+                                  <option value="2">2</option>
+                                  <option value="3">3</option>
+                                  <option value="4">4</option>
+                                  <option value="5">5</option>
+                                </select>
+                              </div>
                                  <input type="hidden" name="id" id="id" value="<?=$key->id;?>">
                                  
                                  <input type="hidden" name="id<?=$key->id;?>" id="id<?=$key->id;?>" value="<?=$key->id;?>">
 
-                                 <input type="hidden" name="lugar" id="lugar" value="series">
                                  
                                  <input type="hidden" name="<?=$csrf['name'];?>" value="<?=$csrf['hash'];?>" />
-                              </div>
                               <div class="col-md-12" id="resultado2<?=$key->id;?>" style="margin-top:15px;"></div>
                               <div class="col-sm-12" style="margin-top:20px;">
                                  <button class="btn btn-lg btn-block btn-primary" type="submit">
@@ -109,7 +128,7 @@
                         <h3> ¿Esta Seguro que desea eliminar la Menú: <b><?=$key->nombre;?></b>?</h3>
                      </div>
                      <div class="modal-footer">
-                        <a href="<?=base_url();?>Menús/eliminar_Menú/<?=$key->id;?>"><button type="button" class="btn btn-danger">Si</button></a>
+                        <a href="<?=base_url();?>menus/eliminar_menu/<?=$key->id;?>"><button type="button" class="btn btn-danger">Si</button></a>
                         <button type="button" class="btn btn-default" data-dismiss="modal">no</button>
                      </div>
                   </div>
@@ -201,7 +220,7 @@
             var getData = jqXHR.responseJSON; // dejar esta linea
            if(data.status=='ok'){
             $("#resultado").html('<div class="alert alert-success">'+data.code+'</div>');
-             window.location.href ='<?=base_url();?>/panel/menus';
+             window.location.href ='<?=base_url();?>panel/menus';
            }else{
            $("#resultado").html('<div class="alert alert-danger"><strong>ERROR!</strong>'+data.error+'</div>');
            }
@@ -232,7 +251,7 @@
         if (msj === "1") {
          var formData = new FormData(jQuery('#editar'+id) [0]);
          jQuery.ajax({
-           url: '<?=base_url();?>Menús/editar_Menú',
+           url: '<?=base_url();?>menus/editar_menu',
            type: 'POST',
            contentType: false,
            processData: false,
@@ -246,7 +265,7 @@
             var getData = jqXHR.responseJSON; // dejar esta linea
            if(data.status=='ok'){
             $("#resultado2"+id).html('<div class="alert alert-success">'+data.code+'</div>');
-            // window.location.href ='<?=base_url();?>/panel';
+            window.location.href ='<?=base_url();?>panel/menus';
            }else{
            $("#resultado2"+id).html('<div class="alert alert-danger"><strong>ERROR!</strong>'+data.error+'</div>');
            }

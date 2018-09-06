@@ -25,7 +25,7 @@ class MMenu extends CI_Model {
 	{    
 		
 		$fecha_m = date("Y-m-d");
-		$query = $this->db->query("UPDATE `st_menu` Set nombre='$nombre', url='$url', id_menus='$id_menus', posicion='$posicion' WHERE `menus`.`id`='$id'");
+		$query = $this->db->query("UPDATE `st_menu` Set nombre='$nombre', url='$url', id_menus='$id_menus', posicion='$posicion' WHERE `st_menu`.`id`='$id'");
 		return $query;
 	}
 
