@@ -67,7 +67,7 @@ a, a:hover, a:focus {
 .user-titulo{
     text-align:left;
     margin-top: 2em !important;
-    margin-bottom: 2em;
+    margin-bottom: 1em;
     font-size: 1.5em;
 }
 .change-p{
@@ -86,7 +86,7 @@ a, a:hover, a:focus {
 .subt-editar{color:#000; text-align: center; font-size: 1.5em; padding-top: 2em; }
 #editarPerfil{
     background-color: #f2f2f2;
-    padding-top: 5em;
+    padding-top: 2em;
     padding-bottom: 5em;
 }
 #editarPerfil .nav-item{
@@ -104,7 +104,7 @@ a, a:hover, a:focus {
     min-height: 7em;
 }
 .welcome{
-    margin-bottom: 1.5em;
+    margin-bottom: 0.5em;
     text-align: center;
 }
 .twice{
@@ -112,3 +112,8 @@ a, a:hover, a:focus {
     width:49%;
 }
 .twice input{ width:100% !important; }
+.salir{ width:10%; margin-bottom: 0.5em; color:#fff; background-color:#FF6666; float:right; }
+.fa-chevron-circle-right{ color:#fff; float:right; overflow: visible; }
+@media (max-width: 900px){
+    .salir{width:50%;}
+}

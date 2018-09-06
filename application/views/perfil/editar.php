@@ -2,7 +2,10 @@
    <div class="container">
       <div class="row">
        <div class="col-md-12"> <h2 class="welcome">Bienvenido al area donde podras editar tu perfil y personalizarlo a tu gusto</h2>
-         <h3 class="user-titulo">Nombre de Usuario: <?=$user->nombre;?></h3></div>
+         <h3 class="user-titulo">Nombre de Usuario: <?=$user->nombre;?></h3>
+
+            <button type="submit" class="salir btn" onclick="salir()">Salir</button>
+       </div>
          <div class="col-md-5">
             <!-- Nav pills -->
             <ul class="nav nav-pills  flex-column">
@@ -247,7 +250,7 @@
            var getData = jqXHR.responseJSON; // dejar esta linea
           if(data.status=='ok'){
            $("#resultado3").html('<div class="alert alert-success">'+data.code+'</div>');
-           window.location.href ='<?=base_url();?>panel/user';
+           window.location.href ='<?=base_url();?>perfil/user';
           }else{
           $("#resultado3").html('<div class="alert alert-danger"><strong>ERROR!</strong>'+data.error+'</div>');
           }
@@ -263,6 +266,9 @@
              swal("¡Error! ", msj, "error");
          }
        });
-   });//fin ready
+   function salir(){
+      window.location.href ='<?=base_url();?>perfil/index';
+   }
    
+
 </script>
