@@ -70,28 +70,33 @@
                   <form id="Form-cambio">
                      <div class="form-group twice">
                         <label for="usr">Nombre:</label>
-                        <input type="text" class="form-control" id="nombre" name="name" placeholder="Nombre">
+                        <input type="text" class="form-control" id="nombre" name="name" value="<?=$user->nombre;?>">
                      </div>
                      <div class="form-group twice">
                         <label for="pwd">Apellido:</label>
-                        <input type="text" class="form-control" id="apellido" name="apellido" placeholder="Apellido">
+                        <input type="text" class="form-control" id="apellido" name="apellido" value="<?=$user->apellido;?>">
                      </div>
                      <div class="form-group">
                         <label for="pwd">Email:</label>
-                        <input type="Email" class="form-control" id="mail" name="mail" placeholder="Example: your@email.com"  required="">
+                        <input type="Email" class="form-control" id="mail" name="mail"  value="<?=$user->mail;?>"  required="">
                      </div>
                      <div class="form-group">
                         <label for="pwd">Sexo:</label>
                         <div class="form-group">
                            <select class="form-control" id="sexo" name="sexo" required="">
+                            <?php if ($user->sexo == 'M'): ?>
+                              <option value="M">Masculino</option>
+                              <option value="F">Femenino</option>
+                                <?php elseif($user->sexo == 'F'): ?>
                               <option value="F">Femenino</option>
                               <option value="M">Masculino</option>
+                              <?php endif ?>
                            </select>
                         </div>
                      </div>
                      <div class="form-group">
                         <label for="pwd">Fecha de Nacimiento</label>
-                        <input type="date" class="form-control" id="pwd">
+                        <input type="date" class="form-control" id="nacimiento" value="<?=$user->nacimiento;?>">
                      </div>
                      <button  type="submit" class="btn btn-cargar mx-auto d-block">Enviar</button>
                   </form>
@@ -123,7 +128,9 @@
                 <label for="pwd">Nickname</label>
                         <input type="Email" class="form-control" id="nickname" name="nickname" required="">
                       </div>
-                                <button type="button" class="btn btn-cargar mx-auto d-block">
+                    
+
+                                <button type="submit" class="btn btn-cargar mx-auto d-block">
                      Guardar
                      </button>
                       <div class="col-md-12" id="resultado3"></div>

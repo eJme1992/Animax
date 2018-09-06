@@ -107,7 +107,7 @@
             <form id="editar_nick" >
                <h4>Nickname</h4>
                <div class="form-group">
-                  <input type="text" name="nickname" id="nick" class="form-control" required="">
+                  <input type="text" name="nick" id="nick" class="form-control" required="">
                   <input type="hidden" name="id" id="id" value="<?=$key->id;?>" />
                   <input type="hidden" name="<?=$csrf['name'];?>" value="<?=$csrf['hash'];?>" />
                   <div class="col-md-12" id="resultado3"></div>
