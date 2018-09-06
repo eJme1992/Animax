@@ -30,6 +30,7 @@ class Perfil extends CI_Controller {
 
     public function editar(){
         $this->load->view('perfil/editar');
+        $this->load->view('website/footer');
     }
 
     public function usuario($id){

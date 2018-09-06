@@ -82,4 +82,17 @@ a, a:hover, a:focus {
 .fa-angle-right{ color:#fff; font-size: 1.5em; }
 .fa-users-cog{color:#82C91E;}
 .fa-user-lock{color:#f3c200;}
-.subt-editar{color:#000; text-align: center; font-size: 1.5em; padding-top: 1em; 
+.fa-user{color:#ff6414;}
+.subt-editar{color:#000; text-align: center; font-size: 1.5em; padding-top: 1em; }
+#editarPerfil{
+    background-color: #f2f2f2;
+    padding-top: 5em;
+    padding-bottom: 5em;
+}
+#editarPerfil .nav-item{
+    border:solid;
+    border-width:2px;
+    border-color:#6633CC;
+    border-radius:10px;
+}
+.nav-link:visited{ background-color: #fff !important; }
