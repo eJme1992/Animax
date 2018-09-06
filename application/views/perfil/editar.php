@@ -1,26 +1,28 @@
 <section id="editarPerfil">
    <div class="container">
       <div class="row">
+       <div class="col-md-12"> <h2 class="welcome">Bienvenido al area donde podras editar tu perfil y personalizarlo a tu gusto</h2>
+         <h3 class="user-titulo">Nombre de Usuario: <?=$user->nombre;?></h3></div>
          <div class="col-md-5">
             <!-- Nav pills -->
             <ul class="nav nav-pills  flex-column">
                <li class="nav-item">
-                  <a class="nav-link " data-toggle="pill" href="#home">
+                  <a class="n-Pill " data-toggle="pill" href="#home">
                      <h3 class="subt-editar">Perfil<i class="fas fa-user fa-lg"></i></i></h3>
                   </a>
                </li>
                <li class="nav-item">
-                  <a class="nav-link" data-toggle="pill" href="#menu1">
+                  <a class="n-Pill" data-toggle="pill" href="#menu1">
                      <h3 class="subt-editar">Datos Personales <i class="fas fa-users-cog fa-lg"></i></h3>
                   </a>
                </li>
                <li class="nav-item">
-                  <a class="nav-link" data-toggle="pill" href="#menu2">
+                  <a class="n-Pill" data-toggle="pill" href="#menu2">
                      <h3 class="subt-editar">Datos de Seguridad <i class="fas fa-user-lock fa-lg"></i></h3>
                   </a>
                </li>
                <li class="nav-item">
-                  <a class="nav-link" data-toggle="pill" href="#menu3">
+                  <a class="n-Pill" data-toggle="pill" href="#menu3">
                      <h3 class="subt-editar">Cambiar Nickname <i class="fas fa-users-cog fa-lg"></i></h3>
                   </a>
                </li>
@@ -60,14 +62,14 @@
                </div>
                <!--second-->
                <div class="tab-pane container fade" id="menu1">
-                  <h3 class="subt-editar">Datos Personales <i class="fas fa-users-cog fa-lg"></i></h3>
-                  <h2 class="user-titulo">Nombre de Usuario: <?=$user->nombre;?></h2>
+                  <h3 class="subt-editar" style="padding:0;">Datos Personales <i class="fas fa-users-cog fa-lg"></i></h3>
+                
                   <form id="Form-cambio">
-                     <div class="form-group">
+                     <div class="form-group twice">
                         <label for="usr">Nombre:</label>
                         <input type="text" class="form-control" id="nombre" name="name" placeholder="Nombre">
                      </div>
-                     <div class="form-group">
+                     <div class="form-group twice">
                         <label for="pwd">Apellido:</label>
                         <input type="text" class="form-control" id="apellido" name="apellido" placeholder="Apellido">
                      </div>
@@ -96,6 +98,7 @@
             <!--third-->
             <div class="tab-pane container fade" id="menu2">
                <h3 class="subt-editar">Datos de Seguridad <i class="fas fa-user-lock fa-lg"></i></h3>
+                    <form id="security">
                <div class="form-group">
                   <label for="pwd">Nueva Contraseña</label>
                   <input type="password" class="form-control" id="change-pass" name="change-pass" >
@@ -104,6 +107,10 @@
                   <label for="pwd">Confirmar Contraseña</label>
                   <input type="password" class="form-control" id="confirm-pass" name="confirm-pass">
                </div>
+                  <button type="button" class="btn btn-cargar mx-auto d-block">
+                     Enviar 
+                     </button>
+                   </form>
             </div>
             <!--Final del tercero-->
             <div class="tab-pane container fade" id="menu3">

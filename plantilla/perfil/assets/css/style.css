@@ -67,7 +67,7 @@ a, a:hover, a:focus {
 .user-titulo{
     text-align:left;
     margin-top: 2em !important;
-    margin-bottom: 1em;
+    margin-bottom: 2em;
     font-size: 1.5em;
 }
 .change-p{
@@ -83,7 +83,7 @@ a, a:hover, a:focus {
 .fa-users-cog{color:#82C91E;}
 .fa-user-lock{color:#f3c200;}
 .fa-user{color:#ff6414;}
-.subt-editar{color:#000; text-align: center; font-size: 1.5em; padding-top: 1em; }
+.subt-editar{color:#000; text-align: center; font-size: 1.5em; padding-top: 2em; }
 #editarPerfil{
     background-color: #f2f2f2;
     padding-top: 5em;
@@ -95,4 +95,20 @@ a, a:hover, a:focus {
     border-color:#6633CC;
     border-radius:10px;
 }
-.nav-link:visited{ background-color: #fff !important; }
+.n-Pill{
+    text-decoration: none;
+
+}
+.n-Pill:visited{ background-color: #fff !important; }
+.nav-item{
+    min-height: 7em;
+}
+.welcome{
+    margin-bottom: 1.5em;
+    text-align: center;
+}
+.twice{
+    display: inline-block;
+    width:49%;
+}
+.twice input{ width:100% !important; }
