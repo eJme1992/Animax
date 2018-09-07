@@ -23,8 +23,10 @@ class Home extends CI_Controller
         $this->load->model('MGenero'); // Carga el modelo de categorías
         $this->load->model('MTemporada'); // Carga el modelo de categorías  
         $this->load->model('MCapitulo'); // Carga el modelo de categorías  
+
         $DATOS['capitulo'] = $this->MCapitulo->listacap(6);
         $DATOS['series'] = $this->MSerie->listades(3);
+        $DATOS['Temporadar'] = $this->MTemporada->recientes(10);
         $this->load->view('website/cuerpo-home',$DATOS);
         $this->load->view('website/footer');
 	}

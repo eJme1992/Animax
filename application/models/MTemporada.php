@@ -11,6 +11,13 @@ class MTemporada extends CI_Model {
 		return $query->result();
 	}
 
+	 function recientes($LIMIT='2')
+	{    
+		//if ($id==false){$var='';}else{$var="";}
+		    $query = $this->db->query("SELECT serie.id as 'id_serie', temporada.id as 'id', serie.nombre, serie.imagen, temporada.fecha_c FROM temporada INNER JOIN serie ON serie.id=temporada.id_serie ORDER BY temporada.fecha_c  LIMIT $LIMIT ");
+		return $query->result();
+	}
+
 	 function eliminar($id)
 	{    
     

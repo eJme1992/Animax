@@ -56,6 +56,12 @@ box-shadow: 3px 10px 16px -4px rgba(0,0,0,0.52);
     border-radius: 2% 2% 0px 0px;
 }
 
+#temp_re .img-fluid{
+    height:15vw ;
+    width: 100%;
+    border-radius: 2% 2% 0px 0px;
+}
+
 .tem-es{
     height:25vw !important;
     width: 100%;
@@ -70,7 +76,23 @@ box-shadow: 3px 10px 16px -4px rgba(0,0,0,0.52);
     font-weight:bold;
     line-height: 24px;
     background-color: #1B9936;
-    height:30px;
+    height:25px;
+    border-radius: 32px;
+    padding: 0 8px;
+    font-size: 11px;
+    color: #fff;
+}
+
+#temp_re .span.Capi {
+    position: absolute;
+    text-align: center;
+    top:10px;
+    right:-4px;
+    width: 80%;
+    font-weight:bold;
+    line-height: 24px;
+    background-color: #1B9936;
+    height:25px;
     border-radius: 32px;
     padding: 0 8px;
     font-size: 11px;

@@ -3,11 +3,10 @@
 </header>
 <nav id="barra-secundaria">
    <div class="text-center">
-      <a href="#SERIES_DESTACAS">Destacadas</a>
-      <a href="">Favoritas</a>
-      <a href="">Subidas recientemente</a>
-      <a href="">Recomendaciones</a>
-      <a href="">Películas</a>
+      <a href="#SERIES_DESTACAS"><i class="fas fa-star"></i></i> Series destacadas</a>
+      <a href="#TEMPORADAS_RECIENTES"><i class="fab fa-cloudscale"></i> Temporadas </a>
+      <a href=""><i class="fas fa-video"></i> Películas recientes</a>
+      <a href=""><i class="fas fa-video"></i> Noticias</a>
    </div>
 </nav>
 <section id="home">
@@ -81,16 +80,19 @@
                   </span>
                </div>
             </div>
-            <?php } ?>            
-            <div class="col-md-12 bordert" id="SERIES_DESTACAS">
-               <h2><i class="fas fa-star"></i></i>Últimos capitulo</h2>
+            <?php } ?> 
+            <div class="text-right col-md-12">
+            <button class="btn mas" style="color:#fff;background-color:#1B9936;text-align:right;border-radius:100%;height:40px;width:40px;"><b><i class="fas fa-plus"></i></b></button>  
+            </div>         
+            <div class="col-md-12 bordert" id="TEMPORADAS_RECIENTES">
+               <h2><i class="fab fa-cloudscale"></i> Temporadas Recientes</h2>
             </div>
-            <?php foreach ($series as $key){?> 
-            <div class="col-md-3" id='destacadas'>
+            <?php foreach ($Temporadar as $key){?> 
+            <div class="col-md-3" id='temp_re'>
                <div class="card">
-                  <a href="#" data-toggle="tooltip" title="<?=$key->nombre;?>"> <img src="<?=base_url().$key->imagen;?>" class="img-fluid tem-es"></a>
+                  <a href="#" data-toggle="tooltip" title="<?=$key->nombre;?>"> <img src="<?=base_url().$key->imagen;?>" class="img-fluid"></a>
                   <span class="span Capi">
-                  DESTACA <i class="fas fa-star"></i></i>
+                  ESTRENO <i class="far fa-clock"></i></i>
                   </span>
                   <span class="Title">
                   <?=$key->nombre;?> 
@@ -98,6 +100,28 @@
                </div>
             </div>
             <?php } ?>
+             <div class="text-right col-md-12">
+            <button class="btn mas" style="color:#fff;background-color:#1B9936;text-align:right;border-radius:100%;height:40px;width:40px;"><b><i class="fas fa-plus"></i></b></button>  
+            </div>
+                <div class="col-md-12 bordert" id="PELICULAS_RECIENTES">
+               <h2><i class="fas fa-video"></i> Películas Recientes</h2>
+            </div>
+            <?php foreach ($Temporadar as $key){?> 
+            <div class="col-md-3" id='temp_re'>
+               <div class="card">
+                  <a href="#" data-toggle="tooltip" title="<?=$key->nombre;?>"> <img src="<?=base_url().$key->imagen;?>" class="img-fluid"></a>
+                  <span class="span Capi">
+                  ESTRENO <i class="far fa-clock"></i></i>
+                  </span>
+                  <span class="Title">
+                  <?=$key->nombre;?> 
+                  </span>
+               </div>
+            </div>
+            <?php } ?>
+             <div class="text-right col-md-12">
+            <button class="btn mas" style="color:#fff;background-color:#1B9936;text-align:right;border-radius:100%;height:40px;width:40px;"><b><i class="fas fa-plus"></i></b></button>  
+            </div>
          </div>
          <div class="col-md-3">
             <div class="col-md-12">

@@ -7,7 +7,7 @@ class MFunctionsg  extends CI_Model {
 	 function comprobar_sesion($rev)
 	 {    
 		if ($rev !== true) {
-         header("Location:" . base_url() . "");
+         header("Location:" . base_url() . "login");
          exit; 
        }
 	 }
@@ -15,7 +15,7 @@ class MFunctionsg  extends CI_Model {
     function comprobar_sesion2($rev)
    {    
     if ($rev == true) {
-         header("Location:" . base_url() . "");
+         header("Location:" . base_url() . "perfil");
          exit; 
        }
    }
@@ -23,7 +23,7 @@ class MFunctionsg  extends CI_Model {
      function comprobar_tipo($rev)
    {    
     if ($rev != 1) {
-         header("Location:" . base_url() . "");
+         header("Location:" . base_url() . "perfi");
          exit; 
       // echo $rev;
        }
