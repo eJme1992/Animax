@@ -191,55 +191,54 @@ nav{
     #boton-menu{ display:none !important; }
 }
 
-/*footer Eloy */ 
 
-#tope .bloque-1{
-    margin-top: 1em;
-    border-right: 1px #d3d3d3 dotted;
+/*Sofia estilos*/
+#barra-secundaria{
+    background-color:#808080;
+    color:#fff;
+    font-family: 'Amaranth', sans-serif;
+    margin-bottom: 1.5em;
+    height:50px;
+    text-align:center;
+ 
+    
 }
-
-#tope h3{
-    font-size: 12px;
+#barra-secundaria .text-center {padding-top:12px;}
+#barra-secundaria a{ line-height:1em !important; margin-left:1em; color:#fff;}
+#barra-secundaria a:hover{text-decoration: none;}
+#barra-secundaria a:active{ border-bottom: 5px solid #800000; border-width: 70%; }
+.rounded{
+    margin-bottom:50px;
 }
-
-#tope h4{
-    font-size: 12px;
+/* Para los subtitulos de los row*/
+.sub-t{
+    margin-bottom:1em;
+    font-family: 'Amaranth', sans-serif;
 }
-
-#tope img{
-    width: 40%;
-    background: #fff;
-    margin-top: 10px;
-    margin left: 10px;
-}
-
-#tope .bloque-2{
-    margin-top: 1em;
-    border-right: 1px #d3d3d3 dotted;
-    margin-left: 5px;
-}
-
-#medio bloque.3 {
-    margin-top: 1em;
-}
-#medio h3{
-    font-size: 12px;
-}
-
-#medio h4{
-    font-size: 12px;
-}
-
-#abajo{
-    text-align: center;
-}
-
-#abajo p{
-font-size: 12px;
+#home{
+margin-bottom:2.5em;
 }
 footer{
-    background-color:#f2f2f2;
+    background-color:#2F343A;
 }
+#tope .titulo-fo{
+    color:#fff;
+    margin-bottom: 1em;
+    font-size: 1.5em;
+
+}
+#tope .sub-fo{
+    color: #868588;
+    text-align: justify;
+    font-weight: bold;
+}
+#tope .contact{ list-style: none; padding-left: 0;}
+.contact li{margin-bottom: 0.5em; font-size:2.5vmin;}
+.contact li a {color:#868588;}
+.pie-pagina{ background-color: #21262A !important;
+width:100%;
+ }
+ .fa-chevron-circle-right{float:left; padding-right: 0.5em;}
 .pie-pagina  p{margin-bottom:0; padding-bottom:1.5em;}
 
 /*Sofia estilos*/
@@ -268,4 +267,11 @@ footer{
 #home{
 margin-bottom:2.5em;
 }
+
+#redes-sociales-f ul li{
+    display: inline;
+    float: right;
+    padding-right:1em;
+}
+#redes-sociales-f ul li a{ color: #868588 !important;}
 
