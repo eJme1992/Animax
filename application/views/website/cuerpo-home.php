@@ -68,8 +68,8 @@
          
          <!--Diva para la barra lateral 3-->
          <div class="col-md-9 row">
-          <div class="col-md-12" id='SERIES_DESTACAS'>
-         <h2><i class="fas fa-star"></i></i> Series destacadas</h2>
+          <div class="col-md-12 bordert" id="SERIES_DESTACAS">
+           <h2><i class="fas fa-star"></i></i> Series destacadas</h2>
           </div>
               <?php foreach ($series as $key){?> 
                <div class="col-sm-4" id='destacadas'>
@@ -85,6 +85,22 @@
                </div>
                 <?php } ?>            
 
+    <div class="col-md-12 bordert" id="SERIES_DESTACAS">
+           <h2><i class="fas fa-star"></i></i> Series destacadas</h2>
+          </div>
+              <?php foreach ($series as $key){?> 
+               <div class="col-md-3" id='destacadas'>
+                  <div class="card">
+                  <a href="#" data-toggle="tooltip" title="<?=$key->nombre;?>"> <img src="<?=base_url().$key->imagen;?>" class="img-fluid tem-es"></a>
+                  <span class="span Capi">
+                     DESTACA <i class="fas fa-star"></i></i>
+                  </span>
+                  <span class="Title">
+                    <?=$key->nombre;?> 
+                  </span>
+                  </div>
+               </div>
+                <?php } ?>
 
 
          </div>
