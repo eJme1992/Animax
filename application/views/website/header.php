@@ -26,7 +26,7 @@
                <div class="collapse navbar-collapse" id="mi-menu">
                   <ul class="navbar-nav">
                      <li class="nav-item">
-                        <a class="nav-link" href="#">Maestro</a>
+                        <a class="nav-link" href="<?=base_url();?>">Inicio</a>
                      </li>
                      <li class="nav-item">
                         <a class="nav-link" href="#">Audiofrecuencia</a>

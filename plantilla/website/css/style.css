@@ -41,31 +41,41 @@ body{font-family: 'Noto Sans KR', sans-serif;}
     height:37.3vw !important;
     width: 100%;
     border-radius: 2% 2% 0px 0px;
+    }
+   #destacadas .imglg{
+    height:95vw !important;
+    width: 100%;
+    border-radius: 2% 2% 0px 0px;
+}
+#temp_re .imgmd{
+    height:95vw !important;
+    width: 100%;
+    border-radius: 2% 2% 0px 0px;
 }
 }
+#destacadas .imglg{
+    height:25vw ;
+    width: 100%;
+    border-radius: 2% 2% 0px 0px;
+}
+#temp_re .imgmd{
+    height:14vw ;
+    width: 100%;
+    border-radius: 2% 2% 0px 0px;
+}
+#cap .cap-es{
+    height:7.3vw ;
+    width: 100%;
+    border-radius: 2% 2% 0px 0px;
+}
+
+
 #home .card {
 margin-bottom:20px; 
 background-color:#f2f2f2;
 -webkit-box-shadow: 3px 10px 16px -4px rgba(0,0,0,0.52);
 -moz-box-shadow: 3px 10px 16px -4px rgba(0,0,0,0.52);
 box-shadow: 3px 10px 16px -4px rgba(0,0,0,0.52);
-}
-#cap .img-fluid{
-    height:7.3vw ;
-    width: 100%;
-    border-radius: 2% 2% 0px 0px;
-}
-
-#temp_re .img-fluid{
-    height:15vw ;
-    width: 100%;
-    border-radius: 2% 2% 0px 0px;
-}
-
-.tem-es{
-    height:25vw !important;
-    width: 100%;
-    border-radius: 2% 2% 0px 0px;
 }
 #destacadas .span.Capi {
     position: absolute;
@@ -88,7 +98,7 @@ box-shadow: 3px 10px 16px -4px rgba(0,0,0,0.52);
     text-align: center;
     top:10px;
     right:-4px;
-    width: 80%;
+    width: 50%;
     font-weight:bold;
     line-height: 24px;
     background-color: #1B9936;
