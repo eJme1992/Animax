@@ -1,6 +1,6 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-class Capitulo extends CI_Controller
+class CapituloVideo extends CI_Controller
 {
     public function __construct()
     {
@@ -10,24 +10,24 @@ class Capitulo extends CI_Controller
     }
     
 
-     public function eliminar_vide($id,$id_serie)
+    public function eliminar_video($id,$id_capitulo)
     {
         $var = $this->MCapituloVideo->eliminar($id);// consulta capitulos existente 
         if ($var == true) {
-         header("Location:" . base_url() . "panel/viewserie/".$id_serie);
+         header("Location:" . base_url() . "panel/capitulo_video/".$id_capitulo);
          exit; 
         }
     }
 
-       public function editar_video()
+    public function editar_video()
     {
         // $id,$id_capitulo, $url_video, $tipo, $provedor
         $id = $this->input->post('id');
-        $id_capitulo   = $this->input->post('id_capitulo');
+        // $id_capitulo   = $this->input->post('id_capitulo');
         $url_video   = $this->input->post('url_video');
         $tipo   = $this->input->post('tipo');
-        $provedor = $this->input->post('provedor');       
-        $var = $this->MCapituloVideo->editar($id,$id_capitulo, $url_video, $tipo, $provedor);// 
+        $provedor = $this->input->post('proveedor');       
+        $var = $this->MCapituloVideo->editar($id, $url_video, $tipo, $provedor);// 
         if ($var != false) { 
               $response['status'] = 'ok';
               $response['code']   = "Edición hecha correctamente recargue la pagina para actualizar la tabla";
@@ -44,16 +44,15 @@ class Capitulo extends CI_Controller
         $id_capitulo   = $this->input->post('id_capitulo');
         $url_video   = $this->input->post('url_video');
         $tipo   = $this->input->post('tipo');
-        $provedor = $this->input->post('provedor');
-        $fecha_estreno = $this->input->post('fecha_estreno');
+        $provedor = $this->input->post('proveedor');
         
         $var = $this->MCapituloVideo->crear($id_capitulo, $url_video, $tipo, $provedor);// 
         if ($var != false) { 
                 $response['status'] = 'ok';
-                $response['code'] = "La capitulo ha sido creada de forma";
+                $response['code'] = "La capitulo ha sido creado exitosamente, por favor recargue la pagina.";
         }else{
                 $response['status'] = 0;
-                $response['error'] = "Ya existe una capitulo con este numero";
+                $response['error'] = "Error al procesar los datos";
         }
         echo json_encode($response);
     }

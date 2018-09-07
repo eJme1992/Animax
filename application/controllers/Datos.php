@@ -1,5 +1,6 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
+
 class Datos extends CI_Controller
 {
     public function __construct()
@@ -8,7 +9,7 @@ class Datos extends CI_Controller
         $this->load->model('MDatos');
         $this->load->library('session');
         $this->load->model('MFunctionsg'); // CARGA LAS FUNCIONES GENERALES PARA EL PANEL
-        
+
     }
     
 

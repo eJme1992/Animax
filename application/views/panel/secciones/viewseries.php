@@ -236,7 +236,7 @@
                   <td><?=$key->fecha_estreno;?></td>
                   <td><?=$key->fecha_m;?></td>
                   <td>
-                    
+                     <a class="btn btn-success btn-xs" href="<?=base_url();?>panel/capitulo_video/<?=$key->id;?>" ><span class="fa fa-eye"></span></a>
                      <button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit<?=$key->id;?>" ><span class="glyphicon glyphicon-pencil"></span></button>
                      <button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete<?=$key->id;?>" ><span class="glyphicon glyphicon-trash"></span></button>
                   </td>

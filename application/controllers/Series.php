@@ -5,7 +5,7 @@ class series extends CI_Controller
     public function __construct()
     {
         parent::__construct();
-        $this->load->model('Mserie');
+        $this->load->model('MSerie');
         $this->load->library('session');
         $this->load->model('MFunctionsg'); // CARGA LAS FUNCIONES GENERALES PARA EL PANEL
         
@@ -15,7 +15,7 @@ class series extends CI_Controller
     
     public function eliminar_serie($id)
     {
-        $var = $this->Mserie->eliminar($id); // consulta series existente 
+        $var = $this->MSerie->eliminar($id); // consulta series existente 
         if ($var == true) {
             header("Location:" . base_url() . "panel/series");
             exit;
@@ -26,7 +26,7 @@ class series extends CI_Controller
     {
         $id     = $this->input->post('id');
         $nombre = $this->input->post('nombre');
-        $var    = $this->Mserie->editar($nombre, $id); // 
+        $var    = $this->MSerie->editar($nombre, $id); // 
         if ($var != false) {
             $response['status'] = 'ok';
             $response['code']   = "Edición hecha correctamente recargue la pagina para actualizar la tabla";
@@ -49,7 +49,7 @@ class series extends CI_Controller
         
         if ($imagenurl != false) {
             
-            $var = $this->Mserie->editarimg($imagenurl,$id,$lugar); // 
+            $var = $this->MSerie->editarimg($imagenurl,$id,$lugar); // 
             if ($var != false) {
                 $response['status'] = 'ok';
                 $response['code']   = "Edición hecha correctamente recargue la pagina para actualizar la tabla";
@@ -86,7 +86,7 @@ class series extends CI_Controller
         
         if ($imagenurl != false) {
             
-            $var = $this->Mserie->crear($nombre, $descripcion, $imagenurl, $categoria, $estado, $fecha, $dias, $duracion); // 
+            $var = $this->MSerie->crear($nombre, $descripcion, $imagenurl, $categoria, $estado, $fecha, $dias, $duracion); // 
             if ($var != false) {
                 $response['status'] = 'ok';
                 $response['code']   = "La serie ha sido creada de forma";
@@ -101,7 +101,7 @@ class series extends CI_Controller
                         'id_serie' => $var,
                         'id_genero' => $key
                     );
-                    $this->Mserie->setgenero($datos);
+                    $this->MSerie->setgenero($datos);
                 }
             }
             
