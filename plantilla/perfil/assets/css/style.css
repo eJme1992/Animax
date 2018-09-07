@@ -100,7 +100,7 @@ a, a:hover, a:focus {
 
 }
 .n-Pill:visited{ background-color: #fff !important; }
-.nav-item{
+#editarPerfil .nav-item{
     min-height: 7em;
 }
 .welcome{

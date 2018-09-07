@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Mserie extends CI_Model {
+class MSerie extends CI_Model {
 
 
 	 function lista()

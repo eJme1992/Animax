@@ -18,13 +18,13 @@ class Home extends CI_Controller
 	public function index()
 	{	
 
-        $this->load->model('Mserie'); // Carga el modelo de categorías 
+        $this->load->model('MSerie'); // Carga el modelo de categorías 
         $this->load->model('MCategoria'); // Carga el modelo de categorías 
         $this->load->model('MGenero'); // Carga el modelo de categorías
         $this->load->model('MTemporada'); // Carga el modelo de categorías  
         $this->load->model('MCapitulo'); // Carga el modelo de categorías  
         $DATOS['capitulo'] = $this->MCapitulo->listacap(6);
-        $DATOS['series'] = $this->Mserie->listades(3);
+        $DATOS['series'] = $this->MSerie->listades(3);
         $this->load->view('website/cuerpo-home',$DATOS);
         $this->load->view('website/footer');
 	}

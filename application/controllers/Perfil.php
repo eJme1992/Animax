@@ -19,7 +19,7 @@ class Perfil extends CI_Controller {
 	public function index()
 	{
 		
-		$this->load->view('perfil/perfil'); //Mi carpeta perfil archivo perfil
+		$this->load->view('website/perfil/perfil'); //Mi carpeta perfil archivo perfil
 	}
     
   public function salir() {
@@ -29,7 +29,7 @@ class Perfil extends CI_Controller {
 	  
 
     public function editar(){
-        $this->load->view('perfil/editar');
+        $this->load->view('website/perfil/editar');
         $this->load->view('website/footer');
     }
 

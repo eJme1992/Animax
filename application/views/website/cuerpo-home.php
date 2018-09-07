@@ -1,13 +1,13 @@
 <header id="portada">
    <a class="#"><img style="width:100%;" class="portada-principal" src="<?=base_url();?>plantilla/website/img/1534667129353.jpg"></a>
 </header>
-<nav id="barra-secundaria" style="height:50px;">
-   <div class="text-center" style="padding-top:12px;">
-      <a href="">Destacadas del mes</a>
+<nav id="barra-secundaria">
+   <div class="text-center">
+      <a href="#SERIES_DESTACAS">Destacadas</a>
       <a href="">Favoritas</a>
       <a href="">Subidas recientemente</a>
       <a href="">Recomendaciones</a>
-      <a href="">Peliculas</a>
+      <a href="">Películas</a>
    </div>
 </nav>
 <section id="home">
@@ -51,7 +51,7 @@
          <div class="col-md-7">
             <div class="row">
               <?php foreach ($capitulo as $key){?> 
-               <div class="col-sm-4" id="cap">
+               <div class="col-md-4" id="cap">
                   <div class="card">
                   <a href="#" data-toggle="tooltip" title="<?=$key->name;?> <?=$key->temporada;?>-<?=$key->numero;?>"> <img src="<?=base_url().$key->imagen2;?>" class="img-fluid cap-es"></a>
                   <span class="span Capi">
@@ -68,8 +68,8 @@
          
          <!--Diva para la barra lateral 3-->
          <div class="col-md-9 row">
-          <div class="col-md-12">
-         <h2>SERIES DESTACAS</h2>
+          <div class="col-md-12" id='SERIES_DESTACAS'>
+         <h2><i class="fas fa-star"></i></i> Series destacadas</h2>
           </div>
               <?php foreach ($series as $key){?> 
                <div class="col-sm-4" id='destacadas'>
@@ -83,8 +83,8 @@
                   </span>
                   </div>
                </div>
-                <?php } ?>             
-         
+                <?php } ?>            
+
 
 
          </div>

@@ -1,7 +1,32 @@
+
 #home .mg {
     margin-top: 10px !important;
 }
+#buscar .mr-sm-2 {
+    margin-right: 0px !important;
+    border-radius: .25rem .0rem .0rem .25rem;
+}
 
+#buscar .btn {
+    border-radius: .0rem .25rem .25rem .0rem;
+    min-height: 38px;
+    background-color: #FF7E00;
+    border-color: #FF7E00;;
+}
+
+#buscar .form-control:focus {
+  border-color:#FF7E00;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(255, 0, 0, 0.6);
+}
+
+body{font-family: 'Noto Sans KR', sans-serif;}
+@media (max-width:765px){
+   .cap-es{
+    height:37.3vw !important;
+    width: 100%;
+    border-radius: 2% 2% 0px 0px;
+}
+}
 #home .card {
 margin-bottom:20px; 
 background-color:#f2f2f2;
@@ -9,8 +34,8 @@ background-color:#f2f2f2;
 -moz-box-shadow: 3px 10px 16px -4px rgba(0,0,0,0.52);
 box-shadow: 3px 10px 16px -4px rgba(0,0,0,0.52);
 }
-.cap-es{
-    height:7.3vw !important;
+#cap .img-fluid{
+    height:7.3vw ;
     width: 100%;
     border-radius: 2% 2% 0px 0px;
 }
@@ -105,6 +130,7 @@ nav{
    .font-s{margin-bottom: 1.5em; margin-top:1em; }
    #boton-menu{display: block;}
    .mi-menu{display: none;}
+}
 @media (min-width:551px) and (max-width:960px){
     #buton-r{display:block;}
     .font-s{display:block;}
@@ -174,11 +200,12 @@ footer{
     color:#fff;
     font-family: 'Amaranth', sans-serif;
     margin-bottom: 1.5em;
-    min-height:60px;
-    text-align:Center;
-    padding-top:20px;
+    height:50px;
+    text-align:center;
+ 
     
 }
+#barra-secundaria .text-center {padding-top:12px;}
 #barra-secundaria a{ line-height:1em !important; margin-left:1em; color:#fff;}
 #barra-secundaria a:hover{text-decoration: none;}
 #barra-secundaria a:active{ border-bottom: 5px solid #800000; border-width: 70%; }
@@ -193,3 +220,4 @@ footer{
 #home{
 margin-bottom:2.5em;
 }
+
