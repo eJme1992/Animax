@@ -26,16 +26,16 @@
                <div class="carousel-inner">
                   <div class="carousel-item active">
                      <a href="#">
-                        <img src="<?=base_url();?>plantilla/website/img/1696.jpg" alt="Los Angeles">
+                     <img src="<?=base_url();?>plantilla/website/img/1696.jpg" alt="Los Angeles">
                      </a>  
                   </div>
                   <div class="carousel-item">
-                  <a href="#"> <img src="<?=base_url();?>plantilla/website/img/1032.jpg" alt="Chicago">
-                  </a>
+                     <a href="#"> <img src="<?=base_url();?>plantilla/website/img/1032.jpg" alt="Chicago">
+                     </a>
                   </div>
                   <div class="carousel-item">
-                  <a href="#"> <img src="<?=base_url();?>plantilla/website/img/1503.jpg" alt="New York">
-                  </a>
+                     <a href="#"> <img src="<?=base_url();?>plantilla/website/img/1503.jpg" alt="New York">
+                     </a>
                   </div>
                </div>
                <!-- Left and right controls -->
@@ -47,62 +47,57 @@
                </a>
             </div>
          </div>
-
          <div class="col-md-7">
             <div class="row">
-              <?php foreach ($capitulo as $key){?> 
+               <?php foreach ($capitulo as $key){?> 
                <div class="col-md-4" id="cap">
                   <div class="card">
-                  <a href="#" data-toggle="tooltip" title="<?=$key->name;?> <?=$key->temporada;?>-<?=$key->numero;?>"> <img src="<?=base_url().$key->imagen2;?>" class="img-fluid cap-es"></a>
-                  <span class="span Capi">
+                     <a href="#" data-toggle="tooltip" title="<?=$key->name;?> <?=$key->temporada;?>-<?=$key->numero;?>"> <img src="<?=base_url().$key->imagen2;?>" class="img-fluid cap-es"></a>
+                     <span class="span Capi">
                      <b>Temp:</b><?=$key->temporada;?>-<b>Cap:</b><?=$key->numero;?> <i class="far fa-clock"></i>
-                  </span>
-                  <span class="Title">
-                    <?=$key->name;?> 
-                  </span>
+                     </span>
+                     <span class="Title">
+                     <?=$key->name;?> 
+                     </span>
                   </div>
                </div>
-                <?php } ?>             
+               <?php } ?>             
             </div>
          </div>
-         
          <!--Diva para la barra lateral 3-->
          <div class="col-md-9 row">
-          <div class="col-md-12 bordert" id="SERIES_DESTACAS">
-           <h2><i class="fas fa-star"></i></i> Series destacadas</h2>
-          </div>
-              <?php foreach ($series as $key){?> 
-               <div class="col-sm-4" id='destacadas'>
-                  <div class="card">
+            <div class="col-md-12 bordert" id="SERIES_DESTACAS">
+               <h2><i class="fas fa-star"></i></i> Series destacadas</h2>
+            </div>
+            <?php foreach ($series as $key){?> 
+            <div class="col-sm-4" id='destacadas'>
+               <div class="card">
                   <a href="#" data-toggle="tooltip" title="<?=$key->nombre;?>"> <img src="<?=base_url().$key->imagen;?>" class="img-fluid tem-es"></a>
                   <span class="span Capi">
-                     DESTACA <i class="fas fa-star"></i></i>
+                  DESTACA <i class="fas fa-star"></i></i>
                   </span>
                   <span class="Title">
-                    <?=$key->nombre;?> 
+                  <?=$key->nombre;?> 
                   </span>
-                  </div>
                </div>
-                <?php } ?>            
-
-    <div class="col-md-12 bordert" id="SERIES_DESTACAS">
-           <h2><i class="fas fa-star"></i></i> Series destacadas</h2>
-          </div>
-              <?php foreach ($series as $key){?> 
-               <div class="col-md-3" id='destacadas'>
-                  <div class="card">
+            </div>
+            <?php } ?>            
+            <div class="col-md-12 bordert" id="SERIES_DESTACAS">
+               <h2><i class="fas fa-star"></i></i>Últimos capitulo</h2>
+            </div>
+            <?php foreach ($series as $key){?> 
+            <div class="col-md-3" id='destacadas'>
+               <div class="card">
                   <a href="#" data-toggle="tooltip" title="<?=$key->nombre;?>"> <img src="<?=base_url().$key->imagen;?>" class="img-fluid tem-es"></a>
                   <span class="span Capi">
-                     DESTACA <i class="fas fa-star"></i></i>
+                  DESTACA <i class="fas fa-star"></i></i>
                   </span>
                   <span class="Title">
-                    <?=$key->nombre;?> 
+                  <?=$key->nombre;?> 
                   </span>
-                  </div>
                </div>
-                <?php } ?>
-
-
+            </div>
+            <?php } ?>
          </div>
          <div class="col-md-3">
             <div class="col-md-12">
@@ -110,12 +105,11 @@
             </div>
             <a href="#"> <img src="<?=base_url();?>plantilla/website/img/jp.jpg" class="img-fluid"></a>
          </div>
-
       </div>
    </div>
 </section>
 <script>
-$(document).ready(function(){
-    $('[data-toggle="tooltip"]').tooltip();   
-});
+   $(document).ready(function(){
+       $('[data-toggle="tooltip"]').tooltip();   
+   });
 </script>
