@@ -6,7 +6,7 @@
       <a href="#SERIES_DESTACAS"><i class="fas fa-star"></i></i> Series destacadas</a>
       <a href="#TEMPORADAS_RECIENTES"><i class="fab fa-cloudscale"></i> Temporadas </a>
       <a href="#PELICULAS_RECIENTES"><i class="fas fa-video"></i> Películas recientes</a>
-      <a href=""><i class="fas fa-video"></i> Noticias</a>
+      <a href="#NOTICIAS"><i class="fas fa-newspaper"></i> Noticias</a>
    </div>
 </nav>
 <section id="home">
