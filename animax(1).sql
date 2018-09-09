@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3306
--- Tiempo de generación: 05-09-2018 a las 23:02:50
+-- Tiempo de generación: 09-09-2018 a las 22:53:47
 -- Versión del servidor: 5.7.21
 -- Versión de PHP: 5.6.35
 
@@ -74,6 +74,22 @@ CREATE TABLE IF NOT EXISTS `capitulo_video` (
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `carrusel`
+--
+
+DROP TABLE IF EXISTS `carrusel`;
+CREATE TABLE IF NOT EXISTS `carrusel` (
+  `id` int(15) NOT NULL AUTO_INCREMENT,
+  `url` varchar(400) NOT NULL,
+  `imagen` int(200) NOT NULL,
+  `posicion` int(2) NOT NULL,
+  `titulo` varchar(200) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `categorias`
 --
 
@@ -116,6 +132,59 @@ CREATE TABLE IF NOT EXISTS `generos` (
 INSERT INTO `generos` (`id`, `nombre`, `fecha_c`, `fecha_m`) VALUES
 (1, 'Porno ', '2018-08-27', '2018-08-28'),
 (3, 'Comedia', '2018-08-29', '2018-08-29');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `peliculas`
+--
+
+DROP TABLE IF EXISTS `peliculas`;
+CREATE TABLE IF NOT EXISTS `peliculas` (
+  `id` int(15) NOT NULL AUTO_INCREMENT,
+  `nombre` varchar(40) NOT NULL,
+  `imagen` varchar(200) NOT NULL,
+  `descripcion` varchar(400) NOT NULL,
+  `duracion` varchar(8) NOT NULL,
+  `idioma` varchar(20) NOT NULL,
+  `direccion` varchar(20) NOT NULL,
+  `formato` varchar(20) NOT NULL,
+  `fecha_estreno` date NOT NULL,
+  `fecha_c` date NOT NULL,
+  `fecha_m` date NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `pelicula_genero`
+--
+
+DROP TABLE IF EXISTS `pelicula_genero`;
+CREATE TABLE IF NOT EXISTS `pelicula_genero` (
+  `id` int(15) NOT NULL AUTO_INCREMENT,
+  `id_pelicula` int(15) NOT NULL,
+  `id_genero` int(15) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `pelicula_video`
+--
+
+DROP TABLE IF EXISTS `pelicula_video`;
+CREATE TABLE IF NOT EXISTS `pelicula_video` (
+  `id` int(15) NOT NULL AUTO_INCREMENT,
+  `id_pelicula` int(15) NOT NULL,
+  `tipo` int(2) NOT NULL,
+  `url_video` varchar(400) NOT NULL,
+  `fecha_c` date NOT NULL,
+  `fecha_m` varchar(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -229,7 +298,7 @@ CREATE TABLE IF NOT EXISTS `st_datos` (
 --
 
 INSERT INTO `st_datos` (`id`, `nombre`, `descripcion`, `logo`, `logo2`, `icon`, `correo`, `telefono`) VALUES
-(1, 'Animex', 'Animex', '', '', '', '', '');
+(1, 'Animex', 'Animex', '', '', '', 'edwin@clubdegorras.com', '0416 8515');
 
 -- --------------------------------------------------------
 
@@ -334,8 +403,8 @@ CREATE TABLE IF NOT EXISTS `user` (
 --
 
 INSERT INTO `user` (`id`, `mail`, `nickname`, `pass`, `nombre`, `apellido`, `nacimiento`, `sexo`, `foto`, `tipo`, `fecha_c`, `fecha_m`) VALUES
-(1, 'sofiasinger19@gmail.com', '', '12345', 'sofia', 'singer', '1997-08-19', 'f', '', 0, '2018-08-18', '2018-08-26'),
-(3, 'edwin.jme@gmail.com', 'JHOO', '2664265', 'Edwin Jose', 'Mogollon E.', '1992-07-10', 'M', 'file/img/img2018_09_05_49.jpg', 1, '2018-08-01', '2018-09-05'),
+(1, 'sofiasinger19@gmail.com', 'jojo', '12345', 'sofia', 'singer', '1997-08-19', 'f', '', 0, '2018-08-18', '2018-09-09'),
+(3, 'edwin.jme@gmail.com', 'Carlos', '2664265', 'Edwin Jose', 'Mogollon E.', '1992-07-10', 'M', 'file/img/img2018_09_09_27.jpg', 1, '2018-08-01', '2018-09-09'),
 (4, 'wilber@gmail.com', '', '12345', 'wilber', 'mendoza', '2018-09-21', 'M', '', 1, '2018-09-01', '2018-09-01');
 COMMIT;
 

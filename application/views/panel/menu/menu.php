@@ -23,7 +23,7 @@
           <ul class="treeview-menu">
             <li><a href="<?=base_url();?>panel/newserie"><b>Todas mis películas</b></a></li>
             <li><a href="<?=base_url();?>panel/newserie">Nueva Película</a></li>
-            <li><a href="<?=base_url();?>plantilla/panel/#">Géneros</a></li>
+            <li><a href="<?=base_url();?>panel/generos">Géneros</a></li>
           </ul>
         </li>
           <li class="treeview">
@@ -43,7 +43,7 @@
           </a>
         </li>
          <li class="treeview">
-          <a href="#"><i class="fa fa-tv"></i> <span>Configuración</span>
+          <a href="#"><i class="fa fa-cog" aria-hidden="true"></i><span>CONFIGURACIÓN</span>
             <span class="pull-right-container">
                 <i class="fa fa-angle-left pull-right"></i>
               </span>

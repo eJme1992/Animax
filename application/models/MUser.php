@@ -81,6 +81,12 @@ class MUser extends CI_Model {
 		return $query->result();
     }
 
+     function detalle($id)
+	{    
+		$query = $this->db->query("SELECT * FROM `user` WHERE id='$id'");
+		return $query->result();
+    }
+
      function eliminar($id)
 	{    
 		$query = $this->db->query("DELETE FROM `user` WHERE id='$id'");

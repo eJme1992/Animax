@@ -53,6 +53,15 @@ class User extends CI_Controller
         
         $var = $this->MUser->editar_usuario($id, $mail,  $nombre, $apellido, $nacimiento, $sexo, $tipo); // 
         if ($var != false) {
+            $id = $this->session->userdata('id');
+            $consultas = $this->MUser->detalle($id->id);
+            $consulta  = end($consultas); //funcion que me trae el ultimo registro de la consulta
+            $data_login = array(
+                'id'        => $consulta,
+                'tipo'      => $consulta->tipo, 
+                'login'     => TRUE
+            ); 
+            $this->session-> set_userdata($data_login); //se crea la sesion con los datod del 
             $response['status'] = 'ok';
             $response['code']   = "Datos editados exitosamente";
         } else {
@@ -69,7 +78,15 @@ class User extends CI_Controller
         $nickname   = $this->input->post('nickname');
         $var = $this->MUser->editar_nick($id,$nickname);
         if ($var) {
-            # code...
+            $id = $this->session->userdata('id');
+            $consultas = $this->MUser->detalle($id->id);
+            $consulta  = end($consultas); //funcion que me trae el ultimo registro de la consulta
+            $data_login = array(
+                'id'        => $consulta,
+                'tipo'      => $consulta->tipo, 
+                'login'     => TRUE
+            ); 
+            $this->session-> set_userdata($data_login); //se crea la sesion con los datod del 
             $response['status'] = 'ok';
             $response['code']   = "Nickname actualizado exitosamente";
         } else {
@@ -100,6 +117,15 @@ class User extends CI_Controller
             
             $var = $this->MUser->editar_img($imagenurl, $id); // 
             if ($var != false) {
+                $id = $this->session->userdata('id');
+                $consultas = $this->MUser->detalle($id->id);
+                $consulta  = end($consultas); //funcion que me trae el ultimo registro de la consulta
+                $data_login = array(
+                'id'        => $consulta,
+                'tipo'      => $consulta->tipo, 
+                'login'     => TRUE
+                 ); 
+                $this->session-> set_userdata($data_login); //se crea la sesion con los datod del 
                 $response['status'] = 'ok';
                 $response['code']   = "Edición hecha correctamente recargue la pagina para actualizar la tabla";
             } else {
