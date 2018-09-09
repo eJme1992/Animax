@@ -30,10 +30,10 @@ class Menus extends CI_Controller
         $var = $this->MMenu->editar($id, $nombre, $url, $id_menus, $posicion);// 
         if ($var != false) { 
               $response['status'] = 'ok';
-              $response['code']   = "Edición hecha correctamente recargue la pagina para actualizar la tabla";
+              $response['code']   = " Edición hecha correctamente recargue la pagina para actualizar la tabla";
         }else{
                $response['status'] = 0;
-               $response['error']  = 'No se edito correctamente';
+               $response['error']  = ' Algo a salido mal, por favor verifique los datos ingresados';
         }
         echo json_encode($response); 
     }
@@ -51,7 +51,7 @@ class Menus extends CI_Controller
                 $response['code'] = "La menu ha sido creada de forma";
         }else{
                 $response['status'] = 0;
-                $response['error'] = "Ya existe una menu con este nombre";
+                $response['error'] = "Algo a salido mal, por favor verifique los datos ingresados";
         }
         echo json_encode($response);
     }
