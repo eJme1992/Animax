@@ -17,25 +17,20 @@
             <div id="demo" class="carousel slide" data-ride="carousel">
                <!-- Indicators -->
                <ul class="carousel-indicators">
-                  <li data-target="#demo" data-slide-to="0" class="active"></li>
-                  <li data-target="#demo" data-slide-to="1"></li>
-                  <li data-target="#demo" data-slide-to="2"></li>
+                  <?php $i=0; foreach ($carrusel as $key) {   ?>
+                  <li data-target="#demo" data-slide-to="<?=$i?>" <?php if($i==0) echo 'class="active"';?>></li>
+                  <?php $i++; } ?>
                </ul>
                <!-- The slideshow -->
+               
                <div class="carousel-inner">
-                  <div class="carousel-item active">
+                  <?php $i=0; foreach ($carrusel as $key) {   ?>
+                  <div class="carousel-item <?php if($i==0) echo 'active';?>">
                      <a href="#">
-                     <img src="<?=base_url();?>plantilla/website/img/1696.jpg" alt="Los Angeles">
+                     <img src="<?=base_url().$key->imagen;?>" alt="Los Angeles" style="height:20vw;">
                      </a>  
                   </div>
-                  <div class="carousel-item">
-                     <a href="#"> <img src="<?=base_url();?>plantilla/website/img/1032.jpg" alt="Chicago">
-                     </a>
-                  </div>
-                  <div class="carousel-item">
-                     <a href="#"> <img src="<?=base_url();?>plantilla/website/img/1503.jpg" alt="New York">
-                     </a>
-                  </div>
+                   <?php $i++; } ?>
                </div>
                <!-- Left and right controls -->
                <a class="carousel-control-prev" href="#demo" data-slide="prev">
