@@ -52,11 +52,14 @@
                            <!-- Modal body -->
                            <form id="change-img">
                               <div class="modal-body">
-                                 <input type="file" name="imagen" id="imagen" class="form-control" required="">    
+                                 <input type="file" name="imagen" id="imagen" class="form-control" required=""> 
+                                 <input type="hidden" name="id" id="id" value="<?=$user->id;?>" />
+                                  <input type="hidden" name="<?=$csrf['name'];?>" value="<?=$csrf['hash'];?>" />   
                               </div>
                            </form>
                            <!-- Modal footer -->
                            <div class="modal-footer">
+                            <button type="submit" name="enviar" class="btn btn-info">Subir imagen</button>
                               <button type="button" class="btn btn-danger" id="close" data-dismiss="modal">Close</button>
                            </div>
                         </div>

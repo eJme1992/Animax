@@ -73,7 +73,7 @@ a, a:hover, a:focus {
 .change-p{
     margin-bottom:2.5em;
 }
-.btn-cargar{ width:60% !important; background-color: #6633CC !important; 
+.btn-cargar{ width:60% !important; background-color: #000 !important; 
     color:#fff; 
     font-size:1.5em; 
     line-height: 1.5;
@@ -92,7 +92,7 @@ a, a:hover, a:focus {
 #editarPerfil .nav-item{
     border:solid;
     border-width:2px;
-    border-color:#6633CC;
+    border-color:#FF7E00;
     border-radius:10px;
 }
 .n-Pill{
@@ -112,7 +112,7 @@ a, a:hover, a:focus {
     width:49%;
 }
 .twice input{ width:100% !important; }
-.salir{ width:10%; margin-bottom: 0.5em; color:#fff; background-color:#FF6666; float:right; }
+.salir{ width:10%; margin-bottom: 0.5em; color:#fff; background-color:#FF7E00; float:right; }
 .fa-chevron-circle-right{ color:#fff; float:right; overflow: visible; }
 @media (max-width: 900px){
     .salir{width:50%;}
