@@ -31,9 +31,9 @@
             </div>
             <?php } ?> 
             <div class="center-block text-center">
-               <ul class="pagination">
+               <ul class="pagination text-center">
                   <?php
-                                         if ($total_paginas > 1) {
+                 if ($total_paginas > 1) {
                          if ($pagina != 1)
                              echo '<li><a href="' . $url . '?pagina=' . (($total_paginas - $total_paginas) + 1) . '"><i class="fa fa-chevron-circle-left" aria-hidden="true"></i></a></li>';
                      
@@ -46,7 +46,7 @@
                      } else
                      //si el índice no corresponde con la página mostrada actualmente,
                      //coloco el enlace para ir a esa página
-                     if (($i < $total_paginas) and ( $i != 0)) {
+                     if (($i <= $total_paginas) and ( $i != 0)) {
                          echo ' <li> <a href="' . $url . '/' . $i . '">' . $i . '</a> </li>';
                      }
                      }

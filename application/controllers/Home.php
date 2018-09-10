@@ -37,7 +37,7 @@ class Home extends CI_Controller
 	}
 
     public function detalle_series($id){
-        $this->load->model('Mserie'); // Carga el modelo de categorías 
+        $this->load->model('MSerie'); // Carga el modelo de categorías 
         $this->load->model('MCategoria'); // Carga el modelo de categorías 
         $this->load->model('MGenero'); // Carga el modelo de categorías
         $this->load->model('MTemporada'); // Carga el modelo de categorías  
