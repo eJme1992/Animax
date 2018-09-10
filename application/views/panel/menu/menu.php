@@ -1,6 +1,10 @@
 <li class="header">MENU DE ADMINISTRACION</li>
         <!-- Optionally, you can add icons to the links -->
-        
+           <li class="trw">
+          <a href="<?=base_url();?>panel/carrusel"><i class="fa fa-language" aria-hidden="true"></i>
+ <span>CARRUSEL</span>
+          </a>
+        </li>
         <li class="treeview">
           <a href="#"><i class="fa fa-tv"></i> <span>SERIES</span>
             <span class="pull-right-container">

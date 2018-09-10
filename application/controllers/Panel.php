@@ -113,6 +113,22 @@ class Panel extends CI_Controller {
 		$this->load->view('panel/footer'); 
 	}
 
+    public function carrusel()
+    {
+        $this->load->model('MCarrusel'); // Carga el modelo de categorías 
+        $DATOS['Carrusel'] = $this->MCarrusel->lista();// consulta categorías existente  
+        // SEGURIDAS
+        $csrf = array(
+        'name' => $this->security->get_csrf_token_name(),
+        'hash' => $this->security->get_csrf_hash()
+        );
+        $DATOS['csrf'] = $csrf;
+
+        $this->load->view('panel/secciones/carrusel',$DATOS);
+        $this->load->view('panel/footer'); 
+    }
+
+
     //GENERO
 
 	  public function generos()
