@@ -144,6 +144,7 @@ class User extends CI_Controller
          $pass = $this->input->post('change-pass');
          $conpass = $this->input->post('confirm-pass');
          if ($pass === $conpass){
+            $res = $this->MUser->editar_pass($pass);
             $response['status']== 'ok';
             $response['code']   = "Contraseña cambiada correctamente";
             }

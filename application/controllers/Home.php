@@ -36,7 +36,24 @@ class Home extends CI_Controller
 	}
 
     public function detalle_series(){
-        $this->load->view('website/detalleseries');
+        $this->load->model('Mserie'); // Carga el modelo de categorías 
+        $this->load->model('MCategoria'); // Carga el modelo de categorías 
+        $this->load->model('MGenero'); // Carga el modelo de categorías
+        $this->load->model('MTemporada'); // Carga el modelo de categorías  
+        $this->load->model('MCapitulo');// medidas de seguridad
+         $csrf = array(
+        'name' => $this->security->get_csrf_token_name(),
+        'hash' => $this->security->get_csrf_hash()
+        );
+        $DATOS['csrf'] = $csrf;
+        
+        $consultas = $this->Mserie->consultar($id);
+        $DATOS['serie'] = end($consultas);
+         $DATOS['temporada'] = $this->MTemporada->lista($id);
+        $DATOS['capitulo'] = $this->MCapitulo->lista($id); 
+        $DATOS['categorias'] = $this->MCategoria->lista();// consulta categorías existente  
+        $DATOS['generos'] = $this->MGenero->lista();// consulta categorías existente    
+        $this->load->view('website/detalleseries', $DATOS);
         $this->load->view('website/footer'); 
     }
  
