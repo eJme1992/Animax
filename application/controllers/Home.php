@@ -48,7 +48,7 @@ class Home extends CI_Controller
         );
         $DATOS['csrf'] = $csrf;
         
-        $consultas = $this->Mserie->consultar($id);
+        $consultas = $this->MSerie->consultar($id);
         $DATOS['serie'] = end($consultas);
          $DATOS['temporada'] = $this->MTemporada->lista($id);
         $DATOS['capitulo'] = $this->MCapitulo->lista($id); 
