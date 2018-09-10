@@ -138,6 +138,20 @@ class User extends CI_Controller
         }
         echo json_encode($response);
     }
+
+    public function editar_pass(){
+         $id  = $this->input->post('id'); 
+         $pass = $this->input->post('change-pass');
+         $conpass = $this->input->post('confirm-pass');
+         if ($pass === $conpass){
+            $response['status']== 'ok';
+            $response['code']   = "Contraseña cambiada correctamente";
+            }
+            else
+             $response['status']== 'not';
+            $response['code']   = "La Contraseña no coincide"; 
+         }
+    }
     
     
     

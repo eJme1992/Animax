@@ -119,6 +119,8 @@
                   <label for="pwd">Confirmar Contraseña</label>
                   <input type="password" class="form-control" id="confirm-pass" name="confirm-pass">
                </div>
+                 <input type="hidden" name="id" id="id" value="<?=$user->id;?>" />
+                            <input type="hidden" name="<?=$csrf['name'];?>" value="<?=$csrf['hash'];?>" />
                   <button type="button" class="btn btn-cargar mx-auto d-block">
                      Enviar 
                      </button>
@@ -130,7 +132,9 @@
                <form id="nickname">
                        <div class="form-group">
                 <label for="pwd">Nickname</label>
-                        <input type="Email" class="form-control" id="nickname" name="nickname" required="">
+                        <input type="text" class="form-control" id="nickname" name="nickname" required="">
+                          <input type="hidden" name="id" id="id" value="<?=$user->id;?>" />
+                            <input type="hidden" name="<?=$csrf['name'];?>" value="<?=$csrf['hash'];?>" />
                       </div>
                     
 
@@ -261,7 +265,7 @@
            var getData = jqXHR.responseJSON; // dejar esta linea
           if(data.status=='ok'){
            $("#resultado3").html('<div class="alert alert-success">'+data.code+'</div>');
-           window.location.href ='<?=base_url();?>perfil/user';
+           window.location.href ='<?=base_url();?>perfil/index';
           }else{
           $("#resultado3").html('<div class="alert alert-danger"><strong>ERROR!</strong>'+data.error+'</div>');
           }
