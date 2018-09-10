@@ -31,10 +31,10 @@ class MCarrusel extends CI_Model {
 		}else{
 			$var = $posicion;
 		}
-		echo "$var";
+		
 		$query = $this->db->query("SELECT * FROM `carrusel` WHERE posicion='$var'");
         
-        /*if ($query->num_rows() == 0) {
+        if ($query->num_rows() == 0) {
         
             $query = $this->db->query("INSERT INTO `carrusel` (`titulo`, `imagen`,`posicion`, `url`) VALUES ('$titulo','$imagen','$posicion','$url')");
             if ($query == true) {
@@ -46,7 +46,7 @@ class MCarrusel extends CI_Model {
         } else {
             $id = false;
             return $id;
-        } */
+        } 
 	}
  
 

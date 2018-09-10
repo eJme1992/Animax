@@ -33,7 +33,7 @@
             <th>Titulo</th>
             <th>Posición</th>        
             <th>#</th>
-            <th>#</th>
+           
          </tr>
       </thead>
       <tfoot>
@@ -43,19 +43,19 @@
             <th>Titulo</th>
             <th>Posición</th>        
             <th>#</th>
-            <th>#</th>
+       
          </tr>
       </tfoot>
       <tbody>
          <?php foreach ($Carrusel as $key) { ?>
          <tr>
             <td><?=$key->id;?></td>
-            <td><img href="<?=$key->imagen;?>" class="img-responsive"></td>
+            <td><img src="<?=base_url().$key->imagen;?>" class="img-responsive"></td>
             <td><?=$key->titulo;?></td>
             <td><?=$key->posicion ;?></td>
-            <td>
+           <!-- <td>
                <p data-placement="top" data-toggle="tooltip" title="Edit"><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit<?=$key->id;?>" ><span class="glyphicon glyphicon-pencil"></span></button></p>
-            </td>
+            </td>-->
             <td>
                <p data-placement="top" data-toggle="tooltip" title="Delete"><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete<?=$key->id;?>" ><span class="glyphicon glyphicon-trash"></span></button></p>
             </td>
@@ -106,7 +106,7 @@
                   <!-- Modal content-->
                   <div class="modal-content">
                      <div class="modal-body text-center">
-                        <h3> ¿Esta Seguro que desea eliminar la Carrusel: <b><?=$key->nombre;?></b>?</h3>
+                        <h3> ¿Esta Seguro que desea eliminar la Carrusel: <b><?=$key->id;?></b>?</h3>
                      </div>
                      <div class="modal-footer">
                         <a href="<?=base_url();?>Carrusel/eliminar_Carrusel/<?=$key->id;?>"><button type="button" class="btn btn-danger">Si</button></a>

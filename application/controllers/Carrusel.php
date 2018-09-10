@@ -15,7 +15,7 @@ class Carrusel extends CI_Controller
     {
         $var = $this->MCarrusel->eliminar($id);// consulta carrusels existente 
         if ($var == true) {
-         header("Location:" . base_url() . "panel/carrusels");
+         header("Location:" . base_url() . "panel/carrusel");
          exit; 
         }
     }
@@ -40,7 +40,7 @@ class Carrusel extends CI_Controller
 
         $titulo = $this->input->post('titulo');
         $imagen      = $_FILES['imagen'];
-       echo $posicion  = $this->input->post('posicion');
+        $posicion  = $this->input->post('posicion');
         $url  = $this->input->post('url');
 
 

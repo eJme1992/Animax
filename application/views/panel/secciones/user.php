@@ -168,6 +168,7 @@
               swal("¡Error! ", msj, "error");
           }
       });
+      
       jQuery("#subir_imagen").submit(function(event) {
          event.preventDefault();
          var msj = '1';

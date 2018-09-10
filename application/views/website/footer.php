@@ -4,14 +4,16 @@
             <div class="row">
                 <div class="col-md-4">
                     <h3 class="titulo-fo">Acerca de nosotros</h3>
-                    <p class="sub-fo"> Lorem ipsum dolor sit amet consectetur adipiscing elit dapibus erat, parturient est quam cum himenaeos potenti a viverra, ultrices arcu volutpat donec turpis justo vehicula fusce.<br> Vehicula natoque donec auctor quisque odio ante posuere, ligula id scelerisque montes augue turpis, laoreet placerat habitant libero conubia eleifend. </p>
+                    <p class="sub-fo"><?=$datos->descripcion;?></p>
                 </div>
                 <div class="col-md-4">
                      <h3 class="titulo-fo">Contactanos</h3>
                      <ul class="contact">
-                         <li><a href="#"><i class="fas fa-phone"></i>(777)777 7777 </a></li>
-                         <li><a href="#"> <i class="fas fa-map-marker-alt"></i>Lorem ipsum dolor sit amet consectetur adipiscing elit dapibus</a></li>
-                         <li><a href="#"><i class="fas fa-envelope"></i> noreply@yourdomain.com</a></li>
+                         <li><a href="#"><i class="fas fa-phone"></i> 
+                            <?=$datos->telefono;?></a></li>
+                         <li><a href="#"><i class="fas fa-envelope"></i> 
+                            <?=$datos->correo;?>
+                         </a></li>
                          
                      </ul>
                 </div>
@@ -27,7 +29,7 @@
                 </div>
                 <div class="col-md-12 "><hr style="border-color:#868588;"></div>
                        <div class="col-md-6">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nec ligula est. Integer bibendum, </p>
+                <p> Ningun video se encuentra alojado en nuestros servidores </p>
             </div>
             <div class="col-md-6" id="redes-sociales-f">
                 

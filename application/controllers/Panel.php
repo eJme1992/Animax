@@ -247,5 +247,57 @@ class Panel extends CI_Controller {
 
 
     }
+    public function peliculas(){
+
+        $this->load->model('MPelicula'); // Carga el modelo de datos 
+        $DATOS['datos'] = $this->MPelicula->lista();// Trae datos de la tabla
+
+         $csrf = array(
+        'name' => $this->security->get_csrf_token_name(),
+        'hash' => $this->security->get_csrf_hash()
+        );
+        $DATOS['csrf'] = $csrf;
+        $this->load->view('panel/secciones/peliculas',$DATOS);
+        $this->load->view('panel/footer');
+
+
+    }
+
+    public function newpelicula()
+    {
+        $this->load->model('MGenero'); // Carga el modelo de categorías 
+         // SEGURIDAS
+      
+        $csrf = array(
+        'name' => $this->security->get_csrf_token_name(),
+        'hash' => $this->security->get_csrf_hash()
+        );
+        $DATOS['csrf'] = $csrf;
+
+        $DATOS['generos'] = $this->MGenero->lista();// consulta categorías existente    
+        $this->load->view('panel/secciones/newpelicula', $DATOS );
+        $this->load->view('panel/footer'); 
+    }
+
+    public function viewpelicula($id)
+    {
+        $this->load->model('MPelicula'); // Carga el modelo de categorías 
+        $this->load->model('MGenero'); // Carga el modelo de categorías
+         // SEGURIDAS
+        
+        $csrf = array(
+        'name' => $this->security->get_csrf_token_name(),
+        'hash' => $this->security->get_csrf_hash()
+        );
+        $DATOS['csrf'] = $csrf;
+        
+        $consultas = $this->MPelicula->consultar($id);
+        $DATOS['pelicula'] = end($consultas);
+
+
+        $DATOS['generos'] = $this->MGenero->lista();// consulta categorías existente    
+        $this->load->view('panel/secciones/viewpelicula', $DATOS );
+        $this->load->view('panel/footer'); 
+    }
 
 }
