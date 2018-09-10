@@ -4,9 +4,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class MCarrusel extends CI_Model {
 
 
-	function lista()
+	function lista($LIMIT=999999)
 	{    
-		$query = $this->db->query("SELECT * FROM `carrusel`");
+		$query = $this->db->query("SELECT * FROM `carrusel` LIMIT $LIMIT" );
 		return $query->result();
 	}
 
