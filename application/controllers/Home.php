@@ -10,7 +10,7 @@ class Home extends CI_Controller
         $this->load->model('MFunctionsg'); // CARGA LAS FUNCIONES GENERALES PARA EL Perfil
         $this->load->model('MDatos'); // CARGA LAS FUNCIONES GENERALES PARA EL Perfil
         $this->load->library('session'); // CARGA LAS SESSIONES
-        
+
         $DATOS['datos'] = $this->MDatos->lista();
         $DATOS['datos'] = end($DATOS['datos']);
   
@@ -34,5 +34,10 @@ class Home extends CI_Controller
         $this->load->view('website/cuerpo-home',$DATOS);
         $this->load->view('website/footer');
 	}
+
+    public function detalle_series(){
+        $this->load->view('website/detalleseries');
+        $this->load->view('website/footer'); 
+    }
  
 }

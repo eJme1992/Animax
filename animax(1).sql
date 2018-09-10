@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3306
--- Tiempo de generación: 09-09-2018 a las 22:53:47
+-- Tiempo de generación: 10-09-2018 a las 16:35:25
 -- Versión del servidor: 5.7.21
 -- Versión de PHP: 5.6.35
 
@@ -81,11 +81,19 @@ DROP TABLE IF EXISTS `carrusel`;
 CREATE TABLE IF NOT EXISTS `carrusel` (
   `id` int(15) NOT NULL AUTO_INCREMENT,
   `url` varchar(400) NOT NULL,
-  `imagen` int(200) NOT NULL,
+  `imagen` varchar(200) NOT NULL,
   `posicion` int(2) NOT NULL,
   `titulo` varchar(200) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `carrusel`
+--
+
+INSERT INTO `carrusel` (`id`, `url`, `imagen`, `posicion`, `titulo`) VALUES
+(6, '', 'file/img/img2018_09_10_40.jpeg', 1, ''),
+(8, '', 'file/img/img2018_09_10_25.jpg', 0, '');
 
 -- --------------------------------------------------------
 
@@ -153,7 +161,14 @@ CREATE TABLE IF NOT EXISTS `peliculas` (
   `fecha_c` date NOT NULL,
   `fecha_m` date NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `peliculas`
+--
+
+INSERT INTO `peliculas` (`id`, `nombre`, `imagen`, `descripcion`, `duracion`, `idioma`, `direccion`, `formato`, `fecha_estreno`, `fecha_c`, `fecha_m`) VALUES
+(1, 'prueba', 'file/img/img2018_09_10_27.jpg', '<p>pruebaprueba</p>', '20min', 'Español', 'pruebad', 'pruebaf', '2018-09-25', '2018-09-10', '2018-09-10');
 
 -- --------------------------------------------------------
 
@@ -167,7 +182,14 @@ CREATE TABLE IF NOT EXISTS `pelicula_genero` (
   `id_pelicula` int(15) NOT NULL,
   `id_genero` int(15) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `pelicula_genero`
+--
+
+INSERT INTO `pelicula_genero` (`id`, `id_pelicula`, `id_genero`) VALUES
+(1, 1, 3);
 
 -- --------------------------------------------------------
 
@@ -289,7 +311,7 @@ CREATE TABLE IF NOT EXISTS `st_datos` (
   `logo2` varchar(200) NOT NULL,
   `icon` varchar(200) NOT NULL,
   `correo` varchar(40) NOT NULL,
-  `telefono` varchar(9) NOT NULL,
+  `telefono` varchar(15) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
@@ -298,7 +320,7 @@ CREATE TABLE IF NOT EXISTS `st_datos` (
 --
 
 INSERT INTO `st_datos` (`id`, `nombre`, `descripcion`, `logo`, `logo2`, `icon`, `correo`, `telefono`) VALUES
-(1, 'Animex', 'Animex', '', '', '', 'edwin@clubdegorras.com', '0416 8515');
+(1, 'Animex', 'Animex esta info viene de base de datos', '', '', '', 'edwin@clubdegorras.com', '+58 0416 058 07');
 
 -- --------------------------------------------------------
 
@@ -404,7 +426,7 @@ CREATE TABLE IF NOT EXISTS `user` (
 
 INSERT INTO `user` (`id`, `mail`, `nickname`, `pass`, `nombre`, `apellido`, `nacimiento`, `sexo`, `foto`, `tipo`, `fecha_c`, `fecha_m`) VALUES
 (1, 'sofiasinger19@gmail.com', 'jojo', '12345', 'sofia', 'singer', '1997-08-19', 'f', '', 0, '2018-08-18', '2018-09-09'),
-(3, 'edwin.jme@gmail.com', 'Carlos', '2664265', 'Edwin Jose', 'Mogollon E.', '1992-07-10', 'M', 'file/img/img2018_09_09_27.jpg', 1, '2018-08-01', '2018-09-09'),
+(3, 'edwin.jme@gmail.com', 'eJme1992', '2664265', 'Edwin Jose', 'Mogollon E.', '1992-07-10', 'M', 'file/img/img2018_09_09_27.jpg', 1, '2018-08-01', '2018-09-10'),
 (4, 'wilber@gmail.com', '', '12345', 'wilber', 'mendoza', '2018-09-21', 'M', '', 1, '2018-09-01', '2018-09-01');
 COMMIT;
 

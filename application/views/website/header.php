@@ -18,7 +18,17 @@
          <nav class="navbar navbar-expand-sm">
             <div class="container-fluid">
                <a href="#">
-               <img src="<?=base_url();?>plantilla/website/img/logo.png">
+               <?php  
+
+              if($datos->logo==''){ 
+               $var = 'plantilla/website/img/logo.png';
+               }
+               else{ 
+               $var = $datos->logo; 
+               }
+               ?>   
+            
+               <img src="<?=base_url().$var;?>">
                </a>
                <button  id="boton-menu" class="btn" type="button" onclick="ocultar()"/>
                <i class="fas fa-bars" style="color:#000;"></i>
