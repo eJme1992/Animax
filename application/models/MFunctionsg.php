@@ -50,4 +50,22 @@ class MFunctionsg  extends CI_Model {
                     
                 }
             }
+
+        function pagina($consultap,$pagina,$TAMANO_PAGINA = 10) {
+        $num_total_registros = $consultap->num_rows();
+        //Limito la busqueda
+        $respuesta['pagina']= $pagina;
+        //examino la página a mostrar y el inicio del registro a mostrar
+        if (!$pagina) {
+            $inicio = 0;
+            $respuesta['pagina'] =  $pagina = 1;
+        } else {
+            $inicio = ($pagina - 1) * $TAMANO_PAGINA;
+        }
+        //calculo el total de páginas
+        
+        $respuesta['total_paginas'] = ceil($num_total_registros / $TAMANO_PAGINA);
+        $respuesta['limite'] = "LIMIT $inicio,$TAMANO_PAGINA";
+        return $respuesta;
+        }
 }

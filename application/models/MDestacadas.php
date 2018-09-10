@@ -4,6 +4,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class MDestacadas extends CI_Model {
 
 
+
+
 	function lista()
 	{    
 		$query = $this->db->query("SELECT * FROM `series_destacadas`");

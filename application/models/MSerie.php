@@ -4,11 +4,20 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class MSerie extends CI_Model {
 
 
-	 function lista()
+	 function lista($LIMIT=false)
 	{    
-		$query = $this->db->query("SELECT * FROM `serie`");
-		return $query->result();
+		if ($LIMIT!=false){$var="$LIMIT";}else{$var="";}
+		$query = $this->db->query("SELECT * FROM `serie` $var");
+		 if ($var!='') {
+		   	$query=$query->result();
+		   }
+		   return $query;
+		
 	}
+
+
+
+
 
 	 function consultar($id)
 	{    
@@ -56,12 +65,18 @@ class MSerie extends CI_Model {
         }
 	}
 
-	 function listades($LIMIT='2')
+	 function listades($LIMIT=false)
 	{    
-		//if ($id==false){$var='';}else{$var="";}
-		    $query = $this->db->query("SELECT * FROM `series_destacadas` INNER JOIN serie ON serie.id=series_destacadas.id_serie LIMIT $LIMIT");
-		return $query->result();
+		if ($LIMIT!=false){$var="$LIMIT";}else{$var="";}
+		  $sql ="SELECT * FROM `series_destacadas` INNER JOIN serie ON serie.id=series_destacadas.id_serie $var";
+		   $query = $this->db->query($sql);
+		   
+		   if ($var!='') {
+		   	$query=$query->result();
+		   }
+		   return $query;
 	}
+
 
 
     function setgenero($datos) {
