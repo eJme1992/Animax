@@ -25,9 +25,8 @@
               </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="<?=base_url();?>panel/newserie"><b>Todas mis películas</b></a></li>
-            <li><a href="<?=base_url();?>panel/newserie">Nueva Película</a></li>
-            <li><a href="<?=base_url();?>panel/generos">Géneros</a></li>
+            <li><a href="<?=base_url();?>panel/peliculas"><b>Todas mis películas</b></a></li>
+            <li><a href="<?=base_url();?>panel/newpelicula">Nueva Película</a></li>
           </ul>
         </li>
           <li class="treeview">
