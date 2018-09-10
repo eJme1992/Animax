@@ -50,7 +50,7 @@
          <?php foreach ($Carrusel as $key) { ?>
          <tr>
             <td><?=$key->id;?></td>
-            <td><img href="<?=$key->imagen;?>" class="img-responsive"></td>
+            <td><img src="<?=base_url().$key->imagen;?>" class="img-responsive"></td>
             <td><?=$key->titulo;?></td>
             <td><?=$key->posicion ;?></td>
             <td>
@@ -106,7 +106,7 @@
                   <!-- Modal content-->
                   <div class="modal-content">
                      <div class="modal-body text-center">
-                        <h3> ¿Esta Seguro que desea eliminar la Carrusel: <b><?=$key->nombre;?></b>?</h3>
+                        <h3> ¿Esta Seguro que desea eliminar la Carrusel: <b><?=$key->id;?></b>?</h3>
                      </div>
                      <div class="modal-footer">
                         <a href="<?=base_url();?>Carrusel/eliminar_Carrusel/<?=$key->id;?>"><button type="button" class="btn btn-danger">Si</button></a>
