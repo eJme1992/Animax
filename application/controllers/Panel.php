@@ -300,4 +300,20 @@ class Panel extends CI_Controller {
         $this->load->view('panel/footer'); 
     }
 
+        public function newnoticia()
+    {
+        $this->load->model('MNoticia'); // Carga el modelo de categorías 
+         // SEGURIDAS
+      
+        $csrf = array(
+        'name' => $this->security->get_csrf_token_name(),
+        'hash' => $this->security->get_csrf_hash()
+        );
+        $DATOS['csrf'] = $csrf;
+
+        $DATOS['noticia'] = $this->MNoticia->lista();// consulta categorías existente    
+        $this->load->view('panel/secciones/newpelicula', $DATOS );
+        $this->load->view('panel/footer'); 
+    }
+
 }
