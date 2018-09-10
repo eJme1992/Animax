@@ -11,6 +11,9 @@ class Perfil extends CI_Controller {
         // VERIFICA QUE EL USER ESTE LOGUEADO (La función esta dentro de Mfuntionsg)
 
         $this->MFunctionsg->comprobar_sesion($this->session->userdata('login'));//Busca la variable de sesion que sea login2 
+        $this->load->model('MDatos'); // CARGA LAS FUNCIONES GENERALES PARA EL Perfil
+        $DATOS['datos'] = $this->MDatos->lista();
+        $DATOS['datos'] = end($DATOS['datos']);
         $DATOS['user'] = $this->session->userdata('id'); // PASO LOS DATOS DEL USUARIO 
         $this->load->view('website/header', $DATOS);
     }
