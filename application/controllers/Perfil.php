@@ -18,13 +18,7 @@ class Perfil extends CI_Controller {
     // **PAGINA DE INICIO DEL HOME**
 	public function index()
 	{
-	     // SEGURIDAS
-        $csrf = array(
-        'name' => $this->security->get_csrf_token_name(),
-        'hash' => $this->security->get_csrf_hash()
-        );
-        $DATOS['csrf'] = $csrf;	
-		$this->load->view('website/perfil/perfil', $DATOS); //Mi carpeta perfil archivo perfil
+		$this->load->view('website/perfil/perfil'); //Mi carpeta perfil archivo perfil
 
 	}
     
@@ -34,8 +28,14 @@ class Perfil extends CI_Controller {
     }
 	  
 
-    public function editar(){
-        $this->load->view('website/perfil/editar');
+  public function editar(){
+        $csrf = array(
+        'name' => $this->security->get_csrf_token_name(),
+        'hash' => $this->security->get_csrf_hash()
+        );
+        $DATOS['csrf'] = $csrf;
+
+        $this->load->view('website/perfil/editar',$DATOS);
         $this->load->view('website/footer');
     }
 
