@@ -29,9 +29,9 @@
       <thead>
          <tr>
             <th>ID</th>
-            <th>Nombre</th>
-            <th>Fecha de creación</th>
-            <th>Fecha de modificación</th>
+            <th>Imagen</th>
+            <th>Titulo</th>
+            <th>Posición</th>        
             <th>#</th>
             <th>#</th>
          </tr>
@@ -39,9 +39,9 @@
       <tfoot>
          <tr>
             <th>ID</th>
-            <th>Nombre</th>
-            <th>Fecha de creación</th>
-            <th>Fecha de modificación</th>
+            <th>Imagen</th>
+            <th>Titulo</th>
+            <th>Posición</th>        
             <th>#</th>
             <th>#</th>
          </tr>
@@ -50,9 +50,9 @@
          <?php foreach ($Carrusel as $key) { ?>
          <tr>
             <td><?=$key->id;?></td>
-            <td><?=$key->nombre;?></td>
-            <td><?=$key->fecha_c;?></td>
-            <td><?=$key->fecha_m;?></td>
+            <td><img href="<?=$key->imagen;?>" class="img-responsive"></td>
+            <td><?=$key->titulo;?></td>
+            <td><?=$key->posicion ;?></td>
             <td>
                <p data-placement="top" data-toggle="tooltip" title="Edit"><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit<?=$key->id;?>" ><span class="glyphicon glyphicon-pencil"></span></button></p>
             </td>
@@ -134,8 +134,15 @@
             <form id="nuevacap">
                <div class="row">
                   <div class="col-sm-12">
-                     <label>Nombre de la Carrusel</label>
-                     <input type="text" name="nombre" id="nombre" required="" class="form-control" placeholder="Ej: Anime">
+                    <h6>Nota solo la imagen es requerida</h6>
+                    <label>Imagen</label>
+                    <input type="file" name="imagen" required="" id="imagen" class="form-control">
+                    <label>Url</label>
+                    <input type="text" name="url" id="url" class="form-control" placeholder="Url">
+                    <label>Posición</label>
+                    <input type="number" name="posicion" id="posicion"  class="form-control" placeholder="Posición">
+                    <label>Titulo</label>
+                    <input type="text" name="titulo" id="titulo"  class="form-control" placeholder="Nota campo es opcional">
                   </div>
                   <div class="col-md-12" id="resultado" style="margin-top:15px;"></div>
                   <input type="hidden" name="<?=$csrf['name'];?>" value="<?=$csrf['hash'];?>" />
@@ -167,7 +174,7 @@
         if (msj === "1") {
          var formData = new FormData(jQuery('#nuevacap') [0]);
          jQuery.ajax({
-           url: '<?=base_url();?>Carrusel/crear_Carrusel',
+           url: '<?=base_url();?>Carrusel/crear_carrusel',
            type: 'POST',
            contentType: false,
            processData: false,
