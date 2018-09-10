@@ -18,8 +18,14 @@ class Perfil extends CI_Controller {
     // **PAGINA DE INICIO DEL HOME**
 	public function index()
 	{
-		
-		$this->load->view('website/perfil/perfil'); //Mi carpeta perfil archivo perfil
+	     // SEGURIDAS
+        $csrf = array(
+        'name' => $this->security->get_csrf_token_name(),
+        'hash' => $this->security->get_csrf_hash()
+        );
+        $DATOS['csrf'] = $csrf;	
+		$this->load->view('website/perfil/perfil', $DATOS); //Mi carpeta perfil archivo perfil
+
 	}
     
   public function salir() {

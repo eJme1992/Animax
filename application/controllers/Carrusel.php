@@ -1,12 +1,13 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-class carrusels extends CI_Controller
+class Carrusel extends CI_Controller
 {
     public function __construct()
     {
         parent::__construct();
         $this->load->model('MCarrusel');
         $this->load->library('session');
+        $this->load->model('MFunctionsg');
     }
     
 
@@ -22,8 +23,8 @@ class carrusels extends CI_Controller
        public function editar_carrusel()
     {
         $id = $this->input->post('id');
-        $nombre = $this->input->post('nombre');
-        $var = $this->MCarrusel->editar($nombre,$id);// 
+        $titulo = $this->input->post('titulo');
+        $var = $this->MCarrusel->editar($titulo,$id);// 
         if ($var != false) { 
               $response['status'] = 'ok';
               $response['code']   = "Edición hecha correctamente recargue la pagina para actualizar la tabla";
@@ -36,15 +37,31 @@ class carrusels extends CI_Controller
 
        public function crear_carrusel()
     {
-        $nombre = $this->input->post('nombre');
+
+        $titulo = $this->input->post('titulo');
+        $imagen      = $_FILES['imagen'];
+       echo $posicion  = $this->input->post('posicion');
+        $url  = $this->input->post('url');
+
+
+        $mensaje   = '';
+        $imagenurl = $this->MFunctionsg->archivo($imagen, $mensaje, 'img', 'img');
         
-        $var = $this->MCarrusel->crear($nombre);// 
+        
+        if ($imagenurl != false) {
+
+        $var = $this->MCarrusel->crear($imagenurl,$titulo,$posicion,$url);// 
         if ($var != false) { 
                 $response['status'] = 'ok';
                 $response['code'] = "La carrusel ha sido creada de forma";
         }else{
                 $response['status'] = 0;
-                $response['error'] = "Ya existe una carrusel con este nombre";
+                $response['error'] = "Ya existe una carrusel con este titulo";
+        }
+
+         } else {
+            $response['status'] = 0;
+            $response['error']  = $mensaje;
         }
         echo json_encode($response);
     }

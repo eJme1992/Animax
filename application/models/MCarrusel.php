@@ -16,20 +16,27 @@ class MCarrusel extends CI_Model {
 		return $query;
 	}
 
-	 function editar($nombre,$id)
+	 function editar($titulo,$id)
 	{    
 		
-		$fecha_m = date("Y-m-d");
-		$query = $this->db->query("UPDATE `carrusel` Set nombre='$nombre', fecha_m='$fecha_m' WHERE `carrusel`.`id`='$id'");
+		$url = date("Y-m-d");
+		$query = $this->db->query("UPDATE `carrusel` Set titulo='$titulo', url='$url' WHERE `carrusel`.`id`='$id'");
 		return $query;
 	}
 
-	 function crear($nombre)
+	 function crear($imagen,$titulo='',$posicion='',$url='')
 	{    
-		$query = $this->db->query("SELECT * FROM `carrusel` WHERE nombre='$nombre'");
-        if ($query->num_rows() == 0) {
-        	$fecha_c = $fecha_m = date("Y-m-d"); // agarra las fechas
-            $query = $this->db->query("INSERT INTO `carrusel` (`nombre`, `fecha_c`, `fecha_m`) VALUES ('$nombre','$fecha_c','$fecha_m')");
+		if ($posicion=='') {
+			$var = '-1';
+		}else{
+			$var = $posicion;
+		}
+		echo "$var";
+		$query = $this->db->query("SELECT * FROM `carrusel` WHERE posicion='$var'");
+        
+        /*if ($query->num_rows() == 0) {
+        
+            $query = $this->db->query("INSERT INTO `carrusel` (`titulo`, `imagen`,`posicion`, `url`) VALUES ('$titulo','$imagen','$posicion','$url')");
             if ($query == true) {
                 $id = $this->db->insert_id();
                 return $id; // 0
@@ -39,7 +46,7 @@ class MCarrusel extends CI_Model {
         } else {
             $id = false;
             return $id;
-        }
+        } */
 	}
  
 
