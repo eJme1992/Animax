@@ -70,11 +70,11 @@ class Home extends CI_Controller
 
      public function mas_series($pagina = 1){
         $this->load->model('MSerie'); // Carga el modelo de categorías 
-        $paginas = $this->MFunctionsg->pagina($this->MSerie->lista(),$pagina,3);//pg
+        $paginas = $this->MFunctionsg->pagina($this->MSerie->lista(),$pagina);//pg
         $DATOS['data'] = $this->MSerie->lista($paginas['limite']); // consulta paginada
         $DATOS['pagina'] = $paginas['pagina']; // valores para los botones
         $DATOS['total_paginas'] = $paginas['total_paginas']; // valores para los s     
-        $DATOS['url'] = base_url() . "home/mas_series";
+        $DATOS['url'] = base_url() . "mas_series";
         $this->load->view('website/mas',$DATOS);
         $this->load->view('website/footer');
     }

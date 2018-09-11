@@ -322,3 +322,15 @@ margin-bottom:2.5em;
  margin-top: 1em;
  
  }
+
+ .page-link{
+    color:#000;
+    height: 55px;
+ }
+
+  .page-link i{
+    margin:4.5px;
+    color:#000;
+    height: 55px;
+ }
+

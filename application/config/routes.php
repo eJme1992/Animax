@@ -53,6 +53,7 @@ $route['login']  = 'Login';
 $route['perfil'] = "Perfil"; //derecha direccion izq controlador
 $route['admin']  = 'Admin';
 $route['panel']  = 'Panel';
+$route['mas_series/(:any)']  = 'home/mas_series/$1';
 $route['mas_series']  = 'home/mas_series';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;

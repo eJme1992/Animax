@@ -31,27 +31,27 @@
             </div>
             <?php } ?> 
             <div class="center-block text-center">
-               <ul class="pagination text-center">
+              <ul class="pagination pagination-lg">
                   <?php
                  if ($total_paginas > 1) {
                          if ($pagina != 1)
-                             echo '<li><a href="' . $url . '?pagina=' . (($total_paginas - $total_paginas) + 1) . '"><i class="fa fa-chevron-circle-left" aria-hidden="true"></i></a></li>';
+                             echo '<li class="page-item"><a class="page-link" href="' . $url . '?pagina=' . (($total_paginas - $total_paginas) + 1) . '"><i class="fa fa-chevron-circle-left" aria-hidden="true"></i></a></li>';
                      
                          for ($i = $pagina - 1; $i <= $pagina + 5; $i++) {
                              if ($pagina == $i) {
                      //si muestro el índice de la página actual, no coloco enlace
                                  ?>
-                  <li class="active"><a href="#"> <?php echo $pagina; ?> </a></li>
+                  <li class="active disabled page-item"><a class="page-link"  href="#"> <?php echo $pagina; ?> </a></li>
                   <?php
                      } else
                      //si el índice no corresponde con la página mostrada actualmente,
                      //coloco el enlace para ir a esa página
                      if (($i <= $total_paginas) and ( $i != 0)) {
-                         echo ' <li> <a href="' . $url . '/' . $i . '">' . $i . '</a> </li>';
+                         echo ' <li class="page-item"> <a class="page-link" href="' . $url . '/' . $i . '">' . $i . '</a> </li>';
                      }
                      }
                      if ($pagina != $total_paginas)
-                     echo '<li><a href="' . $url . '/' . ($total_paginas) . '"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i></a></li>';
+                     echo '<li class="page-item"><a class="page-link" href="' . $url . '/' . ($total_paginas) . '"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i></a></li>';
                      }
                      ?>
                </ul>
