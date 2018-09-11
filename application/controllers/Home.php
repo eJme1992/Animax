@@ -54,7 +54,7 @@ class Home extends CI_Controller
         $DATOS['capitulo'] = $this->MCapitulo->lista($id); 
         $DATOS['categorias'] = $this->MCategoria->lista();// consulta categorías existente  
         $DATOS['generos'] = $this->MGenero->lista();// consulta categorías existente    
-        $this->load->view('website/detalleseries', $DATOS);
+        $this->load->view('website/detalles_series', $DATOS);
         $this->load->view('website/footer'); 
     }
 
