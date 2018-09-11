@@ -322,15 +322,11 @@ margin-bottom:2.5em;
  margin-top: 1em;
  
  }
-
- .page-link{
-    color:#000;
-    height: 55px;
+ .cont-list{
+    border: solid 1px #CCCCCC;
+    box-shadow: 0px 0px 11px rgba(0, 0, 0, 0.23); 
+    line-height:5;
+    border-radius:5px;
+    background-color: #f8f8f8;
  }
-
-  .page-link i{
-    margin:4.5px;
-    color:#000;
-    height: 55px;
- }
-
+ .tab-detalles{margin-bottom:1em;}

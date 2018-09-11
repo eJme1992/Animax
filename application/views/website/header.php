@@ -15,7 +15,7 @@
    </head>
    <body>
       <header>
-         <nav class="navbar navbar-expand-sm">
+         <nav class="navbar navbar-expand-sm fixed-top">
             <div class="container-fluid">
                <a href="#">
                <?php  
