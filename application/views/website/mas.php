@@ -22,26 +22,26 @@
             <form method="GET" id="filtro">
             <div class="row col-12" style="padding-top:2em;">
                <label><b>Tipo de búsqueda</b></label>
-               <select class="form-control" id="categoria" name="categoria">
-                  <option>Series</option>
-                  <option>Temporadas</option>
-                  <option>Capítulos</option>
-                  <option>Películas</option>
-                  <option>Series Destacadas</option>
+               <select class="form-control" id="tipo" name="tipo">
+                  <option value="1">Series</option>
+                  <option value="2">Temporadas</option>
+                  <option value="3">Capítulos</option>
+                  <option value="4">Películas</option>
+                  <option value="5">Series Destacadas</option>
                </select>
                <label><b>Categoría</b></label>
                <select class="form-control" id="categoria" name="categoria">
                   <option>Todas</option>
                </select>
                <label><b>Genero</b></label>
-               <select class="form-control" id="categoria" name="categoria">
+               <select class="form-control" id="genero" name="genero">
                   <option>Todas</option>
                </select>
                <label><b>Estreno</b></label>
                <div class="row">
                   <span class="col-6">Desde</span> <span class="col-6">Hasta</span>  
                   <input class="form-control col-6" style="display:inline-block;" type="number" name="desde" id="desde" required="" placeholder="Desde">
-                  <input class="form-control col-6" style="display:inline-block;" type="number" name="desde" id="desde" required="" placeholder="Hasta ">
+                  <input class="form-control col-6" style="display:inline-block;" type="number" name="hasta" id="hasta" required="" placeholder="Hasta ">
                </div>
                <button type="submit" class="btn btn-warning" style="margin-top:15px;width:50%"><i class="fas fa-filter"></i>Filtrar</button>
                <button class="btn btn-info" style="margin-top:15px;width:50%"><i class="fas fa-retweet"></i>Reiniciar</button>
