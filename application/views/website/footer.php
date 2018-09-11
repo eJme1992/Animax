@@ -1,3 +1,4 @@
+</section>
 <footer>
     <section id="tope">
         <div class="container">

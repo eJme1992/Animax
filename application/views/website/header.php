@@ -56,6 +56,7 @@
             </div>
          </nav> 
       </header>
+      <section style="margin-top:1em;">
       <script type="text/javascript">
          //Funcion para ocultar y mostrar el menu
          function ocultar(){
