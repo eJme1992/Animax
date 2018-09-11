@@ -12,10 +12,16 @@
 <section id="home">
    <div class="container">
       <div class="row mg">
+      <div class="col-md-3">
+          <div class="col-md-12 bordert" id="SERIES_DESTACAS">
+               <h2><i class="fas fa-filter"></i>Filtros</h2>
+         </div>
+
+      </div>
          <!--Diva para la barra lateral 3-->
          <div class="col-md-9 row">
             <div class="col-md-12 bordert" id="SERIES_DESTACAS">
-               <h2><i class="fas fa-star"></i></i> Series destacadas</h2>
+               <h2><i class="fas fa-star"></i> Series destacadas</h2>
             </div>
             <?php foreach ($data as $key){?> 
             <div class="col-md-4" id='destacadas'>
@@ -31,7 +37,7 @@
             </div>
             <?php } ?> 
             <div class="center-block text-center">
-              <ul class="pagination pagination-lg">
+              <ul class="pagination pagination-lg justify-content-center">
                   <?php
                  if ($total_paginas > 1) {
                          if ($pagina != 1)
@@ -58,7 +64,6 @@
             </div>
          </div>
       </div>
-   </div>
    </div>
 </section>
 <script>
