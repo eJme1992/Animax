@@ -78,25 +78,8 @@ class Home extends CI_Controller
         $this->load->view('website/mas',$DATOS);
         $this->load->view('website/footer');
     }
-    public function capitulo($id){
-         $this->load->model('MSerie'); // Carga el modelo de categorías 
-        $this->load->model('MCategoria'); // Carga el modelo de categorías 
-        $this->load->model('MGenero'); // Carga el modelo de categorías
-        $this->load->model('MTemporada'); // Carga el modelo de categorías  
-        $this->load->model('MCapitulo');// medidas de seguridad
-         $csrf = array(
-        'name' => $this->security->get_csrf_token_name(),
-        'hash' => $this->security->get_csrf_hash()
-        );
-        $DATOS['csrf'] = $csrf;
-        
-        $consultas = $this->MSerie->consultar($id);
-        $DATOS['serie'] = end($consultas);
-        $DATOS['temporada'] = $this->MTemporada->lista($id);
-        $DATOS['capitulo'] = $this->MCapitulo->lista($id); 
-        $DATOS['categorias'] = $this->MCategoria->lista();// consulta categorías existente  
-        $DATOS['generos'] = $this->MGenero->lista();// consulta categorías existente 
-         $this->load->view('website/capitulo', $DATOS);
+    public function capitulo(){
+         $this->load->view('website/capitulo');
          $this->load->view('website/footer');
     }
  
