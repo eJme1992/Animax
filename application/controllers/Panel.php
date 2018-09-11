@@ -282,6 +282,7 @@ class Panel extends CI_Controller {
     public function viewpelicula($id)
     {
         $this->load->model('MPelicula'); // Carga el modelo de categorías 
+        $this->load->model('MPeliculaVideo'); // Carga el modelo de categorías 
         $this->load->model('MGenero'); // Carga el modelo de categorías
          // SEGURIDAS
         
@@ -293,6 +294,8 @@ class Panel extends CI_Controller {
         
         $consultas = $this->MPelicula->consultar($id);
         $DATOS['pelicula'] = end($consultas);
+
+        $DATOS['videos'] = $this->MPeliculaVideo->lista($id);
 
 
         $DATOS['generos'] = $this->MGenero->lista();// consulta categorías existente    
