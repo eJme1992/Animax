@@ -137,19 +137,10 @@ class Home extends CI_Controller
         $this->load->view('website/mas', $DATOS);
         $this->load->view('website/footer');
     }
-<<<<<<< HEAD
+
     public function capitulo(){
          $this->load->view('website/capitulo');
          $this->load->view('website/footer');
-=======
-    
-    
-    public function capitulo()
-    {
-        
-        $this->load->view('website/capitulo');
-        $this->load->view('website/footer');
->>>>>>> 0d8a6434d3acfb7a542a06f0a20dae865e952b8e
-    }
+}
     
 }

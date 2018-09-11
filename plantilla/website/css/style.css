@@ -221,9 +221,7 @@ margin-bottom:2.5em;
 footer{
     background-color:#2F343A;
 }
-#tope{
-    margin-top: 2em;
-}
+
 #tope .titulo-fo{
     color:#fff;
     margin-bottom: 1em;
@@ -319,7 +317,9 @@ margin-bottom:2.5em;
  
  /*Para el capitulo*/
  #capitulo-detalle{
-        padding-top: 2.5em;
+        padding-top: 2.5em;;
+        background-color: #303036;
+        padding-bottom:2.5em;
  }
  .capitulo{
     padding-bottom: 2em;
@@ -334,6 +334,7 @@ margin-bottom:2.5em;
     box-shadow:  0 6px 6px 0 rgba(0,0,0,0.6); 
     background-color: #18181E;
     color:#fff;
+     height: 8vmin;
  }
  .no-padding{
     padding:0;
@@ -378,3 +379,23 @@ margin-bottom:2.5em;
 .nav-capitulo li a{
     color:#fff;
 }
+#second-part-capi{
+    background-color: #ffffff;
+}
+.capitulo-text{
+    margin-bottom: 2.5em;
+}
+.comen-regis li{  display: inline-block; padding-right: 1em;}
+.contador{float:right;}
+.btn-comentar{ 
+background-color: #25a3f3; 
+min-width: 120px;
+height: 32px;
+line-height: 1;
+color:#fff; 
+float:right;
+margin-bottom: 1.5em;
+}
+.comment-box{margin-bottom: 2em;}
+.img-text{ margin-bottom: 1em; }
+.subt-capitulo{ margin-bottom: 1em; margin-top: 1em; }
