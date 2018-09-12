@@ -278,18 +278,14 @@ margin-bottom:2.5em;
 #redes-sociales-f ul li a{ color: #868588 !important;}
 
 /* Para el detalle de la serie*/
+#detalle-serie{padding-top: 2em;}
 .detas{
-    background-color: #fff;
+    background-color: #303036;
        box-shadow: 5px 10px 8px 10px #888888; 
        margin-bottom: 2em;
 
 }
-#detalle-serie .back-g{
-    margin-top: 1.5em;
-    background-size: cover;
-    background-repeat: no-repeat;
-    padding-left: 2em;
-}
+
 #detalle-serie .titulo-de{
     color:#FF7E00;
     text-align: left;
@@ -307,11 +303,11 @@ margin-bottom:2.5em;
     display:inline-block;
     color:#fff;
     margin-bottom: 1.5em;
-    background-color: #fff !important;
+    background-color: #303036;
     box-shadow: none;
     border:0;
 }
-.text-nun{ background-color:#FF7E00; margin-top: 0.5em; width:100%; }
+.text-nun{ background-color:#000; margin-top: 0.5em; width:100%; }
 .tit-anun{ text-align: center;  color:#fff;}
 
  
