@@ -21,8 +21,8 @@
                   <br>
                   <p class="sipnosis">Sinopsis: <?=$serie->descripcion;?></p>
                   <p>Dias de estreno de nuevos capitulos: <?=$serie->dias;?></p>
-                  <p>Fecha de estreno de la serie: <?=$serie->estreno;?> </p>
-                  <p>Duración de los cápitulos: <?=$serie->estreno;?> </p>
+                  <p>Fecha de estreno de la serie: <?=$serie->fecha_estreno;?> </p>
+                  <p>Duración de los cápitulos: <?=$serie->duracion;?> </p>
                   <div class="reaccion">
                      <ul class="nav nav-bar fav">
                       <li  class="nav-item"><a class="nav-link" id="favorite" title="Favorito" data-toggle="tooltip" href="#"><i class="fas fa-heart" style="color:#FF0000;"></i></a></li>
