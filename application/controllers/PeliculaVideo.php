@@ -1,6 +1,6 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-class CapituloVideo extends CI_Controller
+class PeliculaVideo extends CI_Controller
 {
     public function __construct()
     {
@@ -48,7 +48,7 @@ class CapituloVideo extends CI_Controller
         $var = $this->MPeliculaVideo->crear($id_pelicula, $url_video, $tipo);// 
         if ($var != false) { 
                 $response['status'] = 'ok';
-                $response['code'] = "La capitulo ha sido creado exitosamente, por favor recargue la pagina.";
+                $response['code'] = "El video ha sido creado exitosamente, por favor recargue la pagina.";
         }else{
                 $response['status'] = 0;
                 $response['error'] = "Error al procesar los datos";

@@ -23,7 +23,7 @@ class MPeliculaVideo extends CI_Model {
 	{    
 		
 		$fecha_m = date("Y-m-d");
-		$query = $this->db->query("UPDATE `pelicula_video` Set url_video='$url_video', tipo = '$tipo', provedor = '$provedor', fecha_m='$fecha_m' WHERE `pelicula_video`.`id`='$id'");
+		$query = $this->db->query("UPDATE `pelicula_video` Set url_video='$url_video', tipo = '$tipo', fecha_m='$fecha_m' WHERE `pelicula_video`.`id`='$id'");
 		return $query;
 	}
 
