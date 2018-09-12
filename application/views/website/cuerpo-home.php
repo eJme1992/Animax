@@ -97,16 +97,16 @@
             </div>
             <?php } ?>
              <div class="text-right col-md-12">
-            <a href="<?php base_url();?>home/mas"><button class="btn mas" style="color:#fff;background-color:#1B9936;text-align:right;border-radius:100%;height:40px;width:40px;"><b><i class="fas fa-plus"></i></b></button></a> 
+            <a href="<?php base_url();?>home/mas/2/Todas/1900-01-01/2018-12-31/Todas/1/false?pagina=1"><button class="btn mas" style="color:#fff;background-color:#1B9936;text-align:right;border-radius:100%;height:40px;width:40px;"><b><i class="fas fa-plus"></i></b></button></a> 
             
             </div>
                 <div class="col-md-12 bordert" id="PELICULAS_RECIENTES">
                <h2><i class="fas fa-video"></i> Películas Recientes</h2>
             </div>
-            <?php foreach ($Temporadar as $key){?> 
+            <?php foreach ($peliculas as $key){?> 
             <div class="col-md-3" id='temp_re'>
                <div class="card">
-                  <a href="<?php echo base_url();?>home/detalle_series/<?=$key->id_serie?>" data-toggle="tooltip" title="<?=$key->nombre;?>"> <img src="<?=base_url().$key->imagen2;?>" class="img-fluid imgmd"></a>
+                  <a href="<?php echo base_url();?>home/detalle_series/<?=$key->id?>" data-toggle="tooltip" title="<?=$key->nombre;?>"> <img src="<?=base_url().$key->imagen;?>" class="img-fluid imgmd"></a>
                   <span class="span Capi">
                   ESTRENO <i class="far fa-clock"></i></i>
                   </span>

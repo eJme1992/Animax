@@ -10,6 +10,19 @@ class MPelicula extends CI_Model {
 		return $query->result();
 	}
 
+	 function recientes($LIMIT = false, $WHERE = '', $ORDEN = 'ORDER BY peliculas.fecha_c')
+	{    
+		if ($LIMIT!=false){$var="$LIMIT";}else{$var="";}
+		if ($WHERE == ''){$WHERE="";}else{$WHERE="where $WHERE";}
+
+		    $sql = "SELECT peliculas.id as 'id', peliculas.nombre, peliculas.imagen  FROM peliculas INNER JOIN pelicula_genero ON peliculas.id=pelicula_genero.id_pelicula  $WHERE $ORDEN $LIMIT ";
+		       $query = $this->db->query($sql);
+		 if ($var!='') {
+		   	$query=$query->result();
+		 }
+		   return $query;
+	}
+
 	 function consultar($id)
 	{    
 		$query = $this->db->query("SELECT * FROM `peliculas` WHERE id='$id'");

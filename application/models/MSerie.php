@@ -10,35 +10,7 @@ class MSerie extends CI_Model
 		return $query->result();
 	}
 
-	function listahome($LIMIT = false, $WHERE = '', $ORDEN = '')
-	{
-		if ($LIMIT != false)
-		{
-			$var = "$LIMIT";
-		}
-		else
-		{
-			$var = "";
-		}
-
-		if ($WHERE == '')
-		{
-			$WHERE = "";
-		}
-		else
-		{
-			$WHERE = "where $WHERE";
-		}
-
-		 $sql = "SELECT * FROM `serie` INNER JOIN serie_genero ON serie.id=serie_genero.id_serie $WHERE  $var $ORDEN";
-		$query = $this->db->query($sql);
-		if ($var != '')
-		{
-			$query = $query->result();
-		}
-
-		return $query;
-	}
+	
 
 	function consultar($id)
 	{
@@ -90,7 +62,7 @@ class MSerie extends CI_Model
 		}
 	}
 
-	function listades($LIMIT = false)
+	function listades($LIMIT = false, $WHERE = '', $ORDEN = '')
 	{
 		if ($LIMIT != false)
 		{
@@ -101,7 +73,46 @@ class MSerie extends CI_Model
 			$var = "";
 		}
 
-		$sql = "SELECT * FROM `series_destacadas` INNER JOIN serie ON serie.id=series_destacadas.id_serie $var";
+		if ($WHERE == '')
+		{
+			$WHERE = "";
+		}
+		else
+		{
+			$WHERE = "where $WHERE";
+		}
+
+		$sql = "SELECT * FROM `series_destacadas` INNER JOIN serie ON serie.id=series_destacadas.id_serie INNER JOIN serie_genero ON serie.id=serie_genero.id_serie $WHERE $ORDEN $var";
+		$query = $this->db->query($sql);
+		if ($var != '')
+		{
+			$query = $query->result();
+		}
+
+		return $query;
+	}
+
+	function listahome($LIMIT = false, $WHERE = '', $ORDEN = '')
+	{
+		if ($LIMIT != false)
+		{
+			$var = "$LIMIT";
+		}
+		else
+		{
+			$var = "";
+		}
+
+		if ($WHERE == '')
+		{
+			$WHERE = "";
+		}
+		else
+		{
+			$WHERE = "where $WHERE";
+		}
+
+		 $sql = "SELECT * FROM `serie` INNER JOIN serie_genero ON serie.id=serie_genero.id_serie $WHERE $ORDEN $var";
 		$query = $this->db->query($sql);
 		if ($var != '')
 		{

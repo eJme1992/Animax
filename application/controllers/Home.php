@@ -33,10 +33,12 @@ class Home extends CI_Controller
         $this->load->model('MTemporada'); // Carga el modelo de categorías
         $this->load->model('MCapitulo'); // Carga el modelo de categorías
         $this->load->model('MCarrusel'); // Carga el modelo de categorías
+        $this->load->model('MPelicula'); // Carga el modelo de categorías
         $DATOS['carrusel'] = $this->MCarrusel->lista(6);
         $DATOS['capitulo'] = $this->MCapitulo->listacap('LIMIT 6');
         $DATOS['series'] = $this->MSerie->listades('LIMIT 5');
         $DATOS['Temporadar'] = $this->MTemporada->recientes('LIMIT 10');
+        $DATOS['peliculas'] = $this->MPelicula->recientes('LIMIT 10');
         $this->load->view('website/cuerpo-home', $DATOS);
         $this->load->view('website/footer');
     }
@@ -87,13 +89,14 @@ class Home extends CI_Controller
         $this->load->model('MGenero'); // Carga el modelo de categorías
         $this->load->model('MTemporada'); // Carga el modelo de categorías
         $this->load->model('MCapitulo'); // medidas de seguridad
+        $this->load->model('MPelicula'); // medidas de seguridad
         $DATOS['genero'] = $this->MGenero->lista();
         $DATOS['categoria'] = $this->MCategoria->lista();
         $where = '';
         $k = '';
         
        //Tabla que voy a usar segun el tipo de busqueda 
-       if (($tipo == 1) or ($tipo == 5)){$tabla = 'serie';}if($tipo == 2){$tabla = 'temporada';} if ($tipo == 3) {$tabla = 'capitulo';}if ($tipo == 4){$tabla = 'peliculas';}
+      
        
 
         if (isset($_GET['pagina'])) {
@@ -102,6 +105,9 @@ class Home extends CI_Controller
         if (isset($_GET['tipo'])) {
             $tipo = $_GET['tipo'];
         }
+
+         if (($tipo == 1) or ($tipo == 5)){$tabla = 'serie';}if($tipo == 2){$tabla = 'temporada';} if ($tipo == 3) {$tabla = 'capitulo';}if ($tipo == 4){$tabla = 'peliculas';}
+
         if (isset($_GET['genero'])) {
             $genero = $_GET['genero'];
         }
@@ -121,7 +127,13 @@ class Home extends CI_Controller
         }
 
           if ($genero != 'Todas') {
-                $where.= "(serie_genero.id_genero='$genero')";
+                $j= $tabla;
+                if ($tipo==4) {
+                    $j='pelicula';
+                }else{
+                    $j='serie';
+                }
+                $where.= "(".$j."_genero.id_genero='$genero')";
                 $k = ' AND ';
             }
             $where.= $k . "($tabla.fecha_estreno>='$desde' AND ";
@@ -135,7 +147,7 @@ class Home extends CI_Controller
             }
 
         if ($tipo == 1) {
-            $paginas = $this->MFunctionsg->pagina($this->MSerie->listahome(false, $where) , $pagina, 3); //pg
+            $paginas = $this->MFunctionsg->pagina($this->MSerie->listahome(false, $where) , $pagina); //pg
             $DATOS['data'] = $this->MSerie->listahome($paginas['limite'], $where); // consulta paginada
         }
 
@@ -145,20 +157,20 @@ class Home extends CI_Controller
         }
 
         if ($tipo == 3) {
-            $paginas = $this->MFunctionsg->pagina($this->MCapitulo->listacap() , $pagina, 3); //pg
-            $DATOS['data'] = $this->MCapitulo->listacap($paginas['limite']); // consulta paginada
+            $paginas = $this->MFunctionsg->pagina($this->MCapitulo->listacap(false,$where) , $pagina, 3); //pg
+            $DATOS['data'] = $this->MCapitulo->listacap($paginas['limite'],$where); // consulta paginada
         }
 
         if ($tipo == 4) {
-            $paginas = $this->MFunctionsg->pagina($this->MSerie->listahome() , $pagina, 3); //pg
-            $DATOS['data'] = $this->MSerie->listahome($paginas['limite']); // consulta paginada
+            $paginas = $this->MFunctionsg->pagina($this->MPelicula->recientes(false,$where) , $pagina, 3); //pg
+            $DATOS['data'] = $this->MPelicula->recientes($paginas['limite'],$where); // consulta paginada
         }
 
         if ($tipo == 5) {
             $paginas = $this->MFunctionsg->pagina($this->MSerie->listades(false, $where) , $pagina, 3);
             $DATOS['data'] = $this->MSerie->listades($paginas['limite']); // consulta paginada
         }
-
+        $DATOS['tipo']= $tipo;
         $DATOS['pagina'] = $paginas['pagina']; // valores para los botones
         $DATOS['total_paginas'] = $paginas['total_paginas']; // valores para los s
         $DATOS['url'] = base_url() . "Home/mas/$tipo/$genero/$desde/$hasta/$categoria/$orden/$buscar";

@@ -13,6 +13,7 @@
    <div class="container">
       <div class="row mg">
          <div class="col-md-3">
+         <div class="" style="position:-webkit-sticky;position:sticky;top:0px;">
             <div class="col-md-12 bordert" id="SERIES_DESTACAS">
                <h2 style='padding-bottom: 4.8px;'><i class="fas fa-filter"></i>Filtros</h2>
             </div>
@@ -34,7 +35,7 @@
                <select class="form-control" id="categoria" name="categoria">
                   <option value="Todas">Todas</option>
                   <?php foreach ($categoria as $key) { ?>
-                     <option value="<?=$key->id?>"><?=$key->nombre?></option>
+                     <option value="<?=$key->nombre?>"><?=$key->nombre?></option>
                   <?php } ?>
                </select>
                <label><b>Genero</b></label>
@@ -54,6 +55,7 @@
                <button class="btn btn-info" style="margin-top:15px;width:50%"><i class="fas fa-retweet"></i>Reiniciar</button>
             </div>
          </form>
+      </div>
          </div>
          <!--Diva para la barra lateral 3-->
          <div class="col-md-9 row">
