@@ -29,6 +29,7 @@
                   <option value="4">Películas</option>
                   <option value="5">Series Destacadas</option>
                </select>
+               <input type="hidden" name="pagina" id="pagina" value="1">
                <label><b>Categoría</b></label>
                <select class="form-control" id="categoria" name="categoria">
                   <option>Todas</option>
@@ -40,8 +41,8 @@
                <label><b>Estreno</b></label>
                <div class="row">
                   <span class="col-6">Desde</span> <span class="col-6">Hasta</span>  
-                  <input class="form-control col-6" style="display:inline-block;" type="number" name="desde" id="desde" required="" placeholder="Desde">
-                  <input class="form-control col-6" style="display:inline-block;" type="number" name="hasta" id="hasta" required="" placeholder="Hasta ">
+                  <input class="form-control col-6" style="display:inline-block;" type="number" name="desde" id="desde" required="" placeholder="Desde" value="1900" >
+                  <input class="form-control col-6" style="display:inline-block;" type="number" name="hasta" id="hasta" required="" placeholder="Hasta " value="2018">
                </div>
                <button type="submit" class="btn btn-warning" style="margin-top:15px;width:50%"><i class="fas fa-filter"></i>Filtrar</button>
                <button class="btn btn-info" style="margin-top:15px;width:50%"><i class="fas fa-retweet"></i>Reiniciar</button>

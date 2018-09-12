@@ -77,7 +77,8 @@
             </div>
             <?php } ?> 
             <div class="text-right col-md-12">
-            <button class="btn mas" style="color:#fff;background-color:#1B9936;text-align:right;border-radius:100%;height:40px;width:40px;"><b><i class="fas fa-plus"></i></b></button>  
+            <a href="<?php base_url();?>home/mas"><button class="btn mas" style="color:#fff;background-color:#1B9936;text-align:right;border-radius:100%;height:40px;width:40px;"><b><i class="fas fa-plus"></i></b></button></a> 
+            
             </div>         
             <div class="col-md-12 bordert" id="TEMPORADAS_RECIENTES">
                <h2><i class="fab fa-cloudscale"></i> Temporadas Recientes</h2>
@@ -96,7 +97,8 @@
             </div>
             <?php } ?>
              <div class="text-right col-md-12">
-            <button class="btn mas" style="color:#fff;background-color:#1B9936;text-align:right;border-radius:100%;height:40px;width:40px;"><b><i class="fas fa-plus"></i></b></button>  
+            <a href="<?php base_url();?>home/mas"><button class="btn mas" style="color:#fff;background-color:#1B9936;text-align:right;border-radius:100%;height:40px;width:40px;"><b><i class="fas fa-plus"></i></b></button></a> 
+            
             </div>
                 <div class="col-md-12 bordert" id="PELICULAS_RECIENTES">
                <h2><i class="fas fa-video"></i> Películas Recientes</h2>
@@ -115,7 +117,7 @@
             </div>
             <?php } ?>
              <div class="text-right col-md-12">
-            <button class="btn mas" style="color:#fff;background-color:#1B9936;text-align:right;border-radius:100%;height:40px;width:40px;"><b><i class="fas fa-plus"></i></b></button>  
+            <a href="<?php base_url();?>home/mas"><button class="btn mas" style="color:#fff;background-color:#1B9936;text-align:right;border-radius:100%;height:40px;width:40px;"><b><i class="fas fa-plus"></i></b></button></a> 
             </div>
          </div>
          <div class="col-md-3">

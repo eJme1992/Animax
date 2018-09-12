@@ -34,6 +34,7 @@ class Panel extends CI_Controller {
     
     // **SERIES**
 
+
     public function series()
     {
         $this->load->model('Mserie'); // Carga el modelo de categorías 

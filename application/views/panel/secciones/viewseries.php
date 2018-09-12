@@ -62,7 +62,7 @@
             </div>
             <div class="form-group col-md-6">
                <label>Fecha de estreno:</label>
-               <input type="date" class="form-control" id="fecha" name="fecha" required="" value="<?=$serie->estreno;?>">
+               <input type="date" class="form-control" id="fecha" name="fecha" required="" value="<?=$serie->fecha_estreno;?>">
             </div>
             <div class="form-group col-md-12">
                <label>Sinopsis:</label>
@@ -108,7 +108,7 @@
             </form>
          </div>
          <div class="col-md-6">
-            <span style="font-size:1.9em;"><?=$serie->nombre;?></span> <span>(<?=$serie->estreno;?>)</span>
+            <span style="font-size:1.9em;"><?=$serie->nombre;?></span> <span>(<?=$serie->fecha_estreno;?>)</span>
             <br>
             <i class="fa fa-heart" aria-hidden="true"></i> <span>2944</span> Favoritos &nbsp;
             <i class="fa fa-star" aria-hidden="true"></i> <span>2944</span> Calificaciones &nbsp;

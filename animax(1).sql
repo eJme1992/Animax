@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3306
--- Tiempo de generación: 10-09-2018 a las 16:35:25
+-- Tiempo de generación: 12-09-2018 a las 00:14:08
 -- Versión del servidor: 5.7.21
 -- Versión de PHP: 5.6.35
 
@@ -144,6 +144,26 @@ INSERT INTO `generos` (`id`, `nombre`, `fecha_c`, `fecha_m`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `noticias`
+--
+
+DROP TABLE IF EXISTS `noticias`;
+CREATE TABLE IF NOT EXISTS `noticias` (
+  `id` int(15) NOT NULL AUTO_INCREMENT,
+  `titulo` varchar(20) NOT NULL,
+  `descripcion_corta` varchar(200) NOT NULL,
+  `contenido` varchar(2000) NOT NULL,
+  `tag` varchar(100) NOT NULL,
+  `imagen` varchar(200) NOT NULL,
+  `portada` varchar(200) NOT NULL,
+  `fecha_r` date NOT NULL,
+  `fecha_m` date NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `peliculas`
 --
 
@@ -226,7 +246,7 @@ CREATE TABLE IF NOT EXISTS `serie` (
   `categoria` varchar(15) NOT NULL,
   `estado` varchar(15) NOT NULL,
   `tipo` int(2) NOT NULL,
-  `estreno` date NOT NULL,
+  `fecha_estreno` date NOT NULL,
   `fecha_c` date NOT NULL,
   `fecha_m` date NOT NULL,
   PRIMARY KEY (`id`)
@@ -236,7 +256,7 @@ CREATE TABLE IF NOT EXISTS `serie` (
 -- Volcado de datos para la tabla `serie`
 --
 
-INSERT INTO `serie` (`id`, `nombre`, `descripcion`, `dias`, `duracion`, `imagen`, `imagen2`, `categoria`, `estado`, `tipo`, `estreno`, `fecha_c`, `fecha_m`) VALUES
+INSERT INTO `serie` (`id`, `nombre`, `descripcion`, `dias`, `duracion`, `imagen`, `imagen2`, `categoria`, `estado`, `tipo`, `fecha_estreno`, `fecha_c`, `fecha_m`) VALUES
 (3, 'Naturo', 'DDD', 'Viernes', '2omin', 'file/img/img2018_09_04_10.jpg', 'file/img/img2018_09_05_12.jpg', 'Anime', 'Por estrenar', 0, '2018-08-08', '2018-09-01', '2018-09-05'),
 (4, 'Fullmetal Alchemist: Brotherho', '<p>Fullmetal Alchemist: Brotherhood es la segunda serie de anime de la franquicia Fullmetal Alchemist, no obstante el título de esta serie continúa siendo «Fullmetal Alchemist» en la versión japonesa.</p>', 'Sin precisar', '40min', 'file/img/img2018_09_05_22.jpg', 'file/img/img2018_09_05_11.jpg', 'Anime', 'Finalizada', 0, '2009-04-05', '2018-09-05', '2018-09-05'),
 (5, 'Shingeki no Kyojin', '<p><i><strong>Shingeki no Kyojin </strong></i>(????? <i>Shingeki no Kyojin</i><a href=\"https://es.wikipedia.org/wiki/Ayuda:Idioma_japon%C3%A9s\">?</a>), conocida en inglés como <i><strong>Attack on Titan</strong></i> y en <a href=\"https://es.wikipedia.org/wiki/Idioma_espa%C3%B1ol\">habla hispana</a> como <i><strong>Ataque a los titanes</strong></i>', 'Domingo', '20min', 'file/img/img2018_09_05_53.jpg', 'file/img/img2018_09_05_02.jpeg', 'Anime', 'En emisión', 0, '2018-09-01', '2018-09-05', '2018-09-05'),
@@ -257,7 +277,7 @@ CREATE TABLE IF NOT EXISTS `series_destacadas` (
   `fecha_c` date NOT NULL,
   `fecha_m` date NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `series_destacadas`
@@ -266,7 +286,10 @@ CREATE TABLE IF NOT EXISTS `series_destacadas` (
 INSERT INTO `series_destacadas` (`id`, `id_serie`, `fecha_c`, `fecha_m`) VALUES
 (3, 3, '2018-09-04', '2018-09-04'),
 (4, 5, '2018-09-05', '2018-09-05'),
-(5, 8, '2018-09-05', '2018-09-05');
+(5, 8, '2018-09-05', '2018-09-05'),
+(6, 4, '2018-09-11', '2018-09-11'),
+(7, 6, '2018-09-11', '2018-09-11'),
+(8, 7, '2018-09-11', '2018-09-11');
 
 -- --------------------------------------------------------
 

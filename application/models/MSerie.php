@@ -4,13 +4,26 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class MSerie extends CI_Model {
 
 
-	 function lista($LIMIT=false)
+	 function lista()
+	{    
+		
+		$query = $this->db->query("SELECT * FROM `serie`");
+		
+		 return $query->result();
+		 
+		
+	}
+
+	 function listahome($LIMIT=false,$WHERE='',$ORDEN='')
 	{    
 		if ($LIMIT!=false){$var="$LIMIT";}else{$var="";}
-		$query = $this->db->query("SELECT * FROM `serie` $var");
+		if ($WHERE == ''){$WHERE="";}else{$WHERE="where $WHERE";}
+
+	echo $sql = "SELECT * FROM `serie` $WHERE  $var $ORDEN";
+	$query = $this->db->query($sql);
 		 if ($var!='') {
 		   	$query=$query->result();
-		   }
+		 }
 		   return $query;
 		
 	}
@@ -52,7 +65,7 @@ class MSerie extends CI_Model {
         if ($query->num_rows() == 0) {
         	$fecha_c = $fecha_m = date("Y-m-d");
 
-            $query = $this->db->query("INSERT INTO `serie` (`nombre`,`descripcion`,`imagen`,`categoria`,`estado`,`estreno`, `dias`,`duracion`,`fecha_c`, `fecha_m`) VALUES ('$nombre','$descripcion','$imagenurl','$categoria','$estado','$fecha','$dias','$duracion','$fecha_c','$fecha_m')");
+            $query = $this->db->query("INSERT INTO `serie` (`nombre`,`descripcion`,`imagen`,`categoria`,`estado`,`fecha_estreno`, `dias`,`duracion`,`fecha_c`, `fecha_m`) VALUES ('$nombre','$descripcion','$imagenurl','$categoria','$estado','$fecha','$dias','$duracion','$fecha_c','$fecha_m')");
             if ($query == true) {
                 $id = $this->db->insert_id();
                 return $id;

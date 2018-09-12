@@ -13,8 +13,7 @@ class Home extends CI_Controller
         $this->load->library('session'); // CARGA LAS SESSIONES
         
         $DATOS['datos'] = $this->MDatos->lista();
-        $DATOS['datos'] = end($DATOS['datos']);
-        
+        $DATOS['datos'] = end($DATOS['datos']);    
         $DATOS['user'] = $this->session->userdata('id'); // PASO LOS DATOS DEL USUARIO 
         $this->load->view('website/header', $DATOS); //Mi carpeta y mi archivo que corresponden a la vista
     }
@@ -30,7 +29,7 @@ class Home extends CI_Controller
         $this->load->model('MCapitulo'); // Carga el modelo de categorías  
         $this->load->model('MCarrusel'); // Carga el modelo de categorías  
         $DATOS['carrusel']   = $this->MCarrusel->lista(6);
-        $DATOS['capitulo']   = $this->MCapitulo->listacap(6);
+        $DATOS['capitulo']   = $this->MCapitulo->listacap('LIMIT 6');
         $DATOS['series']     = $this->MSerie->listades('LIMIT 3');
         $DATOS['Temporadar'] = $this->MTemporada->recientes(10);
         $this->load->view('website/cuerpo-home', $DATOS);
@@ -72,66 +71,93 @@ class Home extends CI_Controller
     }
     
     public function mas($tipo = '1', $genero = 'todos', $desde = '-1', $hasta = '-1',
-     $categoria = 'todos',$orden='1', $pagina = '1'){
-      
+        $categoria = 'todos',$orden='1',$buscar='false', $pagina = '1'){
         
+        $this->load->model('MSerie'); // Carga el modelo de categorías 
+        $this->load->model('MCategoria'); // Carga el modelo de categorías 
+        $this->load->model('MGenero'); // Carga el modelo de categorías
+        $this->load->model('MTemporada'); // Carga el modelo de categorías  
+        $this->load->model('MCapitulo'); // medidas de seguridad
+        
+        
+       
+        $where = '';
+        $k='';
+
         if (isset($_GET['pagina'])) {
             $pagina = $_GET['pagina'];
         }
+
         if (isset($_GET['tipo'])) {
             $tipo = $_GET['tipo'];
         }
+
         if (isset($_GET['genero'])) {
             $genero = $_GET['genero'];
-        }
-        if (isset($_GET['hasta'])) {
-            $hasta = $_GET['hasta'];
-        }
-        if (isset($_GET['desde'])) {
-            $desde = $_GET['desde'];
-        }
-        if (isset($_GET['categoria'])) {
-            $categoria = $_GET['categoria'];     
-        }
-        if (isset($_GET['orden'])) {
-            $orden = $_GET['orden'];   
+            if($genero!='Todas'){
+            $where .= "(genero.id='$genero')";
+            $k = ' AND ';
+            }
         }
 
-        
-        
-        
-        
-        $this->load->model('MSerie'); // Carga el modelo de categorías 
-        
+          if (isset($_GET['desde'])) {
+            $desde = $_GET['desde'].'-01-01';
+            if(($tipo=1) and ($tipo=5)){ $tabla='serie';}
+            $where .= $k."($tabla.fecha_estreno>='$desde' AND ";
+            
+        }
+
+        if (isset($_GET['hasta'])) {
+            $hasta = $_GET['hasta'].'-01-01';
+            $where .= $k."$tabla.fecha_estreno<='$hasta')";
+            $k = ' AND ';
+        }
+      
+        if (isset($_GET['categoria'])) {
+            $categoria = $_GET['categoria'];
+            if($genero!='Todas'){ 
+            $where .= $k."(serie.categoria='$categoria')";
+            $k = ' AND ';   
+            } 
+        }
+
+        if (isset($_GET['orden'])) {
+            $orden = $_GET['orden']; 
+        }
+
+        if (isset($_GET['buscar'])) {
+            //$where .= $k."()";
+            //$k = 'AND';   
+        }      
         
         if ($tipo == 1) {
-            $paginas       = $this->MFunctionsg->pagina($this->MSerie->lista(), $pagina, 3); //pg
-            $DATOS['data'] = $this->MSerie->lista($paginas['limite']); // consulta paginada
+            $paginas    = $this->MFunctionsg->pagina($this->MSerie->listahome(false,$where), $pagina, 3); //pg
+            $DATOS['data'] = $this->MSerie->listahome($paginas['limite'],$where); // consulta paginada
         }
         
         if ($tipo == 2) {
-            $paginas       = $this->MFunctionsg->pagina($this->MSerie->lista(), $pagina, 3); //pg
-            $DATOS['data'] = $this->MSerie->lista($paginas['limite']); // consulta paginada
+            $paginas       = $this->MFunctionsg->pagina($this->MSerie->listahome(), $pagina, 3); //pg
+            $DATOS['data'] = $this->MSerie->listahome($paginas['limite']); // consulta paginada
         }
         
         if ($tipo == 3) {
-            $paginas       = $this->MFunctionsg->pagina($this->MSerie->lista(), $pagina, 3); //pg
-            $DATOS['data'] = $this->MSerie->lista($paginas['limite']); // consulta paginada
+            $paginas       = $this->MFunctionsg->pagina($this->MCapitulo->listacap(), $pagina, 3); //pg
+            $DATOS['data'] = $this->MCapitulo->listacap($paginas['limite']); // consulta paginada
         }
         
         if ($tipo == 4) {
-            $paginas       = $this->MFunctionsg->pagina($this->MSerie->lista(), $pagina, 3); //pg
-            $DATOS['data'] = $this->MSerie->lista($paginas['limite']); // consulta paginada
+            $paginas       = $this->MFunctionsg->pagina($this->MSerie->listahome(), $pagina, 3); //pg
+            $DATOS['data'] = $this->MSerie->listahome($paginas['limite']); // consulta paginada
         }
         
         if ($tipo == 5) {
-            $paginas       = $this->MFunctionsg->pagina($this->MSerie->listades(), $pagina); //pg
+            $paginas     = $this->MFunctionsg->pagina($this->MSerie->listades(false,$where), $pagina,3); 
             $DATOS['data'] = $this->MSerie->listades($paginas['limite']); // consulta paginada
         }
         
         $DATOS['pagina']        = $paginas['pagina']; // valores para los botones
         $DATOS['total_paginas'] = $paginas['total_paginas']; // valores para los s    
-        $DATOS['url']  = base_url() ."Home/mas/$tipo/$genero/$desde/$hasta/$categoria/$orden";
+        $DATOS['url']  = base_url() ."Home/mas/$tipo/$genero/$desde/$hasta/$categoria/$orden/$buscar";
         
         $this->load->view('website/mas', $DATOS);
         $this->load->view('website/footer');

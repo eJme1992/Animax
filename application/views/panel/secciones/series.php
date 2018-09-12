@@ -60,7 +60,7 @@
             <td><?=$key->estado;?></td>
             <td><?=$key->categoria;?></td>
             <td><?=$key->duracion;?></td>
-            <td><?=$key->estreno;?></td>
+            <td><?=$key->fecha_estreno;?></td>
             <td><?=$key->fecha_c;?></td>
             <td><?=$key->fecha_m;?></td>
             <td>
