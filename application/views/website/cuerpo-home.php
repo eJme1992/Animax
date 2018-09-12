@@ -64,9 +64,9 @@
                <h2><i class="fas fa-star"></i></i> Series destacadas</h2>
             </div>
             <?php foreach ($series as $key){?> 
-            <div class="col-md-4" id='destacadas'>
+            <div class="col-md-3" id='destacadas'>
                <div class="card">
-                  <a href="<?php echo base_url();?>home/detalle_series/<?=$key->id?>" data-toggle="tooltip" title="<?=$key->nombre;?>"> <img src="<?=base_url().$key->imagen;?>" class="img-fluid imglg"></a>
+                  <a href="<?php echo base_url();?>home/detalle_series/<?=$key->id?>" data-toggle="tooltip" title="<?=$key->nombre;?>"> <img src="<?=base_url().$key->imagen2;?>" class="img-fluid imglg"></a>
                   <span class="span Capi">
                   DESTACA <i class="fas fa-star"></i></i>
                   </span>
@@ -86,7 +86,7 @@
             <?php foreach ($Temporadar as $key){?> 
             <div class="col-md-3" id='temp_re'>
                <div class="card">
-                  <a href="<?php echo base_url();?>home/detalle_series/<?=$key->id_serie?>" data-toggle="tooltip" title="<?=$key->nombre;?>"> <img src="<?=base_url().$key->imagen;?>" class="img-fluid imgmd"></a>
+                  <a href="<?php echo base_url();?>home/detalle_series/<?=$key->id_serie?>" data-toggle="tooltip" title="<?=$key->nombre;?>"> <img src="<?=base_url().$key->imagen2;?>" class="img-fluid imgmd"></a>
                   <span class="span Capi">
                   ESTRENO <i class="far fa-clock"></i></i>
                   </span>
@@ -106,7 +106,7 @@
             <?php foreach ($Temporadar as $key){?> 
             <div class="col-md-3" id='temp_re'>
                <div class="card">
-                  <a href="<?php echo base_url();?>home/detalle_series/<?=$key->id_serie?>" data-toggle="tooltip" title="<?=$key->nombre;?>"> <img src="<?=base_url().$key->imagen;?>" class="img-fluid imgmd"></a>
+                  <a href="<?php echo base_url();?>home/detalle_series/<?=$key->id_serie?>" data-toggle="tooltip" title="<?=$key->nombre;?>"> <img src="<?=base_url().$key->imagen2;?>" class="img-fluid imgmd"></a>
                   <span class="span Capi">
                   ESTRENO <i class="far fa-clock"></i></i>
                   </span>

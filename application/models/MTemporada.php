@@ -11,11 +11,17 @@ class MTemporada extends CI_Model {
 		return $query->result();
 	}
 
-	 function recientes($LIMIT='2')
+	 function recientes($LIMIT = false, $WHERE = '', $ORDEN = 'ORDER BY temporada.fecha_c')
 	{    
-		//if ($id==false){$var='';}else{$var="";}
-		    $query = $this->db->query("SELECT serie.id as 'id_serie', temporada.id as 'id', serie.nombre, serie.imagen, temporada.fecha_c FROM temporada INNER JOIN serie ON serie.id=temporada.id_serie ORDER BY temporada.fecha_c  LIMIT $LIMIT ");
-		return $query->result();
+		if ($LIMIT!=false){$var="$LIMIT";}else{$var="";}
+		if ($WHERE == ''){$WHERE="";}else{$WHERE="where $WHERE";}
+
+		   echo $sql = "SELECT serie.id as 'id_serie', temporada.id as 'id', serie.nombre, serie.imagen,serie.imagen2, temporada.fecha_c FROM temporada INNER JOIN serie ON serie.id=temporada.id_serie INNER JOIN serie_genero ON serie.id=serie_genero.id_serie  $WHERE $ORDEN $LIMIT ";
+		       $query = $this->db->query($sql);
+		 if ($var!='') {
+		   	$query=$query->result();
+		 }
+		   return $query;
 	}
 
 	 function eliminar($id)
