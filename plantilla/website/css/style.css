@@ -1,3 +1,152 @@
+/*Cambios de edwin 12/09*/
+
+#home .mg {
+    margin-top: 10px !important;
+}
+#buscar .mr-sm-2 {
+    margin-right: 0px !important;
+    border-radius: .25rem .0rem .0rem .25rem;
+}
+
+#buscar .btn {
+    border-radius: .0rem .25rem .25rem .0rem;
+    min-height: 38px;
+    background-color: #FF7E00;
+    border-color: #FF7E00;;
+}
+
+
+#buscar .form-control:focus {
+  border-color:#FF7E00;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(255, 0, 0, 0.6);
+}
+
+.bordert{
+    border-bottom: solid 5px #cd0707;
+margin: 1.5rem 0;
+display: block;
+height: 34px;
+}
+
+.bordert h2 {
+    font-size: 1.375rem;
+line-height: 1.625rem;
+color: #fff;
+background: #cd0707;
+float: left;
+margin: 0;
+padding: 5px 9px 0;
+}
+
+body{font-family: 'Noto Sans KR', sans-serif;}
+@media (max-width:767px){
+   .cap-es{
+    height:37.3vw !important;
+    width: 100%;
+    border-radius: 2% 2% 0px 0px;
+    }
+   .imglg{
+    height:95vw !important;
+    width: 100%;
+    border-radius: 2% 2% 0px 0px;
+}
+ .imgmd{
+    height:35vw !important;
+    width: 100%;
+    border-radius: 2% 2% 0px 0px;
+}
+}
+.imglg{
+    height:20vw ;
+    width: 100%;
+    border-radius: 2% 2% 0px 0px;
+}
+.imgmd{
+    height: 7vw ;
+    width: 100%;
+    border-radius: 2% 2% 0px 0px;
+}
+#cap .cap-es{
+    height:7.3vw ;
+    width: 100%;
+    border-radius: 2% 2% 0px 0px;
+}
+
+
+#home .card {
+margin-bottom:20px; 
+background-color:#f2f2f2;
+-webkit-box-shadow: 3px 10px 16px -4px rgba(0,0,0,0.52);
+-moz-box-shadow: 3px 10px 16px -4px rgba(0,0,0,0.52);
+box-shadow: 3px 10px 16px -4px rgba(0,0,0,0.52);
+}
+#destacadas .span.Capi {
+    position: absolute;
+    text-align: center;
+    top:10px;
+    right:-4px;
+    width: 60%;
+    font-weight:bold;
+    line-height: 24px;
+    background-color: #1B9936;
+    height:25px;
+    border-radius: 32px;
+    padding: 0 8px;
+    font-size: 11px;
+    color: #fff;
+}
+
+#temp_re .span.Capi {
+    position: absolute;
+    text-align: center;
+    top:10px;
+    right:-4px;
+    width: 60%;
+    font-weight:bold;
+    line-height: 24px;
+    background-color: #1B9936;
+    height:25px;
+    border-radius: 32px;
+    padding: 0 8px;
+    font-size: 11px;
+    color: #fff;
+}
+
+#cap .span.Capi {
+    position: absolute;
+    text-align: right;
+    bottom:30px;
+    right:-3px;
+    width: 70%;
+    font-weight:bold;
+    line-height: 16px;
+    background-color: #ff7e00;
+    border-radius: 32px;
+    padding: 0 8px;
+    font-size: 11px;
+    color: #fff;
+}
+
+
+
+
+.Title {
+    display: block;
+    bottom: 20px;
+    overflow: hidden;
+    font-weight:bold;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    color: #000;
+    padding-right: 2px;
+    padding-left: 2px;
+}
+
+/*Para las noticias del home*/
+#home .news{
+    background-color: #fff !important;
+    z-index: -9;
+} 
 
 #home .mg {
     margin-top: 10px !important;

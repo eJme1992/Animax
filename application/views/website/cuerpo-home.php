@@ -120,7 +120,7 @@
             <a href="<?php base_url();?>home/mas"><button class="btn mas" style="color:#fff;background-color:#1B9936;text-align:right;border-radius:100%;height:40px;width:40px;"><b><i class="fas fa-plus"></i></b></button></a> 
             </div>
          </div>
-         <div class="col-md-3">
+         <div class="col-md-3 news">
             <div class="col-md-12">
                <h2 class="sub-t" style='text-align:center;'>NOTICIAS</h2>
             </div>
