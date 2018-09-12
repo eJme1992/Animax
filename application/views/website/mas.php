@@ -15,7 +15,7 @@
          <div class="col-md-3">
          <div class="" style="position:-webkit-sticky;position:sticky;top:0px;">
             <div class="col-md-12 bordert" id="SERIES_DESTACAS">
-               <h2 style='padding-bottom: 4.8px;'><i class="fas fa-filter"></i>Filtros</h2>
+               <h2><i class="fas fa-filter"></i>Filtros</h2>
             </div>
             <style>
                label { margin-top: 10px; }
@@ -51,8 +51,12 @@
                   <input class="form-control col-6" style="display:inline-block;" type="number" name="desde" id="desde" required="" placeholder="Desde" value="1900" >
                   <input class="form-control col-6" style="display:inline-block;" type="number" name="hasta" id="hasta" required="" placeholder="Hasta " value="<?php echo date('Y'); ?>">
                </div>
-               <button type="submit" class="btn btn-warning" style="margin-top:15px;width:50%"><i class="fas fa-filter"></i>Filtrar</button>
-               <button class="btn btn-info" style="margin-top:15px;width:50%"><i class="fas fa-retweet"></i>Reiniciar</button>
+               <div style="margin-top:20px">
+               <button type="submit" class="btn btn-warning btn-block"><i class="fas fa-filter"></i>Filtrar</button>
+               <a href="<?=base_url();?>/home/mas" class="btn btn-info btn-block">
+                   <i class="fas fa-retweet"></i>Reiniciar
+               </a>
+            </div>
             </div>
          </form>
       </div>

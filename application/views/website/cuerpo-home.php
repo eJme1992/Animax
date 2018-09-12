@@ -12,7 +12,7 @@
 <section id="home">
    <div class="container">
       <div class="row mg">
-         <div class="col-md-5">
+         <div class="col-lg-5">
             <!--Slider-->
             <div id="demo" class="carousel slide" data-ride="carousel">
                <!-- Indicators -->
@@ -27,7 +27,7 @@
                   <?php $i=0; foreach ($carrusel as $key) {   ?>
                   <div class="carousel-item <?php if($i==0) echo 'active';?>">
                      <a href="#">
-                     <img src="<?=base_url().$key->imagen;?>" alt="Los Angeles" style="height:20vw;">
+                     <img src="<?=base_url().$key->imagen;?>" alt="Los Angeles" style="height:20vw; width:100%; margin-bottom:5px;">
                      </a>  
                   </div>
                    <?php $i++; } ?>
@@ -41,7 +41,7 @@
                </a>
             </div>
          </div>
-         <div class="col-md-7">
+         <div class="col-lg-7">
             <div class="row">
                <?php foreach ($capitulo as $key){?> 
                <div class="col-md-4" id="cap">
@@ -64,9 +64,9 @@
                <h2><i class="fas fa-star"></i></i> Series destacadas</h2>
             </div>
             <?php foreach ($series as $key){?> 
-            <div class="col-md-3" id='destacadas'>
+            <div class="col-lg-3" id='destacadas'>
                <div class="card">
-                  <a href="<?php echo base_url();?>home/detalle_series/<?=$key->id?>" data-toggle="tooltip" title="<?=$key->nombre;?>"> <img src="<?=base_url().$key->imagen2;?>" class="img-fluid imglg"></a>
+                  <a href="<?php echo base_url();?>home/detalle_series/<?=$key->id?>" data-toggle="tooltip" title="<?=$key->nombre;?>"> <img src="<?=base_url().$key->imagen2;?>" class="img-fluid imgmd"></a>
                   <span class="span Capi">
                   DESTACA <i class="fas fa-star"></i></i>
                   </span>
@@ -84,7 +84,7 @@
                <h2><i class="fab fa-cloudscale"></i> Temporadas Recientes</h2>
             </div>
             <?php foreach ($Temporadar as $key){?> 
-            <div class="col-md-3" id='temp_re'>
+            <div class="col-lg-3" id='temp_re'>
                <div class="card">
                   <a href="<?php echo base_url();?>home/detalle_series/<?=$key->id_serie?>" data-toggle="tooltip" title="<?=$key->nombre;?>"> <img src="<?=base_url().$key->imagen2;?>" class="img-fluid imgmd"></a>
                   <span class="span Capi">
@@ -104,9 +104,9 @@
                <h2><i class="fas fa-video"></i> Películas Recientes</h2>
             </div>
             <?php foreach ($peliculas as $key){?> 
-            <div class="col-md-3" id='temp_re'>
+            <div class="col-lg-3" id='temp_re'>
                <div class="card">
-                  <a href="<?php echo base_url();?>home/detalle_series/<?=$key->id?>" data-toggle="tooltip" title="<?=$key->nombre;?>"> <img src="<?=base_url().$key->imagen;?>" class="img-fluid imgmd"></a>
+                  <a href="<?php echo base_url();?>home/detalle_series/<?=$key->id?>" data-toggle="tooltip" title="<?=$key->nombre;?>"> <img src="<?=base_url().$key->imagen;?>" class="img-fluid imglg"></a>
                   <span class="span Capi">
                   ESTRENO <i class="far fa-clock"></i></i>
                   </span>
@@ -120,7 +120,7 @@
             <a href="<?php base_url();?>home/mas"><button class="btn mas" style="color:#fff;background-color:#1B9936;text-align:right;border-radius:100%;height:40px;width:40px;"><b><i class="fas fa-plus"></i></b></button></a> 
             </div>
          </div>
-         <div class="col-md-3 news">
+         <div class="col-lg-3">
             <div class="col-md-12">
                <h2 class="sub-t" style='text-align:center;'>NOTICIAS</h2>
             </div>
