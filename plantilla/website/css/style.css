@@ -291,6 +291,8 @@ margin-bottom:2.5em;
     text-align: left;
     z-index: 1000;
 }
+.sipnosis{color:#fff; }
+.status{color:#fff;}
 #detalle-serie .img-serie{ margin-bottom: 1em; }
 #detalle-serie .btn-serie{
     background-color: #000;
@@ -309,6 +311,8 @@ margin-bottom:2.5em;
 }
 .text-nun{ background-color:#000; margin-top: 0.5em; width:100%; }
 .tit-anun{ text-align: center;  color:#fff;}
+#descripcion-p p{color:#fff;}
+.fav li a {color:#Fff;}
 
  
  /*Para el capitulo*/
