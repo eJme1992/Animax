@@ -57,10 +57,10 @@ class Peliculas extends CI_Controller
         
         if ($imagenurl != false) {
             
-            $var = $this->MPelicula->editarimg($imagenurl,$id); // 
+            $var = $this->MPelicula->editarimg($id,$imagenurl); // 
             if ($var != false) {
                 $response['status'] = 'ok';
-                $response['code']   = "Edición hecha correctamente recargue la pagina para actualizar la tabla";
+                $response['code']   = "Edición hecha correctamente recargue la pagina para actualizar";
             } else {
                 $response['status'] = 0;
                 $response['error']  = 'No se edito correctamente';

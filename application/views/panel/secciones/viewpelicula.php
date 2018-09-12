@@ -22,36 +22,36 @@
    <!-- Main content -->
    <div class="tab-content">
       <div id="menu2" class="content container-fluid tab-pane fade">
-         <form id="nueva_pelicula" onsubmit="nueva_pelicula();return false; ">
+         <form id="editar_pelicula" onsubmit="editar_pelicula();return false; ">
             <div class="form-group col-md-6">
                <label>Nombre:</label>
-               <input type="text" class="form-control" id="nombre" name="nombre" required="" placeholder="Nombre">
+               <input type="text" class="form-control" id="nombre" name="nombre" value="<?=$pelicula->nombre?>" required="" placeholder="Nombre">
             </div>
             <div class="form-group col-md-6">
                <label>Idioma:</label>
-               <input type="text" class="form-control" id="idioma" name="idioma" required="" placeholder="Idioma">
+               <input type="text" class="form-control" id="idioma" name="idioma" value="<?=$pelicula->idioma?>" required="" placeholder="Idioma">
             </div>
             <div class="form-group col-md-6">
                <label>Duración:</label>
-               <input type="text" class="form-control" id="duracion" name="duracion" required="" placeholder="De 20 a 40min">
+               <input type="text" class="form-control" id="duracion" name="duracion" value="<?=$pelicula->duracion?>" required="" placeholder="De 20 a 40min">
             </div>
             <div class="form-group col-md-4">
                <label>Fecha de estreno:</label>
-               <input type="date" class="form-control" id="fecha_estreno" name="fecha_estreno" required="" placeholder="Fecha de estreno">
+               <input type="date" class="form-control" id="fecha_estreno" value="<?=$pelicula->fecha_estreno?>" name="fecha_estreno" required="" placeholder="Fecha de estreno">
             </div>
             <div class="form-group col-md-4">
                <label>Dirección:</label>
-               <input type="text" class="form-control" id="direccion" name="direccion" required="" placeholder="Dirección">
+               <input type="text" class="form-control" id="direccion" value="<?=$pelicula->direccion?>" name="direccion" required="" placeholder="Dirección">
             </div>
             
             <div class="form-group col-md-4">
                <label>Formato:</label>
-               <input type="text" class="form-control" id="formato" name="formato" required="" placeholder="Formato">
+               <input type="text" class="form-control" id="formato" name="formato" value="<?=$pelicula->formato?>" required="" placeholder="Formato">
             </div>
             <div class="form-group col-md-12">
                <label>Sinopsis:</label>
                <textarea name="content" id="sinopsis" name="sinopsis" required="" placeholder="Sinopsis">
-              
+              <?=$pelicula->descripcion?>
           </textarea>
                <script>
                   ClassicEditor
@@ -61,6 +61,8 @@
                       } );
                </script>
             </div>
+               <input type="hidden" name="id" id="id" value="<?=$pelicula->id;?>" />
+
             <div class="col-md-12">
                <label>Generos</label>
                <?php foreach ($generos as $key) { ?>
@@ -84,7 +86,6 @@
             <img src="<?=base_url().$pelicula->imagen;?>" class="img-responsive">
             <form id="peliculasimagen" onsubmit="realizaProceso2();return false; ">
                <input type="file" name="imagen" id="imagen" class="form-control" required="">
-               <input type="hidden" name="lugar" id="lugar" value=""/>
                <input type="hidden" name="id" id="id" value="<?=$pelicula->id;?>" />
                <input type="hidden" name="<?=$csrf['name'];?>" value="<?=$csrf['hash'];?>" />
                <div class="col-md-12" id="resultado2"></div>
@@ -152,19 +153,21 @@
                               <h4 class="modal-title">Editar video</h4>
                            </div>
                            <div class="modal-body">
-                              <form id="editart<?=$key->id;?>" onsubmit="realizaProceso(
+                              <form id="editar<?=$key->id;?>" onsubmit="realizaProceso(
                                  $('#id<?=$key->id;?>').val() 
                                  );return false; ">
                                  <div class="row">
                                     <div class="col-sm-12">
                                        <label>Url</label>
-                                       <input type="text" name="url_video" id="url_video" required="" class="form-control" placeholder="Url" value="<?=$key->url_video?>">
+                                       <input type="text" name="url_video" id="url_vidpeliculavideored="" class="form-control" placeholder="Url" value="<?=$key->url_video?>">
                                        <label>Tipo</label>
-                                       <select name="tipo" id="tipo">
+                                       <select class="form-control" name="tipo" id="tipo">
                                           <option value="0">0</option>
                                           <option value="1">1</option>
                                        </select>
                                        <input type="hidden" name="id" id="id"  class="form-control"value="<?=$key->id?>">
+                                       <input type="hidden" name="id" id="id"  class="form-control"value="<?=$key->id?>">
+                                       <input type="hidden" name="id<?=$key->id?>" id="id<?=$key->id?>"  class="form-control"value="<?=$key->id?>">
 
                                        <input type="hidden" name="<?=$csrf['name'];?>" value="<?=$csrf['hash'];?>" />
                                        
@@ -193,41 +196,7 @@
       </div>
    </div>
 </section>
-<!-- Modal -->
-<div id="ntm" class="modal fade " role="dialog">
-   <div class="modal-dialog" style="margin-top:10vw;">
-      <!-- Modal content-->
-      <div class="modal-content">
-         <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal">&times;</button>
-            <h4 class="modal-title">Nueva Temporada</h4>
-         </div>
-         <div class="modal-body">
-            <form id="nt" onsubmit="realizaProceso();return false;">
-               <div class="row">
-                  <div class="col-sm-12">
-                     <label>Numero</label>
-                     <input type="text" name="numero" id="numero" required="" class="form-control" placeholder="Ej: Anime">
-                     <label>Fecha de estreno</label>
-                     <input type="date" name="fecha" id="fecha" required="" class="form-control" placeholder="Ej: Anime">
-                  </div>
-                  <div class="col-md-12" id="resultadont" style="margin-top:15px;"></div>
-                  <input type="hidden" name="id_pelicula" id="id_pelicula" value="<?=$pelicula->id;?>" />
-                  <input type="hidden" name="<?=$csrf['name'];?>" value="<?=$csrf['hash'];?>" />
-                  <div class="col-sm-12" style="margin-top:20px;">
-                     <button class="btn btn-lg btn-block btn-primary">
-                     Crear
-                     </button>
-                  </div>
-               </div>
-            </form>
-         </div>
-         <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">cerrar</button>
-         </div>
-      </div>
-   </div>
-</div>
+
 <!-- Modal -->
 <div id="nuevocap" class="modal fade " role="dialog">
    <div class="modal-dialog" style="margin-top:10vw;">
@@ -242,7 +211,7 @@
                <div class="row">
                   <div class="col-sm-12">
                      <label>Url</label>
-                     <input type="text" name="url_video" id="url_video" required="" class="form-control" placeholder="Url">
+                     <input type="text" name="url_video" id="url_video" required="" class="form-control" placeholdpeliculavideo
                      <label>Tipo</label>
                      <select name="tipo" class="form-control" id="tipo">
                         <option value="0">0</option>
@@ -267,32 +236,34 @@
       </div>
    </div>
 </div>
+</div>
+
 <!-- /.content -->
 <script>  
-   function realizaProceso() {
+   function realizaProceso(id) {
        var msj = '1';
       //validaciones con js
       
      if (msj === "1") {
-      var formData = new FormData(jQuery('#nt') [0]);
+      var formData = new FormData(jQuery('#editar'+id) [0]);
       jQuery.ajax({
-        url: '<?=base_url();?>temporada/crear_temporada',
+        url: '<?=base_url();?>peliculavideo/editar_video',
         type: 'POST',
         contentType: false,
         processData: false,
         dataType: 'json',
         data: formData,
         beforeSend: function() {
-          $("#resultadont").html('<div class="alert alert-success">Procesando...!</div>');
+          $("#resultado3"+id).html('<div class="alert alert-success">Procesando...!</div>');
         }
       })
       .done(function(data, textStatus, jqXHR) {
          var getData = jqXHR.responseJSON; // dejar esta linea
         if(data.status=='ok'){
-         $("#resultadont").html('<div class="alert alert-success">'+data.code+'</div>');
+         $("#resultado3"+id).html('<div class="alert alert-success">'+data.code+'</div>');
          window.location.href ='<?=base_url();?>panel/viewpelicula/<?=$pelicula->id;?>';
         }else{
-        $("#resultadont").html('<div class="alert alert-danger"><strong>ERROR!</strong>'+data.error+'</div>');
+        $("#resultado3"+id).html('<div class="alert alert-danger"><strong>ERROR!</strong>'+data.error+'</div>');
         }
       })
             .fail(function(jqXHR, textStatus, errorThrown) {
@@ -386,45 +357,6 @@
        };
 </script>
 
-<script>  
-   function realizaProcesoimgs() {
-       var msj = '1';
-      //validaciones con js
-      
-     if (msj === "1") {
-      var formData = new FormData(jQuery('#peliculasimagens') [0]);
-      jQuery.ajax({
-        url: '<?=base_url();?>peliculas/editar_imagen',
-        type: 'POST',
-        contentType: false,
-        processData: false,
-        dataType: 'json',
-        data: formData,
-        beforeSend: function() {
-          $("#resultadoimgs").html('<div class="alert alert-success">Procesando...!</div>');
-        }
-      })
-      .done(function(data, textStatus, jqXHR) {
-         var getData = jqXHR.responseJSON; // dejar esta linea
-        if(data.status=='ok'){
-         $("#resultadoimgs").html('<div class="alert alert-success">'+data.code+'</div>');
-         window.location.href ='<?=base_url();?>panel/viewpelicula/<?=$pelicula->id;?>';
-        }else{
-        $("#resultadoimgs").html('<div class="alert alert-danger"><strong>ERROR!</strong>'+data.error+'</div>');
-        }
-      })
-            .fail(function(jqXHR, textStatus, errorThrown) {
-              var getErr = jqXHR.responseText;
-              
-              console.log(getErr);
-      
-            })
-       // Fin de ajax
-       } else {
-           swal("¡Error! ", msj, "error");
-       }
-       };
-</script>
 <!-- EDITAR generoS -->
 <script >
    function realizaProcesot(id) {
