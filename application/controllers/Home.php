@@ -52,16 +52,17 @@ class Home extends CI_Controller
         $this->load->model('MGenero'); // Carga el modelo de categorías
    
         $this->load->model('MCapitulo'); // medidas de seguridad
+          $consultas = $this->MSerie->consultar($id);
+        $DATOS['serie'] = end($consultas);
         $csrf = array(
             'name' => $this->security->get_csrf_token_name() ,
             'hash' => $this->security->get_csrf_hash()
         );
         $DATOS['csrf'] = $csrf;
-        $consultas = $this->MSerie->consultar($id);
-        $DATOS['serie'] = end($consultas);
+        $DATOS['capitulos'] = $this->MCapitulo->listacap('LIMIT 6');
         $DATOS['comentarios'] = $this->MComentario_serie->lista($id);
         $DATOS['capitulo'] = $this->MCapitulo->lista($id);
-        $DATOS['capitulos'] = $this->MCapitulo->listacap('LIMIT 6');
+        
    
         $this->load->view('website/detalles_series', $DATOS);
         $this->load->view('website/footer');
@@ -184,15 +185,38 @@ class Home extends CI_Controller
     function capitulo($id)
     {
         $this->load->model('MCapitulo'); // medidas de seguridad
+        $this->load->model('MComentario_capitulo'); // medidas de seguridad
             $csrf = array(
             'name' => $this->security->get_csrf_token_name() ,
             'hash' => $this->security->get_csrf_hash()
         );
         $DATOS['csrf'] = $csrf;
         $DATOS['capitulos'] = $this->MCapitulo->listacap('LIMIT 6');
+        $DATOS['comentarios'] = $this->MComentario_capitulo->lista($id);
+        $DATOS['capitulo'] = $this->MCapitulo->lista($id);
         $consultas = $this->MCapitulo->consultar($id);
         $DATOS['capitulo'] = end($consultas);
         $this->load->view('website/capitulo', $DATOS);
+        $this->load->view('website/footer');
+    }
+
+      public
+
+    function pelicula($id='')
+    {
+       /* $this->load->model('MCapitulo'); // medidas de seguridad
+        $this->load->model('MComentario_capitulo'); // medidas de seguridad
+            $csrf = array(
+            'name' => $this->security->get_csrf_token_name() ,
+            'hash' => $this->security->get_csrf_hash()
+        );
+        $DATOS['csrf'] = $csrf;
+        $DATOS['capitulos'] = $this->MCapitulo->listacap('LIMIT 6');
+        $DATOS['comentarios'] = $this->MComentario_capitulo->lista($id);
+        $DATOS['capitulo'] = $this->MCapitulo->lista($id);
+        $consultas = $this->MCapitulo->consultar($id);
+        $DATOS['capitulo'] = end($consultas);*/
+        $this->load->view('website/pelicula', $DATOS);
         $this->load->view('website/footer');
     }
 }
