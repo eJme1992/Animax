@@ -42,10 +42,10 @@
                      </script>
 
                   </div>
-                  <div class="capitulos">
+                  <div class="capitulos card card-body" style="margin-bottom:100px;">
                      <h3>Capitulos</h3>
                     
-                     <div class="row text-center" style="color:#ff6414;">
+                     <div class="row text-center" style="color:#ff6414;margin-bottom:20px;">
                            <div class="col-6">
                             <b>#Capitulo / #Temporada</b> 
                            </div> 
@@ -54,24 +54,31 @@
                            </div>
                                
                      </div>  
-                             
+                  <div class="row" style="max-height:400px;overflow:auto;">  
                   <?php $cond=0; 
                   foreach ($capitulo as $key) {
                      if($cond!=$key->temporada){ $cond=$key->temporada; ?>
-                     <div class="alert alert-success">
+                     <div class="alert alert-success col-12" id="temporada<?=$key->temporada;?>">
                      <b>Temporada numero <?=$key->temporada;?></b>
                      </div>
                     <?php } ?>
-                     <div class="row">
+                     <div class="row col-md-12" style="background-color:#f2f2f2;color:#000;">
+                      
                            <div class="col-6">
-                           <?=$key->numero;?>/<?=$key->temporada;?> 
+                           <a href="<?php echo base_url();?>home/capitulo/<?=$key->id?>"> 
+                           Cap.<?=$key->numero;?>/Tem.<?=$key->temporada;?> 
+                           </a>
                            </div> 
                            <div class="col-6">
+                             <a href="<?php echo base_url();?>home/capitulo/<?=$key->id?>"> 
                             <?=$key->nombre;?>   
+                            </a>
                            </div>
+                        
                                
                      </div>  
                   <?php } ?>
+               </div>
                         
                      
 
