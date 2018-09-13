@@ -7,7 +7,7 @@
          </div>
          <div class="col-md-4 no-padding">
             <div class="cabecera-cap">
-               <h3>Nombre del capitulo</h3>
+               <h3><?=$capitulo->nombre;?></h3>
             </div>
             <div class="scroll-bar">
                <ul class="list-videos">
@@ -43,7 +43,7 @@
                   </ul>
                </div>
                <div class="col-md-4 footer-cap no-padding">
-                  <h3 class="nom-cap" >Nombre del capitulo <i class="fas fa-angle-double-up" style="color:#fff;"></i></h3>
+                  <h3 class="nom-cap" ><?=$capitulo->nombre_serie;?><i class="fas fa-angle-double-up" style="color:#fff;"></i></h3>
                </div>
             </div>
          </div>
