@@ -4,15 +4,25 @@
     margin-top: 10px !important;
 }
 #home .news{
-    background-color: rgba(220, 220, 220, 0.3)
+    margin-left: 1em;
    -webkit-box-shadow: 3px 10px 16px -4px rgba(0,0,0,0.52);
 -moz-box-shadow: 3px 10px 16px -4px rgba(0,0,0,0.52);
 box-shadow: 3px 10px 16px -4px rgba(0,0,0,0.52); 
+padding-left: 0;
+padding-right: 0;
 }
+#home .sub-t{
+    width: 100%;
+    height:5vmin;
+    color:#fff;
+    background-color: #FF7E00;
+}
+#home .padding{padding-left: 1em; padding-right: 1em;}
 #buscar .mr-sm-2 {
     margin-right: 0px !important;
     border-radius: .25rem .0rem .0rem .25rem;
 }
+
 
 #buscar .btn {
     border-radius: .0rem .25rem .25rem .0rem;
