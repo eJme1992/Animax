@@ -42,6 +42,44 @@
                      </script>
 
                   </div>
+                  <div class="capitulos">
+                     <h3>Capitulos</h3>
+                    
+                     <div class="row text-center" style="color:#ff6414;">
+                           <div class="col-6">
+                            <b>#Capitulo / #Temporada</b> 
+                           </div> 
+                           <div class="col-6">
+                            <b> Nombre </b>
+                           </div>
+                               
+                     </div>  
+                             
+                  <?php $cond=0; 
+                  foreach ($capitulo as $key) {
+                     if($cond!=$key->temporada){ $cond=$key->temporada; ?>
+                     <div class="alert alert-success">
+                     <b>Temporada numero <?=$key->temporada;?></b>
+                     </div>
+                    <?php } ?>
+                     <div class="row">
+                           <div class="col-6">
+                           <?=$key->numero;?>/<?=$key->temporada;?> 
+                           </div> 
+                           <div class="col-6">
+                            <?=$key->nombre;?>   
+                           </div>
+                               
+                     </div>  
+                  <?php } ?>
+                        
+                     
+
+                  </div>
+
+
+
+
                </div>
             </div>
          </div>

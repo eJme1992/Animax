@@ -180,9 +180,11 @@ class Home extends CI_Controller
 
     public
 
-    function capitulo()
+    function capitulo($id)
     {
-        $this->load->view('website/capitulo');
+        $this->load->model('MCapitulo'); // medidas de seguridad
+        $DATOS['capitulo'] = $this->MCapitulo->consultar($id);
+        $this->load->view('website/capitulo', $DATOS);
         $this->load->view('website/footer');
     }
 }

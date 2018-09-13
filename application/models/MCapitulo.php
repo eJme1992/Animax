@@ -4,6 +4,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class MCapitulo extends CI_Model {
 
 
+	function consultar($id)
+	{
+		$query = $this->db->query("SELECT capitulo.id, capitulo.id_temporada, capitulo.numero, capitulo.nombre, capitulo.duracion, capitulo.fecha_estreno, serie.nombre as 'nombre_serie', temporada.numero as 'numero_temporada'  FROM `capitulo` INNER JOIN temporada ON temporada.id=capitulo.id_temporada INNER JOIN serie ON serie.id=temporada.id_serie WHERE capitulo.id='$id'");
+		return $query->result();
+	}
+
+
+ 
 	 function lista($id=false)
 	{    
 
