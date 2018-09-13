@@ -42,7 +42,7 @@
                         <a class="nav-link" href="#">Audiofrecuencia</a>
                      </li>
                      <li class="nav-item">
-                        <a class="nav-link" href="<?=base_url();?>login"><i class="fas fa-user"></i> <?php if (isset($user->id)){echo 'Ver perfil';}else{echo 'Iniciar sección';}?></a>
+                        <a class="nav-link" href="<?=base_url();?>login"><i class="fas fa-user"></i> <?php if (isset($user->id)){echo 'Ver perfil';}else{echo 'Iniciar sesión';}?></a>
                      </li>
                   </ul>
                </div>
