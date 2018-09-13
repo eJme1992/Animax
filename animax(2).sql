@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3306
--- Tiempo de generación: 12-09-2018 a las 21:49:41
+-- Tiempo de generación: 13-09-2018 a las 04:20:35
 -- Versión del servidor: 5.7.21
 -- Versión de PHP: 5.6.35
 
@@ -117,6 +117,65 @@ CREATE TABLE IF NOT EXISTS `categorias` (
 INSERT INTO `categorias` (`id`, `nombre`, `fecha_c`, `fecha_m`) VALUES
 (2, 'Anime', '2018-08-26', '2018-08-27'),
 (16, 'Ova', '2018-08-27', '2018-08-27');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `comentario_capitulo`
+--
+
+DROP TABLE IF EXISTS `comentario_capitulo`;
+CREATE TABLE IF NOT EXISTS `comentario_capitulo` (
+  `id` int(20) NOT NULL AUTO_INCREMENT,
+  `id_capitulo` int(15) NOT NULL,
+  `id_user` int(15) NOT NULL,
+  `comentario` varchar(800) NOT NULL,
+  `like` int(15) NOT NULL,
+  `deslike` int(15) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `comentario_pelicula`
+--
+
+DROP TABLE IF EXISTS `comentario_pelicula`;
+CREATE TABLE IF NOT EXISTS `comentario_pelicula` (
+  `id` int(20) NOT NULL AUTO_INCREMENT,
+  `id_pelicula` int(15) NOT NULL,
+  `id_user` int(15) NOT NULL,
+  `comentario` varchar(800) NOT NULL,
+  `like` int(15) NOT NULL,
+  `deslike` int(15) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `comentario_serie`
+--
+
+DROP TABLE IF EXISTS `comentario_serie`;
+CREATE TABLE IF NOT EXISTS `comentario_serie` (
+  `id` int(21) NOT NULL AUTO_INCREMENT,
+  `id_serie` int(15) NOT NULL,
+  `id_user` int(15) NOT NULL,
+  `comentario` varchar(800) NOT NULL,
+  `like` int(10) NOT NULL,
+  `deslike` int(10) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `comentario_serie`
+--
+
+INSERT INTO `comentario_serie` (`id`, `id_serie`, `id_user`, `comentario`, `like`, `deslike`) VALUES
+(1, 6, 3, 'coño', 0, 0),
+(2, 3, 3, 'prueba numero 2', 0, 0);
 
 -- --------------------------------------------------------
 
