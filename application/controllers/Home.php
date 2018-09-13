@@ -48,9 +48,9 @@ class Home extends CI_Controller
     function detalle_series($id)
     {
         $this->load->model('MSerie'); // Carga el modelo de categorías
-        $this->load->model('MCategoria'); // Carga el modelo de categorías
+        $this->load->model('MComentario_serie'); // Carga el modelo de categorías
         $this->load->model('MGenero'); // Carga el modelo de categorías
-        $this->load->model('MTemporada'); // Carga el modelo de categorías
+   
         $this->load->model('MCapitulo'); // medidas de seguridad
         $csrf = array(
             'name' => $this->security->get_csrf_token_name() ,
@@ -59,11 +59,10 @@ class Home extends CI_Controller
         $DATOS['csrf'] = $csrf;
         $consultas = $this->MSerie->consultar($id);
         $DATOS['serie'] = end($consultas);
-        $DATOS['temporada'] = $this->MTemporada->lista($id);
+        $DATOS['comentarios'] = $this->MComentario_serie->lista($id);
         $DATOS['capitulo'] = $this->MCapitulo->lista($id);
-         $DATOS['capitulos'] = $this->MCapitulo->listacap('LIMIT 6');
-        $DATOS['categorias'] = $this->MCategoria->lista(); // consulta categorías existente
-        $DATOS['generos'] = $this->MGenero->lista(); // consulta categorías existente
+        $DATOS['capitulos'] = $this->MCapitulo->listacap('LIMIT 6');
+   
         $this->load->view('website/detalles_series', $DATOS);
         $this->load->view('website/footer');
     }
@@ -72,6 +71,7 @@ class Home extends CI_Controller
 
     function mas_destacados($pagina = 1)
     {
+        
         $this->load->model('MSerie'); // Carga el modelo de categorías
         $paginas = $this->MFunctionsg->pagina($this->MSerie->listades() , $pagina); //pg
         $DATOS['data'] = $this->MSerie->listades($paginas['limite']); // consulta paginada
@@ -184,6 +184,11 @@ class Home extends CI_Controller
     function capitulo($id)
     {
         $this->load->model('MCapitulo'); // medidas de seguridad
+            $csrf = array(
+            'name' => $this->security->get_csrf_token_name() ,
+            'hash' => $this->security->get_csrf_hash()
+        );
+        $DATOS['csrf'] = $csrf;
         $DATOS['capitulos'] = $this->MCapitulo->listacap('LIMIT 6');
         $consultas = $this->MCapitulo->consultar($id);
         $DATOS['capitulo'] = end($consultas);
