@@ -152,26 +152,20 @@
             </div>
          </div>
          <div class="col-md-4">
-            <h4 class="subt-capitulo">Destacados de hoy</h4>
+            <h4 class="subt-capitulo">Ultimos Capitulos</h4>
             <div class="row">
+               
+               <?php foreach ($capitulos as $key) { ?>
+               
                <div class="col-md-6 img-text">
-                  <img src="<?=base_url();?>file/img/img2018_09_10_21.jpg" class="img-fluid "/>
-               </div>
-               <div class="col-md-6 img-text">
-                  <p>Descripcion del texto destacados de hoy</p>
-               </div>
-                 <div class="col-md-6 img-text">
-                  <img src="<?=base_url();?>file/img/img2018_09_10_21.jpg" class="img-fluid "/>
+                  <img src="<?=base_url().$key->imagen2;?>" class="img-fluid "/>
                </div>
                <div class="col-md-6 img-text">
-                  <p>Descripcion del texto destacados de hoy</p>
+                  <b><?=$key->name;?> </b>
+                  <br><b>Temp:</b><?=$key->temporada;?>-<b>Cap:</b><?=$key->numero;?> <i class="far fa-clock"></i>
                </div>
-                 <div class="col-md-6 img-text">
-                  <img src="<?=base_url();?>file/img/img2018_09_10_21.jpg" class="img-fluid "/>
-               </div>
-               <div class="col-md-6 img-text">
-                  <p>Descripcion del texto destacados de hoy</p>
-               </div>
+            <?php } ?>
+
             </div>
          </div>
       </div>

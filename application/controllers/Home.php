@@ -61,6 +61,7 @@ class Home extends CI_Controller
         $DATOS['serie'] = end($consultas);
         $DATOS['temporada'] = $this->MTemporada->lista($id);
         $DATOS['capitulo'] = $this->MCapitulo->lista($id);
+         $DATOS['capitulos'] = $this->MCapitulo->listacap('LIMIT 6');
         $DATOS['categorias'] = $this->MCategoria->lista(); // consulta categorías existente
         $DATOS['generos'] = $this->MGenero->lista(); // consulta categorías existente
         $this->load->view('website/detalles_series', $DATOS);
@@ -183,6 +184,7 @@ class Home extends CI_Controller
     function capitulo($id)
     {
         $this->load->model('MCapitulo'); // medidas de seguridad
+        $DATOS['capitulos'] = $this->MCapitulo->listacap('LIMIT 6');
         $DATOS['capitulo'] = $this->MCapitulo->consultar($id);
         $this->load->view('website/capitulo', $DATOS);
         $this->load->view('website/footer');
