@@ -304,7 +304,7 @@ class Panel extends CI_Controller {
         $this->load->view('panel/footer'); 
     }
 
-        public function newnoticia()
+    public function noticias()
     {
         $this->load->model('MNoticia'); // Carga el modelo de categorías 
          // SEGURIDAS
@@ -315,8 +315,47 @@ class Panel extends CI_Controller {
         );
         $DATOS['csrf'] = $csrf;
 
-        $DATOS['noticia'] = $this->MNoticia->lista();// consulta categorías existente    
-        $this->load->view('panel/secciones/newpelicula', $DATOS );
+        $DATOS['noticias'] = $this->MNoticia->lista();// consulta categorías existente    
+        $this->load->view('panel/secciones/noticias', $DATOS );
+        $this->load->view('panel/footer'); 
+    }
+
+    public function newnoticia(){
+
+        $this->load->model('MGenero'); // Carga el modelo de categorías 
+        $this->load->model('MNoticia'); // Carga el modelo de categorías 
+
+         // SEGURIDAS
+      
+        $csrf = array(
+        'name' => $this->security->get_csrf_token_name(),
+        'hash' => $this->security->get_csrf_hash()
+        );
+        $DATOS['csrf'] = $csrf;
+        
+        // $DATOS['noticia'] = $this->MNoticia->consultar();// consulta categorías existente    
+
+        $DATOS['generos'] = $this->MGenero->lista();// consulta categorías existente    
+        $this->load->view('panel/secciones/newnoticia', $DATOS );
+        $this->load->view('panel/footer'); 
+    }
+
+    public function editnoticia($id){
+
+        $this->load->model('MGenero'); // Carga el modelo de categorías 
+        $this->load->model('MNoticia'); // Carga el modelo de categorías 
+
+         // SEGURIDAS
+      
+        $csrf = array(
+        'name' => $this->security->get_csrf_token_name(),
+        'hash' => $this->security->get_csrf_hash()
+        );
+        $DATOS['csrf'] = $csrf;
+        
+        $DATOS['noticia'] = $this->MNoticia->consultar($id);// consulta categorías existente    
+
+        $this->load->view('panel/secciones/editnoticia', $DATOS);
         $this->load->view('panel/footer'); 
     }
 

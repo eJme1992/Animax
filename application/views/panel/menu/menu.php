@@ -30,15 +30,14 @@
           </ul>
         </li>
           <li class="treeview">
-          <a href="#"><i class="fa fa-newspaper-o"></i> <span>NOTICIAS</span>
+          <a href="#"><i class="fa fa-newspaper-o"></i><span>NOTICIAS</span>
             <span class="pull-right-container">
                 <i class="fa fa-angle-left pull-right"></i>
               </span>
           </a>
         <ul class="treeview-menu">
-            <li><a href="<?=base_url();?>panel/newserie"><b>Todas mis Noticias</b></a></li>
-            <li><a href="<?=base_url();?>panel/newserie">Crear Noticia</a></li>
-            <li><a href="<?=base_url();?>plantilla/panel/#">Categorías</a></li>
+            <li><a href="<?=base_url();?>panel/noticias"><b>Todas mis Noticias</b></a></li>
+            <li><a href="<?=base_url();?>panel/newnoticia">Crear Noticia</a></li>
           </ul>
         </li>
         <li class="trw">
