@@ -22,6 +22,7 @@ class Perfil extends CI_Controller {
 	public function index()
 	{
 		$this->load->view('website/perfil/perfil'); //Mi carpeta perfil archivo perfil
+        $this->load->view('website/footer');
 
 	}
     

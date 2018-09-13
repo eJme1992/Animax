@@ -219,7 +219,7 @@ class Home extends CI_Controller
         $DATOS['capitulo'] = $this->MCapitulo->lista($id);
         $consultas = $this->MCapitulo->consultar($id);
         $DATOS['capitulo'] = end($consultas);*/
-        $this->load->view('website/pelicula', $DATOS);
+        $this->load->view('website/pelicula');
         $this->load->view('website/footer');
     }
 }
