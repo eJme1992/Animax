@@ -145,7 +145,7 @@ box-shadow: 3px 10px 16px -4px rgba(0,0,0,0.52);
 /*Para las noticias del home*/
 #home .news{
     background-color: #fff !important;
-    z-index: -9;
+    z-index: -9
 } 
 
 #home .mg {
@@ -521,8 +521,8 @@ margin-bottom:2.5em;
     padding-right: 10px;
     
 }
-.nom-cap{ margin-bottom: 0; line-height:2;}
-.nom-cap i{line-height: 2;}
+.nom-cap{ margin-bottom: 0; color:#fff; height: 100%;}
+.nom-cap i{line-height: 1;}
 .fa-angle-double-up{ float:right; }
 .footer-fv{background-color: #202026;}
 .nav-capitulo li a{
@@ -548,3 +548,7 @@ margin-bottom: 1.5em;
 .comment-box{margin-bottom: 2em;}
 .img-text{ margin-bottom: 1em; }
 .subt-capitulo{ margin-bottom: 1em; margin-top: 1em; }
+
+.img-server{ width: 100%; max-height: 400px; }
+.server-ground{background-color: #18181E;}
+.nav-tabs{border-bottom: none;}
