@@ -185,7 +185,8 @@ class Home extends CI_Controller
     {
         $this->load->model('MCapitulo'); // medidas de seguridad
         $DATOS['capitulos'] = $this->MCapitulo->listacap('LIMIT 6');
-        $DATOS['capitulo'] = $this->MCapitulo->consultar($id);
+        $consultas = $this->MCapitulo->consultar($id);
+        $DATOS['capitulo'] = end($consultas);
         $this->load->view('website/capitulo', $DATOS);
         $this->load->view('website/footer');
     }

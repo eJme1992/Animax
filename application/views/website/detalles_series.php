@@ -131,6 +131,21 @@
             <h3 class="subt-capitulo" >Breve introduccion</h3>
             <p class="capitulo-text">"La mayoría del anime" mejores programas de comentario literario, compartir historias del hombre detrás de cada ACG trabaja con usted para darle otra forma de decir que la animación! </p>
             <div class="comentarios">
+               
+            <div class="row">
+               <div class="col-4">
+                  <?php if($user->foto==''){ ?>
+                  <img src="<?=base_url()?>file/img/user/default.png" class="rounded-circle img-fluid"/>
+                  <?php }else{ ?>
+                  <img src="<?=base_url().$user->foto;?>" class="rounded-circle img-fluid"/>
+                  <?php } ?>
+               </div>
+               <div class="col-8">
+                 <p>Comentario</p> 
+               </div>
+            </div>
+
+
                <div class="col-md-6">
                   <ul class="comen-regis">
                      <li><a href="#">Inciar sesion</a></li>
