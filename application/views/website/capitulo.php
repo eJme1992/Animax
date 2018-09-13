@@ -33,6 +33,8 @@
          <div class="col-md-4 no-padding">
             <div class="cabecera-cap">
                <h3><?=$capitulo->nombre;?></h3>
+               <p class="capi-dur"> Duracion del capitulo: <?=$capitulo->duracion;?></p>
+               <p>Fecha de Estreno del capitulo: <?=$capitulo->fecha_estreno;?></p>
             </div>
             <div class="scroll-bar">
                <ul class="list-videos">
