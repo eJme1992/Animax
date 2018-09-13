@@ -48,22 +48,22 @@ class Home extends CI_Controller
     function detalle_series($id)
     {
         $this->load->model('MSerie'); // Carga el modelo de categorías
-        $this->load->model('MComentario_serie'); // Carga el modelo de categorías
+        $this->load->model('MCategoria'); // Carga el modelo de categorías
         $this->load->model('MGenero'); // Carga el modelo de categorías
-   
+        $this->load->model('MTemporada'); // Carga el modelo de categorías
         $this->load->model('MCapitulo'); // medidas de seguridad
-          $consultas = $this->MSerie->consultar($id);
-        $DATOS['serie'] = end($consultas);
         $csrf = array(
             'name' => $this->security->get_csrf_token_name() ,
             'hash' => $this->security->get_csrf_hash()
         );
         $DATOS['csrf'] = $csrf;
-        $DATOS['capitulos'] = $this->MCapitulo->listacap('LIMIT 6');
-        $DATOS['comentarios'] = $this->MComentario_serie->lista($id);
+        $consultas = $this->MSerie->consultar($id);
+        $DATOS['serie'] = end($consultas);
+        $DATOS['temporada'] = $this->MTemporada->lista($id);
         $DATOS['capitulo'] = $this->MCapitulo->lista($id);
-        
-   
+         $DATOS['capitulos'] = $this->MCapitulo->listacap('LIMIT 6');
+        $DATOS['categorias'] = $this->MCategoria->lista(); // consulta categorías existente
+        $DATOS['generos'] = $this->MGenero->lista(); // consulta categorías existente
         $this->load->view('website/detalles_series', $DATOS);
         $this->load->view('website/footer');
     }
@@ -72,7 +72,6 @@ class Home extends CI_Controller
 
     function mas_destacados($pagina = 1)
     {
-        
         $this->load->model('MSerie'); // Carga el modelo de categorías
         $paginas = $this->MFunctionsg->pagina($this->MSerie->listades() , $pagina); //pg
         $DATOS['data'] = $this->MSerie->listades($paginas['limite']); // consulta paginada
@@ -185,41 +184,9 @@ class Home extends CI_Controller
     function capitulo($id)
     {
         $this->load->model('MCapitulo'); // medidas de seguridad
-        $this->load->model('MCapituloVideo'); // medidas de seguridad
-        $this->load->model('MComentario_capitulo'); // medidas de seguridad
-            $csrf = array(
-            'name' => $this->security->get_csrf_token_name() ,
-            'hash' => $this->security->get_csrf_hash()
-        );
-        $DATOS['csrf'] = $csrf;
         $DATOS['capitulos'] = $this->MCapitulo->listacap('LIMIT 6');
-        $DATOS['comentarios'] = $this->MComentario_capitulo->lista($id);
-        $DATOS['video'] = $this->MCapituloVideo->lista($id);
-        $consultas = $this->MCapitulo->consultar($id);
-        $consulta = end($consultas);
-        $DATOS['capitulo'] = $consulta;
-        $DATOS['capituloss'] = $this->MCapitulo->lista($consulta->id_serie);
+        $DATOS['capitulo'] = $this->MCapitulo->consultar($id);
         $this->load->view('website/capitulo', $DATOS);
-        $this->load->view('website/footer');
-    }
-
-      public
-
-    function pelicula($id='')
-    {
-       /* $this->load->model('MCapitulo'); // medidas de seguridad
-        $this->load->model('MComentario_capitulo'); // medidas de seguridad
-            $csrf = array(
-            'name' => $this->security->get_csrf_token_name() ,
-            'hash' => $this->security->get_csrf_hash()
-        );
-        $DATOS['csrf'] = $csrf;
-        $DATOS['capitulos'] = $this->MCapitulo->listacap('LIMIT 6');
-        $DATOS['comentarios'] = $this->MComentario_capitulo->lista($id);
-        $DATOS['capitulo'] = $this->MCapitulo->lista($id);
-        $consultas = $this->MCapitulo->consultar($id);
-        $DATOS['capitulo'] = end($consultas);*/
-        $this->load->view('website/pelicula');
         $this->load->view('website/footer');
     }
 }

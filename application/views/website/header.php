@@ -28,21 +28,16 @@
                }
                ?>   
             
-               <img src="<?=base_url().$var;?>">
+               <a class="nav-link" href="<?=base_url();?>"><img src="<?=base_url().$var;?>"></a>
                </a>
                <button  id="boton-menu" class="btn" type="button" onclick="ocultar()"/>
                <i class="fas fa-bars" style="color:#000;"></i>
                </button>
                <div class="collapse navbar-collapse" id="mi-menu">
                   <ul class="navbar-nav">
+                                          
                      <li class="nav-item">
-                        <a class="nav-link" href="<?=base_url();?>">Inicio</a>
-                     </li>
-                     <li class="nav-item">
-                        <a class="nav-link" href="#">Audiofrecuencia</a>
-                     </li>
-                     <li class="nav-item">
-                        <a class="nav-link" href="<?=base_url();?>login"><i class="fas fa-user"></i> <?php if (isset($user->id)){echo 'Ver perfil';}else{echo 'Iniciar sección';}?></a>
+                        <a class="nav-link" href="<?=base_url();?>login"><i class="fas fa-user"></i> <?php if (isset($user->id)){echo 'Ver perfil';}else{echo 'Iniciar sesión';}?></a>
                      </li>
                   </ul>
                </div>

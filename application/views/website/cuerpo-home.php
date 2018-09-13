@@ -46,7 +46,7 @@
                <?php foreach ($capitulo as $key){?> 
                <div class="col-md-4" id="cap">
                   <div class="card">
-                     <a href="<?php echo base_url();?>home/capitulo/<?=$key->id?>" data-toggle="tooltip" title="<?=$key->name;?> <?=$key->temporada;?>-<?=$key->numero;?>"> <img src="<?=base_url().$key->imagen2;?>" class="img-fluid cap-es"></a>
+                     <a href="<?php echo base_url();?>home/capitulo/<?=$key->id?>" data-toggle="tooltip" title="<?=$key->name;?> <?=$key->temporada;?>-<?=$key->numero;?>"> <img src="<?=base_url().$key->imagen2;?>" class="img-fluid imgsm"></a>
                      <span class="span Capi">
                      <b>Temp:</b><?=$key->temporada;?>-<b>Cap:</b><?=$key->numero;?> <i class="far fa-clock"></i>
                      </span>
@@ -66,7 +66,7 @@
             <?php foreach ($series as $key){?> 
             <div class="col-lg-3" id='destacadas'>
                <div class="card">
-                  <a href="<?php echo base_url();?>home/detalle_series/<?=$key->id?>" data-toggle="tooltip" title="<?=$key->nombre;?>"> <img src="<?=base_url().$key->imagen2;?>" class="img-fluid imgmd"></a>
+                  <a href="<?php echo base_url();?>home/detalle_series/<?=$key->id?>" data-toggle="tooltip" title="<?=$key->nombre;?>"> <img src="<?=base_url().$key->imagen2;?>" class="img-fluid imgsm"></a>
                   <span class="span Capi">
                   DESTACA <i class="fas fa-star"></i></i>
                   </span>
@@ -86,7 +86,7 @@
             <?php foreach ($Temporadar as $key){?> 
             <div class="col-lg-3" id='temp_re'>
                <div class="card">
-                  <a href="<?php echo base_url();?>home/detalle_series/<?=$key->id_serie?>" data-toggle="tooltip" title="<?=$key->nombre;?>"> <img src="<?=base_url().$key->imagen2;?>" class="img-fluid imgmd"></a>
+                  <a href="<?php echo base_url();?>home/detalle_series/<?=$key->id_serie?>" data-toggle="tooltip" title="<?=$key->nombre;?>"> <img src="<?=base_url().$key->imagen2;?>" class="img-fluid imgsm"></a>
                   <span class="span Capi">
                   ESTRENO <i class="far fa-clock"></i></i>
                   </span>
@@ -120,11 +120,44 @@
             <a href="<?php base_url();?>home/mas"><button class="btn mas" style="color:#fff;background-color:#1B9936;text-align:right;border-radius:100%;height:40px;width:40px;"><b><i class="fas fa-plus"></i></b></button></a> 
             </div>
          </div>
-         <div class="col-lg-3">
-            <div class="col-md-12">
-               <h2 class="sub-t" style='text-align:center;'>NOTICIAS</h2>
+         <div class="col-lg-3 news" style="background-color: #eaeaea;">
+            <div class="col-md-12 no-padding">
+               <div class="sub-t"><p>Noticias</p></div>
             </div>
-            <a href="#"> <img src="<?=base_url();?>plantilla/website/img/jp.jpg" class="img-fluid"></a>
+            <div class="row">
+               <div class="col-md-5">
+                  <a href="#"> <img src="<?=base_url();?>plantilla/website/img/jp.jpg" class="img-fluid padding"></a>
+               </div>
+               <div class="col-md-7">
+                  <p  class="padding">Espacio para las noticias traidas de la web</p>
+               </div>
+                <div class="col-md-5">
+                  <a href="#"> <img src="<?=base_url();?>file/img/img2018_08_29_07.jpg" class="img-fluid"></a>
+               </div>
+               <div class="col-md-7 padding">
+                  <p class="padding">Espacio para las noticias traidas de la web</p>
+               </div>
+                 <div class="col-md-5">
+                  <a href="#"> <img src="<?=base_url();?>file/img/img2018_09_05_12.png" class="img-fluid padding"></a>
+               </div>
+               <div class="col-md-7">
+                  <a href="#"> <img src="<?=base_url();?>file/img/img2018_09_05_12.png" class="img-fluid padding"></a>
+                  <p  class="padding" >Espacio para las noticias traidas de la web</p>
+               </div>
+                 <div class="col-md-5">
+                  <a href="#"> <img src="<?=base_url();?>plantilla/website/img/jp.jpg" class="img-fluid padding"></a>
+               </div>
+               <div class="col-md-7">
+                  <p class="padding">Espacio para las noticias traidas de la web</p>
+               </div>
+                 <div class="col-md-5">
+                  <a href="#"> <img src="<?=base_url();?>plantilla/website/img/jp.jpg" class="img-fluid padding"></a>
+               </div>
+               <div class="col-md-7">
+                  <p>Espacio para las noticias traidas de la web</p>
+               </div>
+
+            </div>
          </div>
       </div>
    </div>

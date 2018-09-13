@@ -1,101 +1,101 @@
-
-
 <section id="capitulo-detalle">
    <div class="container capitulo">
       <div class="row">
          <div class="col-md-8 no-padding">
             <div class="tab-content">
-          <?php $i=0; foreach ($video as $key) { ?>
-           
-          
-  				<div class="tab-pane container <?php if($i==0) {echo "active";}else{echo 'fade';}?> no-padding" id="server<?=$i;?>">
-  					<div class="f-video">
-  						<?=$key->url_video;?>
-            </div>
-  				</div>
-  			  <?php  $i=$i+1;  }  ?>
-  			
+          <div class="tab-pane container active no-padding" id="server">
+            <div class="f-video">
+              <img src="<?=base_url()?>file/img/img2018_09_10_42.jpg" class="img-fluid img-server"/>
+                </div>
+          </div>
+        <div class="tab-pane container fade no-padding" id="server1">
+          <div class="f-video">
+          <img src="<?=base_url()?>file/img/img2018_09_10_42.jpg"  class="img-fluid img-server"/>
+          </div>
+        </div>
+        <div class="tab-pane container fade no-padding" id="server2">
+          <div class="f-video">
+          <img src="<?=base_url()?>file/img/img2018_09_10_42.jpg" class="img-fluid img-server"/>
+          </div>
+        </div>
+        <div class="tab-pane container fade no-padding" id="server3">
+          <div class="f-video">
+          <img src="<?=base_url()?>file/img/img2018_09_10_21.jpg" class="img-fluid img-server"/>
+          </div>
+        </div>
+        <div class="tab-pane container fade no-padding" id="server4">
+          <div class="f-video">
+          <img src="<?=base_url()?>file/img/img2018_09_10_42.jpg" class="img-fluid img-server"/>
+          </div>
+        </div>
          </div>
      </div>
-         <div class="col-md-4 no-padding ">
-            <div class="cabecera-cap col-12">
+         <div class="col-md-4 no-padding">
+            <div class="cabecera-cap">
                <h3><?=$capitulo->nombre;?></h3>
                <p class="capi-dur"> Duracion del capitulo: <?=$capitulo->duracion;?></p>
                <p>Fecha de Estreno del capitulo: <?=$capitulo->fecha_estreno;?></p>
             </div>
-            <div class="scroll-bar  col-12" style="width:90%;">
-                
-                    
-                     <div class="row text-center col-12" style="width:90%; color:#ff6414;margin-bottom:20px;">
-                           <div class="col-6">
-                            <b>#Capitulo / #Temporada</b> 
-                           </div> 
-                           <div class="col-6">
-                            <b> Nombre </b>
-                           </div>
-                               
-                     </div>  
-                  <div class="col-12">  
-                  <?php $cond=0; 
-                  foreach ($capituloss as $key) {
-                     if($cond!=$key->temporada){ $cond=$key->temporada; ?>
-                     <div class="alert alert-success col-12" id="temporada<?=$key->temporada;?>">
-                     <b>Temporada numero <?=$key->temporada;?></b>
-                     </div>
-                    <?php } ?>
-                     <div class="col-md-12" style="background-color:#f2f2f2;color:#000;">
-                      
-                           <div class="col-6">
-                           <a href="<?php echo base_url();?>home/capitulo/<?=$key->id?>"> 
-                           Cap.<?=$key->numero;?>/Tem.<?=$key->temporada;?> 
-                           </a>
-                           </div> 
-                           <div class="col-6">
-                             <a href="<?php echo base_url();?>home/capitulo/<?=$key->id?>"> 
-                            <?=$key->nombre;?>   
-                            </a>
-                           </div>
-                        
-                               
-                     </div>  
-                  <?php } ?>
-               </div>
-                        
-                     
-
-               
+            <div class="scroll-bar">
+               <ul class="list-videos">
+                  <li><a href="#">Video</a></li>
+                  <li><a href="#">Video</a></li>
+                  <li><a href="#">Video</a></li>
+                  <li><a href="#">Video</a></li>
+                  <li><a href="#">Video</a></li>
+                  <li><a href="#">Video</a></li>
+                  <li><a href="#">Video</a></li>
+                  <li><a href="#">Video</a></li>
+                  <li><a href="#">Video</a></li>
+                  <li><a href="#">Video</a></li>
+                  <li><a href="#">Video</a></li>
+                  <li><a href="#">Video</a></li>
+                  <li><a href="#">Video</a></li>
+                  <li><a href="#">Video</a></li>
+                  <li><a href="#">Video</a></li>
+                  <li><a href="#">Video</a></li>
+                  <li><a href="#">Video</a></li>
+               </ul>
             </div>
          </div>
          <div class="col-md-12">
             <div class="row">
                <div class="col-md-8 footer-fv no-padding server-ground">
                   <ul class="nav nav-tabs nav-capitulo" role="tablist">
-                    <?php $i=0; foreach ($video as $key) { ?>
-                     <li class="nav-item"><a href="#server<?=$i;?>"  data-toggle="pill"  class="nav-link"><i class="fas fa-arrow-circle-right">Servidor I</i></a></li>
-                    <?php  $i=$i+1;  }  ?>
-                     
+                     <li class="nav-item"><a href="#server"  data-toggle="pill"  class="nav-link"><i class="fas fa-arrow-circle-right">Servidor I</i></a></li>
+
+                     <li class="nav-item"><a href="#server1" class="nav-link" data-toggle="pill"><i class="fas fa-arrow-circle-right">Servidor II</i></a></li>
+                     <li class="nav-item"><a href="#server2" class="nav-link" data-toggle="pill"><i class="fas fa-arrow-circle-right">Servidor III</i></a></li>
+                     <li class="nav-item"><a href="#server3" class="nav-link" data-toggle="pill"><i class="fas fa-arrow-circle-right">Servidor IV</i></a></li>
+                     <li class="nav-item"><a href="#server4" class="nav-link" data-toggle="pill"><i class="fas fa-arrow-circle-right">Servidor V</i></a></li>
                   </ul>
                   <!--Tabs Panel-->
 
                </div>
                <div class="col-md-4 footer-cap no-padding">
-                  <h3 class="nom-cap" ><?=$capitulo->nombre_serie;?><i class="fas fa-angle-double-up" style="color:#fff;"></i></h3>
+                  <h3 class="nom-cap" ><?=$capitulo->nombre_capitulo;?><i class="fas fa-angle-double-up" style="color:#fff;"></i></h3>
                </div>
             </div>
          </div>
          <div class="col-md-12">
-         	<div class="reaccion">
+          <div class="reaccion">
                      <ul class="nav nav-bar fav">
                       <li  class="nav-item"><a class="nav-link" id="favorite" title="Favorito" data-toggle="tooltip" href="#"><i class="fas fa-heart" style="color:#FF0000;"></i></a></li>
                       <li  class="nav-item"><span class="navbar-text"><a href="#"  title="Calificacion" data-toggle="tooltip"><i class="fas fa-star" ></i></a></span>
-                        <span class="navbar-text"><a href="#" title="Calificacion" data-toggle="tooltip"><i class="fas fa-star" id="star"></i></a></span>
+                        <span class="navbar-text"><a href="#" title="Calificacion" data-toggle="tooltip"  onclick="cambio()"><i class="fas fa-star" id="star"></i></a></span>
                         <span class="navbar-text"><a href="#"title="Calificacion" data-toggle="tooltip"><i class="fas fa-star" ></i></a></span>
                         <span class="navbar-text"><a href="#" title="Calificacion" data-toggle="tooltip"><i class="fas fa-star"></i></a></span>
                         <span class="navbar-text"><a href="#" title="Calificacion" data-toggle="tooltip"><i class="fas fa-star" ></i></a></span> 
                      </li>
                       <li  class="nav-item"><a class="nav-link" href="#">Agregar a mi lista</a></li>    
                      </ul>
-                   
+                     <script>
+                        
+                        function cambio(){
+                           document.getElementById("star").style.color="#FFFF00";
+                        }
+                     </script>
+
                   </div>
          </div>
       </div>
@@ -168,7 +168,7 @@
             <h4 class="subt-capitulo">Ultimos Capitulos</h4>
             <div class="row">
                
-          <?php foreach ($capitulos as $key) { ?>
+               <?php foreach ($capitulos as $key) { ?>
                
                <div class="col-md-6 img-text">
                  <a href="<?php echo base_url();?>home/capitulo/<?=$key->id?>" data-toggle="tooltip" title="<?=$key->name;?> <?=$key->temporada;?>-<?=$key->numero;?>"> <img src="<?=base_url().$key->imagen2;?>" class="img-fluid "/></a>
@@ -177,54 +177,10 @@
                   <a href="<?php echo base_url();?>home/capitulo/<?=$key->id?>" data-toggle="tooltip" title="<?=$key->name;?> <?=$key->temporada;?>-<?=$key->numero;?>"><b><?=$key->name;?> </b>
                   <br><b>Temp:</b><?=$key->temporada;?>-<b>Cap:</b><?=$key->numero;?> <i class="far fa-clock"></i></a>
                </div>
-            <?php } ?> 
+            <?php } ?>
 
             </div>
          </div>
       </div>
    </div>
 </section>
-      <script >
-         jQuery(document).ready(function() {
-               jQuery("#comments").submit(function(event) {
-               event.preventDefault();
-         
-             var msj = '1';
-         //validaciones con js
-         
-        if (msj === "1") {
-         var formData = new FormData(jQuery('#comments') [0]);
-         jQuery.ajax({
-           url: '<?=base_url();?>Comentario_capitulo/crear_comentario',
-           type: 'POST',
-           contentType: false,
-           processData: false,
-           dataType: 'json',
-           data: formData,
-           beforeSend: function() {
-             $("#resultado").html('<div class="alert alert-success">Procesando...!</div>');
-           }
-         })
-         .done(function(data, textStatus, jqXHR) {
-            var getData = jqXHR.responseJSON; // dejar esta linea
-           if(data.status=='ok'){
-            $("#resultado").html('<div class="alert alert-success">'+data.code+'</div>');
-             window.location.href ='<?=base_url();?>home/capitulo/<?=$capitulo->id;?>';
-           }else{
-           $("#resultado").html('<div class="alert alert-danger"><strong>ERROR!</strong>'+data.error+'</div>');
-           }
-         })
-               .fail(function(jqXHR, textStatus, errorThrown) {
-                 var getErr = jqXHR.responseText;
-                 
-                 console.log(getErr);
-         
-               })
-          // Fin de ajax
-          } else {
-              swal("¡Error! ", msj, "error");
-          }
-          });
-         
-         });//fin ready
-      </script>
