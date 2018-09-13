@@ -186,12 +186,12 @@ padding: 5px 9px 0;
 
 body{font-family: 'Noto Sans KR', sans-serif;}
 @media (max-width:765px){
-   .cap-es{
+   .imgsm{
     height:37.3vw !important;
     width: 100%;
     border-radius: 2% 2% 0px 0px;
     }
-   #destacadas .imglg{
+ .imglg{
     height:95vw !important;
     width: 100%;
     border-radius: 2% 2% 0px 0px;
@@ -212,7 +212,7 @@ body{font-family: 'Noto Sans KR', sans-serif;}
     width: 100%;
     border-radius: 2% 2% 0px 0px;
 }
-#cap .cap-es{
+.imgsm{
     height:7.3vw ;
     width: 100%;
     border-radius: 2% 2% 0px 0px;
