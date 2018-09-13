@@ -185,6 +185,7 @@ class Home extends CI_Controller
     function capitulo($id)
     {
         $this->load->model('MCapitulo'); // medidas de seguridad
+        $this->load->model('MCapituloVideo'); // medidas de seguridad
         $this->load->model('MComentario_capitulo'); // medidas de seguridad
             $csrf = array(
             'name' => $this->security->get_csrf_token_name() ,
@@ -193,9 +194,11 @@ class Home extends CI_Controller
         $DATOS['csrf'] = $csrf;
         $DATOS['capitulos'] = $this->MCapitulo->listacap('LIMIT 6');
         $DATOS['comentarios'] = $this->MComentario_capitulo->lista($id);
-        $DATOS['capitulo'] = $this->MCapitulo->lista($id);
+        $DATOS['video'] = $this->MCapituloVideo->lista($id);
         $consultas = $this->MCapitulo->consultar($id);
-        $DATOS['capitulo'] = end($consultas);
+        $consulta = end($consultas);
+        $DATOS['capitulo'] = $consulta;
+        $DATOS['capituloss'] = $this->MCapitulo->lista($consulta->id_serie);
         $this->load->view('website/capitulo', $DATOS);
         $this->load->view('website/footer');
     }
