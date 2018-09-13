@@ -120,11 +120,43 @@
             <a href="<?php base_url();?>home/mas"><button class="btn mas" style="color:#fff;background-color:#1B9936;text-align:right;border-radius:100%;height:40px;width:40px;"><b><i class="fas fa-plus"></i></b></button></a> 
             </div>
          </div>
-         <div class="col-lg-3">
+         <div class="col-lg-3 news">
             <div class="col-md-12">
                <h2 class="sub-t" style='text-align:center;'>NOTICIAS</h2>
             </div>
-            <a href="#"> <img src="<?=base_url();?>plantilla/website/img/jp.jpg" class="img-fluid"></a>
+            <div class="row">
+               <div class="col-md-5">
+                  <a href="#"> <img src="<?=base_url();?>plantilla/website/img/jp.jpg" class="img-fluid"></a>
+               </div>
+               <div class="col-md-7">
+                  <p>Espacio para las noticias traidas de la web</p>
+               </div>
+                <div class="col-md-5">
+                  <a href="#"> <img src="<?=base_url();?>file/img/img2018_08_29_07.jpg" class="img-fluid"></a>
+               </div>
+               <div class="col-md-7">
+                  <p>Espacio para las noticias traidas de la web</p>
+               </div>
+                 <div class="col-md-5">
+                  <a href="#"> <img src="<?=base_url();?>file/img/img2018_09_05_12.png" class="img-fluid"></a>
+               </div>
+               <div class="col-md-7">
+                  <p>Espacio para las noticias traidas de la web</p>
+               </div>
+                 <div class="col-md-5">
+                  <a href="#"> <img src="<?=base_url();?>plantilla/website/img/jp.jpg" class="img-fluid"></a>
+               </div>
+               <div class="col-md-7">
+                  <p>Espacio para las noticias traidas de la web</p>
+               </div>
+                 <div class="col-md-5">
+                  <a href="#"> <img src="<?=base_url();?>plantilla/website/img/jp.jpg" class="img-fluid"></a>
+               </div>
+               <div class="col-md-7">
+                  <p>Espacio para las noticias traidas de la web</p>
+               </div>
+
+            </div>
          </div>
       </div>
    </div>

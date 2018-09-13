@@ -3,6 +3,12 @@
 #home .mg {
     margin-top: 10px !important;
 }
+#home .news{
+    background-color: rgba(220, 220, 220, 0.3)
+   -webkit-box-shadow: 3px 10px 16px -4px rgba(0,0,0,0.52);
+-moz-box-shadow: 3px 10px 16px -4px rgba(0,0,0,0.52);
+box-shadow: 3px 10px 16px -4px rgba(0,0,0,0.52); 
+}
 #buscar .mr-sm-2 {
     margin-right: 0px !important;
     border-radius: .25rem .0rem .0rem .25rem;
