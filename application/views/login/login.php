@@ -4,97 +4,33 @@
       <title>Iniciar sesion</title>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1">
-      <!--===============================================================================================-->  
-      <script src="<?=base_url();?>plantilla/admin/vendor/jquery/jquery-3.2.1.min.js"></script>
-      <script src="<?=base_url();?>plantilla/admin/vendor/tilt/tilt.jquery.min.js"></script>
-      <link rel="icon" type="image/png" href="<?=base_url();?>plantilla/admin/images/icons/favicon.ico"/>
-      <!--===============================================================================================-->
-      <link rel="stylesheet" type="text/css" href="<?=base_url();?>plantilla/admin/vendor/bootstrap/css/bootstrap.min.css">
-      <!--===============================================================================================-->
-      <link rel="stylesheet" type="text/css" href="<?=base_url();?>plantilla/admin/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
-      <!--===============================================================================================-->
-      <link rel="stylesheet" type="text/css" href="<?=base_url();?>plantilla/admin/vendor/animate/animate.css">
-      <!--===============================================================================================-->  
-      <link rel="stylesheet" type="text/css" href="<?=base_url();?>plantilla/admin/vendor/css-hamburgers/hamburgers.min.css">
-      <!--===============================================================================================-->
-      <link rel="stylesheet" type="text/css" href="<?=base_url();?>plantilla/admin/vendor/select2/select2.min.css">
-      <!--===============================================================================================-->
-      <link rel="stylesheet" type="text/css" href="<?=base_url();?>plantilla/admin/css/util.css">
-      <link rel="stylesheet" type="text/css" href="<?=base_url();?>plantilla/admin/css/main.css">
-      <!--===============================================================================================-->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
    </head>
    <body>
       <div class="limiter">
          <div class="container-login100" style="background-image:url('<?=base_url();?>plantilla/admin/images/nime.jpeg');" >
-            <div class="wrap-login100">
-               <div class="login100-pic js-tilt" data-tilt>
-                  <img src="<?=base_url();?>plantilla/admin/images/img-01.png" alt="IMG" id="img">
-                  <div  id="imgr">
-                     <h3 class="login100-form-title ">Inicia con nosotros y no te pierdas ni una aventura más</h3>
-                     <img src="<?=base_url();?>plantilla/admin/images/death-note.jpg" alt="IMG">
-                  </div>
-               </div>
-               <form class="login100-form validate-form" id="formu">
-                  <span class="login100-form-title">
-                  Inicia sesion para disfrutar del mejor contenido
-                  </span>
-                  <div class="wrap-input100 validate-input" >
-                     <input type="email" id="email" name="email" class="form-control input100" placeholder="Ingresar email"  required="">
-                     <span class="focus-input100"></span>
-                     <span class="symbol-input100">
-                     <i class="fa fa-envelope" aria-hidden="true"></i>
-                     </span>
-                  </div>
-                  <div class="wrap-input100 validate-input">
-                     <input  type="password" id="pass" name="pass" placeholder="Clave" class="form-control input100"  required=""  />
-                     <span class="focus-input100"></span>
-                     <span class="symbol-input100">
-                     <i class="fa fa-lock" aria-hidden="true"></i>
-                     </span>
-                  </div>
-                  <div class="container-login100-form-btn">
-                     <button type="submit" id="enviar" name="enviar" class="btn btn-primary btn-round btn-lg btn-block login100-form-btn ">INGRESAR</button>
-                     
-                     <input type="hidden" name="<?=$csrf['name'];?>" value="<?=$csrf['hash'];?>" />
-                     <div class="col-md-12" id="resultado" style="margin-top:15px;"></div>
-                    
-                     <button type="button" id="registrar" name="registrar" onclick="doble()" class="btn btn-primary btn-round btn-lg btn-block btn-regi ">REGISTRARSE</button>
+            <div class="container">
+               <div class="row">
+                 <div class="col-md-6">
+                  <h1>Hola</h1>
+                   <form  id="formr">
+                      <div class="form-group">
+                        <label for="usr">Name:</label>
+                        <input type="text" class="form-control" id="usr">
+                      </div>
+                      <div class="form-group">
+                        <label for="pwd">Password:</label>
+                        <input type="password" class="form-control" id="pwd">
+                      </div> 
+                   </form>
+                 </div>
+                 <div class="col-md-6">
+                   
+                 </div>
 
-                  </div>
-                 
-                  <div class="text-center p-t-12">
-                     <span class="txt1">
-                     Olvido su
-                     </span>
-                     <a class="txt2">
-                     Usuario / Contraseña?
-                     </a>
-                  </div>
-               </form>
-               <form id="formr" class="validate-form login100-form" >
-                  <input type="text" id="nombre" name="nombre" class="form-control input100 in-t" placeholder="Nombre" required="">
-                  <input type="text" id="apellido" name="apellido" class="form-control input100 in-t" placeholder="Apellido" required="">
-                  <input  type="email" id="mail" name="mail" class="form-control input100 in-t" placeholder="Email" required="">
-                  <input type="password" id="contrasena" name="contrasena" class="form-control input100 in-t" placeholder="Contraseña" required="">
-                  <input type="date" id="fecha_n" name="fecha_n"  class="form-control input100 in-t"  required="">
-                   <input type="hidden" name="<?=$csrf['name'];?>" value="<?=$csrf['hash'];?>" />
-                  <div class="container" style="padding-left:3em;">
-                     <div class="form-check-inline">
-                        <label class="form-check-label" style="width:100%;">
-                        <input type="radio" class="form-check-input" name="sexo" id="sexo" value="F">Femenino
-                        </label>
-                     </div>
-                     <div class="form-check-inline">
-                        <label class="form-check-label" style="width:100%;">
-                        <input type="radio" class="form-check-input" name="sexo" id="sexo" value="M">Masculino
-                        </label>
-                     </div>
-                  </div>
-                  <div class="col-md-12" id="resultado2" style="margin-top:15px;"></div>
-                  <button type="submit" id="registrar" name="registrar"  class="btn btn-primary btn-round btn-lg btn-block btn-regi ">REGISTRARSE</button>
-                  <h3 class="login100-form-title ">Ya tienes una cuenta? Inicia sesion</h3>
-                  <button type="button" onclick="oculta()" id="ini" class="btn btn-primary btn-round btn-lg btn-block btn-regi  ">Inicia sesion</button>
-               </form>
+               </div>
                <script>
                   function doble(){
                    document.getElementById("formr").style.display="block";

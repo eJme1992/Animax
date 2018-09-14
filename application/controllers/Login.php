@@ -18,7 +18,8 @@ class Login extends CI_Controller
         'hash' => $this->security->get_csrf_hash()
         );
         $DATOS['csrf'] = $csrf;
-        $this->load->view('login/login',$DATOS); //Primero la carpeta de la view y segundo el archivo
+        $this->load->view('login/login'); //Primero la carpeta de la view y segundo el archivo
+        $this->load->view('website/footer');
     }
     public function ingreso()
     {

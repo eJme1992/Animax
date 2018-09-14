@@ -28,7 +28,6 @@
       </ul>
       <h3  class="level">Level</h3>
    </nav>
-   <section id="inicio">
       <div class="container">
          <div class="row">
           <div class="col-md-12">  <h3 class="titulos-perfil">Videos que te Gustaron</h3></div>
