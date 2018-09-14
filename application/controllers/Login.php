@@ -19,7 +19,7 @@ class Login extends CI_Controller
         );
         $DATOS['csrf'] = $csrf;
         $this->load->view('login/login'); //Primero la carpeta de la view y segundo el archivo
-        $this->load->view('website/footer');
+      
     }
     public function ingreso()
     {

@@ -6,31 +6,69 @@
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="<?=base_url();?>plantilla/login-user/css/style.css">
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+   <link href="https://fonts.googleapis.com/css?family=Shojumaru" rel="stylesheet"> 
    </head>
    <body>
-      <div class="limiter">
-         <div class="container-login100" style="background-image:url('<?=base_url();?>plantilla/admin/images/nime.jpeg');" >
-            <div class="container">
+     
+         <section id="login" style="background-image:url('<?=base_url();?>plantilla/admin/images/nime.jpeg');" >
+          <section class="padding-b">
+            <header class="headerlog" >
+              <div class="container">
+                <div class="row">
+                  <div class="col-xs-4">
+                    <h3 class="portal">Tu portal de anime</h3>
+                  </div>
+                  <div class="col-xs-4">
+                   <span class="logo navbar-text ">A</span>
+                  </div>
+                  <div class="col-xs-4">
+                    <div class="registrar-div">
+                    <a href="#" class="login-b">LOGIN</a>
+                    <button class="btn btn-regi" type="submit">REGISTRARSE</button>
+                  </div>
+                </div>
+                </div>
+              </div>
+            </header>
+          </section>
+            <div class="container loginbg">
                <div class="row">
                  <div class="col-md-6">
-                  <h1>Hola</h1>
+                  <div class="border">
+                  <h3>Entra con tu cuenta</h3>
                    <form  id="formr">
                       <div class="form-group">
                         <label for="usr">Name:</label>
-                        <input type="text" class="form-control" id="usr">
+                        <input type="text" class="form-control" id="usr" required="">
                       </div>
                       <div class="form-group">
                         <label for="pwd">Password:</label>
-                        <input type="password" class="form-control" id="pwd">
-                      </div> 
+                        <input type="password" class="form-control" id="pwd" required="">
+                      </div>
+                      <button class="btn btn-block btn-ingresar">Iniciar sesión</button> 
+                      <p class="crear-cuento">¿No tienes cuenta? Create <a class="una" href="#">una</a></p>
                    </form>
                  </div>
+                 </div>
                  <div class="col-md-6">
-                   
+                   <div clas="box-login" style="padding:1em; ">
+                    <span class="info-title"><h3>¿No has recibido el email de confirmación?</h3></span>
+                    <p class="info-text">
+                      Si ya te has registrado y no has recibido el email de confirmación para activar tu cuenta haz clic
+                      <a class="una" href="https://socialani.me/confirm-email" title="Ir a ...">aquí</a></p>
+                      <h3>¿Has olvidado tu contraseña?</h3>
+                       <p>Si no te acuerdas de la contraseña no te preocupes, tenemos una sección para recuperarla haz clic
+                      <a class="una" href="https://socialani.me/confirm-email" title="Ir a ...">aquí</a> para solicitar una nueva. 
+                      <h3>¿Tienes alguna duda?</h3>
+                      No te preocupes nosotros te solucionaremos cualquier duda o consulta que tengas, envianos un email <a class="una" href="https://socialani.me/confirm-email" title="Ir a ...">aquí</a> </p>
+                  </div>
                  </div>
 
                </div>
+             </div>
+           </section>
                <script>
                   function doble(){
                    document.getElementById("formr").style.display="block";
@@ -45,9 +83,6 @@
                    document.getElementById("imgr").style.display="none";
                   }
                </script>
-            </div>
-         </div>
-      </div>
       <script > //Ajax para mi form ingresar
          jQuery(document).ready(function() { //Cuando el doc se cargue, hacelas ejecuciones siguientes
                jQuery("#formu").submit(function(event) {  //Se activa el form, activa el ajax
@@ -136,21 +171,6 @@
          
          });//fin ready
       </script>
-      <!--===============================================================================================-->  
-
-      <!--===============================================================================================-->
-      <script src="<?=base_url();?>plantilla/admin/vendor/bootstrap/js/popper.js"></script>
-      <script src="<?=base_url();?>plantilla/admin/vendor/bootstrap/js/bootstrap.min.js"></script>
-      <!--===============================================================================================-->
-      <script src="<?=base_url();?>plantilla/admin/vendor/select2/select2.min.js"></script>
-      <!--===============================================================================================-->
-     
-      <script >
-         $('.js-tilt').tilt({
-          scale: 1.1
-         })
-      </script>
-      <!--===============================================================================================-->
-      <script src="<?=base_url();?>plantilla/admin/js/main.js"></script>
+      
    </body>
 </html>
