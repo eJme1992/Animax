@@ -17,11 +17,18 @@ border-bottom-color:#fff;
   margin-bottom: 2em;
   width: 80%;
 }
+.border-bo{
+  border-bottom-width: 1px;
+ border-bottom-style: solid; 
+ border-bottom-color: #cccc;
+ margin-bottom: 1em;
+ background-color: #FAFAFA;
+}
 #login .border{ 
   margin-top:1em;
   margin-bottom: 2em;
-  border:solid 1px #f2f2f2;
-  padding:1em; 
+  border:solid 1px #cccccc;
+  padding:2em; 
 }
 .btn-ingresar{
   color:#fff;
@@ -43,7 +50,6 @@ border-bottom-color:#fff;
   font-size: 2em;
   font-family: 'Shojumaru', cursive;
   float:center;
- 
 }
 .btn-regi{
   background-color: #F4511E;
@@ -58,6 +64,13 @@ border-bottom-color:#fff;
   line-height: 1em;
  font-weight: bold;
 }
+.saludo{
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.5em;
+  color:#000;
+  font-family: helvetica;
+}
 .btn-regi:hover{
   color:#fff;
   background-color: #ff382e;
@@ -68,4 +81,21 @@ border-bottom-color:#fff;
   color:#fff;
   text-decoration: none;
   font-weight: bold;
+}
+.inp-wtb{
+ border-color: #ff0000;
+ border-top: 0;
+ border-left:0;
+ border-right:0;
+ box-shadow: none;
+ border-radius: 0;
+
+}
+.respon-he{display: none;}
+@media (max-width: 1110px){
+  .respon-he{display: block}
+  .no-re{display:none;}
+  .registrar-div{max-width:250px;}
+  .btn-regi{margin-left: 5px; margin-right: 5px;}
+  .login-b{padding: 10px;}
 }

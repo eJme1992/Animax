@@ -17,14 +17,20 @@
             <header class="headerlog" >
               <div class="container">
                 <div class="row">
-                  <div class="col-xs-4">
+                  <div class="col-sm-4 no-re">
                     <h3 class="portal">Tu portal de anime</h3>
                   </div>
-                  <div class="col-xs-4">
+                  <div class="col-sm-4 no-re">
                    <span class="logo navbar-text ">A</span>
                   </div>
-                  <div class="col-xs-4">
+                  <div class="col-sm-4 no-re">
                     <div class="registrar-div">
+                    <a href="#" class="login-b">LOGIN</a>
+                    <button class="btn btn-regi" type="submit">REGISTRARSE</button>
+                  </div>
+                </div>
+                <div class="col-md-12 respon-he">   <span class="logo navbar-text pull-left">A</span>
+                  <div class="registrar-div pull-right">
                     <a href="#" class="login-b">LOGIN</a>
                     <button class="btn btn-regi" type="submit">REGISTRARSE</button>
                   </div>
@@ -35,17 +41,20 @@
           </section>
             <div class="container loginbg">
                <div class="row">
+                  <div class="col-md-12 border-bo">
+                    <h1 class="saludo">Konnichi wa! 今日は</h1>
+                  </div>
                  <div class="col-md-6">
                   <div class="border">
                   <h3>Entra con tu cuenta</h3>
                    <form  id="formr">
                       <div class="form-group">
-                        <label for="usr">Name:</label>
-                        <input type="text" class="form-control" id="usr" required="">
+                        <label for="usr">Correo</label>
+                        <input type="email" class="form-control inp-wtb" id="mail" name="mail" required="">
                       </div>
                       <div class="form-group">
-                        <label for="pwd">Password:</label>
-                        <input type="password" class="form-control" id="pwd" required="">
+                        <label for="pwd">Contraseña</label>
+                        <input type="password" class="form-control inp-wtb" id="pwd" required="">
                       </div>
                       <button class="btn btn-block btn-ingresar">Iniciar sesión</button> 
                       <p class="crear-cuento">¿No tienes cuenta? Create <a class="una" href="#">una</a></p>
