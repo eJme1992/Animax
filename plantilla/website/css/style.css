@@ -15,7 +15,7 @@
      border-radius: 3px;
 }
  .imglg{
-     height:20vw ;
+     height:25vw ;
      width: 100%;
      border-radius: 3px;
 }
@@ -25,12 +25,12 @@
 }
 
  .spanhovertilte{
-     display:block;
-     height: 40px;
-     padding:3px;
-     color: #000;
-    
-    
+     display: none;
+     position: absolute;
+     top: 0;
+     right: 0;
+     left: 0;
+     bottom: 0;
 }
  .spanhovertag{
      display: none;
@@ -39,9 +39,6 @@
      right: 0;
      left: 0;
      bottom: 0;
-}
-.card{
-background-color: transparent;
 }
  a:hover a .spanhovertag {
      display: block;
@@ -124,14 +121,14 @@ background-color: transparent;
   font-weight: bold;
 }
 .btn-regi{
-  background-color: #F4511E;
+  background-color: #FD4C5D;
   color:#fff;
    font-weight: bold;
    margin-left: 10px;
 }
 .btn-regi:hover{
   color:#fff;
-  background-color: #ff382e;
+  background-color: #FD4C5D;
 }
  .input-buscar{ 
      width:316px;
