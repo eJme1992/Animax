@@ -11,6 +11,7 @@
       <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR" rel="stylesheet"> 
       <link rel="stylesheet" type="text/css" href="<?=base_url();?>plantilla/perfil/assets/css/style.css">
       <link rel="stylesheet" type="text/css" href="<?=base_url();?>plantilla/website/css/style.css?E">
+      <link rel="stylesheet" type="text/css" href="<?=base_url();?>plantilla/website/css/home.css">
       <title>Animax</title>
    </head>
    <body>

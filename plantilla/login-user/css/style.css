@@ -100,4 +100,7 @@ border-bottom-color:#fff;
   .login-b{padding: 10px;}
 }
 /* Para registro */
-.radio{width:400px;}
+.regis-label{
+  transform: translate3d(0,28px,0) scale(1);
+}
+
