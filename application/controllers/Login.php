@@ -24,7 +24,7 @@ class Login extends CI_Controller
     public function ingreso()
     {
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-            $usuario   = $this->input->post('email');
+            $usuario   = $this->input->post('mail');
             $password  = $this->input->post('pass');
             $consultas = $this->MLogin->consultar($usuario);
             $consulta  = end($consultas); //funcion que me trae el ultimo registro de la consulta

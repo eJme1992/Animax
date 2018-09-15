@@ -2,7 +2,10 @@
   background-repeat: no-repeat;
   background-size: cover;
   width: 100%;
-  padding-bottom:2em; 
+  padding-bottom:0em; 
+}
+.opaco{
+  background-color: rgba(36, 41, 46, 0.8);padding-bottom:  1em;
 }
 .padding-b{ padding-bottom: 15vmin; }
 .headerlog{

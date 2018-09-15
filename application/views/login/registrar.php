@@ -13,6 +13,7 @@
    <body>
      
          <section id="login" style="background-image:url('<?=base_url();?>plantilla/admin/images/nime.jpeg');" >
+          <div class="opaco">
           <section class="padding-b">
             <header class="headerlog" >
               <div class="container">
@@ -106,6 +107,7 @@
 
                </div>
              </div>
+           </div>
            </section>
                
       <script > //Ajax para mi form ingresar

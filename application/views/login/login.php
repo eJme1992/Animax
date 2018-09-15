@@ -13,6 +13,7 @@
    <body>
      
          <section id="login" style="background-image:url('<?=base_url();?>plantilla/admin/images/nime.jpeg');" >
+          <div class="opaco">
           <section class="padding-b">
             <header class="headerlog" >
               <div class="container">
@@ -54,7 +55,7 @@
                       </div>
                       <div class="form-group">
                         <label for="pwd">Contraseña</label>
-                        <input type="password" class="form-control inp-wtb" id="pwd" required="">
+                        <input type="password" class="form-control inp-wtb" id="pass" name="pass" required="">
                       </div>
                       <input type="hidden" name="<?=$csrf['name'];?>" value="<?=$csrf['hash'];?>" />
                      <div class="col-md-12" id="resultado" style="margin-top:15px;"></div>
@@ -79,6 +80,7 @@
 
                </div>
              </div>
+           </div>
            </section>
       <script > //Ajax para mi form ingresar
          jQuery(document).ready(function() { //Cuando el doc se cargue, hacelas ejecuciones siguientes
