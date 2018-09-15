@@ -2,7 +2,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   width: 100%;
-  min-height: 800px;
+min-height: 1200px
 }
 .padding-b{ padding-bottom: 15vmin; }
 .headerlog{
@@ -99,3 +99,5 @@ border-bottom-color:#fff;
   .btn-regi{margin-left: 5px; margin-right: 5px;}
   .login-b{padding: 10px;}
 }
+/* Para registro */
+.radio{width:400px;}

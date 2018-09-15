@@ -49,6 +49,7 @@ class Login extends CI_Controller
     }
     
     public function registrar(){
+             $this->load->view('login/registrar'); 
               $this->load->model('MUser');//Para cargar el Modelo user include
 
            if($_SERVER['REQUEST_METHOD'] == 'POST'){ //Por seguridad, que venga del post 

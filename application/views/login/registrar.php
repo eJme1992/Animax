@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
    <head>
-      <title>Iniciar sesion</title>
+      <title>Registrar</title>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -25,14 +25,15 @@
                   </div>
                   <div class="col-sm-4 no-re">
                     <div class="registrar-div">
-                    <a href="#" class="login-b">LOGIN</a>
-                    <button class="btn btn-regi" type="submit" onclick="window.location.href='<?=base_url();?>login/registrar'">REGISTRARSE</button>
+                    <a href="<?=base_url();?>login" class="login-b">LOGIN</a>
+                    <button class="btn btn-regi" type="submit">REGISTRARSE</button>
                   </div>
                 </div>
                 <div class="col-md-12 respon-he">   <span class="logo navbar-text pull-left">A</span>
                   <div class="registrar-div pull-right">
                     <a href="#" class="login-b">LOGIN</a>
                     <button class="btn btn-regi" type="submit" onclick="window.location.href='<?=base_url();?>login/registrar'">REGISTRARSE</button>
+    
                   </div>
                 </div>
                 </div>
@@ -42,20 +43,41 @@
             <div class="container loginbg">
                <div class="row">
                   <div class="col-md-12 border-bo">
-                    <h1 class="saludo">Konnichi wa! 今日は</h1>
+                    <h1 class="saludo">Todos los animes, mangas y mucho más</h1>
                   </div>
                  <div class="col-md-6">
                   <div class="border">
-                  <h3>Entra con tu cuenta</h3>
-                   <form  id="formu">
+                  <h3>Create una cuenta</h3>
+                   <form  id="formr">
                       <div class="form-group">
-                        <label for="usr">Correo</label>
-                        <input type="email" class="form-control inp-wtb" id="mail" name="mail" required="">
+                        <label for="regis-label">Nombre</label>
+                        <input type="text" class="form-control inp-wtb inp-re" id="nombre" name="nombre" required="">
+                      </div>
+                      <div class="form-group">
+                        <label for="regis-label">Apellido</label>
+                        <input type="text" class="form-control inp-wtb inp-re" id="apellido" name="apellido" required="">
+                      </div>
+                      <div class="form-group">
+                        <label for="regis-label">Correo</label>
+                        <input type="email" class="form-control inp-wtb inp-re" id="mail" name="mail" required="">
                       </div>
                       <div class="form-group">
                         <label for="pwd">Contraseña</label>
-                        <input type="password" class="form-control inp-wtb" id="pwd" required="">
+                        <input type="password" class="form-control inp-wtb inp-re" id="contrasena" name="contrasena" required="">
                       </div>
+                      <div class="form-group">
+                        <label for="regis-label">Fecha de Nacimiento</label>
+                        <input type="date" class="form-control inp-wtb inp-re" id="fecha_n" name="fecha_n" required="">
+                      </div>
+                        <div class="form-group">
+                          <label for="sel1">Sexo</label>
+                          <select class="form-control" id="sexo" name="sexo">
+                            <option cheked="" >Seleccionar</option>
+                            <option value="F">F</option>
+                            <option value="M">M</option>
+                          </select>
+                        </div>
+
                       <button class="btn btn-block btn-ingresar">Iniciar sesión</button> 
                       <p class="crear-cuento">¿No tienes cuenta? Create <a class="una" href="#">una</a></p>
                    </form>
@@ -66,30 +88,37 @@
                     <span class="info-title"><h3>¿No has recibido el email de confirmación?</h3></span>
                     <p class="info-text">
                       Si ya te has registrado y no has recibido el email de confirmación para activar tu cuenta haz clic
-                      <a class="una" href="https://socialani.me/confirm-email" title="Ir a ...">aquí</a></p>
+                      <a class="una" href="#" title="Ir a ...">aquí</a></p>
                       <h3>¿Has olvidado tu contraseña?</h3>
                        <p>Si no te acuerdas de la contraseña no te preocupes, tenemos una sección para recuperarla haz clic
-                      <a class="una" href="https://socialani.me/confirm-email" title="Ir a ...">aquí</a> para solicitar una nueva. 
+                      <a class="una" href="#" title="Ir a ...">aquí</a> para solicitar una nueva.</p> 
                       <h3>¿Tienes alguna duda?</h3>
-                      No te preocupes nosotros te solucionaremos cualquier duda o consulta que tengas, envianos un email <a class="una" href="https://socialani.me/confirm-email" title="Ir a ...">aquí</a> </p>
+                      <p>No te preocupes nosotros te solucionaremos cualquier duda o consulta que tengas, envianos un email <a class="una" href="#" title="Ir a ...">aquí</a> </p>
+                        <h3>Socialanime te informa</h3>
+                        <p>Los datos de carácter personal que nos proporciones rellenando el presente formulario serán tratados por Weblab Studio S.C. Como responsable de esta web. La finalidad  de la recogida y tratamiento de los datos personales que te solicitamos es para enviarte nuestras publicaciones, promociones de productos y/o servicios y recursos exclusivos. La legitimación se realiza a través del consetimiento del insteresado. Te informamos que los datos que nos facilitas estarán ubicados en los servicores de OVH a través de su empresa OVH HISPANO, SLU, ubicada dentro de la UE. <a class="una"  href="
+                          #" target="_blank"> Ver politica de privacidad de OVH HISPANO</a>. El hecho de que no introduzcas los datos obligatorios que aparecen en el formulario podrá tener como consecuencia que no pueda atender tu solicitud.</p>
+                          <p>
+                      Asimismo le informamos de la posibilidad de ejercer los derechos de acceso, rectificación cancelación y oposicion de sus datos en el domicilio fiscal de Weblab Studio S.C. C/ Cañero, 7, 3ºIzq- 41007- Sevilla - info@weblabstudio.net.
+                    </p>
                   </div>
                  </div>
 
                </div>
              </div>
            </section>
+               
       <script > //Ajax para mi form ingresar
          jQuery(document).ready(function() { //Cuando el doc se cargue, hacelas ejecuciones siguientes
-               jQuery("#formu").submit(function(event) {  //Se activa el form, activa el ajax
+               jQuery("#formr").submit(function(event) {  //Se activa el form, activa el ajax
                event.preventDefault(); 
          
              var msj = '1'; 
          //validaciones con js
          
          if (msj === "1") { //tres igual para decir que es identico
-         var formData = new FormData(jQuery('#formu') [0]); //Se crea el arreglo con los datos del form
+         var formData = new FormData(jQuery('#formr') [0]); //Se crea el arreglo con los datos del form
          jQuery.ajax({
-           url: '<?=base_url();?>login/ingreso', // Al controlador donde van mis datos 
+           url: '<?=base_url();?>login/registrar', // Al controlador donde van mis datos 
            type: 'POST', 
            contentType: false,
            processData: false, //Le dice que tipo de dato va a recibir
