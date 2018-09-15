@@ -12,9 +12,9 @@
 <section id="home">
    <div class="container">
       <div class="row mg">
-         <div class="col-md-3">
+         <div class="col-lg-3">
          <div class="" style="position:-webkit-sticky;position:sticky;top:0px;">
-            <div class="col-md-12 bordert" id="SERIES_DESTACAS">
+            <div class="col-lg-12 bordert" id="SERIES_DESTACAS">
                <h2><i class="fas fa-filter"></i>Filtros</h2>
             </div>
             <style>
@@ -52,8 +52,8 @@
                   <input class="form-control col-6" style="display:inline-block;" type="number" name="hasta" id="hasta" required="" placeholder="Hasta " value="<?php echo date('Y'); ?>">
                </div>
                <div style="margin-top:20px">
-               <button type="submit" class="btn btn-warning btn-block"><i class="fas fa-filter"></i>Filtrar</button>
-               <a href="<?=base_url();?>/home/mas" class="btn btn-info btn-block">
+               <button type="submit" class="btn btn-light btn-block"><i class="fas fa-filter"></i>Filtrar</button>
+               <a href="<?=base_url();?>/home/mas" class="btn btn-dark btn-block">
                    <i class="fas fa-retweet"></i>Reiniciar
                </a>
             </div>
@@ -62,17 +62,15 @@
       </div>
          </div>
          <!--Diva para la barra lateral 3-->
-         <div class="col-md-9 row">
-            <div class="col-md-12 bordert" id="SERIES_DESTACAS">
+         <div class="col-lg-9 row">
+            <div class="col-lg-12 bordert" id="SERIES_DESTACAS">
                <h2><i class="fas fa-star"></i> Series destacadas</h2>
             </div>
             <?php foreach ($data as $key){?> 
-            <div class="col-md-4" id='destacadas'>
+            <div class="col-md-3" id='destacadas'>
                <div class="card">
                   <a href="<?php echo base_url();?>home/detalle_series/<?=$key->id?>" data-toggle="tooltip" title="<?=$key->nombre;?>"> <img src="<?=base_url().$key->imagen;?>" class="img-fluid imglg"></a>
-                  <span class="span Capi">
-                  DESTACA <i class="fas fa-star"></i></i>
-                  </span>
+                 
                   <span class="Title">
                   <?=$key->nombre;?> 
                   </span>

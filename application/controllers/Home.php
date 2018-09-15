@@ -36,7 +36,7 @@ class Home extends CI_Controller
         $this->load->model('MPelicula'); // Carga el modelo de categorías
         $DATOS['carrusel'] = $this->MCarrusel->lista(6);
         $DATOS['capitulo'] = $this->MCapitulo->listacap('LIMIT 6');
-        $DATOS['series'] = $this->MSerie->listades('LIMIT 5');
+        $DATOS['series'] = $this->MSerie->listades('LIMIT 4');
         $DATOS['Temporadar'] = $this->MTemporada->recientes('LIMIT 10');
         $DATOS['peliculas'] = $this->MPelicula->recientes('LIMIT 10');
         $this->load->view('website/cuerpo-home', $DATOS);
