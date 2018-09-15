@@ -46,7 +46,7 @@
                     <?php foreach ($capitulo as $key){?>
                     <div class="col-md-4" id="cap">
                         <div class="card">
-                            <a href="<?php echo base_url();?>home/capitulo/<?=$key->id?>" data-toggle="tooltip" title="<?=$key->name;?> <?=$key->temporada;?>-<?=$key->numero;?>"> <img src="<?=base_url().$key->imagen2;?>" class="img-fluid imgsm"></a>
+                            <a href="<?php echo base_url();?>home/capitulo/<?=$key->id?>" data-toggle="tooltip" title="<?=$key->name;?> <?=$key->temporada;?>-<?=$key->numero;?>"> <img src="<?=base_url().$key->imagen2;?>" class="img-fluid imgssm"></a>
                             <span class="spanhovertag">
                      <b>Temp:</b><?=$key->temporada;?>-<b>Cap:</b><?=$key->numero;?> <i class="far fa-clock"></i>
                      </span>
@@ -60,16 +60,18 @@
             </div>
             <!--Diva para la barra lateral 3-->
             <div class="col-lg-9 row">
+                
+<div class="row titulos col-md-12">
                 <div class="col-md-10 bordert" id="SERIES_DESTACAS">
-                    <h2><i class="fas fa-star"></i>Series destacadas</h2>
+                    <h3><i class="fas fa-star"></i> Series destacadas</h3>
                 </div>
                 <div class="text-right col-md-2">
                     <a href="<?php base_url();?>home/mas">
                         <button class="btn mas" style=""><b><i class="fas fa-plus"></i></b>
                         </button>
                     </a>
-
                 </div>
+            </div>
                 <?php foreach ($series as $key){?>
                 <div class="col-lg-3 series">
                     <div class="card" id='destacadas'>
@@ -84,8 +86,34 @@
                 </div>
                 <?php } ?>
 
+<div class="row titulos col-md-12">
+                <div class="col-md-10 bordert" id="SERIES_DESTACAS">
+                    <h3><i class="fas fa-tv"></i> Ultimos capitulos</h3>
+                </div>
+                <div class="text-right col-md-2">
+                    <a href="<?php base_url();?>home/mas">
+                        <button class="btn mas" style=""><b><i class="fas fa-plus"></i></b>
+                        </button>
+                    </a>
+                </div>
+            </div>
+               <?php foreach ($capitulo as $key){?>
+                    <div class="col-md-3 series" id="cap">
+                        <div class="card">
+                            <a href="<?php echo base_url();?>home/capitulo/<?=$key->id?>" data-toggle="tooltip" title="<?=$key->name;?> <?=$key->temporada;?>-<?=$key->numero;?>"> <img src="<?=base_url().$key->imagen2;?>" class="img-fluid imgsm"></a>
+                            <span class="spanhovertag">
+                     <b>Temp:</b><?=$key->temporada;?>-<b>Cap:</b><?=$key->numero;?> <i class="far fa-clock"></i>
+                     </span>
+                            <span class="spanhovertag">
+                     <?=$key->name;?> 
+                     </span>
+                        </div>
+                    </div>
+                    <?php } ?>
+
+                <div class="row titulos col-md-12">
                 <div class="col-md-10 bordert" id="TEMPORADAS_RECIENTES">
-                    <h2><i class="fab fa-cloudscale"></i> Temporadas Recientes</h2>
+                    <h3><i class="fab fa-cloudscale"></i> Temporadas Recientes</h3>
                 </div>
                 <div class="text-right col-md-2">
                     <a href="<?php base_url();?>home/mas/2/Todas/1900-01-01/2018-12-31/Todas/1/false?pagina=1">
@@ -94,6 +122,7 @@
                     </a>
 
                 </div>
+            </div>
                 <?php foreach ($Temporadar as $key){?>
                 <div class="col-lg-3 series">
                     <div class="card" id='temporadas_recientes'>
@@ -107,9 +136,9 @@
                     </div>
                 </div>
                 <?php } ?>
-
+<div class="row titulos col-md-12">
                 <div class="col-md-10 bordert" id="PELICULAS_RECIENTES">
-                    <h2><i class="fas fa-video"></i> Películas Recientes</h2>
+                    <h3><i class="fas fa-video"></i> Películas Recientes</h3>
                 </div>
                 <div class="text-right col-md-2">
                     <a href="<?php base_url();?>home/mas">
@@ -117,6 +146,7 @@
                         </button>
                     </a>
                 </div>
+            </div>
                 <?php foreach ($peliculas as $key){?>
                 <div class="col-lg-3 series">
                     <div class="card" id='pelicula_recientes'>
@@ -133,7 +163,17 @@
 
             </div>
             <div class="col-lg-3 news" style="padding-right: 0px; margin-left:1.5%;">
-                ss
+            <div class="row titulos col-md-12">
+                <div class="col-md-10 bordert" id="NOTICIAS">
+                    <h3><i class="fas fa-video"></i> Noticias</h3>
+                </div>
+                <div class="text-right col-md-2">
+                    <a href="<?php base_url();?>home/mas">
+                        <button class="btn mas" style=""><b><i class="fas fa-plus"></i></b>
+                        </button>
+                    </a>
+                </div>
+            </div>
             </div>
 
         </div>
