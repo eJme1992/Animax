@@ -56,6 +56,8 @@
                         <label for="pwd">Contraseña</label>
                         <input type="password" class="form-control inp-wtb" id="pwd" required="">
                       </div>
+                      <input type="hidden" name="<?=$csrf['name'];?>" value="<?=$csrf['hash'];?>" />
+                     <div class="col-md-12" id="resultado" style="margin-top:15px;"></div>
                       <button class="btn btn-block btn-ingresar">Iniciar sesión</button> 
                       <p class="crear-cuento">¿No tienes cuenta? Create <a class="una" href="#">una</a></p>
                    </form>
