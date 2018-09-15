@@ -18,6 +18,8 @@
       <header>
          <nav class="navbar navbar-expand-sm fixed-top">
             <div class="container-fluid">
+              <div class="row" id="row-header">
+                <div class="col-md-2">
                <a href="#">
                <?php  
 
@@ -31,24 +33,28 @@
             
                <a class="nav-link" href="<?=base_url();?>"><img src="<?=base_url().$var;?>"></a>
                </a>
+             </div>
+             <div class="col-md-7">
+                 <div id="buscar" class="ocultar">
+                  <form class="form-inline" action="/action_page.php" id="buscar">
+                     <input class="form-control input-buscar" type="text" placeholder="Buscar">
+                     <button class="btn btn-buscar" type="submit"><i class="fas fa-search"></i></button>
+                  </form>
+               </div>
                <button  id="boton-menu" class="btn" type="button" onclick="ocultar()"/>
                <i class="fas fa-bars" style="color:#000;"></i>
                </button>
-               <div class="collapse navbar-collapse" id="mi-menu">
-                  <ul class="navbar-nav">
-                                          
-                     <li class="nav-item">
-                        <a class="nav-link" href="<?=base_url();?>login"><i class="fas fa-user"></i> <?php if (isset($user->id)){echo 'Ver perfil';}else{echo 'Iniciar sesión';}?></a>
-                     </li>
-                  </ul>
+             </div>
+             <div class="col-md-3">
+               <div  id="mi-menu" class="float-right">
+                  <div class="registrar-div">
+                    <a href="#" class="login-b navbar-text">LOGIN</a>
+                    <button class="btn btn-regi" type="submit" onclick="window.location.href='<?=base_url();?>login/registrar'">REGISTRARSE</button>
+                  </div>
                </div>
+             </div>
                <button onclick="oculta()" class="font-s btn"><i class="fas fa-search"></i></button>
-               <div id="buscar" class="ocultar">
-                  <form class="form-inline" action="/action_page.php" id="buscar">
-                     <input class="form-control mr-sm-2" type="text" placeholder="Buscar">
-                     <button class="btn btn-success" type="submit"><i class="fas fa-search"></i></button>
-                  </form>
-               </div>
+               </div>         
             </div>
          </nav> 
       </header>

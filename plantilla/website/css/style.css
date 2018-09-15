@@ -103,6 +103,45 @@
      color: #868588 !important;
 }
 /* ############### FOTER CSS ############## */
+/*################HEADER CSS ############## */
+#boton-menu{display:none;}
+.font-s{display:none;}
+.fixed-top {background-color: #000 !important; }
+#row-header{width:100%;}
 
-
-
+.login-b{
+  color:#fff;
+  width:2.5em;
+ font-weight: bold;
+}
+.login-b:hover{
+  background-color: rgb(255, 255, 255, 0.5);
+  color:#fff;
+  text-decoration: none;
+  font-weight: bold;
+}
+.btn-regi{
+  background-color: #F4511E;
+  color:#fff;
+   font-weight: bold;
+   margin-left: 10px;
+}
+.btn-regi:hover{
+  color:#fff;
+  background-color: #ff382e;
+}
+ .input-buscar{ 
+     width:316px;
+     height:32px;
+     border-radius: 3px 0 0 3px;
+     color: #999;
+     box-sizing: border-box; 
+ }
+ .btn-buscar{
+     background: #fd4c5d;
+     color: #fff;
+     border-radius: 0 3px 3px 0;
+     font-size: 14px;
+     width: 46px;
+     height: 32px;
+ }
