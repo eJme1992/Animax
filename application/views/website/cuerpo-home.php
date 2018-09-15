@@ -63,7 +63,7 @@
                 
 <div class="row titulos col-md-12">
                 <div class="col-md-10 bordert" id="SERIES_DESTACAS">
-                    <h3><i class="fas fa-star"></i> Series destacadas</h3>
+                    <h4><i class="fas fa-star"></i> Series destacadas</h4>
                 </div>
                 <div class="text-right col-md-2">
                     <a href="<?php base_url();?>home/mas">
@@ -79,7 +79,7 @@
                         <span class="spanhovertag">
                   DESTACA <i class="fas fa-star"></i>
                   </span>
-                        <span class="spanhovertag">
+                       <span class="spanhovertilte">
                   <?=$key->nombre;?> 
                   </span>
                     </div>
@@ -88,7 +88,7 @@
 
 <div class="row titulos col-md-12">
                 <div class="col-md-10 bordert" id="SERIES_DESTACAS">
-                    <h3><i class="fas fa-tv"></i> Ultimos capitulos</h3>
+                    <h4><i class="fas fa-tv"></i> Ultimos capitulos</h4>
                 </div>
                 <div class="text-right col-md-2">
                     <a href="<?php base_url();?>home/mas">
@@ -104,16 +104,18 @@
                             <span class="spanhovertag">
                      <b>Temp:</b><?=$key->temporada;?>-<b>Cap:</b><?=$key->numero;?> <i class="far fa-clock"></i>
                      </span>
-                            <span class="spanhovertag">
+                            <span class="spanhovertilte">
                      <?=$key->name;?> 
                      </span>
                         </div>
                     </div>
                     <?php } ?>
-
+                    <div class="col-12">
+                    <img style="width:100%;" class="portada-principal" src="<?=base_url();?>plantilla/website/img/1534667129353.jpg">
+                    </div>
                 <div class="row titulos col-md-12">
                 <div class="col-md-10 bordert" id="TEMPORADAS_RECIENTES">
-                    <h3><i class="fab fa-cloudscale"></i> Temporadas Recientes</h3>
+                    <h4><i class="fab fa-cloudscale"></i> Temporadas Recientes</h4>
                 </div>
                 <div class="text-right col-md-2">
                     <a href="<?php base_url();?>home/mas/2/Todas/1900-01-01/2018-12-31/Todas/1/false?pagina=1">
@@ -130,7 +132,7 @@
                         <span class="spanhovertag">
                   ESTRENO <i class="far fa-clock"></i>
                   </span>
-                        <span class="spanhovertag">
+                       <span class="spanhovertilte">
                   <?=$key->nombre;?> 
                   </span>
                     </div>
@@ -138,7 +140,7 @@
                 <?php } ?>
 <div class="row titulos col-md-12">
                 <div class="col-md-10 bordert" id="PELICULAS_RECIENTES">
-                    <h3><i class="fas fa-video"></i> Películas Recientes</h3>
+                    <h4><i class="fas fa-video"></i> Películas Recientes</h4>
                 </div>
                 <div class="text-right col-md-2">
                     <a href="<?php base_url();?>home/mas">
@@ -154,26 +156,43 @@
                         <span class="spanhovertag">
                   ESTRENO <i class="far fa-clock"></i>
                   </span>
-                        <span class="spanhovertag">
+                       <span class="spanhovertilte">
                   <?=$key->nombre;?> 
                   </span>
                     </div>
                 </div>
                 <?php } ?>
+                <div class="col-12">
+                 <img style="width:100%;" class="portada-principal" src="<?=base_url();?>plantilla/website/img/1534667129353.jpg">
+                    </div>
 
             </div>
-            <div class="col-lg-3 news" style="padding-right: 0px; margin-left:1.5%;">
+            <div class="col-lg-3 news  panel" style="padding-right: 0px; margin-left:1.5%;">
             <div class="row titulos col-md-12">
-                <div class="col-md-10 bordert" id="NOTICIAS">
-                    <h3><i class="fas fa-video"></i> Noticias</h3>
-                </div>
-                <div class="text-right col-md-2">
+                <div class="col-10 bordert" id="NOTICIAS">
+                    <h4><i class="fas fa-newspaper"></i> Noticias</h4> </div>
+                <div class="text-right col-2">
                     <a href="<?php base_url();?>home/mas">
                         <button class="btn mas" style=""><b><i class="fas fa-plus"></i></b>
                         </button>
                     </a>
                 </div>
             </div>
+
+<div class="row">
+<?php foreach ($series as $key){?>
+            <div class="col-12 titulares">
+                Espacio para las noticias traidas de la web
+            </div>
+               <div class="col-md-6  imgssm" style="background: url('<?=base_url();?>plantilla/website/img/jp.jpg');background-repeat: no-repeat;background-size: cover;">
+                  
+               </div>
+               <div class="col-md-6">
+                  <p  class="padding">Espacio para las noticias traidas de la web</p>
+               </div>
+                <?php } ?>
+</div>
+
             </div>
 
         </div>

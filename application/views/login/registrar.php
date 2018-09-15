@@ -13,6 +13,7 @@
    <body>
      
          <section id="login" style="background-image:url('<?=base_url();?>plantilla/admin/images/nime.jpeg');" >
+          <div class="opaco">
           <section class="padding-b">
             <header class="headerlog" >
               <div class="container">
@@ -77,7 +78,8 @@
                             <option value="M">M</option>
                           </select>
                         </div>
-
+<input type="hidden" name="<?=$csrf['name'];?>" value="<?=$csrf['hash'];?>" />
+                     <div class="col-md-12" id="resultado" style="margin-top:15px;"></div>
                       <button class="btn btn-block btn-ingresar">Iniciar sesión</button> 
                       <p class="crear-cuento">¿No tienes cuenta? Create <a class="una" href="#">una</a></p>
                    </form>
@@ -105,6 +107,7 @@
 
                </div>
              </div>
+           </div>
            </section>
                
       <script > //Ajax para mi form ingresar
@@ -118,7 +121,7 @@
          if (msj === "1") { //tres igual para decir que es identico
          var formData = new FormData(jQuery('#formr') [0]); //Se crea el arreglo con los datos del form
          jQuery.ajax({
-           url: '<?=base_url();?>login/registrar', // Al controlador donde van mis datos 
+           url: '<?=base_url();?>login/registrarme', // Al controlador donde van mis datos 
            type: 'POST', 
            contentType: false,
            processData: false, //Le dice que tipo de dato va a recibir

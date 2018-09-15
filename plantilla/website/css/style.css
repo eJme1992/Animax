@@ -15,7 +15,7 @@
      border-radius: 3px;
 }
  .imglg{
-     height:25vw ;
+     height:20vw ;
      width: 100%;
      border-radius: 3px;
 }
@@ -25,12 +25,12 @@
 }
 
  .spanhovertilte{
-     display: none;
-     position: absolute;
-     top: 0;
-     right: 0;
-     left: 0;
-     bottom: 0;
+     display:block;
+     height: 40px;
+     padding:3px;
+     color: #000;
+    
+    
 }
  .spanhovertag{
      display: none;
@@ -39,6 +39,9 @@
      right: 0;
      left: 0;
      bottom: 0;
+}
+.card{
+background-color: transparent;
 }
  a:hover a .spanhovertag {
      display: block;
