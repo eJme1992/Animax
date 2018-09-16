@@ -136,7 +136,7 @@
          
            if(data.status=='ok'){ //ver controlador, status es el nombre la clave cuando se creo
             $("#resultado").html('<div class="alert alert-success">'+data.code+'</div>'); //controlador
-             window.location.href ='<?=base_url();?>perfil'; //te manda la direccion a donde vas
+            // window.location.href ='<?=base_url();?>perfil'; //te manda la direccion a donde vas
            }else{
            $("#resultado").html('<div class="alert alert-danger"><strong>ERROR!</strong>'+data.error+'</div>');
            }
