@@ -135,7 +135,7 @@
                   
             <div class="row alert alert-warning" style="margin:10px;">
               <div class="col-2">
-                  <?php if($user->foto==''){ ?>
+                  <?php if($key->foto==''){ ?>
                   <img src="<?=base_url()?>file/img/user/default.png" class="rounded-circle img-fluid"/>
                   <?php }else{ ?>
                   <img src="<?=base_url().$key->foto;?>" class="rounded-circle img-fluid"/>
@@ -158,10 +158,11 @@
                   <img src="<?=base_url().$user->foto;?>" class="rounded-circle img-fluid"/>
                   <?php } ?>
                   <?php }else{ ?>
-                  <img src="<?=base_url().$user->foto;?>" class="rounded-circle img-fluid"/>
+                  <img src="<?=base_url();?>file/img/user/default.png" class="rounded-circle img-fluid"/>
                   <?php } ?>
                </div>
                 
+               <?php if(isset($user->id)){ ?> 
                <div class="col-md-9 comment-box">
                   <form id="comments">
                      <div class="form-group">
@@ -175,6 +176,7 @@
                      <button class="btn btn-comentar " type="submit">Comentar</button> 
                   </form>
                </div>
+             <?php } ?>
             </div>
             </div>
             <!-- <div class="col-md-6">
