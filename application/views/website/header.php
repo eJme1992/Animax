@@ -20,7 +20,7 @@
          <nav class="navbar navbar-expand-sm fixed-top">
             <div class="container-fluid">
               <div class="row" id="row-header">
-                <div class="col-2">
+                <div class="col-3">
                <a href="#">
                <?php  
 
@@ -35,7 +35,7 @@
                <a class="nav-link" href="<?=base_url();?>"><img src="<?=base_url().$var;?>"></a>
                </a>
              </div>
-             <div class="col-7">
+             <div class="col-6">
                  <div id="buscar" class="ocultar">
                   <form class="form-inline" action="/action_page.php" id="buscar">
                      <div style="margin: auto;">
@@ -51,8 +51,12 @@
              <div class="col-3">
                <div  id="mi-menu" class="float-right">
                   <div class="registrar-div">
-                    <a href="#" class="login-b navbar-text">LOGIN</a>
-                    <button class="btn btn-regi" type="submit" onclick="window.location.href='<?=base_url();?>login/registrar'">REGISTRARSE</button>
+                    <?php if (isset($user->id)==false) { ?>                  
+                    <a  href="<?=base_url();?>login" class="login-b navbar-text">LOGIN</a>
+                    <a  href='<?=base_url();?>login/registrar' class="navbar-text registrarbtn">REGISTRARSE</a> 
+                     <?php  }else{ ?>
+                    <a  href="<?=base_url();?>login" class="navbar-text registrarbtn"><?php echo $user->nombre." ".$user->apellido;?></a>
+                     <?php   } ?> 
                   </div>
                </div>
              </div>

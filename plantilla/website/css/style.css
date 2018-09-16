@@ -1,9 +1,19 @@
+.page-link{
+    height: 55.5px;
+}
+.btn-block { 
+    height: 44px;
+    margin-top: .5rem;
+}
+.fa-chevron-circle-right{
+    color: #007bff;
+    margin:6.5px;
+}
  .imgssm{
      height: 9.4vw ;
      width: 100%;
      border-radius: 3px;
 }
-
  .imgsm{
      height:7vw ;
      width: 100%;
@@ -171,4 +181,12 @@ background-color: transparent;
      font-size: 14px;
      width: 46px;
      height: 32px;
+ }
+ .ocultar{
+    margin-top: 5px;
+ }
+ .registrarbtn{
+    margin-top: 4px;
+    margin-left: 20px;
+    color: #fd4c5d;
  }

@@ -46,15 +46,15 @@
                   <?php } ?>
                </select>
                <label><b>Estreno</b></label>
-               <div class="row">
+               <div class="row col-12">
                   <span class="col-6">Desde</span> <span class="col-6">Hasta</span>  
                   <input class="form-control col-6" style="display:inline-block;" type="number" name="desde" id="desde" required="" placeholder="Desde" value="1900" >
                   <input class="form-control col-6" style="display:inline-block;" type="number" name="hasta" id="hasta" required="" placeholder="Hasta " value="<?php echo date('Y'); ?>">
                </div>
-               <div style="margin-top:20px">
-               <button type="submit" class="btn btn-light btn-block"><i class="fas fa-filter"></i>Filtrar</button>
-               <a href="<?=base_url();?>/home/mas" class="btn btn-dark btn-block">
-                   <i class="fas fa-retweet"></i>Reiniciar
+               <div style="margin-top:20px" class="row col-12"  >
+               <button type="submit" class="btn btn-light btn-block col-sm-6"><i class="fas fa-filter"></i>Filtrar</button>
+               <a href="<?=base_url();?>/home/mas" class="col-sm-3 offset-sm-1 btn btn-dark btn-block">
+                   <i class="fas fa-retweet"></i>
                </a>
             </div>
             </div>
@@ -74,17 +74,17 @@
                <h2><?=$tipo;?></h2>
             </div>
             <?php foreach ($data as $key){?> 
-            <div class="col-md-3" id='destacadas'>
+            <div class="col-md-3 series" id='destacadas'>
                <div class="card">
                   <a href="<?php echo base_url();?>home/detalle_series/<?=$key->id?>" data-toggle="tooltip" title="<?=$key->nombre;?>"> <img src="<?=base_url().$key->imagen;?>" class="img-fluid imglg"></a>
                  
-                  <span class="Title">
+                  <span class="spanhovertilte">
                   <?=$key->nombre;?> 
                   </span>
                </div>
             </div>
             <?php } ?> 
-            <div class="center-block text-center">
+            <div class="center-block text-center col-12">
                <ul class="pagination pagination-lg justify-content-center">
                   <?php
                      if ($total_paginas > 1) {

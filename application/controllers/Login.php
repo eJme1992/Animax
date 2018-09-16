@@ -114,11 +114,46 @@ class Login extends CI_Controller
                 $response['error']  = "Email existente. Pruebe con otro";
             }
             
-            
-            
-            
             echo json_encode($response);
-        }   
+        } 
     }
+
+
+public function resetPass()
+    {
+        $email = $this->input->get("email");
+        $consultas = $this->MLogin->consultar($email);
+        $consulta = end($consultas);
+        if ($consulta != false){
+            $config = Array(
+                      'protocol' => 'smtp',
+                      'smtp_host' => 'ssl://mail.fet.org.ec',
+                      'smtp_port' => 465,
+                      'smtp_user' => 'soporte@fet.org.ec',
+                      'smtp_pass' => 'Fet2018$',
+                      'crlf' => "\r\n",
+                      'newline' => "\r\n"
+                    );
+            $this->load->library('email', $config);
+                     $this->email->from('soporte@fet.org.ec', 'fet.com.ec');
+                     $this->email->to($email);
+            $this->email->subject('Bienvenido/a a FET');
+                     $this->email->message('<h2> gracias por registrarte</h2><hr><br><br>
+                     Tu nombre de usuario es: ' . $email . '.<br>Tu password es: '.$consulta->password);
+            $this->email->send();
+             $response['status'] = 'ok';
+             $response['error'] = 'Se a enviado 1 correo con las instrucciones';
+             echo json_encode($response);
+        }else{
+            $response['status'] = 0;
+            $response['error'] = 'El email es incorrecto';
+            echo json_encode($response);
+        }
+    }
+
+
+
+
+    
 }
 
