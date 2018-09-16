@@ -63,8 +63,15 @@
          </div>
          <!--Diva para la barra lateral 3-->
          <div class="col-lg-9 row">
-            <div class="col-lg-12 bordert" id="SERIES_DESTACAS">
-               <h2><i class="fas fa-star"></i> Series destacadas</h2>
+            <?php
+             if($tipo==1){ $tipo='<i class="fas fa-fighter-jet"></i> Series';}
+             if($tipo==2){ $tipo='<i class="fab fa-cloudscale"></i> Temporadas';}
+             if($tipo==3){ $tipo='<i class="fas fa-tv"></i> Capítulos';}
+             if($tipo==4){ $tipo='<i class="fas fa-video"></i> Películas';}
+             if($tipo==5){ $tipo='<i class="fas fa-star"></i> Series destacadas';} 
+             ?>
+            <div class="col-lg-12" id="Resultados">
+               <h2><?=$tipo;?></h2>
             </div>
             <?php foreach ($data as $key){?> 
             <div class="col-md-3" id='destacadas'>

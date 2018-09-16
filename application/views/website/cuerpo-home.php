@@ -66,7 +66,7 @@
                     <h4><i class="fas fa-star"></i> Series destacadas</h4>
                 </div>
                 <div class="text-right col-md-2">
-                    <a href="<?php base_url();?>home/mas">
+                    <a href="<?php base_url();?>home/mas?tipo=2&pagina=1&categoria=Todas&genero=Todas&desde=1900&hasta=2099">
                         <button class="btn mas" style=""><b><i class="fas fa-plus"></i></b>
                         </button>
                     </a>
@@ -91,7 +91,7 @@
                     <h4><i class="fas fa-tv"></i> Ultimos capitulos</h4>
                 </div>
                 <div class="text-right col-md-2">
-                    <a href="<?php base_url();?>home/mas">
+                    <a href="<?php base_url();?>home/mas?tipo=3&pagina=1&categoria=Todas&genero=Todas&desde=1900&hasta=2099">
                         <button class="btn mas" style=""><b><i class="fas fa-plus"></i></b>
                         </button>
                     </a>
@@ -118,7 +118,7 @@
                     <h4><i class="fab fa-cloudscale"></i> Temporadas Recientes</h4>
                 </div>
                 <div class="text-right col-md-2">
-                    <a href="<?php base_url();?>home/mas/2/Todas/1900-01-01/2018-12-31/Todas/1/false?pagina=1">
+                    <a href="<?php base_url();?>home/mas?tipo=2&pagina=1&categoria=Todas&genero=Todas&desde=1900&hasta=2099">
                         <button class="btn mas" style=""><b><i class="fas fa-plus"></i></b>
                         </button>
                     </a>
@@ -143,7 +143,7 @@
                     <h4><i class="fas fa-video"></i> Películas Recientes</h4>
                 </div>
                 <div class="text-right col-md-2">
-                    <a href="<?php base_url();?>home/mas">
+                    <a href="<?php base_url();?>home/mas?tipo=4&pagina=1&categoria=Todas&genero=Todas&desde=1900&hasta=2099">
                         <button class="btn mas" style=""><b><i class="fas fa-plus"></i></b>
                         </button>
                     </a>
