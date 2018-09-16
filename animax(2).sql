@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3306
--- Tiempo de generación: 13-09-2018 a las 04:20:35
+-- Tiempo de generación: 16-09-2018 a las 21:47:26
 -- Versión del servidor: 5.7.21
 -- Versión de PHP: 5.6.35
 
@@ -69,7 +69,14 @@ CREATE TABLE IF NOT EXISTS `capitulo_video` (
   `fecha_c` date NOT NULL,
   `fecha_m` date NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `capitulo_video`
+--
+
+INSERT INTO `capitulo_video` (`id`, `id_capitulo`, `url_video`, `tipo`, `provedor`, `fecha_c`, `fecha_m`) VALUES
+(1, 6, '<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/lCkXLO3IqUo\" frameborder=\"0\" allow=\"autoplay; encrypted-media\" allowfullscreen></iframe>', '0', 'youtube', '2018-09-13', '2018-09-13');
 
 -- --------------------------------------------------------
 
@@ -133,7 +140,14 @@ CREATE TABLE IF NOT EXISTS `comentario_capitulo` (
   `like` int(15) NOT NULL,
   `deslike` int(15) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `comentario_capitulo`
+--
+
+INSERT INTO `comentario_capitulo` (`id`, `id_capitulo`, `id_user`, `comentario`, `like`, `deslike`) VALUES
+(1, 6, 3, 'www', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -167,7 +181,7 @@ CREATE TABLE IF NOT EXISTS `comentario_serie` (
   `like` int(10) NOT NULL,
   `deslike` int(10) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `comentario_serie`
@@ -175,7 +189,8 @@ CREATE TABLE IF NOT EXISTS `comentario_serie` (
 
 INSERT INTO `comentario_serie` (`id`, `id_serie`, `id_user`, `comentario`, `like`, `deslike`) VALUES
 (1, 6, 3, 'coño', 0, 0),
-(2, 3, 3, 'prueba numero 2', 0, 0);
+(2, 3, 3, 'prueba numero 2', 0, 0),
+(3, 5, 3, 'prueba', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -285,7 +300,14 @@ CREATE TABLE IF NOT EXISTS `pelicula_video` (
   `fecha_c` date NOT NULL,
   `fecha_m` varchar(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `pelicula_video`
+--
+
+INSERT INTO `pelicula_video` (`id`, `id_pelicula`, `tipo`, `url_video`, `fecha_c`, `fecha_m`) VALUES
+(1, 1, 0, 'dddd', '2018-09-13', '2018-09-13');
 
 -- --------------------------------------------------------
 
@@ -500,7 +522,7 @@ CREATE TABLE IF NOT EXISTS `user` (
   `fecha_c` date NOT NULL,
   `fecha_m` date NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `user`
@@ -509,7 +531,14 @@ CREATE TABLE IF NOT EXISTS `user` (
 INSERT INTO `user` (`id`, `mail`, `nickname`, `pass`, `nombre`, `apellido`, `nacimiento`, `sexo`, `foto`, `tipo`, `fecha_c`, `fecha_m`) VALUES
 (1, 'sofiasinger19@gmail.com', 'jojo', '12345', 'sofia', 'singer', '1997-08-19', 'f', '', 0, '2018-08-18', '2018-09-09'),
 (3, 'edwin.jme@gmail.com', 'eJme1992', '2664265', 'Edwin Jose', 'Mogollon E.', '1992-07-10', 'M', 'file/img/img2018_09_09_27.jpg', 1, '2018-08-01', '2018-09-10'),
-(4, 'wilber@gmail.com', '', '12345', 'wilber', 'mendoza', '2018-09-21', 'M', '', 1, '2018-09-01', '2018-09-01');
+(4, 'wilber@gmail.com', '', '12345', 'wilber', 'mendoza', '2018-09-21', 'M', '', 1, '2018-09-01', '2018-09-01'),
+(6, 'pububagu@mailinator.net', '', 'Pa$$w0rd!', 'Eius commodi voluptate tenetur', 'Numquam fuga Ut voluptates dol', '1995-09-28', 'F', '', 0, '2018-09-15', '2018-09-15'),
+(7, 'vovy@mailinator.net', '', 'Pa$$w0rd!', 'Aspernatur aspernatur veniam m', 'Nihil aliquam exercitationem e', '1999-12-28', 'M', '', 0, '2018-09-16', '2018-09-16'),
+(8, 'edwin.jme@hotmail.com', '', '2664265', 'Officia nisi dolor pariatur Ex', 'Sed repudiandae eos lorem veni', '2011-08-11', 'M', '', 0, '2018-09-16', '2018-09-16'),
+(9, 'jegam@mailinator.net', '', 'Pa$$w0rd!', 'Ipsum dolores totam aliquid co', 'Ad assumenda repudiandae labor', '1987-01-06', 'F', '', 0, '2018-09-16', '2018-09-16'),
+(10, 'pikoq@mailinator.com', '', 'Pa$$w0rd!', 'Ipsa accusamus ut consequuntur', 'Ab atque occaecat quaerat perf', '1976-01-13', 'M', '', 0, '2018-09-16', '2018-09-16'),
+(11, 'pipo@mailinator.com', '', 'Pa$$w0rd!', 'Expedita autem laborum Suscipi', 'Sit quis deserunt voluptate no', '1997-10-03', 'F', '', 0, '2018-09-16', '2018-09-16'),
+(12, 'qyku@mailinator.net', '', 'Pa$$w0rd!', 'Molestias id ea eum iste esse ', 'Eligendi velit architecto labo', '2004-12-24', 'F', '', 0, '2018-09-16', '2018-09-16');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

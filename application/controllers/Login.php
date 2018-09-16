@@ -107,7 +107,7 @@ class Login extends CI_Controller
                     $response['code']   = "El usuario ha sido creado exitosamente";
                 } else {      
                     $response['status'] = 0;
-                    $response['code']   = "coño el email no se mando";
+                    $response['code']   = "No se mando el carro";
                 }
             } else {
                 $response['status'] = 0;
