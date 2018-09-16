@@ -19,7 +19,7 @@
          <nav class="navbar navbar-expand-sm fixed-top">
             <div class="container-fluid">
               <div class="row" id="row-header">
-                <div class="col-md-2">
+                <div class="col-2">
                <a href="#">
                <?php  
 
@@ -34,18 +34,20 @@
                <a class="nav-link" href="<?=base_url();?>"><img src="<?=base_url().$var;?>"></a>
                </a>
              </div>
-             <div class="col-md-7">
+             <div class="col-7">
                  <div id="buscar" class="ocultar">
                   <form class="form-inline" action="/action_page.php" id="buscar">
-                     <input class="form-control input-buscar" type="text" placeholder="Buscar">
+                     <div style="margin: auto;">
+                     <input style="margin-right:-5px;" class="form-control input-buscar" type="text" placeholder="Buscar">
                      <button class="btn btn-buscar" type="submit"><i class="fas fa-search"></i></button>
+                   </div>
                   </form>
                </div>
                <button  id="boton-menu" class="btn" type="button" onclick="ocultar()"/>
                <i class="fas fa-bars" style="color:#000;"></i>
                </button>
              </div>
-             <div class="col-md-3">
+             <div class="col-3">
                <div  id="mi-menu" class="float-right">
                   <div class="registrar-div">
                     <a href="#" class="login-b navbar-text">LOGIN</a>

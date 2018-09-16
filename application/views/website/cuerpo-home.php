@@ -73,7 +73,7 @@
                 </div>
             </div>
                 <?php foreach ($series as $key){?>
-                <div class="col-lg-3 series">
+                <div class="col-md-3 series">
                     <div class="card" id='destacadas'>
                         <a class="hovere" href="<?php echo base_url();?>home/detalle_series/<?=$key->id?>" data-toggle="tooltip" title="<?=$key->nombre;?>"> <img src="<?=base_url().$key->imagen2;?>" class="img-fluid imgsm"></a>
                         <span class="spanhovertag">
@@ -126,7 +126,7 @@
                 </div>
             </div>
                 <?php foreach ($Temporadar as $key){?>
-                <div class="col-lg-3 series">
+                <div class="col-md-3 series">
                     <div class="card" id='temporadas_recientes'>
                         <a href="<?php echo base_url();?>home/detalle_series/<?=$key->id_serie?>" data-toggle="tooltip" title="<?=$key->nombre;?>"> <img src="<?=base_url().$key->imagen2;?>" class="img-fluid imgsm"></a>
                         <span class="spanhovertag">
