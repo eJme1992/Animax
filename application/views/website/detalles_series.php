@@ -176,6 +176,10 @@
                      <button class="btn btn-comentar " type="submit">Comentar</button> 
                   </form>
                </div>
+             <?php }else{ ?>
+             <div class="col-md-9 comment-box">
+                  Debe iniciar sección para poder comentar 
+               </div>
              <?php } ?>
             </div>
             </div>
