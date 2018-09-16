@@ -156,7 +156,7 @@
                </div>
                <?php }else{ ?>
              <div class="col-md-9 comment-box">
-                  Debe iniciar sección para poder comentar 
+                  <p>Debe iniciar sección para poder comentar </p>
                </div>
              <?php } ?>
             </div>
