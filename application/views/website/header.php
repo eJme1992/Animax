@@ -39,7 +39,7 @@
                  <div id="buscar" class="ocultar">
                   <form class="form-inline" action="/action_page.php" id="buscar">
                      <div style="margin: auto;">
-                     <input style="margin-right:-5px;" class="form-control input-buscar" type="text" placeholder="Buscar">
+                     <input style="margin-right:-5px;" class="form-control input-buscar" type="text" >
                      <button class="btn btn-buscar" type="submit"><i class="fas fa-search"></i></button>
                    </div>
                   </form>
@@ -53,7 +53,7 @@
                   <div class="registrar-div">
                     <?php if (isset($user->id)==false) { ?>                  
                     <a  href="<?=base_url();?>login" class="login-b navbar-text">LOGIN</a>
-                    <a  href='<?=base_url();?>login/registrar' class="navbar-text registrarbtn">REGISTRARSE</a> 
+                    <a  href='<?=base_url();?>login/registrar' class="navbar-text registrarbtn"><b>REGISTRARSE</b></a> 
                      <?php  }else{ ?>
                     <a  href="<?=base_url();?>login" class="navbar-text registrarbtn"><?php echo $user->nombre." ".$user->apellido;?></a>
                      <?php   } ?> 

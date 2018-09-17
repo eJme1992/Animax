@@ -37,7 +37,7 @@
                      <div id="buscar" class="ocultar">
                         <form class="form-inline" action="/action_page.php" id="buscar">
                            <div style="margin: auto;">
-                              <input style="margin-right:-5px;" class="form-control input-buscar" type="text" placeholder="Buscar">
+                              <input style="margin-right:-5px;" class="form-control input-buscar" type="text">
                               <button class="btn btn-buscar" type="submit"><i class="fas fa-search"></i></button>
                            </div>
                         </form>

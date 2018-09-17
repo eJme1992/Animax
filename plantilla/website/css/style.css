@@ -89,14 +89,23 @@ background-color: transparent;
  footer{
      background-color:#2F343A;
 }
+footer .fa-chevron-circle-right{ 
+    color:#fd4c5d;
+}
+footer p{
+    color:#fff;
+}
+
  #tope .titulo-fo{
-     color:#fff;
+     color:#fd4c5d;
      margin-bottom: 1em;
      padding-top: 0.5em;
      font-size: 1.5em;
 }
+}
+}
  #tope .sub-fo{
-     color: #868588;
+     color: #fff;
      text-align: justify;
      font-weight: bold;
 }
@@ -109,7 +118,7 @@ background-color: transparent;
      font-size:2.5vmin;
 }
  .contact li a {
-     color:#868588;
+     color:#fff;
 }
  .pie-pagina{
      background-color: #21262A !important;
