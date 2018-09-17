@@ -27,7 +27,7 @@
  }
  .scroll-bar{
     overflow-y: scroll;
-    height:200px;
+    height:100%;
  }
  .white-text{color:#fff;}
  .red-titles{color:#FD4C5D; font-weight: bold; margin-bottom: 0.5em; width: 100%;}
@@ -90,4 +90,5 @@ margin-bottom: 1.5em;
 .img-server{ width: 100%; max-height: 400px; }
 .server-ground{background-color: #18181E;}
 .nav-tabs{border-bottom: none;}
-.nom-cap{font-size: 1.5em; padding-bottom: 0.5em;}
+.nom-cap{font-size: 1.5em; width: 100%;}
+.nom-cap a {color: #fff;}

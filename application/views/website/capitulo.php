@@ -19,7 +19,7 @@
      </div>
          <div class="col-md-4 no-padding ">
             <div class="cabecera-cap col-12">
-               <h3><?=$capitulo->nombre;?></h3>
+               <h3 class="nom-cap"><?=$capitulo->nombre;?></h3>
                <p class="capi-dur"> <p class="red-titles">Duracion del capitulo: <span class="white-text"><?=$capitulo->duracion;?></span></p>
                <p class="red-titles">Fecha de Estreno del capitulo: <span class="white-text"><?=$capitulo->fecha_estreno;?></span></p>
             </div>
@@ -37,10 +37,7 @@
                      <ul class="list-videos">
                      <li><p class="red-titles">Temporada numero: <span class="white-text"><?=$key->temporada;?></span></p> <?php } ?></li>
                      <li><a href="<?php echo base_url();?>home/capitulo/<?=$key->id?>"><?=$key->nombre;?>  <?php } ?></a></li>
-                     <li><a href="#">Prueba</a></li>
-                     <li><a href="#">Prueba</a></li>
-                     <li><a href="#">Prueba</a></li>
-                     <li><a href="#">Prueba</a></li>
+                     
                   </ul>
                      
                            Cap.<?=$key->numero;?>/Tem.<?=$key->temporada;?> 
@@ -69,7 +66,7 @@
 
                </div>
                <div class="col-md-4 footer-cap no-padding">
-                  <h3 class="nom-cap" ><?=$capitulo->nombre_serie;?><i class="fas fa-angle-double-up" style="color:#fff;"></i></h3>
+                  <h3 class="nom-cap navbar-text" ><a href="#"><?=$capitulo->nombre_serie;?><i class="fas fa-angle-double-up" style="color:#fff;"></i></a></h3>
                </div>
             </div>
          </div>
