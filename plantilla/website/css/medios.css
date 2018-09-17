@@ -16,7 +16,6 @@
  }
 .f-video .ytp-cued-thumbnail-overlay-image{ margin-right: auto!important; margin-left: auto !important; }
  .cabecera-cap{
-    box-shadow:  0 6px 6px 0 rgba(0,0,0,0.6); 
     background-color: #18181E;
     color:#fff;
     padding-left: 8px;
@@ -30,6 +29,8 @@
     overflow-y: scroll;
     height:200px;
  }
+ .white-text{color:#fff;}
+ .red-titles{color:#FD4C5D; font-weight: bold; margin-bottom: 0.5em; width: 100%;}
  .list-videos{
     list-style: none;
  }
@@ -54,7 +55,6 @@
 }
 .footer-cap{
     background-color: #18181E;
-    height: 8vmin;
     padding-right: 10px;
     margin-bottom: 0;
     
@@ -90,3 +90,4 @@ margin-bottom: 1.5em;
 .img-server{ width: 100%; max-height: 400px; }
 .server-ground{background-color: #18181E;}
 .nav-tabs{border-bottom: none;}
+.nom-cap{font-size: 1.5em; padding-bottom: 0.5em;}

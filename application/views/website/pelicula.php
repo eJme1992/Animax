@@ -5,7 +5,7 @@
             <div class="tab-content">
           <div class="tab-pane container active no-padding" id="server">
             <div class="f-video">
-              <img src="<?=base_url()?>file/img/img2018_09_10_42.jpg" class="img-fluid img-server"/>
+              <iframe width="560" height="315" src="https://www.youtube.com/embed/OA7NnDIn1c0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
                 </div>
           </div>
         <div class="tab-pane container fade no-padding" id="server1">
@@ -32,9 +32,9 @@
      </div>
          <div class="col-md-4 no-padding">
             <div class="cabecera-cap">
-               <h3><?=$capitulo->nombre;?></h3>
-               <p class="capi-dur"> Duracion del capitulo: <?=$capitulo->duracion;?></p>
-               <p>Fecha de Estreno del capitulo: <?=$capitulo->fecha_estreno;?></p>
+               <h3 class="nom-cap">Nombre del capitulo</h3>
+               <p class="capi-dur"> Duracion del capitulo: </p>
+               <p>Fecha de Estreno del capitulo: </p>
             </div>
             <div class="scroll-bar">
                <ul class="list-videos">
@@ -73,7 +73,7 @@
 
                </div>
                <div class="col-md-4 footer-cap no-padding">
-                  <h3 class="nom-cap" ><?=$capitulo->nombre_capitulo;?><i class="fas fa-angle-double-up" style="color:#fff;"></i></h3>
+                  <h3 class="nom-cap" >nom<i class="fas fa-angle-double-up" style="color:#fff;"></i></h3>
                </div>
             </div>
          </div>
@@ -142,7 +142,7 @@
                <div class="col-md-9 comment-box">
                   <form id="comments">
                      <div class="form-group">
-                        <label for="comment">Comment:</label>
+                        <label for="comment">Comentarios:</label>
                         <textarea class="form-control"  rows="5" name="comentario" id="comentario"></textarea>
                         <input type="hidden" name="id_capitulo" name="id_capitulo" value="<?=$capitulo->id?>">
                         <input type="hidden" name="id_user" id="id_user" value="<?=$user->id?>">
@@ -184,3 +184,7 @@
       </div>
    </div>
 </section>
+<script>
+ var i = document.querySelector("iframe"); 
+          i.setAttribute("class", "mx-auto d-block");
+</script>

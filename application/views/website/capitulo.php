@@ -20,8 +20,8 @@
          <div class="col-md-4 no-padding ">
             <div class="cabecera-cap col-12">
                <h3><?=$capitulo->nombre;?></h3>
-               <p class="capi-dur"> Duracion del capitulo: <?=$capitulo->duracion;?></p>
-               <p>Fecha de Estreno del capitulo: <?=$capitulo->fecha_estreno;?></p>
+               <p class="capi-dur"> <p class="red-titles">Duracion del capitulo: <span class="white-text"><?=$capitulo->duracion;?></span></p>
+               <p class="red-titles">Fecha de Estreno del capitulo: <span class="white-text"><?=$capitulo->fecha_estreno;?></span></p>
             </div>
             <div class="scroll-bar  col-md-12" style="width:100%;">
                 
@@ -34,26 +34,21 @@
                   <?php $cond=0; 
                   foreach ($capituloss as $key) {
                      if($cond!=$key->temporada){ $cond=$key->temporada; ?>
-                     <div class="alert alert-success col-12" id="temporada<?=$key->temporada;?>">
-                     <b>Temporada numero <?=$key->temporada;?></b>
-                     </div>
-                    <?php } ?>
-                     <div class="col-md-12" style="background-color:#f2f2f2;color:#000;">
-                      
-                           <div class="col-6">
-                           <a href="<?php echo base_url();?>home/capitulo/<?=$key->id?>"> 
+                     <ul class="list-videos">
+                     <li><p class="red-titles">Temporada numero: <span class="white-text"><?=$key->temporada;?></span></p> <?php } ?></li>
+                     <li><a href="<?php echo base_url();?>home/capitulo/<?=$key->id?>"><?=$key->nombre;?>  <?php } ?></a></li>
+                     <li><a href="#">Prueba</a></li>
+                     <li><a href="#">Prueba</a></li>
+                     <li><a href="#">Prueba</a></li>
+                     <li><a href="#">Prueba</a></li>
+                  </ul>
+                     
                            Cap.<?=$key->numero;?>/Tem.<?=$key->temporada;?> 
                            </a>
-                           </div> 
-                           <div class="col-6">
                              <a href="<?php echo base_url();?>home/capitulo/<?=$key->id?>"> 
                             <?=$key->nombre;?>   
-                            </a>
-                           </div>
-                        
-                               
-                     </div>  
-                  <?php } ?>
+                    
+                 
                </div>
                         
                      
