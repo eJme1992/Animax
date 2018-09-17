@@ -11,8 +11,9 @@
  }
  .f-video{
     background-color: #101010;
-    height:400px;
+    height:315px;
  }
+.f-video .ytp-cued-thumbnail-overlay-image{ margin-right: auto!important; margin-left: auto !important; }
  .cabecera-cap{
     box-shadow:  0 6px 6px 0 rgba(0,0,0,0.6); 
     background-color: #18181E;
@@ -26,7 +27,7 @@
  }
  .scroll-bar{
     overflow-y: scroll;
-    height:300px;
+    height:200px;
  }
  .list-videos{
     list-style: none;
