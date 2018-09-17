@@ -23,7 +23,7 @@
                <p class="capi-dur"> Duracion del capitulo: <?=$capitulo->duracion;?></p>
                <p>Fecha de Estreno del capitulo: <?=$capitulo->fecha_estreno;?></p>
             </div>
-            <div class="scroll-bar  col-md-12" style="width:90%;">
+            <div class="scroll-bar  col-md-12" style="width:100%;">
                 
                     
                      <div class="row text-center col-12" style="width:90%; color:#ff6414;margin-bottom:20px;">
@@ -139,7 +139,7 @@
             
                   <form id="comments">
                      <div class="form-group">
-                        <label for="comment">Comment:</label>
+                        <label for="comment">Comentar:</label>
                         <textarea class="form-control"  rows="5" name="comentario" id="comentario"></textarea>
                         <input type="hidden" name="id_capitulo" name="id_capitulo" value="<?=$capitulo->id?>">
                         <input type="hidden" name="id_user" id="id_user" value="<?=$user->id?>">
