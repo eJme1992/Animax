@@ -112,7 +112,7 @@ footer p{
 }
  #tope .contact{
      list-style: none;
-     padding-left: 0;
+     padding-left:0 !important;
 }
  .contact li{
      margin-bottom: 0.5em;

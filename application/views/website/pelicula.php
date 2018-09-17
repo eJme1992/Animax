@@ -32,9 +32,9 @@
      </div>
          <div class="col-md-4 no-padding">
             <div class="cabecera-cap">
-               <h3 class="nom-cap">Nombre del capitulo</h3>
-               <p class="capi-dur"> Duracion del capitulo: </p>
-               <p>Fecha de Estreno del capitulo: </p>
+               <h3 class="nom-cap ">Nombre del capitulo</h3>
+               <p class="red-titles"> Duracion del capitulo:<span class="white-text"></span> </p>
+               <p class="red-titles">Fecha de Estreno del capitulo: <span class="white-text"></span> </p>
             </div>
             <div class="scroll-bar">
                <ul class="list-videos">
@@ -73,7 +73,7 @@
 
                </div>
                <div class="col-md-4 footer-cap no-padding">
-                  <h3 class="nom-cap" >nom<i class="fas fa-angle-double-up" style="color:#fff;"></i></h3>
+                  <h3 class="nom-cap navbar-text" ><a href="#">nom<i class="fas fa-angle-double-up" style="color:#fff;"></i></a></h3>
                </div>
             </div>
          </div>
