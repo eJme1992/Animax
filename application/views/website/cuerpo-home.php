@@ -45,7 +45,7 @@
                 <div class="row">
                     <?php foreach ($capitulo as $key){?>
                     <div class="col-md-4" id="cap">
-                        <div class="card">
+                        <div class="">
                             <a href="<?php echo base_url();?>home/capitulo/<?=$key->id?>" data-toggle="tooltip" title="<?=$key->name;?> <?=$key->temporada;?>-<?=$key->numero;?>"> <img src="<?=base_url().$key->imagen2;?>" class="img-fluid imgssm"></a>
                             <span class="spanhovertag">
                      <b>Temp:</b><?=$key->temporada;?>-<b>Cap:</b><?=$key->numero;?> <i class="far fa-clock"></i>
@@ -74,7 +74,7 @@
             </div>
                 <?php foreach ($series as $key){?>
                 <div class="col-md-3 series">
-                    <div class="card" id='destacadas'>
+                    <div class="" id='destacadas'>
                         <a class="hovere" href="<?php echo base_url();?>home/detalle_series/<?=$key->id?>" data-toggle="tooltip" title="<?=$key->nombre;?>"> <img src="<?=base_url().$key->imagen2;?>" class="img-fluid imgsm"></a>
                         <span class="spanhovertag">
                   DESTACA <i class="fas fa-star"></i>
@@ -99,7 +99,7 @@
             </div>
                <?php foreach ($capitulo as $key){?>
                     <div class="col-md-3 series" id="cap">
-                        <div class="card">
+                        <div class="">
                             <a href="<?php echo base_url();?>home/capitulo/<?=$key->id?>" data-toggle="tooltip" title="<?=$key->name;?> <?=$key->temporada;?>-<?=$key->numero;?>"> <img src="<?=base_url().$key->imagen2;?>" class="img-fluid imgsm"></a>
                             <span class="spanhovertag">
                      <b>Temp:</b><?=$key->temporada;?>-<b>Cap:</b><?=$key->numero;?> <i class="far fa-clock"></i>
@@ -127,7 +127,7 @@
             </div>
                 <?php foreach ($Temporadar as $key){?>
                 <div class="col-md-3 series">
-                    <div class="card" id='temporadas_recientes'>
+                    <div class="" id='temporadas_recientes'>
                         <a href="<?php echo base_url();?>home/detalle_series/<?=$key->id_serie?>" data-toggle="tooltip" title="<?=$key->nombre;?>"> <img src="<?=base_url().$key->imagen2;?>" class="img-fluid imgsm"></a>
                         <span class="spanhovertag">
                   ESTRENO <i class="far fa-clock"></i>
@@ -151,7 +151,7 @@
             </div>
                 <?php foreach ($peliculas as $key){?>
                 <div class="col-lg-3 series">
-                    <div class="card" id='pelicula_recientes'>
+                    <div class="" id='pelicula_recientes'>
                         <a href="<?php echo base_url();?>home/detalle_series/<?=$key->id?>" data-toggle="tooltip" title="<?=$key->nombre;?>"> <img src="<?=base_url().$key->imagen;?>" class="img-fluid imglg"></a>
                         <span class="spanhovertag">
                   ESTRENO <i class="far fa-clock"></i>
