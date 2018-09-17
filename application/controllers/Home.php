@@ -87,6 +87,21 @@ class Home extends CI_Controller
         $this->load->view('website/footer');
     }
 
+     public
+
+    function noticia($id)
+    {
+        
+        $this->load->model('MNoticia'); // Carga el modelo de categorías
+     
+        $DATOS['noticias'] = $this->MNoticia->listanot('LIMIT 6'); // consulta paginada
+        $consultas = $this->MNoticia->consultar($id);
+        $DATOS['noticia'] = end($consultas);
+        $this->load->view('website/noticia', $DATOS);
+        $this->load->view('website/footer');
+    }
+
+
     public
 
     function mas($tipo = 1, $genero = 'Todas', $desde = '1100-01-01', $hasta = '2090-01-01', $categoria = 'Todas', $orden = '1', $buscar = 'false', $pagina = '1')

@@ -22,7 +22,7 @@
                  <a href="<?php echo base_url();?>home/capitulo/<?=$key->id?>" data-toggle="tooltip" title="<?=$key->name;?> <?=$key->temporada;?>-<?=$key->numero;?>"> <img src="<?=base_url().$key->imagen2;?>" class="img-fluid "/></a>
                </div>
                <div class="col-md-6 img-text">
-                  <a href="<?php echo base_url();?>home/capitulo/<?=$key->id?>" data-toggle="tooltip" title="<?=$key->name;?> <?=$key->temporada;?>-<?=$key->numero;?>"><b><?=$key->name;?> </b>
+                  <a class="link" href="<?php echo base_url();?>home/capitulo/<?=$key->id?>" data-toggle="tooltip" title="<?=$key->name;?> <?=$key->temporada;?>-<?=$key->numero;?>"><b><?=$key->name;?> </b>
                   <br><b>Temp:</b><?=$key->temporada;?>-<b>Cap:</b><?=$key->numero;?> <i class="far fa-clock"></i></a>
                </div>
             <?php } ?> 
@@ -35,7 +35,7 @@
             <?php foreach ($data as $key){?> 
             <div class="col-md-6 series" id='noticias'>
                <div class="noticia">
-                  <a href="<?php echo base_url();?>home/detalle_series/<?=$key->id?>" data-toggle="tooltip" title="<?=$key->titulo;?>"> <img src="<?=base_url().$key->imagen;?>" class="img-fluid imgmd">
+                  <a href="<?php echo base_url();?>home/noticia/<?=$key->id?>" data-toggle="tooltip" title="<?=$key->titulo;?>"> <img src="<?=base_url().$key->imagen;?>" class="img-fluid imgmd">
                  
                   <span class="titular">
                   <b><?=$key->titulo;?></b><br>

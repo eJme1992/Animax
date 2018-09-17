@@ -1,5 +1,3 @@
-
-
 <section id="capitulo-detalle">
    <div class="container capitulo">
       <div class="row">
@@ -9,8 +7,8 @@
            
           
   				<div class="tab-pane container <?php if($i==0) {echo "active";}else{echo 'fade';}?> no-padding" id="server<?=$i;?>">
-  					<div class="f-video">
-  			<?=$key->url_video;?>
+  					<div class="f-video mx-auto d-block">
+  						<?=$key->url_video;?>
             </div>
   				</div>
   			  <?php  $i=$i+1;  }  ?>
@@ -22,15 +20,20 @@
                <h3><?=$capitulo->nombre;?></h3>
                <p class="capi-dur"> Duracion del capitulo: <?=$capitulo->duracion;?></p>
                <p>Fecha de Estreno del capitulo: <?=$capitulo->fecha_estreno;?></p>
-            </div>
-            <div class="scroll-bar  col-md-12" style="width:90%;">
+            </div>.
+            <div class="scroll-bar  col-12" style="width:90%;">
                 
                     
                      <div class="row text-center col-12" style="width:90%; color:#ff6414;margin-bottom:20px;">
-                          
+                           <div class="col-6">
+                            <b>#Capitulo / #Temporada</b> 
+                           </div> 
+                           <div class="col-6">
+                            <b> Nombre </b>
+                           </div>
                                
                      </div>  
-                  <div class="col-md-12">  
+                  <div class="col-12">  
                   <?php $cond=0; 
                   foreach ($capituloss as $key) {
                      if($cond!=$key->temporada){ $cond=$key->temporada; ?>
@@ -66,7 +69,7 @@
                <div class="col-md-8 footer-fv no-padding server-ground">
                   <ul class="nav nav-tabs nav-capitulo" role="tablist">
                     <?php $i=0; foreach ($video as $key) { ?>
-                     <li class="nav-item"><a href="#server<?=$i;?>"  data-toggle="pill"  class="nav-link"><i class="fas fa-arrow-circle-right">Servidor I</i></a></li>
+                     <li class="nav-item"><a href="#server<?=$i;?>" style="color:#fff;"  data-toggle="pill"  class="nav-link"><i class="fas fa-arrow-circle-right" style="color:#fff;">Servidor I</i></a></li>
                     <?php  $i=$i+1;  }  ?>
                      
                   </ul>
@@ -107,7 +110,7 @@
                   
             <div class="row alert alert-warning" style="margin:10px;">
               <div class="col-2">
-                  <?php if($key->foto==''){ ?>
+                  <?php if($user->foto==''){ ?>
                   <img src="<?=base_url()?>file/img/user/default.png" class="rounded-circle img-fluid"/>
                   <?php }else{ ?>
                   <img src="<?=base_url().$key->foto;?>" class="rounded-circle img-fluid"/>
@@ -130,13 +133,11 @@
                   <img src="<?=base_url().$user->foto;?>" class="rounded-circle img-fluid"/>
                   <?php } ?>
                   <?php }else{ ?>
-                  <img src="<?=base_url();?>file/img/user/default.png" class="rounded-circle img-fluid"/>
+                  <img src="<?=base_url().$user->foto;?>" class="rounded-circle img-fluid"/>
                   <?php } ?>
                </div>
-               
-                   <?php if(isset($user->id)){ ?>  
+                
                <div class="col-md-9 comment-box">
-            
                   <form id="comments">
                      <div class="form-group">
                         <label for="comment">Comment:</label>
@@ -149,11 +150,6 @@
                      <button class="btn btn-comentar " type="submit">Comentar</button> 
                   </form>
                </div>
-               <?php }else{ ?>
-             <div class="col-md-9 comment-box">
-                  <p>Debe iniciar sección para poder comentar </p>
-               </div>
-             <?php } ?>
             </div>
             </div>
             <!-- <div class="col-md-6">
@@ -229,9 +225,4 @@
           });
          
          });//fin ready
-
-       
-        var i = document.querySelector("iframe"); 
-          i.setAttribute("class", "mx-auto d-block");
-
       </script>
