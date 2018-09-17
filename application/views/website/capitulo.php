@@ -232,6 +232,6 @@
 
        
         var i = document.querySelector("iframe"); 
-          i.setAttribute("class", "mx-auto, d-block");
+          i.setAttribute("class", "mx-auto d-block");
 
       </script>
