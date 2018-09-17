@@ -144,7 +144,7 @@ background-color: transparent;
 }
 /* ############### FOTER CSS ############## */
 /*################HEADER CSS ############## */
-#boton-menu{display:none;}
+.menu-bar{display:none;}
 .font-s{display:none;}
 .fixed-top {background-color: #000 !important; }
 #row-header{width:100%;}
@@ -153,12 +153,6 @@ background-color: transparent;
   color:#fff;
   width:2.5em;
  font-weight: bold;
-}
-.login-b:hover{
-  background-color: rgb(255, 255, 255, 0.5);
-  color:#fff;
-  text-decoration: none;
-  font-weight: bold;
 }
 .btn-regi{
   background-color: #FD4C5D;
@@ -185,6 +179,7 @@ background-color: transparent;
      width: 46px;
      height: 32px;
  }
+<<<<<<< HEAD
  .ocultar{
     margin-top: 5px;
  }
@@ -193,3 +188,16 @@ background-color: transparent;
     margin-left: 20px;
     color: #fd4c5d;
  }
+
+/*Responsive area*/
+.mostrar{display: block !important;}
+.bus-in{display: none;}
+@media (max-width:900px ){
+    .ocultar{display: none;}
+    .menu-bar{display: block;}
+    .no-padding{padding-right: 0;}
+    .responsive{display: block;}
+    #desktop{display: none;}
+    .bus-in{display: block;}
+
+}

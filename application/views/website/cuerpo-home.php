@@ -181,6 +181,7 @@
 
 <div class="row">
 <?php foreach ($noticias as $key){?>
+    <a class="link row" href="<?php echo base_url();?>home/noticia/<?=$key->id?>" data-toggle="tooltip" title="<?=$key->titulo;?>">
             <div class="col-12 titulares">
                 <?=$key->titulo;?>
             </div>
@@ -190,6 +191,7 @@
                <div class="col-md-6" style="max-height:140px;overflow:hidden;">
                   <p  class="padding"><?=$key->descripcion_corta;?> </p>
                </div>
+           </a>
                 <?php } ?>
 </div>
 
