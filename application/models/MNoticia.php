@@ -10,6 +10,18 @@ class MNoticia extends CI_Model
 		return $query->result();
 	}
 
+		 function listanot($LIMIT=false,$WHERE='',$ORDEN='order by id DESC')
+	{    
+		if ($LIMIT!=false){$var="$LIMIT";}else{$var="";}
+		if ($WHERE == ''){$WHERE="";}else{$WHERE="where $WHERE";}
+		$sql ="SELECT * FROM `noticias` $WHERE $ORDEN $var";
+		  $query = $this->db->query($sql);
+		        if ($var!='') {
+		   	    $query=$query->result();
+		        }
+		        return $query;
+	}
+
 	
 
 	function consultar($id)

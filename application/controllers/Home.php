@@ -34,11 +34,13 @@ class Home extends CI_Controller
         $this->load->model('MCapitulo'); // Carga el modelo de categorías
         $this->load->model('MCarrusel'); // Carga el modelo de categorías
         $this->load->model('MPelicula'); // Carga el modelo de categorías
+        $this->load->model('MNoticia'); // Carga el modelo de categorías
         $DATOS['carrusel'] = $this->MCarrusel->lista(6);
         $DATOS['capitulo'] = $this->MCapitulo->listacap('LIMIT 6');
         $DATOS['series'] = $this->MSerie->listades('LIMIT 4');
         $DATOS['Temporadar'] = $this->MTemporada->recientes('LIMIT 10');
         $DATOS['peliculas'] = $this->MPelicula->recientes('LIMIT 10');
+        $DATOS['noticias'] = $this->MNoticia->listanot('LIMIT 30'); 
         $this->load->view('website/cuerpo-home', $DATOS);
         $this->load->view('website/footer');
     }
@@ -70,15 +72,18 @@ class Home extends CI_Controller
 
     public
 
-    function mas_destacados($pagina = 1)
+    function noticias($pagina = 1)
     {
         
-        $this->load->model('MSerie'); // Carga el modelo de categorías
-        $paginas = $this->MFunctionsg->pagina($this->MSerie->listades() , $pagina); //pg
-        $DATOS['data'] = $this->MSerie->listades($paginas['limite']); // consulta paginada
+        $this->load->model('MNoticia'); // Carga el modelo de categorías
+        $this->load->model('MCapitulo'); // medidas de seguridad
+        $paginas = $this->MFunctionsg->pagina($this->MNoticia->listanot() , $pagina); //pg
+        $DATOS['data'] = $this->MNoticia->listanot($paginas['limite']); // consulta paginada
         $DATOS['pagina'] = $paginas['pagina']; // valores para los botones
         $DATOS['total_paginas'] = $paginas['total_paginas']; // valores para los s
-        $this->load->view('website/mas', $DATOS);
+        $DATOS['url'] = base_url() . "Home/noticias";
+        $DATOS['capitulos'] = $this->MCapitulo->listacap('LIMIT 6');
+        $this->load->view('website/noticias', $DATOS);
         $this->load->view('website/footer');
     }
 

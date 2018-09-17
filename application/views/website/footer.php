@@ -45,16 +45,7 @@
                
             </div>
             </div>
-            </div>
-
-            <div class="pie-pagina">
-                <div class="container">
-                    <div class="row">
-                    <p style="padding-bottom:1px;"><i class="fas fa-users fa-2x" style="padding-top: 5px; padding-left: 5px;"></i>The team</p>
-         
-        </div>
-        </div>
-            </div>          
+            </div>         
         </section>
     </footer>
 

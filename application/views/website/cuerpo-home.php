@@ -172,7 +172,7 @@
                 <div class="col-10 bordert" id="NOTICIAS">
                     <h4><i class="fas fa-newspaper"></i> Noticias</h4> </div>
                 <div class="text-right col-2">
-                    <a href="<?php base_url();?>home/mas">
+                    <a href="<?php base_url();?>home/noticias">
                         <button class="btn mas" style=""><b><i class="fas fa-plus"></i></b>
                         </button>
                     </a>
@@ -180,15 +180,15 @@
             </div>
 
 <div class="row">
-<?php foreach ($series as $key){?>
+<?php foreach ($noticias as $key){?>
             <div class="col-12 titulares">
-                Espacio para las noticias traidas de la web
+                <?=$key->titulo;?>
             </div>
-               <div class="col-md-6  imgssm" style="background: url('<?=base_url();?>plantilla/website/img/jp.jpg');background-repeat: no-repeat;background-size: cover;">
+               <div class="col-md-6  imgssm" style="background: url('<?=base_url().$key->imagen;?>');background-repeat: no-repeat;background-size: cover;">
                   
                </div>
-               <div class="col-md-6">
-                  <p  class="padding">Espacio para las noticias traidas de la web</p>
+               <div class="col-md-6" style="max-height:140px;overflow:hidden;">
+                  <p  class="padding"><?=$key->descripcion_corta;?> </p>
                </div>
                 <?php } ?>
 </div>
