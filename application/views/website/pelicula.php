@@ -30,19 +30,20 @@
         </div>
          </div>
      </div>
-         <div class="col-md-4 no-padding">
+         <div class="col-md-4 no-padding" style="background-color: #18181E;">
             <div class="cabecera-cap">
                <div class="row">
-                 <div class="col-md-4 card-body">
+                 <div class="col-md-4 card-body" >
                   <img src="<?=base_url();?>file/img/img2018_09_04_50.png"class="img-fluid" />
                </div>
                <div class="col-md-8 card-body">
-                <p class="red-titles">Nombre  la peli: <br><span class="white-text">Prueba</span></p>
-                 <p class="red-titles">Fecha de estreno de la peli:<br> <span class="white-text"></span></p>
+                <p class="white-text">Prueba</p>
                </div>
             </div>
-            <div class="scroll-bar">
-               <p class="red-titles">Sinopsis: <span class="white-text"></span></p>
+            <div >
+               <p class="red-titles">Sinopsis: <span class="white-text"> Lorem ipsum dolor sit amet consectetur adipiscing elit nisl est aliquet, velit libero cursus primis donec fames ultricies massa litora, risus turpis fusce laoreet curae dis sem eget suspendisse. s</span></p>
+               <p class="red-titles">Duracion:<br> <span class="white-text"></span></p>
+               <p class="red-titles">Fecha de estreno de la peli:<br> <span class="white-text"></span></p>
             </div>
          </div>
        </div>
