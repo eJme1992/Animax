@@ -11,7 +11,6 @@
  }
  .f-video{
     background-color: #101010;
-    height:315px;
     padding-bottom: 2em;
     padding-top: 2em;
  }
@@ -29,7 +28,7 @@
  }
  .scroll-bar{
     overflow-y: scroll;
-    height:150px;
+    height:200px;
  }
  .list-videos{
     list-style: none;
