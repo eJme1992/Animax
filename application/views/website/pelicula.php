@@ -32,32 +32,20 @@
      </div>
          <div class="col-md-4 no-padding">
             <div class="cabecera-cap">
-               <h3 class="nom-cap ">Nombre del capitulo</h3>
-               <p class="red-titles"> Duracion del capitulo:<span class="white-text"></span> </p>
-               <p class="red-titles">Fecha de Estreno del capitulo: <span class="white-text"></span> </p>
+               <div class="row">
+                 <div class="col-md-4 card-body">
+                  <img src="<?=base_url();?>file/img/img2018_09_04_50.png"class="img-fluid" />
+               </div>
+               <div class="col-md-8 card-body">
+                <p class="red-titles">Nombre  la peli: <br><span class="white-text">Prueba</span></p>
+                 <p class="red-titles">Fecha de estreno de la peli:<br> <span class="white-text"></span></p>
+               </div>
             </div>
             <div class="scroll-bar">
-               <ul class="list-videos">
-                  <li><a href="#">Video</a></li>
-                  <li><a href="#">Video</a></li>
-                  <li><a href="#">Video</a></li>
-                  <li><a href="#">Video</a></li>
-                  <li><a href="#">Video</a></li>
-                  <li><a href="#">Video</a></li>
-                  <li><a href="#">Video</a></li>
-                  <li><a href="#">Video</a></li>
-                  <li><a href="#">Video</a></li>
-                  <li><a href="#">Video</a></li>
-                  <li><a href="#">Video</a></li>
-                  <li><a href="#">Video</a></li>
-                  <li><a href="#">Video</a></li>
-                  <li><a href="#">Video</a></li>
-                  <li><a href="#">Video</a></li>
-                  <li><a href="#">Video</a></li>
-                  <li><a href="#">Video</a></li>
-               </ul>
+               <p class="red-titles">Sinopsis: <span class="white-text"></span></p>
             </div>
          </div>
+       </div>
          <div class="col-md-12">
             <div class="row">
                <div class="col-md-8 footer-fv no-padding server-ground">
