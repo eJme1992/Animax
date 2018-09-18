@@ -70,7 +70,7 @@
         <div class="container-fluid">
           <div class="row row-responsive">
               <div class="col-4">
-              <button  class=" btn float-left"><i class="fas fa-search"></i></button>
+              <button type="submit" class=" btn float-left"  data-toggle="modal" data-target="#myModal"><i class="fas fa-search"></i></button>
               </div>
               <div class="col-4">
               <a href="<?=base_url();?>"><img src="<?=base_url().$var;?>" class="img-fluid mx-auto d-block navbar-text" /></a>
@@ -82,6 +82,32 @@
           </div>
         </nav>
       </header>
+      <!--Modal -->
+      <div class="modal modal-sm fade" id="myModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Buscalo todo</h5>
+      </div>
+      <!-- Modal body -->
+      <div class="modal-body no-padding">
+         <form class="form-inline" action="/action_page.php" id="buscar">
+                     <div style="margin:5px;">
+                     <input style="width: 216px; display: inline-block;" class="form-control input-buscar" type="text" >
+                     <button class="btn btn-buscar" style="display: inline-block;" type="submit"><i class="fas fa-search"></i></button>
+                   </div>
+                  </form>
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
       <section style="padding-top: 4em;">
       <script type="text/javascript">
          //Funcion para ocultar y mostrar el menu
