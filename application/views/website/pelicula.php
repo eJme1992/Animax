@@ -30,34 +30,23 @@
         </div>
          </div>
      </div>
-         <div class="col-md-4 no-padding">
+         <div class="col-md-4 no-padding" style="background-color: #18181E;">
             <div class="cabecera-cap">
-               <h3 class="nom-cap">Nombre del capitulo</h3>
-               <p class="capi-dur"> Duracion del capitulo: </p>
-               <p>Fecha de Estreno del capitulo: </p>
+               <div class="row">
+                 <div class="col-md-4 card-body" >
+                  <img src="<?=base_url();?>file/img/img2018_09_04_50.png"class="img-fluid" />
+               </div>
+               <div class="col-md-8 card-body">
+                <p class="white-text">Prueba</p>
+               </div>
             </div>
-            <div class="scroll-bar">
-               <ul class="list-videos">
-                  <li><a href="#">Video</a></li>
-                  <li><a href="#">Video</a></li>
-                  <li><a href="#">Video</a></li>
-                  <li><a href="#">Video</a></li>
-                  <li><a href="#">Video</a></li>
-                  <li><a href="#">Video</a></li>
-                  <li><a href="#">Video</a></li>
-                  <li><a href="#">Video</a></li>
-                  <li><a href="#">Video</a></li>
-                  <li><a href="#">Video</a></li>
-                  <li><a href="#">Video</a></li>
-                  <li><a href="#">Video</a></li>
-                  <li><a href="#">Video</a></li>
-                  <li><a href="#">Video</a></li>
-                  <li><a href="#">Video</a></li>
-                  <li><a href="#">Video</a></li>
-                  <li><a href="#">Video</a></li>
-               </ul>
+            <div >
+               <p class="red-titles">Sinopsis:<br> <span class="white-text"> Lorem ipsum dolor sit amet consectetur adipiscing elit nisl est aliquet, velit libero cursus primis donec fames ultricies massa litora, risus turpis fusce laoreet curae dis sem eget suspendisse. s</span></p>
+               <p class="red-titles">Duracion:<br> <span class="white-text"> Lorem ipsum dolor sit amet consectetur adipiscing</span></p>
+               <p class="red-titles">Fecha de estreno de la peli:<br> <span class="white-text"> Lorem ipsum dolor sit amet consectetur adipiscing</span></p>
             </div>
          </div>
+       </div>
          <div class="col-md-12">
             <div class="row">
                <div class="col-md-8 footer-fv no-padding server-ground">
@@ -73,7 +62,7 @@
 
                </div>
                <div class="col-md-4 footer-cap no-padding">
-                  <h3 class="nom-cap" >nom<i class="fas fa-angle-double-up" style="color:#fff;"></i></h3>
+                  <h3 class="nom-cap navbar-text" ><a href="#">Lorem ipsum<i class="fas fa-angle-double-up" style="color:#fff;"></i></a></h3>
                </div>
             </div>
          </div>

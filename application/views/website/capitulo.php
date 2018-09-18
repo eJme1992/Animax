@@ -30,21 +30,18 @@
                           
                                
                      </div>  
-                  <div class="col-md-12">  
+                  <div class="col-md-12 no-padding">  
                   <?php $cond=0; 
                   foreach ($capituloss as $key) {
                      if($cond!=$key->temporada){ $cond=$key->temporada; ?>
-                     <ul class="list-videos">
+                     <ul class="list-videos" style="padding-left:0; ">
                      <li><p class="red-titles">Temporada numero: <span class="white-text"><?=$key->temporada;?></span></p> <?php } ?></li>
-                     <li><a href="<?php echo base_url();?>home/capitulo/<?=$key->id?>"><?=$key->nombre;?>  <?php } ?></a></li>
-                     
+                     <li><a class="white-text" href="<?php echo base_url();?>home/capitulo/<?=$key->id?>"><?=$key->nombre;?>  <?php } ?><?=$key->duracion;?></a> </li>
+                  
+ 
                   </ul>
                      
-                           Cap.<?=$key->numero;?>/Tem.<?=$key->temporada;?> 
-                           </a>
-                             <a href="<?php echo base_url();?>home/capitulo/<?=$key->id?>"> 
-                            <?=$key->nombre;?>   
-                    
+                                               
                  
                </div>
                         
