@@ -41,9 +41,9 @@
                </div>
             </div>
             <div >
-               <p class="red-titles">Sinopsis: <span class="white-text"> Lorem ipsum dolor sit amet consectetur adipiscing elit nisl est aliquet, velit libero cursus primis donec fames ultricies massa litora, risus turpis fusce laoreet curae dis sem eget suspendisse. s</span></p>
-               <p class="red-titles">Duracion:<br> <span class="white-text"></span></p>
-               <p class="red-titles">Fecha de estreno de la peli:<br> <span class="white-text"></span></p>
+               <p class="red-titles">Sinopsis:<br> <span class="white-text"> Lorem ipsum dolor sit amet consectetur adipiscing elit nisl est aliquet, velit libero cursus primis donec fames ultricies massa litora, risus turpis fusce laoreet curae dis sem eget suspendisse. s</span></p>
+               <p class="red-titles">Duracion:<br> <span class="white-text"> Lorem ipsum dolor sit amet consectetur adipiscing</span></p>
+               <p class="red-titles">Fecha de estreno de la peli:<br> <span class="white-text"> Lorem ipsum dolor sit amet consectetur adipiscing</span></p>
             </div>
          </div>
        </div>
@@ -62,7 +62,7 @@
 
                </div>
                <div class="col-md-4 footer-cap no-padding">
-                  <h3 class="nom-cap navbar-text" ><a href="#">nom<i class="fas fa-angle-double-up" style="color:#fff;"></i></a></h3>
+                  <h3 class="nom-cap navbar-text" ><a href="#">Lorem ipsum<i class="fas fa-angle-double-up" style="color:#fff;"></i></a></h3>
                </div>
             </div>
          </div>
