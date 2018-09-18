@@ -63,6 +63,8 @@ background-color: transparent;
      background-color: rgba(0,0,0,0.7);
      color: #eee;
 }
+.news{
+    padding-right: 0px; margin-left:1.5%;}
 @media (max-width:767px){
         .imgssm{
     height:40vw !important;
@@ -89,7 +91,12 @@ background-color: transparent;
     width: 100%;
 }
 
+.news, .col-md-12{
+    padding-right: 0px !important; 
+    margin-left:0 !important;}
+
 }
+
 
 
 /* ############### FOOTER CSS ############## */
@@ -210,7 +217,7 @@ footer p{
     color: #fd4c5d;
  }
  #responsivenav{display: none;}
-@media (max-width: 480px){
+@media (max-width: 780px){
     #responsivenav{display: block;}
     #nav-principal{display: none;}
 }

@@ -3,9 +3,9 @@
 </header>
 <nav id="barra-secundaria">
    <div class="text-center">
-      <a href="#SERIES_DESTACAS"><i class="fas fa-star"></i></i> Series destacadas</a>
+      <a href="#SERIES_DESTACAS"><i class="far fa-star"></i> Series destacadas</a>
       <a href="#TEMPORADAS_RECIENTES"><i class="fab fa-cloudscale"></i> Temporadas </a>
-      <a href="#PELICULAS_RECIENTES"><i class="fas fa-video"></i> Películas recientes</a>
+      <a href="#PELICULAS_RECIENTES"><i class="fas fa-film"></i> Películas recientes</a>
       <a href="#NOTICIAS"><i class="fas fa-newspaper"></i> Noticias</a>
    </div>
 </nav>
@@ -67,7 +67,7 @@
              if($tipo==1){ $tipo='<i class="fas fa-fighter-jet"></i> Series';}
              if($tipo==2){ $tipo='<i class="fab fa-cloudscale"></i> Temporadas';}
              if($tipo==3){ $tipo='<i class="fas fa-tv"></i> Capítulos';}
-             if($tipo==4){ $tipo='<i class="fas fa-video"></i> Películas';}
+             if($tipo==4){ $tipo='<i class="fas fa-film"></i></i> Películas';}
              if($tipo==5){ $tipo='<i class="fas fa-star"></i> Series destacadas';} 
              ?>
             <div class="col-lg-12" id="Resultados">

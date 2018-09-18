@@ -2,11 +2,27 @@
     <a class="#"><img style="width:100%;" class="portada-principal" src="<?=base_url();?>plantilla/website/img/1534667129353.jpg"></a>
 </header>
 <nav id="barra-secundaria">
+        <div class="navbar-header row" id="responsivenav" style="width: 100%">
+
+               <div class="col-6 offset-md-6">
+                <button class="btn" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2">
+     <i class="fas fa-align-justify"></i>
+    </button>
+  </div>
+  </div>
+   <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2" style="background-color:#fff;">
     <div class="text-center">
-        <a href="#SERIES_DESTACAS"><i class="fas fa-star"></i> SERIES DESTACADAS</a>
+        <a href="#SERIES_DESTACAS"><i class="far fa-star"></i> SERIES</a>
         <a href="#TEMPORADAS_RECIENTES"><i class="fab fa-cloudscale"></i> TEMPORADAS  </a>
-        <a href="#PELICULAS_RECIENTES"><i class="fas fa-video"></i> PELICULAS RECIENTES</a>
-        <a href="#NOTICIAS"><i class="fas fa-newspaper"></i> NOTICIAS</a>
+        <a href="#PELICULAS_RECIENTES"><i class="fas fa-film"></i> PELICULAS</a>
+        <a href="#NOTICIAS"><i class="far fa-newspaper"></i> NOTICIAS</a>
+    </div>
+</div>
+<div class="text-center" id="nav-principal">
+        <a href="#SERIES_DESTACAS"><i class="far fa-star"></i> SERIES</a>
+        <a href="#TEMPORADAS_RECIENTES"><i class="fab fa-cloudscale"></i> TEMPORADAS  </a>
+        <a href="#PELICULAS_RECIENTES"><i class="fas fa-film"></i> PELICULAS</a>
+        <a href="#NOTICIAS"><i class="far fa-newspaper"></i> NOTICIAS</a>
     </div>
 </nav>
 <section id="home">
@@ -61,13 +77,13 @@
             <!--Diva para la barra lateral 3-->
             <div class="col-lg-9 row">
                 
-<div class="row titulos col-md-12">
+           <div class="row titulos col-md-12">
                 <div class="col-md-10 bordert" id="SERIES_DESTACAS">
-                    <h4><i class="fas fa-star"></i> Series destacadas</h4>
+                    <h5><i class="far fa-star"></i> SERIES DESTACADAS</h5>
                 </div>
                 <div class="text-right col-md-2">
                     <a href="<?php base_url();?>home/mas?tipo=2&pagina=1&categoria=Todas&genero=Todas&desde=1900&hasta=2099">
-                        <button class="btn mas" style=""><b><i class="fas fa-plus"></i></b>
+                        <button class="btn mas btn-dark" style=""><b><i class="fas fa-plus"></i></b>
                         </button>
                     </a>
                 </div>
@@ -77,7 +93,7 @@
                     <div class="" id='destacadas'>
                         <a class="hovere" href="<?php echo base_url();?>home/detalle_series/<?=$key->id?>" data-toggle="tooltip" title="<?=$key->nombre;?>"> <img src="<?=base_url().$key->imagen2;?>" class="img-fluid imgsm"></a>
                         <span class="spanhovertag">
-                  DESTACA <i class="fas fa-star"></i>
+                  DESTACA <i class="far fa-star"></i>
                   </span>
                        <span class="spanhovertilte">
                   <?=$key->nombre;?> 
@@ -88,11 +104,11 @@
 
 <div class="row titulos col-md-12">
                 <div class="col-md-10 bordert" id="SERIES_DESTACAS">
-                    <h4><i class="fas fa-tv"></i> Ultimos capitulos</h4>
+                    <h5><i class="fas fa-tv"></i> ULTIMOS CAPITULOS</h5>
                 </div>
                 <div class="text-right col-md-2">
                     <a href="<?php base_url();?>home/mas?tipo=3&pagina=1&categoria=Todas&genero=Todas&desde=1900&hasta=2099">
-                        <button class="btn mas" style=""><b><i class="fas fa-plus"></i></b>
+                        <button class="btn mas btn-dark" style=""><b><i class="fas fa-plus"></i></b>
                         </button>
                     </a>
                 </div>
@@ -111,15 +127,15 @@
                     </div>
                     <?php } ?>
                     <div class="col-12">
-                    <img style="width:100%;" class="portada-principal" src="<?=base_url();?>plantilla/website/img/1534667129353.jpg">
+                    <img style="width:100%;" class="pd" src="<?=base_url();?>plantilla/website/img/1534667129353.jpg">
                     </div>
                 <div class="row titulos col-md-12">
                 <div class="col-md-10 bordert" id="TEMPORADAS_RECIENTES">
-                    <h4><i class="fab fa-cloudscale"></i> Temporadas Recientes</h4>
+                    <h5><i class="fab fa-cloudscale"></i> TEMPORADAS RECIENTES</h5>
                 </div>
                 <div class="text-right col-md-2">
                     <a href="<?php base_url();?>home/mas?tipo=2&pagina=1&categoria=Todas&genero=Todas&desde=1900&hasta=2099">
-                        <button class="btn mas" style=""><b><i class="fas fa-plus"></i></b>
+                        <button class="btn mas btn-dark" style=""><b><i class="fas fa-plus"></i></b>
                         </button>
                     </a>
 
@@ -140,11 +156,11 @@
                 <?php } ?>
 <div class="row titulos col-md-12">
                 <div class="col-md-10 bordert" id="PELICULAS_RECIENTES">
-                    <h4><i class="fas fa-video"></i> Películas Recientes</h4>
+                    <h5><i class="fas fa-film"></i> PELÍCULAS RECIENTES</h5>
                 </div>
                 <div class="text-right col-md-2">
                     <a href="<?php base_url();?>home/mas?tipo=4&pagina=1&categoria=Todas&genero=Todas&desde=1900&hasta=2099">
-                        <button class="btn mas" style=""><b><i class="fas fa-plus"></i></b>
+                        <button class="btn mas btn-dark" style=""><b><i class="fas fa-plus"></i></b>
                         </button>
                     </a>
                 </div>
@@ -163,34 +179,36 @@
                 </div>
                 <?php } ?>
                 <div class="col-12">
-                 <img style="width:100%;" class="portada-principal" src="<?=base_url();?>plantilla/website/img/1534667129353.jpg">
+                 <img style="width:100%;" class="pd" src="<?=base_url();?>plantilla/website/img/1534667129353.jpg">
                     </div>
 
             </div>
-            <div class="col-lg-3 news  panel" style="padding-right: 0px; margin-left:1.5%;">
-            <div class="row titulos col-md-12">
-                <div class="col-10 bordert" id="NOTICIAS">
-                    <h4><i class="fas fa-newspaper"></i> Noticias</h4> </div>
-                <div class="text-right col-2">
+            <div class="col-lg-3 news panel">
+            <div class="row titulos ">
+                <div class="col-8 bordert" id="NOTICIAS">
+                    <h5><i class="far fa-newspaper"></i> NOTICIAS</h5> </div>
+                <div class=" col-2">
                     <a href="<?php base_url();?>home/noticias">
-                        <button class="btn mas" style=""><b><i class="fas fa-plus"></i></b>
+                        <button class="btn mas btn-dark" style=""><b><i class="fas fa-plus"></i></b>
                         </button>
                     </a>
                 </div>
             </div>
 
-<div class="row">
+<div class="row  card-body">
 <?php foreach ($noticias as $key){?>
     <a class="link row" href="<?php echo base_url();?>home/noticia/<?=$key->id?>" data-toggle="tooltip" title="<?=$key->titulo;?>">
-            <div class="col-12 titulares">
-                <?=$key->titulo;?>
-            </div>
-               <div class="col-md-6  imgssm" style="background: url('<?=base_url().$key->imagen;?>');background-repeat: no-repeat;background-size: cover;">
+          
+               <div class="col-md-12  imgssm" style="background: url('<?=base_url().$key->imagen;?>');background-repeat: no-repeat;background-size: cover;">
                   
                </div>
-               <div class="col-md-6" style="max-height:140px;overflow:hidden;">
+                 <div class="col-12 titulares">
+                <?=$key->titulo;?>
+            </div>
+
+             <!--  <div class="col-md-12" style="max-height:140px;overflow:hidden;">
                   <p  class="padding"><?=$key->descripcion_corta;?> </p>
-               </div>
+               </div> -->
            </a>
                 <?php } ?>
 </div>

@@ -21,7 +21,7 @@
             <div class="container-fluid">
               <div class="row" id="row-header">
                 <div class="col-3">
-               <a href="#">
+               
                <?php  
 
               if($datos->logo==''){ 
@@ -33,7 +33,7 @@
                ?>   
             
                <a class="nav-link" href="<?=base_url();?>"><img src="<?=base_url().$var;?>"></a>
-               </a>
+            
              </div>
              <div class="col-6">
                  <div id="buscar" class="ocultar">
@@ -67,54 +67,54 @@
       </header>
       <header id="responsivenav">
         <nav class="nav navbar fixed-top">
-        <div class="container-fluid">
-          <div class="row row-responsive">
-              <div class="col-4">
-              <button type="submit" class=" btn float-left"  data-toggle="modal" data-target="#myModal"><i class="fas fa-search"></i></button>
-              </div>
-              <div class="col-4">
-              <a href="<?=base_url();?>"><img src="<?=base_url().$var;?>" class="img-fluid mx-auto d-block navbar-text" /></a>
-              </div>
-              <div class="col-4">
-               <div class="dropdown dropleft"> <a href="#" class="float-right navbar-text dropdown-toggle" data-toggle="dropdown"><i class="fas fa-user fa-2x"></i></a>
-                  <div class="dropdown-menu">
-    <a class="dropdown-item" href="#">Link 1</a>
-    <a class="dropdown-item" href="#">Link 2</a>
-    <a class="dropdown-item" href="#">Link 3</a>
-  </div>
-</div>
+    <div class="navbar-header row" style="width: 100%">
+<div class="col-6">
+         <?php  
 
+              if($datos->logo==''){ 
+               $var = 'plantilla/website/img/logo.png';
+               }
+               else{ 
+               $var = $datos->logo; 
+               }
+               ?>   
+            
+               <a class="nav-link" href="<?=base_url();?>"><img src="<?=base_url().$var;?>"></a>
+             </div>
+               <div class="col-6 " style="text-align: right;">
+                <button class="btn" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" style="margin-top:2px;">
+     <i class="fas fa-align-justify"></i>
+    </button>
+  </div>
+  </div>
+
+  <!-- Collect the nav links, forms, and other content for toggling -->
+  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+   <div class="col-12">
+               <div  id="mi-menu" class="float-right">
+                  <div class="registrar-div">
+                    <?php if (isset($user->id)==false) { ?>                  
+                    <a  href="<?=base_url();?>login" class="login-b navbar-text">LOGIN</a>
+                    <a  href='<?=base_url();?>login/registrar' class="navbar-text registrarbtn"><b>REGISTRARSE</b></a> 
+                     <?php  }else{ ?>
+                    <a  href="<?=base_url();?>login" class="navbar-text registrarbtn"><?php echo $user->nombre." ".$user->apellido;?></a>
+                     <?php   } ?> 
+                  </div>
                </div>
-              </div>
-            </div>
-          </div>
+             </div>
+             <br><hr>
+    <div class="col-12">
+         <form class="form-inline" action="/action_page.php" id="buscar">
+                     <div style="margin: auto;">
+                     <input style="margin-right:-5px;display:inline;" class="form-control input-buscar" type="text" >
+                     <button  style="margin-top: -7.5px" class="btn btn-buscar" type="submit"><i class="fas fa-search"></i></button>
+                   </div>
+                  </form>
+    </div>
         </nav>
       </header>
       <!--Modal -->
-      <div class="modal modal-sm fade" id="myModal">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">Buscalo todo</h5>
-      </div>
-      <!-- Modal body -->
-      <div class="modal-body no-padding">
-         <form class="form-inline" action="/action_page.php" id="buscar">
-                     <div style="margin:5px;">
-                     <input style="width: 216px; display: inline-block;" class="form-control input-buscar" type="text" >
-                     <button class="btn btn-buscar" style="display: inline-block;" type="submit"><i class="fas fa-search"></i></button>
-                   </div>
-                  </form>
-      </div>
 
-      <!-- Modal footer -->
-      <div class="modal-footer">
-        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-      </div>
-
-    </div>
-  </div>
-</div>
 <!--DropDown-->
 
       <section style="padding-top: 4em;">

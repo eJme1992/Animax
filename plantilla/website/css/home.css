@@ -1,24 +1,45 @@
+.pd {
+    margin-top: 20px;
+    display: block !important;
+}
 #home .mas{
-     color:#000;
-     background-color:#fff;
+     margin-top:10px;
+     color:#fff;
+     font-size:6px;
      text-align:right;
      border-radius:14%;
-     height:35px;
+     height:20px;
+     padding-top:5px;
+     width: 20px;
+padding-left: 5px;
+}
+#home .mas i{
+    
+     font-size:10px;
+    
 }
  .titulos {
+    padding-top: 0.5em;
      margin-top:15px;
-     margin-bottom:15px;
+     margin-bottom:0px;
      font-size: 18px;
      font-weight: bold;
      color: #122;
 }
+.bordert{
+    padding-top: 0.5em;
+}
+.titulos h5 {
+margin-bottom: 0rem;
+    }
  .fa-tv {
      color: #fd4c5d;
 }
+
  .fa-star{
      color: #fd4c5d;
 }
- .fa-video{
+.fa-film{
      color: #fd4c5d;
 }
  .fa-cloudscale{
@@ -59,8 +80,8 @@ background: #fff;
 }
 
 .titulares{
-     margin-bottom: 6px;
-     margin-top: 16px;
+     margin-bottom: 26px;
+     margin-top: 6px;
      color:#000;
      font-weight: 700;
      font-size: 13px;
@@ -99,4 +120,10 @@ background: #fff;
 
 #detalle-seriexdxd .capitulos {
     height: 400px;
+}
+
+#NOTICIAS {
+padding-right: 0px !important; 
+padding-left: 0px !important;
+
 }

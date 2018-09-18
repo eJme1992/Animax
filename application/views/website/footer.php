@@ -4,11 +4,11 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-4">
-                    <h3 class="titulo-fo">Acerca de nosotros</h3>
+                    <h3 class="titulo-fo">ACERCA DE NOSOTROS</h3>
                     <p class="sub-fo"><?=$datos->descripcion;?></p>
                 </div>
                 <div class="col-md-4">
-                     <h3 class="titulo-fo">Contactanos</h3>
+                     <h3 class="titulo-fo">CONTACTANOS</h3>
                      <ul class="contact">
                          <li><a href="#"><i class="fas fa-phone"></i> 
                             <?=$datos->telefono;?></a></li>
@@ -19,7 +19,7 @@
                      </ul>
                 </div>
                 <div class="col-md-4">
-                     <h3 class="titulo-fo">Links</h3>
+                     <h3 class="titulo-fo">OTRAS OPCIONES</h3>
                         <ul class="contact">
                          <li><a href="<?=base_url();?>series"><i class="fas fa-chevron-circle-right"></i>Home </a></li>
                          <li><a href="<?=base_url();?>login/index"><i class="fas fa-chevron-circle-right"></i>Iniciar sesion</a></li>

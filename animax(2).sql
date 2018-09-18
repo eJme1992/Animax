@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3306
--- Tiempo de generación: 16-09-2018 a las 21:47:26
+-- Tiempo de generación: 18-09-2018 a las 04:15:01
 -- Versión del servidor: 5.7.21
 -- Versión de PHP: 5.6.35
 
@@ -69,14 +69,15 @@ CREATE TABLE IF NOT EXISTS `capitulo_video` (
   `fecha_c` date NOT NULL,
   `fecha_m` date NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `capitulo_video`
 --
 
 INSERT INTO `capitulo_video` (`id`, `id_capitulo`, `url_video`, `tipo`, `provedor`, `fecha_c`, `fecha_m`) VALUES
-(1, 6, '<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/lCkXLO3IqUo\" frameborder=\"0\" allow=\"autoplay; encrypted-media\" allowfullscreen></iframe>', '0', 'youtube', '2018-09-13', '2018-09-13');
+(1, 6, '<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/lCkXLO3IqUo\" frameborder=\"0\" allow=\"autoplay; encrypted-media\" allowfullscreen></iframe>', '0', 'youtube', '2018-09-13', '2018-09-13'),
+(2, 7, 'Quas rerum quos exercitationem quia ipsum pariatur Doloremque sint consequatur consectetur omnis quibusdam rerum corporis iure in fugiat quas dicta', '1', 'Sequi nobis culpa ipsam et quod placeat aperiam pariatur Dolor reiciendis excepteur et voluptas ut perspiciatis unde id dolores', '2018-09-18', '2018-09-18');
 
 -- --------------------------------------------------------
 
@@ -195,6 +196,48 @@ INSERT INTO `comentario_serie` (`id`, `id_serie`, `id_user`, `comentario`, `like
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `favoritos_capitulos`
+--
+
+DROP TABLE IF EXISTS `favoritos_capitulos`;
+CREATE TABLE IF NOT EXISTS `favoritos_capitulos` (
+  `id` int(20) NOT NULL AUTO_INCREMENT,
+  `id_capitulo` int(15) NOT NULL,
+  `id_user` int(15) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `favoritos_peliculas`
+--
+
+DROP TABLE IF EXISTS `favoritos_peliculas`;
+CREATE TABLE IF NOT EXISTS `favoritos_peliculas` (
+  `id` int(20) NOT NULL AUTO_INCREMENT,
+  `id_pelicula` int(15) NOT NULL,
+  `id_user` int(15) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `favoritos_serie`
+--
+
+DROP TABLE IF EXISTS `favoritos_serie`;
+CREATE TABLE IF NOT EXISTS `favoritos_serie` (
+  `id` int(20) NOT NULL AUTO_INCREMENT,
+  `id_serie` int(15) NOT NULL,
+  `id_user` int(15) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `generos`
 --
 
@@ -233,7 +276,17 @@ CREATE TABLE IF NOT EXISTS `noticias` (
   `fecha_r` date NOT NULL,
   `fecha_m` date NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `noticias`
+--
+
+INSERT INTO `noticias` (`id`, `titulo`, `descripcion_corta`, `contenido`, `tag`, `imagen`, `portada`, `fecha_r`, `fecha_m`) VALUES
+(1, 'Sed vel nulla illum ', 'Voluptatibus assumenda non enim in consequatur dolores et suscipit facilis labore', '<p>mmmm</p>', 'Veniam est esse quas dolor ut iste', 'file/img/img2018_09_17_45.jpg', 'file/img/img2018_09_17_45.jpeg', '2018-09-17', '2018-09-17'),
+(2, 'Harum reprehenderit ', 'Minim dolores quia odio et dignissimos ullam amet id quaerat eiusmod quis pariatur Nisi blanditiis id in debitis deserunt', '<p>Minim dolores quia odio et dignissimos ullam amet id quaerat eiusmod quis pariatur Nisi blanditiis id in debitis deserunt Minim dolores quia odio et dignissimos ullam amet id quaerat eiusmod quis pariatur Nisi blanditiis id in debitis deserunt Minim dolores quia odio et dignissimos ullam amet id quaerat eiusmod quis pariatur Nisi blanditiis id in debitis deserunt</p><p>Minim dolores quia odio et dignissimos ullam amet id quaerat eiusmod quis pariatur Nisi blanditiis id in debitis deserun Minim dolores quia odio et dignissimos ullam amet id quaerat eiusmod quis pariatur Nisi blanditiis id in debitis deserunt Minim dolores quia odio et dignissimos ullam amet id quaerat eiusmod quis pariatur Nisi blanditiis id in debitis deserunt v vMinim dolores quia odio et dignissimos ullam amet id quaerat eiusmod quis pariatur Nisi blanditiis id in debitis deserunt Minim dolores quia odio et dignissimos ullam amet id quaerat eiusmod quis pariatur Nisi blanditiis id in debitis deserunt v Minim dolores quia odio et dignissimos ullam amet id quaerat eiusmod quis pariatur Nisi blanditiis id in debitis deserunt v Minim dolores quia odio et dignissimos ullam amet id quaerat eiusmod quis pariatur Nisi blanditiis id in debitis deserunt</p>', 'Dolorum eligendi nostrud asperiores ex ut illo inventore et dolores dolorem duis illum sunt porro', 'file/img/img2018_09_17_37.jpg', 'file/img/img2018_09_17_37.jpg', '2018-09-17', '2018-09-17'),
+(3, 'Aliquip laborum Sit ', 'Aut et sunt expedita enim assumenda error voluptate quia aute molestias possimus fuga Sit fugiat Minim dolores quia odio et dignissimos ullam amet id quaerat eiusmod quis pariatur Nisi blanditiis id i', '<p>Minim dolores quia odio et dignissimos ullam amet id quaerat eiusmod quis pariatur Nisi blanditiis id in debitis deserunt Minim dolores quia odio et dignissimos ullam amet id quaerat eiusmod quis pariatur Nisi blanditiis id in debitis deserunt Minim dolores quia odio et dignissimos ullam amet id quaerat eiusmod quis pariatur Nisi blanditiis id in debitis deserunt Minim dolores quia odio et dignissimos ullam amet id quaerat eiusmod quis pariatur Nisi blanditiis id in debitis deserunt Minim dolores quia odio et dignissimos ullam amet id quaerat eiusmod quis pariatur Nisi blanditiis id in debitis deserunt Minim dolores quia odio et dignissimos ullam amet id quaerat eiusmod quis pariatur Nisi blanditiis id in debitis deserunt Minim dolores quia odio et dignissimos ullam amet id quaerat eiusmod quis pariatur Nisi blanditiis id in debitis deserunt Minim dolores quia odio et dignissimos ullam amet id quaerat eiusmod quis pariatur Nisi blanditiis id in debitis deserunt &nbsp;Minim dolores quia odio et dignissimos ullam amet id quaerat eiusmod quis pariatur Nisi blanditiis id in debitis deserunt&nbsp;</p>', 'Voluptatibus labore ea dolorem rerum cupidatat rem labore dolores perferendis voluptatem assumenda a', 'file/img/img2018_09_17_22.jpg', 'file/img/img2018_09_17_22.jpg', '2018-09-17', '2018-09-17'),
+(4, 'Voluptates ut simili', 'Recusandae Nostrum pariatur Reiciendis nulla ea quis tempore est enim voluptate esse quae', '<p>Recusandae Nostrum pariatur Reiciendis nulla ea quis tempore est enim voluptate esse quae</p>', 'Earum et consequatur quis cumque irure expedita consequat Adipisci architecto', 'file/img/img2018_09_17_25.jpg', 'file/img/img2018_09_17_25.jpg', '2018-09-17', '2018-09-17');
 
 -- --------------------------------------------------------
 
