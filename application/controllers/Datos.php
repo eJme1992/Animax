@@ -67,7 +67,7 @@ class Datos extends CI_Controller
         $icon    = $_FILES['icon'];
         //guardar fotos
         $mensaje   = '';
-        $iconurl = $this->MFunctionsg->archivo($icon, $mensaje, 'icon', 'icon');
+        $iconurl = $this->MFunctionsg->archivo($icon, $mensaje, 'img', 'img');
          
         if ($iconurl != false) {
             
@@ -92,7 +92,7 @@ class Datos extends CI_Controller
         $logo2    = $_FILES['logo2'];
         //guardar fotos
         $mensaje   = '';
-        $logo2url = $this->MFunctionsg->archivo($logo2, $mensaje, 'logo2', 'logo2');
+        $logo2url = $this->MFunctionsg->archivo($logo2, $mensaje, 'img', 'img');
          
         if ($logo2url != false) {
             
@@ -113,11 +113,11 @@ class Datos extends CI_Controller
 
     public function editar_logo()
     {
-        $id        = $this->input->post('id');
-        $logo    = $_FILES['logo'];
+        $id = $this->input->post('id');
+        $logo = $_FILES['logo'];
         //guardar fotos
         $mensaje   = '';
-        $logourl = $this->MFunctionsg->archivo($logo, $mensaje, 'logo', 'logo');
+        $logourl = $this->MFunctionsg->archivo($logo, $mensaje, 'img', 'img');
          
         if ($logourl != false) {
             

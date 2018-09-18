@@ -87,6 +87,7 @@
                               
                               
                               <input type="hidden" name="id" id="id" value="<?=$key->id;?>">
+                              <!-- <input type="hidden" name="id_capitulo" id="id_capitulo" value="<?=$key->id_capitulo;?>"> -->
                               <input type="hidden" name="id<?=$key->id;?>" id="id<?=$key->id;?>" value="<?=$key->id;?>">
                               <input type="hidden" name="id_capitulo<?=$key->id;?>" id="id_capitulo<?=$key->id;?>" value="<?=$key->id_capitulo;?>">
                               <input type="hidden" name="<?=$csrf['name'];?>" value="<?=$csrf['hash'];?>" />
@@ -124,7 +125,7 @@
             </div>
             <!-- /.content -->
          </tr>
-         <?php }  ?>  
+<?php }  ?>    
       </tbody>
    </table>
 </section>
@@ -135,7 +136,7 @@
       <div class="modal-content">
          <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal">&times;</button>
-            <h4 class="modal-title">Nueva Menú</h4>
+            <h4 class="modal-title">Nuevo Video</h4>
          </div>
          <div class="modal-body">
             <form id="nuevo_video" >
@@ -155,10 +156,8 @@
                      <label>Proveedor</label>
                      <input type="text" name="proveedor" id="proveedor" required="" class="form-control"  placeholder="Proveedor">
                   </div>
-                  <?php foreach ($datos as $key): ?>
-                     <input type="hidden" id="id_capitulo<?=$key->id_capitulo?>" name="id_capitulo" value="<?=$key->id_capitulo?>">
+                     <input type="hidden" id="id_capitulo<?=$id?>" name="id_capitulo" value="<?=$id?>">
                      
-                  <?php endforeach ?>
 
                   <div class="col-md-12" id="resultado" style="margin-top:15px;"></div>
                   <input type="hidden" name="<?=$csrf['name'];?>" value="<?=$csrf['hash'];?>" />
@@ -242,7 +241,7 @@ function realizaProceso(id, id_capitulo) {
           var getData = jqXHR.responseJSON; // dejar esta linea
           if(data.status=='ok'){
             $("#resultado").html('<div class="alert alert-success">'+data.code+'</div>');
-            // window.location.href ='<?=base_url();?>panel/capitulo_video';
+            window.location.href ='<?=base_url();?>panel/capitulo_video/<?=$id?>';
           }else{
             $("#resultado").html('<div class="alert alert-danger"><strong>ERROR!</strong>'+data.error+'</div>');
           }

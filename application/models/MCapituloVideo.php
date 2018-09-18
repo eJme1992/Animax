@@ -19,7 +19,7 @@ class MCapituloVideo extends CI_Model {
 		return $query;
 	}
 
-	 function editar($id, $url_video, $tipo, $provedor)
+	 function editar($id,  $url_video, $tipo, $provedor)
 	{    
 		
 		$fecha_m = date("Y-m-d");

@@ -237,6 +237,9 @@ class Panel extends CI_Controller {
 
         $this->load->model('MCapituloVideo'); // Carga el modelo de datos 
         $DATOS['datos'] = $this->MCapituloVideo->lista($id);// Trae datos de la tabla
+        $DATOS['id'] = $id;// Trae datos de la tabla
+        // $DATOS['capitulo'] = $this->MCapitulo->consultar($id);// Trae datos de la tabla
+
 
          $csrf = array(
         'name' => $this->security->get_csrf_token_name(),
