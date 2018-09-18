@@ -22,11 +22,13 @@ class Capitulo extends CI_Controller
        public function editar_capitulo()
     {
         $id = $this->input->post('id');
-        $id_temporada   = $this->input->post('id_temporada');
+        $id_temporada   = $this->input->post('temporada');
         $numero   = $this->input->post('numero');
         $nombre   = $this->input->post('nombre');
-        $duracion = $this->input->post('duracion');       
-        $var = $this->MCapitulo->editar($numero,$nombre,$duracion,$id_temporada,$id);// 
+        $duracion = $this->input->post('duracion');
+        $fecha_estreno = $this->input->post('fecha_estreno');
+
+        $var = $this->MCapitulo->editar_capitulo($numero,$nombre, $fecha_estreno,$duracion,$id_temporada,$id);// 
         if ($var != false) { 
               $response['status'] = 'ok';
               $response['code']   = "Edición hecha correctamente recargue la pagina para actualizar la tabla";

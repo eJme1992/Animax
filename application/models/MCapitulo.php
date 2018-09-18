@@ -46,6 +46,13 @@ class MCapitulo extends CI_Model {
 		return $query;
 	}
 
+	function editar_video($numero,$nombre, $fecha_estreno,$duracion,$id_temporada,$id){
+
+		$fecha_m = date("Y-m-d");
+		$query = $this->db->query("UPDATE `capitulo` Set numero='$numero',nombre = '$nombre', fecha_estreno='$fecha_estreno', duracion = '$duracion',id_temporada = '$id_temporada', fecha_m='$fecha_m' WHERE `Capitulo`.`id`='$id'");
+		return $query;	
+	}
+
 	 function crear($id_temporada,$numero,$nombre,$duracion,$fecha_estreno)
 	{    
 		$query = $this->db->query("SELECT * FROM `capitulo` WHERE numero='$numero' and id_temporada='$id_temporada'");
