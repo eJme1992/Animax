@@ -40,7 +40,7 @@
                      if($cond!=$key->temporada){ $cond=$key->temporada; ?>
                      <ul class="list-videos" style="padding-left:0; ">
                      <li><p class="red-titles">Temporada numero: <span class="white-text"><?=$key->temporada;?></span></p> <?php } ?></li>
-                     <li><a class="white-text" href="<?php echo base_url();?>home/capitulo/<?=$key->id?>"><?=$key->nombre;?>  <?php } ?><?=$key->duracion;?></a> </li>
+                     <li><a class="white-text" href="<?php echo base_url();?>home/capitulo/<?=$key->id?>"><?=$key->nombre;?>  <?php } ?><span class="white-text float-right"><?=$key->duracion;?></span></a> </li>
                   
  
                   </ul>
