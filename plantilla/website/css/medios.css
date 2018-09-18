@@ -27,10 +27,13 @@
  }
  .scroll-bar{
     overflow-y: scroll;
-    height:150px;
+    height:79%;
  }
  .white-text{color:#fff;}
- .red-titles{color:#FD4C5D; font-weight: bold; margin-bottom: 0.8em; width: 100%;}
+ .red-titles{color:#FD4C5D; 
+    font-weight: bold; 
+    margin-bottom: 0.8em; 
+    width: 100%;}
  .list-videos{
     list-style: none;
  }
