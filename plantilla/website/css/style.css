@@ -1,7 +1,3 @@
-#home .row{
-    margin:auto;
-    width: 100%;
-}
 
 a:hover {
     color: #fd4c5d;
@@ -88,6 +84,11 @@ background-color: transparent;
     width: 100%;
     border-radius: 2% 2% 0px 0px;
 }
+#home .row{
+    margin:auto;
+    width: 100%;
+}
+
 }
 
 
@@ -121,7 +122,7 @@ footer p{
 }
  .contact li{
      margin-bottom: 0.5em;
-     font-size:2.5vmin;
+     
 }
  .contact li a {
      color:#fff;

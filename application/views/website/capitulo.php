@@ -19,11 +19,15 @@
      </div>
          <div class="col-md-4 no-padding ">
             <div class="cabecera-cap col-12">
-               <h3 class="nom-cap"><?=$capitulo->nombre;?></h3>
-               <p class="capi-dur"> <p class="red-titles">Duracion del capitulo: <span class="white-text"><?=$capitulo->duracion;?></span></p>
-               <p class="red-titles">Fecha de Estreno del capitulo: <span class="white-text"><?=$capitulo->fecha_estreno;?></span></p>
+               <div class="text-center">
+                <h3 class="nom-cap"><?=$capitulo->nombre;?></h3>
+              </div>
+               <p class="capi-dur"> <p class="red-titles">Duracion del capitulo:<br>
+               <span class="white-text"><?=$capitulo->duracion;?></span></p>
+               <p class="red-titles">Fecha de Estreno del capitulo:<br>
+                <span class="white-text"><?=$capitulo->fecha_estreno;?></span></p>
             </div>
-            <div class="scroll-bar  col-md-12" style="width:100%;">
+            <div class="scroll-bar  col-md-12" style="width:99.6%;">
                 
                     
                      <div class="row text-center col-12" style="width:90%; color:#ff6414;margin-bottom:20px;">
@@ -55,14 +59,14 @@
                <div class="col-md-8 footer-fv no-padding server-ground">
                   <ul class="nav nav-tabs nav-capitulo" role="tablist">
                     <?php $i=0; foreach ($video as $key) { ?>
-                     <li class="nav-item"><a href="#server<?=$i;?>"  data-toggle="pill"  class="nav-link"><i class="fas fa-arrow-circle-right">Servidor I</i></a></li>
+                     <li class="nav-item"><a href="#server<?=$i;?>"  data-toggle="pill"  class="nav-link"><i class="far fa-check-circle"></i> Servidor <?=$i+1;?></i></a></li>
                     <?php  $i=$i+1;  }  ?>
                      
                   </ul>
                   <!--Tabs Panel-->
 
                </div>
-               <div class="col-md-4 footer-cap no-padding">
+               <div class="col-md-4 footer-cap no-padding text-center">
                   <h3 class="nom-cap navbar-text" ><a href="#"><?=$capitulo->nombre_serie;?><i class="fas fa-angle-double-up" style="color:#fff;"></i></a></h3>
                </div>
             </div>

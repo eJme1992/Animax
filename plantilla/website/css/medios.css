@@ -26,14 +26,12 @@
     margin-bottom: 0;
  }
  .scroll-bar{
+    width: 99.5%;
     overflow-y: scroll;
-    height:79%;
+    height:40vh;
  }
  .white-text{color:#fff;}
- .red-titles{color:#FD4C5D; 
-    font-weight: bold; 
-    margin-bottom: 0.8em; 
-    width: 100%;}
+ .red-titles{color:#FD4C5D; font-weight: bold; margin-bottom: 0em; width: 100%;}
  .list-videos{
     list-style: none;
  }
