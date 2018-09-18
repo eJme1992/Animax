@@ -267,27 +267,30 @@
                               <h4 class="modal-title">Editar capitulo</h4>
                            </div>
                            <div class="modal-body">
-                              <form id="editart<?=$key->id;?>" onsubmit="realizaProceso(
+                              <form id="editart<?=$key->id;?>" onsubmit="editar_capitulo(
                                  $('#id<?=$key->id;?>').val() 
                                  );return false; ">
                                  <div class="row">
                                     <div class="col-sm-12">
                                        <label>Numero</label>
-                                       <input type="number" name="numero" id="numero" required="" class="form-control" placeholder="Numero">
+                                       <input type="number" name="numero" id="numero" value="<?=$key->numero?>" required="" class="form-control" placeholder="Numero">
                                        <label>Nombre</label>
-                                       <input type="text" name="nombre" id="nombre" required="" class="form-control" placeholder="Ej: Venganza">
+                                       <input type="text" name="nombre" id="nombre" value="<?=$key->nombre?>" required="" class="form-control" placeholder="Ej: Venganza">
                                        <label>Duración (En minutos)</label>
-                                       <input type="number" name="duracion" id="duracion" required="" class="form-control" >
+                                       <input type="number" name="duracion" value="<?=$key->duracion?>" id="duracion" required="" class="form-control" >
                                        <label>Fecha de estreno</label>
-                                       <input type="date" name="fecha_estreno" id="fecha_estreno" required="" class="form-control" >
+                                 <input type="hidden" id="id<?=$key->id?>" name="id" value="<?=$key->id?>" />
+                                       <input type="date" name="fecha_estreno" value="<?=$key->fecha_estreno?>" id="fecha_estreno" required="" class="form-control" >
                                        <label>Temporada</label>
                                        <select id="temporada" name="temporada" class="form-control" required="">
-                                          <?php foreach ($temporada as $key ) { ?>
-                                          <option value="<?=$key->id;?>"><?=$key->numero; ?></option>
+                                          <?php foreach ($temporada as $k ) { ?>
+                                          <option value="<?=$k->id;?>"><?=$k->numero; ?></option>
                                           <?php  } ?>
                                        </select>
-                                    </div>
                                     <div class="col-md-12" id="resultado3<?=$key->id;?>" style="margin-top:15px;"></div>
+                                    </div>
+                                 <input type="hidden" name="<?=$csrf['name'];?>" value="<?=$csrf['hash'];?>" />
+
                                     <div class="col-sm-12" style="margin-top:20px;">
                                        <button class="btn btn-lg btn-block btn-primary" type="submit">
                                        Editar
@@ -468,6 +471,48 @@
        }
        };
 </script>
+
+<script>  
+   function editar_capitulo($id) {
+       var msj = '1';
+      //validaciones con js
+      
+     if (msj === "1") {
+      var formData = new FormData(jQuery('#editart'+id) [0]);
+      jQuery.ajax({
+        url: '<?=base_url();?>capitulo/editar_capitulo',
+        type: 'POST',
+        contentType: false,
+        processData: false,
+        dataType: 'json',
+        data: formData,
+        beforeSend: function() {
+          $("#resultado3"+id).html('<div class="alert alert-success">Procesando...!</div>');
+        }
+      })
+      .done(function(data, textStatus, jqXHR) {
+         var getData = jqXHR.responseJSON; // dejar esta linea
+        if(data.status=='ok'){
+         $("#resultado3"+id).html('<div class="alert alert-success">'+data.code+'</div>');
+          window.location.href ='<?=base_url();?>panel/viewserie/<?=$serie->id;?>';
+        }else{
+        $("#resultado3"+id).html('<div class="alert alert-danger"><strong>ERROR!</strong>'+data.error+'</div>');
+        }
+      })
+            .fail(function(jqXHR, textStatus, errorThrown) {
+              var getErr = jqXHR.responseText;
+              
+              console.log(getErr);
+      
+            })
+       // Fin de ajax
+       } else {
+           swal("¡Error! ", msj, "error");
+       }
+       };
+</script>
+
+
 <script>  
    function realizaProceso2() {
        var msj = '1';

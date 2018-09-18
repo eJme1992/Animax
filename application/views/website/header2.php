@@ -67,7 +67,6 @@
       </header>
       <header id="responsivenav">
         <nav class="nav navbar fixed-top">
-<<<<<<< HEAD
     <div class="navbar-header row" style="width: 100%">
 <div class="col-6">
          <?php  
@@ -87,22 +86,6 @@
      <i class="fas fa-align-justify"></i>
     </button>
   </div>
-=======
-        <div class="container-fluid">
-          <div class="row row-responsive">
-              <div class="col-4">
-              <a class="float-left navbar-text"  data-toggle="modal" data-target="#myModal"><i class="fas fa-search fa-lg" style="color:#fff;"></i></a>
-              </div>
-              <div class="col-4">
-              <a href="<?=base_url();?>"><img src="<?=base_url().$var;?>" class="img-fluid mx-auto d-block navbar-text" /></a>
-              </div>
-              <div class="col-4">
-               <div class="dropdown dropleft"> <a href="#" class="float-right navbar-text dropdown-toggle" data-toggle="dropdown"><i class="fas fa-user fa-lg"></i></a>
-                  <div class="dropdown-menu">
-    <a class="dropdown-item" href="#">Link 1</a>
-    <a class="dropdown-item" href="#">Link 2</a>
-    <a class="dropdown-item" href="#">Link 3</a>
->>>>>>> 35089cb73b8a8ae4dd0a4fcb6d4dcdcc2be2f5ac
   </div>
 
   <!-- Collect the nav links, forms, and other content for toggling -->
@@ -134,7 +117,7 @@
 
 <!--DropDown-->
 
-      <section >
+      <section style="padding-top: 4em;">
       <script type="text/javascript">
          //Funcion para ocultar y mostrar el menu
          function ocultar(){

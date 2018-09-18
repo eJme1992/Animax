@@ -14,7 +14,7 @@
       <div class="row mg">
          <div class="col-lg-4 row">
            <div class="col-lg-12" id="Resultados">
-               <h2><i class="fas fa-tv"></i> Ultimos capitulos</h2>
+               <h4><i class="fas fa-tv"></i> Ultimos capitulos</h4>
             </div>
      <?php foreach ($capitulos as $key) { ?>
              
@@ -22,15 +22,15 @@
                  <a href="<?php echo base_url();?>home/capitulo/<?=$key->id?>" data-toggle="tooltip" title="<?=$key->name;?> <?=$key->temporada;?>-<?=$key->numero;?>"> <img src="<?=base_url().$key->imagen2;?>" class="img-fluid "/></a>
                </div>
                <div class="col-md-6 img-text">
-                  <a class="link" href="<?php echo base_url();?>home/capitulo/<?=$key->id?>" data-toggle="tooltip" title="<?=$key->name;?> <?=$key->temporada;?>-<?=$key->numero;?>"><b><?=$key->name;?> </b>
-                  <br><b>Temp:</b><?=$key->temporada;?>-<b>Cap:</b><?=$key->numero;?> <i class="far fa-clock"></i></a>
+                  <a class="link" href="<?php echo base_url();?>home/capitulo/<?=$key->id?>" data-toggle="tooltip" title="<?=$key->name;?> <?=$key->temporada;?>-<?=$key->numero;?>"></a><b><?=$key->name;?> </b>
+                  <br><b>Temp:</b><?=$key->temporada;?>-<b>Cap:</b><?=$key->numero;?> <i class="far fa-clock"></i>
                </div>
             <?php } ?> 
          </div>
          <!--Diva para la barra lateral 3-->
         <div class="col-md-8 row">
             <div class="col-lg-12" id="Resultados">
-               <h2><i class="fas fa-newspaper"></i> Noticias</h2>
+               <h4><i class="fas fa-newspaper"></i> Noticias</h4>
             </div>
             <?php foreach ($data as $key){?> 
             <div class="col-md-6 series" id='noticias'>
