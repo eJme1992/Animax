@@ -70,13 +70,13 @@
         <div class="container-fluid">
           <div class="row row-responsive">
               <div class="col-4">
-              <button type="submit" class=" btn float-left"  data-toggle="modal" data-target="#myModal"><i class="fas fa-search"></i></button>
+              <a class="float-left navbar-text"  data-toggle="modal" data-target="#myModal"><i class="fas fa-search fa-lg" style="color:#fff;"></i></a>
               </div>
               <div class="col-4">
               <a href="<?=base_url();?>"><img src="<?=base_url().$var;?>" class="img-fluid mx-auto d-block navbar-text" /></a>
               </div>
               <div class="col-4">
-               <div class="dropdown dropleft"> <a href="#" class="float-right navbar-text dropdown-toggle" data-toggle="dropdown"><i class="fas fa-user fa-2x"></i></a>
+               <div class="dropdown dropleft"> <a href="#" class="float-right navbar-text dropdown-toggle" data-toggle="dropdown"><i class="fas fa-user fa-lg"></i></a>
                   <div class="dropdown-menu">
     <a class="dropdown-item" href="#">Link 1</a>
     <a class="dropdown-item" href="#">Link 2</a>
@@ -117,7 +117,7 @@
 </div>
 <!--DropDown-->
 
-      <section style="padding-top: 4em;">
+      <section >
       <script type="text/javascript">
          //Funcion para ocultar y mostrar el menu
          function ocultar(){
