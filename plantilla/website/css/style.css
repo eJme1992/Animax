@@ -209,3 +209,9 @@ footer p{
     margin-left: 20px;
     color: #fd4c5d;
  }
+ #responsivenav{display: none;}
+@media (max-width: 480px){
+    #responsivenav{display: block;}
+    #nav-principal{display: none;}
+}
+.row-responsive{margin: 0; width: 100%;}

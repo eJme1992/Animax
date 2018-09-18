@@ -16,7 +16,7 @@
       <title>Animax</title>
    </head>
    <body>
-      <header>
+      <header id="nav-principal">
          <nav class="navbar navbar-expand-sm fixed-top">
             <div class="container-fluid">
               <div class="row" id="row-header">
@@ -64,6 +64,23 @@
                </div>         
             </div>
          </nav> 
+      </header>
+      <header id="responsivenav">
+        <nav class="nav navbar fixed-top">
+        <div class="container-fluid">
+          <div class="row row-responsive">
+              <div class="col-4">
+              <button  class=" btn float-left"><i class="fas fa-search"></i></button>
+              </div>
+              <div class="col-4">
+              <a href="<?=base_url();?>"><img src="<?=base_url().$var;?>" class="img-fluid mx-auto d-block navbar-text" /></a>
+              </div>
+              <div class="col-4">
+                <a href="#" class="float-right navbar-text"><i class="fas fa-user fa-2x"></i></a>
+              </div>
+            </div>
+          </div>
+        </nav>
       </header>
       <section style="padding-top: 4em;">
       <script type="text/javascript">
