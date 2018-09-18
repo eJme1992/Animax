@@ -76,7 +76,15 @@
               <a href="<?=base_url();?>"><img src="<?=base_url().$var;?>" class="img-fluid mx-auto d-block navbar-text" /></a>
               </div>
               <div class="col-4">
-                <a href="#" class="float-right navbar-text"><i class="fas fa-user fa-2x"></i></a>
+               <div class="dropdown dropleft"> <a href="#" class="float-right navbar-text dropdown-toggle" data-toggle="dropdown"><i class="fas fa-user fa-2x"></i></a>
+                  <div class="dropdown-menu">
+    <a class="dropdown-item" href="#">Link 1</a>
+    <a class="dropdown-item" href="#">Link 2</a>
+    <a class="dropdown-item" href="#">Link 3</a>
+  </div>
+</div>
+
+               </div>
               </div>
             </div>
           </div>
@@ -107,6 +115,7 @@
     </div>
   </div>
 </div>
+<!--DropDown-->
 
       <section style="padding-top: 4em;">
       <script type="text/javascript">
