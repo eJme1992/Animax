@@ -2,6 +2,9 @@
     margin-top: 20px;
     display: block !important;
 }
+.carrusel{
+    height:20vw; width:100%; margin-bottom:5px;
+}
 #home .mas{
      margin-top:10px;
      color:#fff;
@@ -76,6 +79,9 @@ background: #fff;
         background-color: #fff;
         margin-bottom: 1em;
         z-index: 0;
+    }
+    .carousel-inner{
+        display: none !important;
     }
 } 
 @media (min-width:401px) and (max-width:530px){

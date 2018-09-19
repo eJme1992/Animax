@@ -43,7 +43,7 @@
                         <?php $i=0; foreach ($carrusel as $key) { ?>
                         <div class="carousel-item <?php if($i==0) echo 'active';?>">
                             <a href="#">
-                     <img src="<?=base_url().$key->imagen;?>" alt="Los Angeles" style="height:20vw; width:100%; margin-bottom:5px;">
+                     <img class="carrusel" src="<?=base_url().$key->imagen;?>" alt="Los Angeles">
                      </a>
                         </div>
                         <?php $i++; } ?>
