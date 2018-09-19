@@ -1,6 +1,6 @@
 
 
-<section id="capitulo-detalle">
+<section id="capitulo-detalle" style="margin-top: 4em;">
    <div class="container capitulo">
       <div class="row">
          <div class="col-md-8 no-padding">
@@ -9,23 +9,49 @@
            
           
   				<div class="tab-pane container <?php if($i==0) {echo "active";}else{echo 'fade';}?> no-padding" id="server<?=$i;?>">
-  					<div class="f-video">
+  					
   			<?=$key->url_video;?>
-            </div>
+            
   				</div>
   			  <?php  $i=$i+1;  }  ?>
   			
          </div>
+          <div class="col-md-12">
+            <div class="row">
+               <div class="col-md-8 footer-fv no-padding server-ground">
+                  <ul class="nav nav-tabs nav-capitulo" role="tablist">
+                    <?php $i=0; foreach ($video as $key) { ?>
+                     <li class="nav-item"><a href="#server<?=$i;?>"  data-toggle="pill"  class="nav-link"><i class="fas fa-share"></i> Servidor <?=$i+1;?></i></a></li>
+                    <?php  $i=$i+1;  }  ?> 
+                  </ul>
+                  <!--Tabs Panel-->
+               </div>
+               <div class="col-md-4 footer-cap no-padding text-center">
+                  <!--reaccion-->
+                  <div class="reaccion">
+                     <ul class="nav nav-bar fav">
+                      <li  class="nav-item"><a class="nav-link" id="favorite" title="Favorito" data-toggle="tooltip" href="#"><i class="fas fa-heart" style="color:#FF0000;"></i></a></li>
+                      <li  class="nav-item"><span class="navbar-text"><a href="#"  title="Calificacion" data-toggle="tooltip"><i class="fas fa-star" ></i></a></span>
+                        <span class="navbar-text"><a href="#" title="Calificacion" data-toggle="tooltip"><i class="fas fa-star" id="star"></i></a></span>
+                        <span class="navbar-text"><a href="#"title="Calificacion" data-toggle="tooltip"><i class="fas fa-star" ></i></a></span>
+                        <span class="navbar-text"><a href="#" title="Calificacion" data-toggle="tooltip"><i class="fas fa-star"></i></a></span>
+                        <span class="navbar-text"><a href="#" title="Calificacion" data-toggle="tooltip"><i class="fas fa-star" ></i></a></span> 
+                     </li>    
+                     </ul>
+                  </div>
+
+               </div>
+            </div>
      </div>
+   </div>
          <div class="col-md-4 no-padding ">
-            <div class="cabecera-cap col-12">
-               <div class="text-center">
+            <div class="cabecera-cap col-12 no-padding">
+               <div class="text-center card-body">
                 <h3 class="nom-cap"><?=$capitulo->nombre;?></h3>
               </div>
-               <p class="capi-dur"> <p class="red-titles">Duracion del capitulo:<br>
-               <span class="white-text"><?=$capitulo->duracion;?></span></p>
-               <p class="red-titles">Fecha de Estreno del capitulo:<br>
-                <span class="white-text"><?=$capitulo->fecha_estreno;?></span></p>
+              <div class="subtitulo-cap">
+                <h6 class="bold">Aca subtitulo</h6>
+              </div>
             </div>
             <div class="scroll-bar  col-md-12" style="width:99.6%;">
                 
@@ -39,7 +65,7 @@
                   foreach ($capituloss as $key) {
                      if($cond!=$key->temporada){ $cond=$key->temporada; ?>
                      <ul class="list-videos" style="padding-left:0; ">
-                     <li><p class="red-titles">Temporada numero: <span class="white-text"><?=$key->temporada;?></span></p> <?php } ?></li>
+                     <li><p class="red-titles" style="display: none;">Temporada numero: <span class="white-text"><?=$key->temporada;?></span></p> <?php } ?></li>
                      <li><a class="white-text" href="<?php echo base_url();?>home/capitulo/<?=$key->id?>"><?=$key->nombre;?>  <?php } ?><span class="white-text float-right"><?=$key->duracion;?></span></a> </li>
                   
  
@@ -54,37 +80,7 @@
                
             </div>
          </div>
-         <div class="col-md-12">
-            <div class="row">
-               <div class="col-md-8 footer-fv no-padding server-ground">
-                  <ul class="nav nav-tabs nav-capitulo" role="tablist">
-                    <?php $i=0; foreach ($video as $key) { ?>
-                     <li class="nav-item"><a href="#server<?=$i;?>"  data-toggle="pill"  class="nav-link"><i class="far fa-check-circle"></i> Servidor <?=$i+1;?></i></a></li>
-                    <?php  $i=$i+1;  }  ?>
-                     
-                  </ul>
-                  <!--Tabs Panel-->
-
-               </div>
-               <div class="col-md-4 footer-cap no-padding text-center">
-                  <h3 class="nom-cap navbar-text" ><a href="#"><?=$capitulo->nombre_serie;?><i class="fas fa-angle-double-up" style="color:#fff;"></i></a></h3>
-               </div>
-            </div>
-         </div>
-         <div class="col-md-12">
-         	<div class="reaccion">
-                     <ul class="nav nav-bar fav">
-                      <li  class="nav-item"><a class="nav-link" id="favorite" title="Favorito" data-toggle="tooltip" href="#"><i class="fas fa-heart" style="color:#FF0000;"></i></a></li>
-                      <li  class="nav-item"><span class="navbar-text"><a href="#"  title="Calificacion" data-toggle="tooltip"><i class="fas fa-star" ></i></a></span>
-                        <span class="navbar-text"><a href="#" title="Calificacion" data-toggle="tooltip"><i class="fas fa-star" id="star"></i></a></span>
-                        <span class="navbar-text"><a href="#"title="Calificacion" data-toggle="tooltip"><i class="fas fa-star" ></i></a></span>
-                        <span class="navbar-text"><a href="#" title="Calificacion" data-toggle="tooltip"><i class="fas fa-star"></i></a></span>
-                        <span class="navbar-text"><a href="#" title="Calificacion" data-toggle="tooltip"><i class="fas fa-star" ></i></a></span> 
-                     </li>
-                      <li  class="nav-item"><a class="nav-link" href="#">Agregar a mi lista</a></li>    
-                     </ul>
-                   
-                  </div>
+        
          </div>
       </div>
    </div>
@@ -225,6 +221,6 @@
 
        
         var i = document.querySelector("iframe"); 
-          i.setAttribute("class", "mx-auto d-block");
+          i.style.width="100%";
 
       </script>
