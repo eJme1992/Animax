@@ -20,7 +20,7 @@
             <h4 class="news-title navbar-text"><i class="fas fa-newspaper"></i> Noticias</h4> 
               <div class="text-right col-2">
                     <a href="<?php base_url();?>home/noticias">
-                        <button class="btn mas" style=""><b><i class="fas fa-plus"></i></b>
+                        <button class="btn mas btn-dark" style=""><b><i class="fas fa-plus"></i></b>
                         </button>
                     </a>
                 </div>
