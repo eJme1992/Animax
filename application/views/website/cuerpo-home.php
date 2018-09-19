@@ -19,10 +19,10 @@
     </div>
 </div>
 <div class="text-center" id="nav-principal">
-        <a href="#SERIES_DESTACAS"><i class="far fa-star"></i>SERIES</a>
-        <a href="#TEMPORADAS_RECIENTES"><i class="fab fa-cloudscale"></i>TEMPORADAS  </a>
-        <a href="#PELICULAS_RECIENTES"><i class="fas fa-film"></i>PELICULAS</a>
-        <a href="#NOTICIAS"><i class="far fa-newspaper"></i>NOTICIAS</a>
+        <a href="#SERIES_DESTACAS"><i class="far fa-star"><span>SERIES</span></i></a>
+        <a href="#TEMPORADAS_RECIENTES"><i class="fab fa-cloudscale"><span>TEMPORADAS</span></i></a>
+        <a href="#PELICULAS_RECIENTES"><i class="fas fa-film"><span>PELICULAS</span></i></a>
+        <a href="#NOTICIAS"><i class="far fa-newspaper"><span>NOTICIAS</span></i></a>
     </div>
 </nav>
 <section id="home">

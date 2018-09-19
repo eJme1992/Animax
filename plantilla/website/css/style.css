@@ -1,4 +1,7 @@
-
+i span{
+    color:#000;
+    font-weight: 300 !important;
+}
 a:hover {
     color: #fd4c5d;
 }
