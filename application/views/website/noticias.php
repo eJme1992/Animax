@@ -40,9 +40,9 @@
                   <span class="titular">
                   <b><?=$key->titulo;?></b><br>
                   </span>
-                   <span class="titulard">
+                   <div class="titulard">
                   <?=$key->descripcion_corta;?> 
-                  </span>
+                  </div>
                   </a>
                </div>
             </div>

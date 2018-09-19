@@ -127,3 +127,17 @@ padding-right: 0px !important;
 padding-left: 0px !important;
 
 }
+/*Para las vistas de noticias*/
+.titulard{
+    height:40px;
+    overflow: hidden;
+}
+.title-new{
+    text-align: left;
+    color: #000;
+}
+.news-title{
+    padding-bottom: 0;
+    margin-bottom:0; 
+}
+.mas{background-color: #fff;}
