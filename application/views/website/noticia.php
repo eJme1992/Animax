@@ -29,12 +29,9 @@
             <div class="col-12 titulares">
                 <?=$key->titulo;?>
             </div>
-               <div class="col-md-6  imgssm" style="background: url('<?=base_url().$key->imagen;?>');background-repeat: no-repeat;background-size: cover;">
-                  
+               <div class="col-md-12  imgssm" style="background: url('<?=base_url().$key->imagen;?>');background-repeat: no-repeat;background-size: cover;">
                </div>
-               <div class="col-md-6" style="max-height:140px;overflow:hidden;">
-                  <p  class="padding"><?=$key->descripcion_corta;?> </p>
-               </div>
+               
                 <?php } ?>
             </a>
             </div>
