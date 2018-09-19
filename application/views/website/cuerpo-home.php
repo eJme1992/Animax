@@ -12,17 +12,17 @@
   </div>-->
    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2" style="background-color:#fff;">
     <div class="text-center">
-        <a href="#SERIES_DESTACAS"><i class="far fa-star"></i> SERIES</a>
-        <a href="#TEMPORADAS_RECIENTES"><i class="fab fa-cloudscale"></i> TEMPORADAS  </a>
-        <a href="#PELICULAS_RECIENTES"><i class="fas fa-film"></i> PELICULAS</a>
-        <a href="#NOTICIAS"><i class="far fa-newspaper"></i> NOTICIAS</a>
+        <a href="#SERIES_DESTACAS"><i class="far fa-star"></i>SERIES</a>
+        <a href="#TEMPORADAS_RECIENTES"><i class="fab fa-cloudscale"></i>TEMPORADAS  </a>
+        <a href="#PELICULAS_RECIENTES"><i class="fas fa-film"></i>PELICULAS</a>
+        <a href="#NOTICIAS"><i class="far fa-newspaper"></i>NOTICIAS</a>
     </div>
 </div>
 <div class="text-center" id="nav-principal">
-        <a href="#SERIES_DESTACAS"><i class="far fa-star"></i> SERIES</a>
-        <a href="#TEMPORADAS_RECIENTES"><i class="fab fa-cloudscale"></i> TEMPORADAS  </a>
-        <a href="#PELICULAS_RECIENTES"><i class="fas fa-film"></i> PELICULAS</a>
-        <a href="#NOTICIAS"><i class="far fa-newspaper"></i> NOTICIAS</a>
+        <a href="#SERIES_DESTACAS"><i class="far fa-star"></i>SERIES</a>
+        <a href="#TEMPORADAS_RECIENTES"><i class="fab fa-cloudscale"></i>TEMPORADAS  </a>
+        <a href="#PELICULAS_RECIENTES"><i class="fas fa-film"></i>PELICULAS</a>
+        <a href="#NOTICIAS"><i class="far fa-newspaper"></i>NOTICIAS</a>
     </div>
 </nav>
 <section id="home">

@@ -66,7 +66,7 @@ background-color: transparent;
 .news{
     padding-right: 0px; margin-left:1.5%;}
 @media (max-width:767px){
-        .imgssm{
+.imgssm{
     height:40vw !important;
     width: 100%;
     border-radius: 2% 2% 0px 0px;
@@ -116,8 +116,7 @@ footer p{
      padding-top: 0.5em;
      font-size: 1.5em;
 }
-}
-}
+
  #tope .sub-fo{
      color: #fff;
      text-align: justify;
@@ -223,7 +222,7 @@ footer p{
     #navi-principal{display: none;}
     #row-header{display: none;}
     .input-look{width:216px; display: inline-block; }
-    .btn-buscar{display: inline-block; width:35px; margin-top: -7.5px}
+    .btn-buscar{display: inline-block; width:35px; margin-top: -6.3px}
     .registrarbtn{margin-left: 5px;}
  }
 @media (min-width: 292px) and (max-width: 574px){
@@ -231,7 +230,7 @@ footer p{
     #navi-principal{display: none;}
     #row-header{display: none;}
     .input-look{width:216px; display: inline-block; }
-    .btn-buscar{display: inline-block; width:35px; margin-top: -7.5px}
+    .btn-buscar{display: inline-block; width:35px; margin-top: -6.3px}
 }
 @media (min-width: 575px) and (max-width: 782px){
      #responsivenav{display: block;}
