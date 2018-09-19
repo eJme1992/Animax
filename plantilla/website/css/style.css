@@ -216,10 +216,31 @@ footer p{
     margin-left: 20px;
     color: #fd4c5d;
  }
+
  #responsivenav{display: none;}
-@media (max-width: 780px){
+ @media(max-width: 290px){
     #responsivenav{display: block;}
-    #nav-principal{display: none;}
+    #navi-principal{display: none;}
+    #row-header{display: none;}
+    .input-look{width:216px; display: inline-block; }
+    .btn-buscar{display: inline-block; width:35px; margin-top: -7.5px}
+    .registrarbtn{margin-left: 5px;}
+ }
+@media (min-width: 292px) and (max-width: 574px){
+    #responsivenav{display: block;}
+    #navi-principal{display: none;}
+    #row-header{display: none;}
+    .input-look{width:216px; display: inline-block; }
+    .btn-buscar{display: inline-block; width:35px; margin-top: -7.5px}
+}
+@media (min-width: 575px) and (max-width: 782px){
+     #responsivenav{display: block;}
+    #navi-principal{display: none;}
+    #row-header{display: none;}
+    .input-look{width:216px; display: inline-block; }
+    .btn-buscar{display: inline-block; width:35px;}
+    .navbar-header{width:100% !important;}
 }
 .row-responsive{margin: 0; width: 100%;}
 .no-padding{padding: 0;}
+/* Barra debajo del nav*/
