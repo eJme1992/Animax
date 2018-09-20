@@ -86,6 +86,8 @@ class Home extends CI_Controller
         $DATOS['total_paginas'] = $paginas['total_paginas']; // valores para los s
         $DATOS['url'] = base_url() . "Home/noticias";
         $DATOS['capitulos'] = $this->MCapitulo->listacap('LIMIT 6');
+             $this->load->view('website/header2'); 
+        $this->load->view('website/nav');
         $this->load->view('website/noticias', $DATOS);
         $this->load->view('website/footer');
     }
@@ -100,6 +102,7 @@ class Home extends CI_Controller
         $DATOS['noticias'] = $this->MNoticia->listanot('LIMIT 6'); // consulta paginada
         $consultas = $this->MNoticia->consultar($id);
         $DATOS['noticia'] = end($consultas);
+
         $this->load->view('website/noticia', $DATOS);
         $this->load->view('website/footer');
     }
@@ -234,7 +237,9 @@ class Home extends CI_Controller
 
     function pelicula($id='')
     {
-       /* $this->load->model('MCapitulo'); // medidas de seguridad
+        $this->load->model('MCapitulo'); // medidas de seguridad
+        $this->load->model('MPelicula'); // medidas de seguridad
+        $this->load->model('MPeliculaVideo'); // medidas de seguridad
         $this->load->model('MComentario_capitulo'); // medidas de seguridad
             $csrf = array(
             'name' => $this->security->get_csrf_token_name() ,
@@ -243,10 +248,13 @@ class Home extends CI_Controller
         $DATOS['csrf'] = $csrf;
         $DATOS['capitulos'] = $this->MCapitulo->listacap('LIMIT 6');
         $DATOS['comentarios'] = $this->MComentario_capitulo->lista($id);
-        $DATOS['capitulo'] = $this->MCapitulo->lista($id);
-        $consultas = $this->MCapitulo->consultar($id);
-        $DATOS['capitulo'] = end($consultas);*/
-        $this->load->view('website/pelicula');
+        $DATOS['video'] = $this->MPeliculaVideo->lista($id);
+       
+        $consultas = $this->MPelicula->consultar($id);
+        $consulta = end($consultas);
+        $DATOS['pelicula'] = $consulta;
+    
+        $this->load->view('website/pelicula',$DATOS);
         $this->load->view('website/footer');
     }
 }

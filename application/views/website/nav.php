@@ -16,9 +16,9 @@
     </div>
 </div>
 <div class="text-center" id="nav-principal">
-        <a href="#SERIES_DESTACAS"><i class="far fa-star"><span>SERIES</span></i></a>
-        <a href="#TEMPORADAS_RECIENTES"><i class="fab fa-cloudscale"><span>TEMPORADAS</span></i></a>
-        <a href="#PELICULAS_RECIENTES"><i class="fas fa-film"><span>PELICULAS</span></i></a>
-        <a href="#NOTICIAS"><i class="far fa-newspaper"><span>NOTICIAS</span></i></a>
+        <a href="<?php base_url();?>mas?tipo=1&pagina=1&categoria=Todas&genero=Todas&desde=1900&hasta=2099"><i class="far fa-star"><span>SERIES</span></i></a>
+       <a href="<?php base_url();?>mas?tipo=2&pagina=1&categoria=Todas&genero=Todas&desde=1900&hasta=2099"><i class="fab fa-cloudscale"><span>TEMPORADAS</span></i></a>
+        <a href="<?php base_url();?>mas?tipo=4&pagina=1&categoria=Todas&genero=Todas&desde=1900&hasta=2099"><i class="fas fa-film"><span>PELICULAS</span></i></a>
+        <a href="<?php base_url();?>noticias"><i class="far fa-newspaper"><span>NOTICIAS</span></i></a>
     </div>
 </nav>
