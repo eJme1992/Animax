@@ -40,7 +40,10 @@ class Home extends CI_Controller
         $DATOS['series'] = $this->MSerie->listades('LIMIT 4');
         $DATOS['Temporadar'] = $this->MTemporada->recientes('LIMIT 10');
         $DATOS['peliculas'] = $this->MPelicula->recientes('LIMIT 10');
-        $DATOS['noticias'] = $this->MNoticia->listanot('LIMIT 30'); 
+        $DATOS['noticias'] = $this->MNoticia->listanot('LIMIT 30');
+        
+        $this->load->view('website/header2');
+        $this->load->view('website/nav'); 
         $this->load->view('website/cuerpo-home', $DATOS);
         $this->load->view('website/footer');
     }
@@ -112,6 +115,7 @@ class Home extends CI_Controller
         $this->load->model('MTemporada'); // Carga el modelo de categorías
         $this->load->model('MCapitulo'); // medidas de seguridad
         $this->load->model('MPelicula'); // medidas de seguridad
+
         $DATOS['genero'] = $this->MGenero->lista();
         $DATOS['categoria'] = $this->MCategoria->lista();
         $where = '';
@@ -196,6 +200,9 @@ class Home extends CI_Controller
         $DATOS['pagina'] = $paginas['pagina']; // valores para los botones
         $DATOS['total_paginas'] = $paginas['total_paginas']; // valores para los s
         $DATOS['url'] = base_url() . "Home/mas/$tipo/$genero/$desde/$hasta/$categoria/$orden/$buscar";
+        $this->load->view('website/header2'); 
+        $this->load->view('website/nav');
+        
         $this->load->view('website/mas', $DATOS);
         $this->load->view('website/footer');
     }

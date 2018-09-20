@@ -103,30 +103,5 @@
       </header>
       <!--Modal -->
       <!--DropDown-->
-      <section >
-      <script type="text/javascript">
-         //Funcion para ocultar y mostrar el menu
-         function ocultar(){
-          var x = document.getElementById("mi-menu");
-                     if (x.className.indexOf("mostrar") == -1) {
-                         x.className += " mostrar";
-                     } else { 
-                         x.className = x.className.replace(" mostrar", "");
-                        
-                     }
-         }
-         //Funcion para ocultar y mostrar la barra de busqueda
-          
-            function oculta() {
-          
-                     var x = document.getElementById("buscar");
-                     if (x.className.indexOf("mostrar") == -1) {
-                         x.className += " mostrar";
-                     } else { 
-                         x.className = x.className.replace(" mostrar", "");
-                        
-                     }
-                 }
-         
-         
-      </script>
+      <section style="margin-top:5vw;" >
+     

@@ -1,14 +1,3 @@
-<header id="portada">
-   <a class="#"><img style="width:100%;" class="portada-principal" src="<?=base_url();?>plantilla/website/img/1534667129353.jpg"></a>
-</header>
-<nav id="barra-secundaria">
-   <div class="text-center">
-      <a href="#SERIES_DESTACAS"><i class="far fa-star"></i> Series destacadas</a>
-      <a href="#TEMPORADAS_RECIENTES"><i class="fab fa-cloudscale"></i> Temporadas </a>
-      <a href="#PELICULAS_RECIENTES"><i class="fas fa-film"></i> Películas recientes</a>
-      <a href="#NOTICIAS"><i class="fas fa-newspaper"></i> Noticias</a>
-   </div>
-</nav>
 <section id="home">
    <div class="container">
       <div class="row mg">
