@@ -142,7 +142,7 @@
                 <?php foreach ($peliculas as $key){?>
                 <div class="col-lg-3 series">
                     <div class="" id='pelicula_recientes'>
-                        <a href="<?php echo base_url();?>home/detalle_series/<?=$key->id?>" data-toggle="tooltip" title="<?=$key->nombre;?>"> <img src="<?=base_url().$key->imagen;?>" class="img-fluid imglg"></a>
+                        <a href="<?php echo base_url();?>home/pelicula/<?=$key->id?>" data-toggle="tooltip" title="<?=$key->nombre;?>"> <img src="<?=base_url().$key->imagen;?>" class="img-fluid imglg"></a>
                         <span class="spanhovertag">
                   ESTRENO <i class="far fa-clock"></i>
                   </span>
