@@ -18,7 +18,7 @@
          </div>
           <div class="col-md-12">
             <div class="row">
-               <div class="col-md-8 footer-fv no-padding server-ground">
+               <div class="col-md-8 footer-fv no-padding ">
                   <ul class="nav nav-tabs nav-capitulo" role="tablist">
                     <?php $i=0; foreach ($video as $key) { ?>
                      <li class="nav-item"><a href="#server<?=$i;?>"  data-toggle="pill"  class="nav-link"><i class="fas fa-share"></i> Servidor <?=$i+1;?></i></a></li>

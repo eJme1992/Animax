@@ -61,15 +61,13 @@
      height:20%;
 }
 .footer-cap{
-    background-color: #18181E;
     padding-right: 10px;
     margin-bottom: 0;
     
 }
-.nom-cap{ margin-bottom: 0; color:#fff; font-size: 1.5em;padding-left: 10px;}
+.nom-cap{ margin-bottom: 0; color:#fd4c5d; font-size: 1.5em;padding-left: 10px;}
 .nom-cap i{line-height: 1;}
 .fa-angle-double-up{ float:right; }
-.footer-fv{background-color: #202026;}
 .nav-capitulo li a{
     color:#fff;
 }
@@ -95,7 +93,6 @@ margin-bottom: 1.5em;
 .subt-capitulo{ margin-bottom: 1em; margin-top: 1em; }
 
 .img-server{ width: 100%; max-height: 400px; }
-.server-ground{background-color: #18181E;}
 .nav-tabs{border-bottom: none;}
 .nom-cap{font-size: 1.5em; width: 100%;}
 .nom-cap a {color: #fff;}
