@@ -3,7 +3,7 @@
 <section id="capitulo-detalle" style="margin-top: 4em;">
    <div class="container capitulo">
       <div class="row">
-         <div class="col-md-8 no-padding">
+         <div class="col-md-8 no-padding videonegro">
             <div class="tab-content">
           <?php $i=0; foreach ($video as $key) { ?>
            

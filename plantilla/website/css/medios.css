@@ -6,7 +6,7 @@
  }
  .capitulo{
     padding-bottom: 2em;
-    background-color: #202026;
+    background-color: #1A1A22;
     padding-bottom: 0;
  }
  .f-video{
@@ -99,3 +99,6 @@ margin-bottom: 1.5em;
 .nav-tabs{border-bottom: none;}
 .nom-cap{font-size: 1.5em; width: 100%;}
 .nom-cap a {color: #fff;}
+.videonegro{
+    background-color: #000;
+}
