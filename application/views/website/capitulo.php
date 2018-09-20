@@ -46,16 +46,18 @@
    </div>
          <div class="col-md-4 no-padding ">
             <div class="cabecera-cap col-12 no-padding">
-               <div class="text-center card-body">
-                <h3 class="nom-cap"><?=$capitulo->nombre;?></h3>
+               <div class="padding">
+                <h3 class="bold nom-cap"><?=$capitulo->nombre;?></h3>
               </div>
               <div class="subtitulo-cap">
                 <h6 class="bold">Aca subtitulo</h6>
               </div>
             </div>
-            <div class="scroll-bar  col-md-12" style="width:99.6%;">
+            <div class="scroll-bar  col-md-12 no-padding" style="width:99.6%;">
                 
-                    
+                    <div class="link">
+                      <a href="#"class="link-d navbar-text" title="colapsar"><i class="fas fa-angle-right"></i></a>
+                    </div>
                      <div class="row text-center col-12" style="width:90%; color:#ff6414;margin-bottom:20px;">
                           
                                
@@ -66,7 +68,7 @@
                      if($cond!=$key->temporada){ $cond=$key->temporada; ?>
                      <ul class="list-videos" style="padding-left:0; ">
                      <li><p class="red-titles" style="display: none;">Temporada numero: <span class="white-text"><?=$key->temporada;?></span></p> <?php } ?></li>
-                     <li><a class="white-text" href="<?php echo base_url();?>home/capitulo/<?=$key->id?>"><?=$key->nombre;?>  <?php } ?><span class="white-text float-right"><?=$key->duracion;?></span></a> </li>
+                     <li><a class="white-text" href="<?php echo base_url();?>home/capitulo/<?=$key->id?>">001 <?=$key->nombre;?>  <?php } ?><span class="white-text float-right"><?=$key->duracion;?></span></a> </li>
                   
  
                   </ul>
