@@ -35,6 +35,11 @@
 
         <script src="<?=base_url();?>plantilla/panel/assets/js/modernizr.min.js"></script>
 
+ 
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
+
     </head>
 
 
@@ -138,7 +143,7 @@
 
                     <!--- Sidemenu -->
                     <div id="sidebar-menu">
-                        <ul>
+                  
                             
 
                            
