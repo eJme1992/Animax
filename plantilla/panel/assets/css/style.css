@@ -560,6 +560,17 @@ hr {
   margin: 0;
   display: none;
 }
+/*Para el carrusel*/
+.img-carrusel{
+ width: 150px;
+ height: 150px;
+}
+.td-carrusel{
+  width:250px;
+  height:140px;
+}
+.mi-nav{background-color: #71B6F9 !important;}
+.mi-nav .page-title{color: #fff;}
 
 /* Background colors */
 .bg-custom {

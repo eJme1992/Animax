@@ -69,7 +69,7 @@
                      </button>
                   
                </a>
-               <button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete<?=$key->id;?>" ><span class="glyphicon glyphicon-trash"></span></button><br>
+               <button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete<?=$key->id;?>" ><i class="fas fa-trash-alt"></i></button><br>
                 
                 
                 <?php 

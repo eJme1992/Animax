@@ -9,6 +9,7 @@
         <meta name="author" content="Coderthemes">
          <!-- COMPLEMENTO PARA TEXTAREA -->
   <script src="https://cdn.ckeditor.com/ckeditor5/11.0.1/classic/ckeditor.js"></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
   <style> 
 
    .ck-content { min-height:160px; }
@@ -36,7 +37,7 @@
         <script src="<?=base_url();?>plantilla/panel/assets/js/modernizr.min.js"></script>
 
  
-
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <!-- Latest compiled JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
 
@@ -57,7 +58,7 @@
                 </div>
 
                 <!-- Button mobile view to collapse sidebar menu -->
-                <div class="navbar navbar-default" role="navigation">
+                <div class="navbar navbar-default mi-nav" role="navigation">
                     <div class="container-fluid">
 
                         <!-- Page title -->
