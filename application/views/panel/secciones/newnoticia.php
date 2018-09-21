@@ -11,7 +11,7 @@
 </section>
 <!-- Main content -->
 <section class="content container-fluid">
-   <form id="nuevaser">
+   <form id="nuevaser" class="row">
       <div class="form-group col-md-12">
          <label>Título:</label>
          <input type="text" class="form-control" id="titulo" name="titulo" required="" placeholder="Título">

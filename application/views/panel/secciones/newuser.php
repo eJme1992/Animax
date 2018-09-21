@@ -12,7 +12,7 @@
 </section>
 <!-- Main content -->
 <section class="content container-fluid">
-   <form id="crearUser">
+   <form id="crearUser" class="row">
       <div class="form-group col-md-6">
          <label>Nombre:</label>
          <input type="text" class="form-control" id="nombre" name="nombre" required="" placeholder="Nombre" ">
