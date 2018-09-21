@@ -3,22 +3,31 @@
 <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="A fully featured admin theme which can be used to build CRM, CMS, etc.">
+        <meta name="description" content="A fully featured admins theme which can be used to build CRM, CMS, etc.">
         <meta name="author" content="Coderthemes">
 
-        <link rel="shortcut icon" href="<?=base_url();?>plantilla/admin/images/favicon.ico">
+        <link rel="shortcut icon" href="<?=base_url();?>plantilla/admins/images/favicon.ico">
 
-        <title>Adminto - Responsive Admin Dashboard Template</title>
+        <title>adminsto - Responsive admins Dashboard Template</title>
 
         <!--Morris Chart CSS -->
-        <link rel="stylesheet" href="<?=base_url();?>plantilla/admin/plugins/morris/morris.css">
+        <link rel="stylesheet" href="<?=base_url();?>plantilla/admins/plugins/morris/morris.css">
 
         <!-- App css -->
-        <link href="<?=base_url();?>plantilla/admin/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-        <link href="<?=base_url();?>plantilla/admin/css/bootstrap.min.css/icons.css" rel="stylesheet" type="text/css" />
-        <link href="<?=base_url();?>plantilla/admin/css/bootstrap.min.css/style.css" rel="stylesheet" type="text/css" />
+        <link href="<?=base_url();?>plantilla/admins/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="<?=base_url();?>plantilla/admins/css/bootstrap.min.css/icons.css" rel="stylesheet" type="text/css" />
+        <link href="<?=base_url();?>plantilla/admins/css/bootstrap.min.css/style.css" rel="stylesheet" type="text/css" />
 
-        <script src="<?=base_url();?>plantilla/admin/js/modernizr.min.js"></script>
+        <script src="<?=base_url();?>plantilla/admins/js/modernizr.min.js"></script>
+
+         <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
 
     </head>
 
@@ -30,7 +39,7 @@
 
                 <!-- LOGO -->
                 <div class="topbar-left">
-                    <a href="index.html" class="logo"><span>Admin<span>to</span></span><i class="mdi mdi-layers"></i></a>
+                    <a href="index.html" class="logo"><span>admins<span>to</span></span><i class="mdi mdi-layers"></i></a>
                 </div>
 
                 <!-- Button mobile view to collapse sidebar menu -->
