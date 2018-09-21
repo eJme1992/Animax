@@ -1,33 +1,39 @@
-    <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
+    
+<!-- Mirrored from coderthemes.com/adminto/dark_menu/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 07 Sep 2018 18:36:06 GMT -->
 <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="A fully featured admins theme which can be used to build CRM, CMS, etc.">
+        <meta name="description" content="A fully featured admin theme which can be used to build CRM, CMS, etc.">
         <meta name="author" content="Coderthemes">
+         <!-- COMPLEMENTO PARA TEXTAREA -->
+  <script src="https://cdn.ckeditor.com/ckeditor5/11.0.1/classic/ckeditor.js"></script>
+  <style> 
 
-        <link rel="shortcut icon" href="<?=base_url();?>plantilla/admins/images/favicon.ico">
+   .ck-content { min-height:160px; }
+  </style>
+ <!-- COMPLEMENTO PARA TABLAS -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 
-        <title>adminsto - Responsive admins Dashboard Template</title>
+<link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.11/css/jquery.dataTables.css">
+<script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.11/js/jquery.dataTables.js">
+</script>
+ <!-- FIN COMPLEMENTO PARA TABLAS -->
+
+        <link rel="shortcut icon" href="<?=base_url();?>plantilla/panel/assets/images/favicon.ico">
+
+        <title>Adminto - Responsive Admin Dashboard Template</title>
 
         <!--Morris Chart CSS -->
-        <link rel="stylesheet" href="<?=base_url();?>plantilla/admins/plugins/morris/morris.css">
+        <link rel="stylesheet" href="<?=base_url();?>plantilla/panel/assets/plugins/morris/morris.css">
 
         <!-- App css -->
-        <link href="<?=base_url();?>plantilla/admins/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-        <link href="<?=base_url();?>plantilla/admins/css/bootstrap.min.css/icons.css" rel="stylesheet" type="text/css" />
-        <link href="<?=base_url();?>plantilla/admins/css/bootstrap.min.css/style.css" rel="stylesheet" type="text/css" />
+        <link href="<?=base_url();?>plantilla/panel/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="<?=base_url();?>plantilla/panel/assets/css/icons.css" rel="stylesheet" type="text/css" />
+        <link href="<?=base_url();?>plantilla/panel/assets/css/style.css" rel="stylesheet" type="text/css" />
 
-        <script src="<?=base_url();?>plantilla/admins/js/modernizr.min.js"></script>
-
-         <!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-
-<!-- jQuery library -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
-<!-- Latest compiled JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
+        <script src="<?=base_url();?>plantilla/panel/assets/js/modernizr.min.js"></script>
 
     </head>
 
@@ -35,11 +41,14 @@
     <body class="fixed-left">
 
         <!-- Begin page -->
-    <div class="topbar">
+        <div id="wrapper">
+
+            <!-- Top Bar Start -->
+            <div class="topbar">
 
                 <!-- LOGO -->
                 <div class="topbar-left">
-                    <a href="index.html" class="logo"><span>admins<span>to</span></span><i class="mdi mdi-layers"></i></a>
+                    <a href="index.html" class="logo"><span>Admin<span>to</span></span><i class="mdi mdi-layers"></i></a>
                 </div>
 
                 <!-- Button mobile view to collapse sidebar menu -->
@@ -93,3 +102,39 @@
                     </div><!-- end container -->
                 </div><!-- end navbar -->
             </div>
+            <!-- Top Bar End -->
+
+
+            <!-- ========== Left Sidebar Start ========== -->
+            <div class="left side-menu">
+                <div class="sidebar-inner slimscrollleft">
+
+                    <!-- User -->
+                    <div class="user-box">
+                        <div class="user-img">
+                            <img src="<?=base_url();?>plantilla/panel/assets/images/users/avatar-1.jpg" alt="user-img" title="Mat Helme" class="rounded-circle img-thumbnail img-responsive">
+                            <div class="user-status offline"><i class="mdi mdi-adjust"></i></div>
+                        </div>
+                        <h5><a href="#">Mat Helme</a> </h5>
+                        <ul class="list-inline">
+                            <li class="list-inline-item">
+                                <a href="#" >
+                                    <i class="mdi mdi-settings"></i>
+                                </a>
+                            </li>
+
+                            <li class="list-inline-item">
+                                <a href="#" class="text-custom">
+                                    <i class="mdi mdi-power"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- End User -->
+
+                    <!--- Sidemenu -->
+                    <div id="sidebar-menu">
+                        <ul>
+                            
+
+                           

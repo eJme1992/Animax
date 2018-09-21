@@ -1,8 +1,13 @@
-</ul>
-      <!-- /.sidebar-menu -->
-    </section>
-    <!-- /.sidebar -->
-  </aside>
+     <div class="clearfix"></div>
+                    </div>
+                    <!-- Sidebar -->
+                    <div class="clearfix"></div>
 
-  <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
+                </div>
+
+            </div>
+            <!-- Left Sidebar End -->
+             <div class="content-page">
+                <!-- Start content -->
+                <div class="content">
+                    <div class="container-fluid row">
