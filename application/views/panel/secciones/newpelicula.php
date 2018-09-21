@@ -11,8 +11,7 @@
 </section>
 <!-- Main content -->
 <section class="content container-fluid">
-  <div class="row">
-   <form id="nueva_pelicula">
+   <form id="nueva_pelicula" class="row">
       <div class="form-group col-md-6">
          <label>Nombre:</label>
          <input type="text" class="form-control" id="nombre" name="nombre" required="" placeholder="Nombre">
@@ -72,7 +71,6 @@
          <button type="submit" class="btn btn-default btn-lg">Enviar</button>
       </div>
    </form>
- </div>
 </section>
 <!-- /.content -->
 <!-- NUEVAS peliculaS -->

@@ -5839,7 +5839,7 @@ File: Menu
 
 .content-page .content {
   padding: 0 10px;
-  margin-top: 93px;
+  margin-top: 10px;
 }
 
 .button-menu-mobile {
@@ -6387,7 +6387,7 @@ File: Responsive
     line-height: 75px !important;
   }
   .content-page .content {
-    margin-top: 95px;
+    margin-top: 5px;
   }
   .topbar .topbar-left {
     height: 72px;
