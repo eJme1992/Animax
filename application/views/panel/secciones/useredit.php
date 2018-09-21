@@ -15,9 +15,9 @@
    <div class="col-md-4">
       <h4>Datos de la cuenta</h4>
       <?php if($key->foto==''){ ?>
-      <img src="<?=base_url();?>plantilla/panel/dist/img/user2-160x160.jpg" class="img-responsive img-circle" alt="User Image">
+      <img src="<?=base_url();?>plantilla/panel/dist/img/user2-160x160.jpg" class="img-responsive img-thumbnail img-edit" alt="User Image">
       <?php }else{ ?>
-      <img src="<?=base_url().$key->foto;?>" class="img-circle img-responsive" alt="User Image">
+      <img src="<?=base_url().$key->foto;?>" class="img-circle img-thumbnail img-edit" alt="User Image">
       <?php } ?>
       <div class="form-group col-md-12">
          <a href="#" class="btn  form-control" data-title="imagen" data-toggle="modal" data-target="#imagen" >Cambiar imagen</a>
@@ -29,7 +29,7 @@
    </div>
    <div class="col-md-8 row">
       <h4>Datos Personales</h4>
-      <form id="editarUser">
+      <form id="editarUser" class="row">
          <div class="form-group col-md-6">
             <label>Nombre:</label>
             <input type="text" class="form-control" id="nombre" name="nombre" required="" placeholder="Nombre" value="<?=$key->nombre;?>">
@@ -80,7 +80,7 @@
       <!-- Modal content-->
       <div class="modal-content">
          <div class="modal-body text-center">
-            <form id="subir_imagen" >
+            <form id="subir_imagen" class="row" >
                <h4>Subir imagen</h4>
                <div class="form-group">
                   <input type="file" name="imagen" id="imagen" class="form-control" required="">
