@@ -52,7 +52,7 @@ class Perfil extends CI_Controller {
         'hash' => $this->security->get_csrf_hash()
         );
     }
-
+    
 
 
 

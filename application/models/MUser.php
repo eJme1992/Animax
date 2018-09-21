@@ -100,4 +100,8 @@ class MUser extends CI_Model {
 		return $query;
 	}
 
+	function editar_pass($pass){
+		$query = $this->db->query("SELECT * FROM `user` WHERE mail='$mail'");
+	}
+
   }
