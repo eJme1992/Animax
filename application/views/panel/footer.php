@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 </div>
 </div>
 </div>
@@ -62,7 +62,6 @@
         <!-- App js -->
         <script src="<?=base_url();?>plantilla/panel/assets/js/jquery.core.js"></script>
         <script src="<?=base_url();?>plantilla/panel/assets/js/jquery.app.js"></script>
->>>>>>> e89427fad4420d04f9f35953afd56da384aeaf98
 
 </body>
 

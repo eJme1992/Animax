@@ -112,19 +112,23 @@
                     <!-- User -->
                     <div class="user-box">
                         <div class="user-img">
-                            <img src="<?=base_url();?>plantilla/panel/assets/images/users/avatar-1.jpg" alt="user-img" title="Mat Helme" class="rounded-circle img-thumbnail img-responsive">
+                            <?php if($user->foto==''){ ?>
+                             <img src="<?=base_url();?>plantilla/panel/dist/img/user2-160x160.jpg" class="rounded-circle img-thumbnail img-responsive" alt="User Image">
+                             <?php }else{ ?>
+                                <img src="<?=base_url().$user->foto;?>" class="rounded-circle img-thumbnail img-responsive" alt="User Image">
+                               <?php } ?>
                             <div class="user-status offline"><i class="mdi mdi-adjust"></i></div>
                         </div>
-                        <h5><a href="#">Mat Helme</a> </h5>
+                        <h5><a href="#"><?=$user->nombre;?></a> </h5>
                         <ul class="list-inline">
                             <li class="list-inline-item">
-                                <a href="#" >
+                                <a href="<?=base_url();?>panel/user" >
                                     <i class="mdi mdi-settings"></i>
                                 </a>
                             </li>
 
                             <li class="list-inline-item">
-                                <a href="#" class="text-custom">
+                                <a href="<?=base_url();?>panel/salir " class="text-custom">
                                     <i class="mdi mdi-power"></i>
                                 </a>
                             </li>
