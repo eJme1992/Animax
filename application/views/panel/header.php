@@ -128,7 +128,7 @@
                             </li>
 
                             <li class="list-inline-item">
-                                <a href="<?=base_url();?>panel/salir " class="text-custom">
+                                <a href="<?=base_url();?>panel/salir" class="text-custom">
                                     <i class="mdi mdi-power"></i>
                                 </a>
                             </li>
