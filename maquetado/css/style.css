@@ -114,3 +114,14 @@ padding: 0;
 .footer p{color:#908886;}
 .footer-social li a { color:#908886; }
 .hr{border-color:#000;}
+/*########RECUPERAR SESION###########*/
+.label-recuperar{
+  float:left; 
+  text-align:right;
+  width: 150px;
+  line-height: 2.5;
+  margin-right:1em;
+}
+.btn-center{
+  width: 250px;
+}
