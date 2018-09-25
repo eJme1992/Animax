@@ -14,13 +14,17 @@
          <li class="active">Nueva serie</li>
       </ol>
    </section>
+   <div class="row row-serie">
+   <div class="col-md-12">
    <ul class="nav nav-tabs">
-      <li class="active"><a data-toggle="tab" href="#home">Ficha</a></li>
-      <li><a data-toggle="tab" href="#menu1">Lista de capítulos</a></li>
-      <li><a data-toggle="tab" href="#menu2">Editar datos</a></li>
+      <li class="li-newserie active"><a data-toggle="tab" href="#home">Ficha</a></li>
+      <li class="li-newserie"><a data-toggle="tab" href="#menu1">Lista de capítulos</a></li>
+      <li class="li-newserie"><a data-toggle="tab" href="#menu2">Editar datos</a></li>
    </ul>
+</div>
+</div>
    <!-- Main content -->
-   <div class="tab-content">
+   <div class="tab-content col-md-12">
       <div id="menu2" class="content container-fluid tab-pane fade">
          <form id="nuevaser">
             <div class="form-group col-md-12">
@@ -96,8 +100,9 @@
          </form>
       </div>
       <div id="home" class="content container-fluid tab-pane fade row in active">
+         <div class="row">
          <div class="col-md-4">
-            <img src="<?=base_url().$serie->imagen;?>" class="img-responsive">
+            <img src="<?=base_url().$serie->imagen;?>" class="img-responsive img-thumbnail">
             <form id="seriesimagen" onsubmit="realizaProceso2();return false; ">
                <input type="file" name="imagen" id="imagen" class="form-control" required="">
                <input type="hidden" name="lugar" id="lugar" value=""/>
@@ -118,7 +123,7 @@
             <p><?=$serie->descripcion;?></p>
          </div>
          <div class="col-md-2">
-            <img src="<?=base_url().$serie->imagen2;?>" class="img-responsive">
+            <img src="<?=base_url().$serie->imagen2;?>" class="img-responsive img-thumbnail">
             <form id="seriesimagens" onsubmit="realizaProcesoimgs();return false; ">
                <input type="file" name="imagen" id="imagen" class="form-control" required="">
                <input type="hidden" name="id" id="id" value="<?=$serie->id;?>" />
@@ -128,6 +133,8 @@
                <button type="submit" name="enviar" class="form-control">Editar</button>
             </form>
          </div>
+      </div>
+            <div class="row">
          <div class="col-md-8">
             <div class="btn-group">
                <h3>Temporadas <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ntm">Nueva Temporada <i class="fa fa-plus-circle"></i></button><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#nuevocap">Nueva capitulo <i class="fa fa-plus-circle"></i></button></h3>
@@ -215,7 +222,8 @@
             </div>
          </div>
       </div>
-      <div id='menu1'  class="content container-fluid tab-pane fade row">
+     </div> 
+      <div id='menu1'  class="content container-fluid tab-pane fade ">
          <table class="table" id="cap">
             <thead>
                <tr>

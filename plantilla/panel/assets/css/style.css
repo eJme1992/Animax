@@ -6527,3 +6527,9 @@ File: Responsive
 .btn-deleted{width:44px; margin-top: 10px;}
 /*editar user*/
 .img-edit{margin-bottom: 1em;}
+/* ver serie*/
+.row-serie{
+  padding-top: 2em;
+  width: 100%;
+}
+.li-newserie{ padding-left: 1em; }
