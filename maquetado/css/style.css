@@ -109,3 +109,8 @@ padding: 0;
 }
 .buton-center{width:200px;}
 .label-content{width:500px; margin-bottom: 1em;}
+/*#########FOOTER##########*/
+.footer{background-color: #dbdbdb;}
+.footer p{color:#908886;}
+.footer-social li a { color:#908886; }
+.hr{border-color:#000;}
