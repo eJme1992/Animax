@@ -408,6 +408,15 @@ a, a:hover, a:focus {
     background-color:#F15B91;
   color:#fff; 
 }
+.publi{
+  background-color:#727070;
+  width: 96%;
+  height: 300px;
+  display: block;
+  margin-bottom: 1em;
+}
+.publi h2{color:#fff; text-align: center;}
+.but-mas{margin-top: 10px;}
 /*########Para las nav responsive##########*/
 
 #input-nav.form-control{
