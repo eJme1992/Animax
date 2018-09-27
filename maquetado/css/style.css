@@ -266,13 +266,13 @@ height:70px;
 }
 .level{
     float:right;
-    width:350px;
+    width:450px;
     text-align:right;
 }
 .level p{text-align: center;}
 #second-nav{
   background-color: #fff;
-    margin-bottom:3em;
+    margin-bottom:1em;
 }
 #second-nav ul li {
   list-style: none;
@@ -331,10 +331,65 @@ a, a:hover, a:focus {
   background-color: transparent;
 }
 .btn-three .fa-ellipsis-v{color:#fff;}
+.cuerpo-perfil{
+  background-color: #fff;
+}
 .description-user{
    z-index:1000;
    color:#fff;
     position:relative;
     left:8.5em;
     width:300px;
+}
+.descripcion-span{
+  width:96%;
+  background-color: #fff;
+  height:45px;
+  display: inline-block;
+  margin-bottom: 1em;
+}
+.descripcion-span .rayo{
+  width:25px;
+  height:25px;
+  border-radius: 15px;
+  background-color: #f3c200;
+  display: inline-block;
+  margin:10px;
+}
+.descripcion-span .rayo i{
+  color:#fff;
+  padding: 6px;
+}
+.text-descrip{
+  width:75%;
+  text-align: center;
+  display: inline-block;
+}
+.nav-perfil{
+  margin-bottom: 0 !important;
+}
+.prespan{
+  width:96%;
+  background-color: #fff;
+  padding: 15px;
+  margin-bottom:1em;
+}
+.presentacion-span .presentacion-header{
+  font-weight: bold;
+}
+.presentacion-header h5{margin-bottom: 0; font-weight:bold;}
+.pgb{margin-bottom:8px; }
+.next-level{font-weight: bold; width: 100%; text-align: right;}
+.last-registro{
+  text-align: right;
+  color:#ccc;
+  font-size: 12px;
+}
+.birthday{color:#ccc; font-size: 12px; padding-right: 5px;}
+.birthday .fa-birthday-cake{color: #f7ee42; padding-right: 5px;}
+#input-nav.form-control{
+  width: 15vw;
+}
+.input-group-btn:last-child > .btn, .input-group-btn:last-child > .btn-group {
+    height: 34px;
 }

@@ -12,7 +12,7 @@
    </head>
    <body>
       <header>
-         <nav class="navbar navbar-fixed" id="nav-regis">
+         <nav class="navbar navbar-fixed nav-perfil" id="nav-regis">
             <div class="container-fluid">
                <div class="row">
                   <div class="col-md-4">
@@ -51,81 +51,154 @@
             </div>
          </nav>
       </header>
-
-<section id="inicio-perfil">
-<div class="container">
-   <div class="bgi" style="background-image:url('img/1537514052883.jpg');">
-  <!--   <?php if($user->foto==''){ ?>
-      <img src="img/1537514052883.jpg" class="rounded-circle cic"/>
-      <?php }else{ ?>-->
-      <img src="img/default.png" class="img-circle cic"/>
-      <h4 class="user-name">Lorem ipsum</h4>
-      <p class="description-user">Founder and Ceo</p>
-      <div class="buttons"><button class="btn btn-one">Seguir</button>
-      <button class="btn btn-two">Bloquear</button>
-      <button class="btn-three"><i class="fas fa-ellipsis-v fa-lg"></i></button>
-   </div>
-   </div>
-   <nav id="second-nav" class="navbar navbar-expand-sm bg-light">
-      <ul class="navbar-nav navbar-text nav-secondnav">
-         <li class="nav-item">
-            <a class="nav-link" href="#"><i class="fas fa-home fa-lg"></i>Home</a>
-         </li>
-         <li class="nav-item">
-            <a class="nav-link" href="#"><i class="fas fa-asterisk fa-lg"></i>Anime</a>
-         </li>
-         <li class="nav-item">
-            <a class="nav-link" href="#"><i class="fas fa-tv fa-lg"></i>Doramas</a>
-         </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#"><i class="fas fa-tv fa-lg"></i>Comentarios</a>
-         </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#"><i class="fab fa-rocketchat fa-lg" style="color:#8AD4DF;"></i>Favoritos</a>
-         </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#"><i class="fas fa-heart fa-lg" style="color:#FD4C5D;"></i>Logros</a>
-         </li>
-         <!--
-         <li class="nav-item">
-            <a class="nav-link" href="<?=base_url();?>perfil/editar"><i class="fas fa-user-edit fa-lg"></i>Editar Perfil</a>
-         </li>
-         <li  class="nav-item">
-            <a  class="nav-link" href="<?=base_url();?>perfil/salir"> <i class="fas fa-power-off fa-lg"></i>Cerrar sesión</a>
-         </li>
-      -->
-      </ul>
-      <span class="level">
-         <p class="col-md-4">Seguidores<br> <strong>466k</strong></p>
-          <p class="col-md-4">Comentarios<br> <strong>46,6k</strong></p>
-           <p class="col-md-4">Horas Online<br> <strong>245h</strong></p>
-      </span>
-   </nav>
-      <div class="container">
-         <div class="row">
-          
-      </div>
-</div>
-</section>
- <footer class="footer">
+      <section id="inicio-perfil">
          <div class="container">
-            <div class="row">
-               <div class="col-md-offset-1 col-md-10 col-md-offset-1">
-                  <hr class="hr">
-                  <div class="col-md-6">
-                     <p class="unir"> Unete a nuestras redes sociales! ©  AEx 2018<br>Ningún vídeo se encuentra alojado en nuestros servidores</p>
-                  </div>
-                  <div class="col-md-6">
-                     <ul class="nav navbar-nav footer-social pull-right">
-                        <li class="active"><a href="#"><i class="fab fa-google-plus-square fa-lg"></i></a></li>
-                           <li><a href="#"><i class="fab fa-facebook-f fa-lg"></i></a></li>
-                           <li><a href="#"><i class="fab fa-youtube fa-lg"></i></a></li>
-                           <li><a href="#"><i class="fab fa-twitter fa-lg"></i></a></li>
-                           <li><a href="#"><i class="fab fa-flickr fa-lg"></i></a></li>
-                           <li><a href="#"><i class="fab fa-tumblr-square fa-lg"></i></a></li>
-                     </ul>
-                  </div>
+            <div class=" bgi" style="background-image:url('img/1537514052883.jpg');">
+               <!--   <?php if($user->foto==''){ ?>
+                  <img src="img/1537514052883.jpg" class="rounded-circle cic"/>
+                  <?php }else{ ?>-->
+               <img src="img/default.png" class="img-circle cic"/>
+               <h4 class="user-name">Lorem ipsum</h4>
+               <p class="description-user">Founder and Ceo</p>
+               <div class="buttons"><button class="btn btn-one">Seguir</button>
+                  <button class="btn btn-two">Bloquear</button>
+                  <button class="btn-three"><i class="fas fa-ellipsis-v fa-lg"></i></button>
+               </div>
             </div>
+            <nav id="second-nav" class="navbar navbar-expand-sm bg-light">
+               <ul class="navbar-nav navbar-text nav-secondnav">
+                  <li class="nav-item">
+                     <a class="nav-link" href="#"><i class="fas fa-home fa-lg"></i>Home</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link" href="#"><i class="fas fa-asterisk fa-lg"></i>Anime</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link" href="#"><i class="fas fa-tv fa-lg"></i>Doramas</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link" href="#"><i class="fas fa-tv fa-lg"></i>Comentarios</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link" href="#"><i class="fab fa-rocketchat fa-lg" style="color:#8AD4DF;"></i>Favoritos</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link" href="#"><i class="fas fa-heart fa-lg" style="color:#FD4C5D;"></i>Logros</a>
+                  </li>
+                  <!--
+                     <li class="nav-item">
+                        <a class="nav-link" href="<?=base_url();?>perfil/editar"><i class="fas fa-user-edit fa-lg"></i>Editar Perfil</a>
+                     </li>
+                     <li  class="nav-item">
+                        <a  class="nav-link" href="<?=base_url();?>perfil/salir"> <i class="fas fa-power-off fa-lg"></i>Cerrar sesión</a>
+                     </li>
+                     -->
+               </ul>
+               <span class="level">
+                  <p class="col-md-4">Seguidores<br> <strong>466k</strong></p>
+                  <p class="col-md-4">Comentarios<br> <strong>46,6k</strong></p>
+                  <p class="col-md-4">Horas Online<br> <strong>245h</strong></p>
+               </span>
+            </nav>
+            <!--INICIO-->
+            <div class="container">
+               <div class="row">
+                  <div class="col-md-8 cuerpo-perfil">
+                     <div class="col-md-12">
+                        <ul class="nav nav-tabs">
+                           <li class="active"><a data-toggle="tab" href="#home">Home</a></li>
+                           <li><a data-toggle="tab" href="#menu1">Menu 1</a></li>
+                           <li><a data-toggle="tab" href="#menu2">Menu 2</a></li>
+                           <li><a data-toggle="tab" href="#menu3">Menu 3</a></li>
+                        </ul>
+                     </div>
+                     <div class="col-md-12">
+                        <div class="tab-content">
+                           <div id="home" class="tab-pane fade in active">
+                              <h3>HOME</h3>
+                              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                           </div>
+                           <div id="menu1" class="tab-pane fade">
+                              <h3>Menu 1</h3>
+                              <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                           </div>
+                           <div id="menu2" class="tab-pane fade">
+                              <h3>Menu 2</h3>
+                              <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+                           </div>
+                           <div id="menu3" class="tab-pane fade">
+                              <h3>Menu 3</h3>
+                              <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+                           </div>
+                        </div>
+                     </div>
+                     <!--Fin del tab-->
+                  </div>
+                  <div class="col-md-4">
+                     <div class="descripcion-span">
+                        <span class="rayo"><i class="fas fa-bolt fa-lg"></i></span>
+                        <h5 class="text-descrip">Founder and CEO en Facebook</h5>
+                     </div>
+                     <div class="prespan">
+                        <span class="presentacion-header">
+                           <h5>Presentacion</h5>
+                           <hr style="margin-top:10px;">
+                        </span>
+                        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit tempor metus, faucibus porta fames commodo purus vitae orci habitant, </p>
+                     </div>
+                     <div class="prespan">
+                        <span class="presentacion-header">
+                           <h5>Experiencia por nivel</h5>
+                           <hr style="margin-top:10px;">
+                        </span>
+                        <div class="progress pgb">
+                           <div class="progress-bar" role="progressbar" aria-valuenow="85"
+                              aria-valuemin="0" aria-valuemax="100" style="width:70%">
+                              <span class="pull-right"><b>85%<b></span>
+                           </div>
+                        </div>
+                        <p class="next-level">Proximo nivel 7</p>
+                     </div>
+                     <div class="prespan">
+                        <span class="presentacion-header">
+                           <h5>Rango: VIP <span class="last-registro pull-right"><i class="far fa-clock"></i>Registro:28/09/2018</span></h5>
+                           <hr style="margin-top:10px;">
+                        </span>
+                        <p class="birthday"><i class="fas fa-birthday-cake fa-lg"></i>Cumpleaños: 07-13 </p>
+                     </div>
+                     <div class="prespan">
+                        <span class="presentacion-header">
+                           <h5>Rango:</h5>
+                           <hr style="margin-top:10px;">
+                        </span>
+                        
+                     </div>
 
+                  </div>
+               </div>
+            </div>
+         </div>
+         <!--CUERPO-->
+         </div>
+      </section>
+      <footer class="footer">
+         <div class="container">
+         <div class="row">
+            <div class="col-md-offset-1 col-md-10 col-md-offset-1">
+               <hr class="hr">
+               <div class="col-md-6">
+                  <p class="unir"> Unete a nuestras redes sociales! ©  AEx 2018<br>Ningún vídeo se encuentra alojado en nuestros servidores</p>
+               </div>
+               <div class="col-md-6">
+                  <ul class="nav navbar-nav footer-social pull-right">
+                     <li class="active"><a href="#"><i class="fab fa-google-plus-square fa-lg"></i></a></li>
+                     <li><a href="#"><i class="fab fa-facebook-f fa-lg"></i></a></li>
+                     <li><a href="#"><i class="fab fa-youtube fa-lg"></i></a></li>
+                     <li><a href="#"><i class="fab fa-twitter fa-lg"></i></a></li>
+                     <li><a href="#"><i class="fab fa-flickr fa-lg"></i></a></li>
+                     <li><a href="#"><i class="fab fa-tumblr-square fa-lg"></i></a></li>
+                  </ul>
+               </div>
+            </div>
          </div>
       </footer>
