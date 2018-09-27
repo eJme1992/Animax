@@ -393,13 +393,26 @@ a, a:hover, a:focus {
 .input-group-btn:last-child > .btn, .input-group-btn:last-child > .btn-group {
     height: 34px;
 }
+.margin-b{margin-bottom: 8px;}
+.friend-name{display: inline-block;}
+.img-inline{display: inline-block;}
+.btn-facebook{
+  background-color:#4267B2;
+  color:#fff; 
+}
+.btn-twitter{
+    background-color:#1DA1F2;
+  color:#fff; 
+}
+.btn-dribble{
+    background-color:#F15B91;
+  color:#fff; 
+}
 /*########Para las nav responsive##########*/
-Edwin M, [27.09.18 16:03]
+
 #input-nav.form-control{
   width: 100%;
 }
-
-Edwin M, [27.09.18 16:03]
 #navmovil{
     display: none;
 }
