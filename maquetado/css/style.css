@@ -238,3 +238,103 @@ font-size: 10px;
 background-color: #f2f2f2;
 height:70px;
 }
+/*###########PERFIL#################*/
+.bgi{
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height:180px;
+}
+.cic{
+    z-index:1000;
+    width:80px;
+    height:80px;
+    position:relative;
+    top:6.5em;
+    left:2.5em;
+}
+.fa-home{color:#00ff00;}
+.fa-asterisk{color:#800080;}
+.fa-tv{ color:#ff8000;}
+.fa-power-off{color:#FF3300;}
+.fa-user-edit{color:#2b589b;}
+.user-name{
+    color:#fff;
+    position:relative;
+    left:7em;
+    z-index:1000;
+    width:250px;
+}
+.level{
+    float:right;
+    width:350px;
+    text-align:right;
+}
+.level p{text-align: center;}
+#second-nav{
+  background-color: #fff;
+    margin-bottom:3em;
+}
+#second-nav ul li {
+  list-style: none;
+}
+#second-nav li a{
+    color:#000;
+}
+#second-nav li a i{padding-right:0.5em;}
+.level{ color:#000; }
+
+a, a:hover, a:focus {
+    text-decoration: none;
+    outline: none;
+}
+::selection {
+
+    background: #68dff0;
+    color: #fff;
+}
+::-moz-selection {
+    background: #68dff0;
+    color: #fff;
+}
+.btn-one{
+  color:#fff;
+  background-color:rgba(244, 105, 116, 0.9);
+  border-radius: 4px;
+  border-color:#fff; 
+  display: inline-block;
+}
+.btn-one:hover{
+  color:#fff;
+  background-color:rgba(244, 105, 116, 0.9);
+}
+.btn-two{
+  color:#fff;
+  background-color:rgba(0, 0, 0, 0.6);
+  border-radius: 4px;
+  border-color:#fff; 
+  display: inline-block;
+}
+.btn-two:hover{
+  color:#fff;
+  background-color:rgba(0, 0, 0, 0.6);
+}
+.buttons{
+  display: inline-block;
+  width:200px;
+  position:relative;
+  float: right;
+  z-index:1000;
+  top:-1em;
+}
+.btn-three{
+  border:none;
+  background-color: transparent;
+}
+.btn-three .fa-ellipsis-v{color:#fff;}
+.description-user{
+   z-index:1000;
+   color:#fff;
+    position:relative;
+    left:8.5em;
+    width:300px;
+}
