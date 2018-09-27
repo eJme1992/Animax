@@ -393,3 +393,35 @@ a, a:hover, a:focus {
 .input-group-btn:last-child > .btn, .input-group-btn:last-child > .btn-group {
     height: 34px;
 }
+/*########Para las nav responsive##########*/
+Edwin M, [27.09.18 16:03]
+#input-nav.form-control{
+  width: 100%;
+}
+
+Edwin M, [27.09.18 16:03]
+#navmovil{
+    display: none;
+}
+ .escritorio{
+    font-size: 0.9vw;
+ } 
+ .navbar-toggle{
+    float: right !important;
+    display: block;
+}
+@media (max-width:1270px){
+ .escritorio{
+     display: none;
+ } 
+ #navmovil{
+    display: block ;
+} 
+}
+.span {
+display: inline-flex !important;
+} 
+#navmovil ul li{
+    display: block !important;
+    width: 100% !important;
+}
