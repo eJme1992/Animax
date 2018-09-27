@@ -6,25 +6,95 @@
                 <div class="row">
                     <div class="col-md-5">
                         <img src="<?=base_url().$serie->imagen;?>" class="img-fluid img-serie" />
-                      <div class="reaccion">
+                        <?php if(isset($user->id)){ ?>
+
+
+                        <div class="reaccion">
                             <ul class="nav nav-bar fav">
-                                <li class="nav-item"><a class="nav-link" id="favorite" title="Favorito" data-toggle="tooltip" href="#"><i class="fas fa-heart" style="color:#FF0000;"></i></a></li>
-                                <li class="nav-item"><span class="navbar-text"><a href="#"  title="Calificacion" data-toggle="tooltip"><i class="fas fa-star" ></i></a></span>
-                                    <span class="navbar-text"><a href="#" title="Calificacion" data-toggle="tooltip"  onclick="cambio()"><i class="fas fa-star" id="star"></i></a></span>
+                                <form id="me_gusta">
+                                    <li class="nav-item">
+                                        <button class="<?php if (isset($favoritos->id)) echo 'btn' ?> nav-link" id="favorite" title="Favorito" data-toggle="tooltip" type='submit'><i class="fas fa-heart" style="color:#FF0000;"></i></button>
+                                        <input type="hidden" name="id_serie" id='id_serie' value="<?=$serie->id?>">
+                                        <input type="hidden" name="id_user" id='id_user' value="<?=$user->id?>">
+                                        <input type="hidden" name="<?=$csrf['name'];?>" value="<?=$csrf['hash'];?>">
+                                        <?php if (isset($favoritos->id)) { ?>
+                                        <input type="hidden" name="favoritos" id='favoritos' value="<?=$favoritos->id?>">
+                                        <?php  }else{ ?>
+                                        <input type="hidden" name="favoritos" id='favoritos' value="false">
+                                        <?php  } ?>
+                                    </li>
+                                </form>
+
+
+
+
+
+
+                                <li class="nav-item">
+
+                                    <span class="navbar-text">
+                                      <a href="#"  title="Calificacion" data-toggle="tooltip"><i class="fas fa-star" ></i>
+                                      </a>
+                                    </span>
+
+                                    <span class="navbar-text">
+                                      <a href="#" title="Calificacion" data-toggle="tooltip"  onclick="cambio(1)"><i class="fas fa-star" id="star"></i>
+                                      </a>
+                                    </span>
+
+                                    <span class="navbar-text">
+                                      <a href="#" title="Calificacion" data-toggle="tooltip"><i class="fas fa-star" ></i>
+                                      </a>
+                                    </span>
+
+                                    <span class="navbar-text">
+                                      <a href="#" title="Calificacion" data-toggle="tooltip"><i class="fas fa-star"></i>
+                                      </a>
+                                    </span>
+
                                     <span class="navbar-text"><a href="#" title="Calificacion" data-toggle="tooltip"><i class="fas fa-star" ></i></a></span>
-                                    <span class="navbar-text"><a href="#" title="Calificacion" data-toggle="tooltip"><i class="fas fa-star"></i></a></span>
-                                    <span class="navbar-text"><a href="#" title="Calificacion" data-toggle="tooltip"><i class="fas fa-star" ></i></a></span>
+
                                 </li>
-                                <li class="nav-item"><a class="nav-link" href="#">Agregar a mi lista</a></li>
+                                    <form id="Lista">
+                                    <li class="nav-item">
+                                        <button class="<?php if (isset($id->id)) echo 'btn' ?> nav-link" id="Listas" title="Favorito" data-toggle="tooltip" type='submit'>Agregar a mi lista</button>
+                                        <input type="hidden" name="id_serie" id='id_serie' value="<?=$serie->id?>">
+                                        <input type="hidden" name="id_user" id='id_user' value="<?=$user->id?>">
+                                        <input type="hidden" name="<?=$csrf['name'];?>" value="<?=$csrf['hash'];?>">
+                                        <?php if (isset($id->id)) { ?>
+                                        <input type="hidden" name="id" id='id' value="<?=$id->id?>">
+                                        <?php  }else{ ?>
+                                        <input type="hidden" name="id" id='id' value="false">
+                                        <?php  } ?>
+                                    </li>
+                                </form>
+                                </li>
                             </ul>
                             <script>
-                                function cambio(){
-                                   document.getElementById("star").style.color="#FFFF00";
+                                function cambio(number,var){
+                                   var series = <?=$serie->id?>;
+                                   var user = <?=$user->id?>;
+                                   var parametros = {
+                                   "series": series,
+                                   "user": user,
+                                   "var" : var,
+                                   "number": number
+                                   };
+                                  $.ajax({
+                                  data: parametros, //datos que se envian a traves de ajax
+                                  url: '<?=base_url();?>Interanciones/califica_serie', 
+                                  type: 'post', //método de envio
+                                  success: function ( response ) { //una vez que el archivo recibe el request lo procesa y lo devuelve
+                                  $( "#resultado" ).html( response );
+                                  document.getElementById("star").style.color="#FFFF00";
+                                  }
+                                  });
+                                   
                                 }
                             </script>
-
+                            <?php } ?>
                         </div>
-                    
+
                     </div>
                     <div class="col-md-7" id="descripcion-p">
                         <div class="text-nun">
@@ -35,11 +105,11 @@
                         <p><b>Categorias:</b><br>
                             <?=$serie->categoria?>
                         </p>
-                       
+
                         <p class="status"><b>Estado:</b><br>
                             <?=$serie->estado?>
                         </p>
-                      
+
                         <p class="sipnosis"><b>Sinopsis:</b><br>
                             <?=$serie->descripcion;?>
                         </p>
@@ -52,7 +122,7 @@
                         <p><b>Duración de los cápitulos:</b><br>
                             <?=$serie->duracion;?>
                         </p>
-                      
+
 
 
 
@@ -62,28 +132,28 @@
                 </div>
             </div>
             <div class="col-md-4 anun">
-            <div class="capitulos card">
-                     <h3>Lista de capitulo</h3>
-                    
-                     <div class="row text-center" style="color:#ff6414;margin-bottom:20px;">
-                           <div class="col-6">
-                            <b>#Capitulo / #Temporada</b> 
-                           </div> 
-                           <div class="col-6">
+                <div class="capitulos card">
+                    <h3>Lista de capitulo</h3>
+
+                    <div class="row text-center" style="color:#ff6414;margin-bottom:20px;">
+                        <div class="col-6">
+                            <b>#Capitulo / #Temporada</b>
+                        </div>
+                        <div class="col-6">
                             <b> Nombre </b>
-                           </div>
-                               
-                     </div>  
-                  <div>  
-                  <?php $cond=0; 
+                        </div>
+
+                    </div>
+                    <div>
+                        <?php $cond=0; 
                   foreach ($capitulo as $key) {
                      if($cond!=$key->temporada){ $cond=$key->temporada; ?>
-                     <div class="text-center col-12" id="temporada<?=$key->temporada;?>">
-                     <b>Temporada numero <?=$key->temporada;?></b>
-                     </div>
-                    <?php } ?>
-                     <div class="" >
-                      <a href="<?php echo base_url();?>home/capitulo/<?=$key->id?>"> 
+                        <div class="text-center col-12" id="temporada<?=$key->temporada;?>">
+                            <b>Temporada numero <?=$key->temporada;?></b>
+                        </div>
+                        <?php } ?>
+                        <div class="">
+                            <a href="<?php echo base_url();?>home/capitulo/<?=$key->id?>"> 
                            <span class="col-6">
                            
                            <i class="fas fa-check-double"></i>Cap.<?=$key->numero;?>/Tem.<?=$key->temporada;?> 
@@ -95,14 +165,14 @@
                           
                            </span>
                           </a>
-                               
-                     </div>  
-                  <?php } ?>
-               </div>
-                        
-                     
 
-                  </div>
+                        </div>
+                        <?php } ?>
+                    </div>
+
+
+
+                </div>
 
             </div>
 
@@ -206,45 +276,123 @@
 <!-- NUEVAS generoS -->
 <script>
     jQuery(document).ready(function() {
-               jQuery("#comments").submit(function(event) {
-               event.preventDefault();
-         
-             var msj = '1';
-         //validaciones con js
-         
+    jQuery("#me_gusta").submit(function(event) {
+        event.preventDefault();
+
+        var msj = '1';
+        //validaciones con js
+
         if (msj === "1") {
-         var formData = new FormData(jQuery('#comments') [0]);
-         jQuery.ajax({
-           url: '<?=base_url();?>Comentario_serie/crear_comentario',
-           type: 'POST',
-           contentType: false,
-           processData: false,
-           dataType: 'json',
-           data: formData,
-           beforeSend: function() {
-             $("#resultado").html('<div class="alert alert-success">Procesando...!</div>');
-           }
-         })
-         .done(function(data, textStatus, jqXHR) {
-            var getData = jqXHR.responseJSON; // dejar esta linea
-           if(data.status=='ok'){
-            $("#resultado").html('<div class="alert alert-success">'+data.code+'</div>');
-             window.location.href ='<?=base_url();?>home/detalle_series/<?=$serie->id;?>';
-           }else{
-           $("#resultado").html('<div class="alert alert-danger"><strong>ERROR!</strong>'+data.error+'</div>');
-           }
-         })
-               .fail(function(jqXHR, textStatus, errorThrown) {
-                 var getErr = jqXHR.responseText;
-                 
-                 console.log(getErr);
-         
-               })
-          // Fin de ajax
-          } else {
-              swal("¡Error! ", msj, "error");
-          }
-          });
-         
-         });//fin ready
+            var formData = new FormData(jQuery('#me_gusta')[0]);
+            jQuery.ajax({
+                    url: '<?=base_url();?>Interanciones/Favorito_serie',
+                    type: 'POST',
+                    contentType: false,
+                    processData: false,
+                    dataType: 'json',
+                    data: formData,
+
+                })
+                .done(function(data, textStatus, jqXHR) {
+                    var getData = jqXHR.responseJSON; // dejar esta linea
+                    if (data.status == 'ok') {
+                        var element = document.getElementById("favorite");
+                        element.classList.add("btn");
+                        $("#favoritos").val(data.resultado);
+                    } else {
+                        var element = document.getElementById("favorite");
+                        element.classList.remove("btn");
+                    }
+                })
+                .fail(function(jqXHR, textStatus, errorThrown) {
+                    var getErr = jqXHR.responseText;
+
+                    console.log(getErr);
+
+                })
+                // Fin de ajax
+        } else {
+            swal("¡Error! ", msj, "error");
+        }
+    });
+    jQuery("#Lista").submit(function(event) {
+        event.preventDefault();
+
+        var msj = '1';
+        //validaciones con js
+
+        if (msj === "1") {
+            var formData = new FormData(jQuery('#Lista')[0]);
+            jQuery.ajax({
+                    url: '<?=base_url();?>Interanciones/lista_serie',
+                    type: 'POST',
+                    contentType: false,
+                    processData: false,
+                    dataType: 'json',
+                    data: formData,
+
+                })
+                .done(function(data, textStatus, jqXHR) {
+                    var getData = jqXHR.responseJSON; // dejar esta linea
+                    if (data.status == 'ok') {
+                        var element = document.getElementById("Listas");
+                        element.classList.add("btn");
+                        $("#id").val(data.resultado);
+                    } else {
+                        var element = document.getElementById("Listas");
+                        element.classList.remove("btn");
+                    }
+                })
+                .fail(function(jqXHR, textStatus, errorThrown) {
+                    var getErr = jqXHR.responseText;
+
+                    console.log(getErr);
+
+                })
+                // Fin de ajax
+        } else {
+            swal("¡Error! ", msj, "error");
+        }
+    });
+    jQuery("#comments").submit(function(event) {
+        event.preventDefault();
+
+        var msj = '1';
+        //validaciones con js
+
+        if (msj === "1") {
+            var formData = new FormData(jQuery('#comments')[0]);
+            jQuery.ajax({
+                    url: '<?=base_url();?>Comentario_serie/crear_comentario',
+                    type: 'POST',
+                    contentType: false,
+                    processData: false,
+                    dataType: 'json',
+                    data: formData,
+                    beforeSend: function() {
+                        $("#resultado").html('<div class="alert alert-success">Procesando...!</div>');
+                    }
+                })
+                .done(function(data, textStatus, jqXHR) {
+                    var getData = jqXHR.responseJSON; // dejar esta linea
+                    if (data.status == 'ok') {
+                        $("#resultado").html('<div class="alert alert-success">' + data.code + '</div>');
+                        window.location.href = '<?=base_url();?>home/detalle_series/<?=$serie->id;?>';
+                    } else {
+                        $("#resultado").html('<div class="alert alert-danger"><strong>ERROR!</strong>' + data.error + '</div>');
+                    }
+                })
+                .fail(function(jqXHR, textStatus, errorThrown) {
+                    var getErr = jqXHR.responseText;
+
+                    console.log(getErr);
+
+                })
+                // Fin de ajax
+        } else {
+            swal("¡Error! ", msj, "error");
+        }
+    });
+
+}); //fin ready
 </script>

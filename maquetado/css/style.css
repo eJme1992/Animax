@@ -125,3 +125,116 @@ padding: 0;
 .btn-center{
   width: 250px;
 }
+/* SERIE CABEZERA */ 
+#cabezera{
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  color:#fff;
+
+}
+.cabezera_degradado {
+  padding-top: 25px;
+  padding-bottom: 25px;
+  background-color: rgba(7, 18, 30, 0.82);
+}
+#cabezera .portada {
+  border: 5px solid #fff;
+  border-radius:10px;
+}
+#cabezera .titulo h2,#cabezera .total h1 {
+  line-height: 1px;
+}
+#cabezera .generos{
+  margin-top: 35px;
+}
+#cabezera .descripcion{
+  margin-top: 35px;
+}
+#cabezera .datos{
+  margin-top: 35px;
+}
+#cabezera .borde_center {
+  border-left: 2px solid #fff;
+  border-right: 2px solid #fff;
+}
+#cabezera .well {
+  background-color: #000 !important;
+  color:#fff !important;
+  margin-bottom: 5px !important;
+
+border: 1px solid #000;
+}
+.puntos .total {
+  background-color: #07bff7;
+  height: 50px;
+  padding-left: 0px;
+  padding-right: 0px;
+  padding-top: 5px;
+  border-radius: 5px 0px 0px 5px;
+}
+.puntos .estrellas{
+  background-color: #535353;
+    height: 50px;
+     padding-top: 5px;
+     border-radius: 0px 5px 5px 0px;
+}
+#cabezera .opciones {
+    margin-left:3px;
+    margin-top: 35px;
+    padding:15px;
+    width:auto;
+    background-color: #22272c;
+}
+#cabezera .opciones .btn-primary {
+  background-color: #1a2237 !important;
+  border: 1px solid #1a2237 !important;
+}
+
+#pestañas_serie {
+  width: 100%;
+  background-color: #fff;
+  padding-top: 7px;
+  font-size: 14px;
+  font-weight:700;
+}
+#pestañas_serie a{
+  color: #54c8f0;
+  border: 0px solid #ddd;
+  border-bottom: 2px solid #54c8f0;
+  height: 50px;
+}
+#pestañas_serie a:hover{
+  color: red;
+  background-color: transparent;
+}
+#pestañas_serie .nav-tabs {
+    border-bottom: 0px solid #ddd;
+}
+#pestañas_serie .active a{
+  color:#000;
+  border-bottom: 0px solid #54c8f0;
+}
+.secciones {
+   margin-top: 35px;
+}
+#capitulos{
+ 
+  margin: 15px;
+}
+.capitulo{
+  overflow: hidden;
+  border-radius:5px;
+  height:70px;
+}
+#capitulos .capitulo .img-cap{
+  background-size:cover !important;
+  background-repeat: no-repeat !important;
+  height:70px;
+  border-radius:5px 0px 0px 5px;
+  background-position: center center;
+}
+#capitulos .contenido{
+font-size: 10px;
+background-color: #f2f2f2;
+height:70px;
+}
