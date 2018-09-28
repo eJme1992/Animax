@@ -472,6 +472,11 @@ top: -2em;
 .logros-descrip{font-weight: normal;}
 /*Perfil /Anime */
 .anime-side{background-color:#fff; padding-top: 1.5em;}
+.nav-anime{background-color: #f2f2f2; margin-bottom: 1em;}
+.nav-anime nav ul li a { color:#000; }
+.nav-anime nav ul li a:visited{color:#0575ff;}
+.navAnime{margin-bottom: 0;}
+.colorgrey{color:#838383;}
 /*########Para las nav responsive##########*/
 
 #input-nav.form-control{
