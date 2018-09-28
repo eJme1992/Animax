@@ -145,14 +145,14 @@ padding: 0;
   line-height: 1px;
 }
 #cabezera .generos{
-  line-height:5px;
-  margin-top: 35px;
+  line-height:35px;
+  margin-top: 10px;
 }
 #cabezera .descripcion{
-  margin-top: 35px;
+  margin-top: 0px;
 }
 #cabezera .datos{
-  margin-top: 35px;
+  margin-top: 10px;
 }
 #cabezera .borde_center {
   border-left: 2px solid #fff;
@@ -181,7 +181,7 @@ border: 1px solid #000;
 }
 #cabezera .opciones {
     margin-left:3px;
-    margin-top: 35px;
+    margin-top: 0px;
     padding:15px;
     width:auto;
     background-color: #22272c;
@@ -216,7 +216,7 @@ border: 1px solid #000;
   border-bottom: 0px solid #54c8f0;
 }
 .secciones {
-   margin-top: 35px;
+   margin-top: 25px;
 }
 #capitulos{
  
@@ -240,7 +240,7 @@ background-color: #f2f2f2;
 height:70px;
 }
 .lateral {
-  margin-top: 35px;
+  margin-top: 25px;
 }
 .lateral button{
   font-size:12px;
