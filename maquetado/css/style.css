@@ -453,6 +453,23 @@ top: -2em;
 }
 .text-title{color:#000;}
 .dis{display: inline-block;}
+/*Perfil Logros*/
+#logros-perfil{background-color:#f2f2f2; }
+.perfil-logros{
+  background-color: #fff;
+  padding-bottom: 1.5em;
+  margin-bottom: 1.5em;
+}
+.logritos{color:#838383; background-color:#f2f2f2; padding-bottom: 1em;}
+.logros-text{color:#000; font-weight: bold;}
+.back-logros{
+  background-color: #fff;
+  margin-bottom: 1em;
+}
+.logros-title{color:#000; font-weight: bold;}
+.margin-t{margin-top:1em;}
+.progreso{height:89px;}
+.logros-descrip{font-weight: normal;}
 /*########Para las nav responsive##########*/
 
 #input-nav.form-control{
