@@ -145,6 +145,7 @@ padding: 0;
   line-height: 1px;
 }
 #cabezera .generos{
+  line-height:5px;
   margin-top: 35px;
 }
 #cabezera .descripcion{
@@ -237,6 +238,13 @@ border: 1px solid #000;
 font-size: 10px;
 background-color: #f2f2f2;
 height:70px;
+}
+.lateral {
+  margin-top: 35px;
+}
+.lateral button{
+  font-size:12px;
+  margin-top: 15px;
 }
 /*###########PERFIL#################*/
 .bgi{
