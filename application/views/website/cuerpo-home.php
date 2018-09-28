@@ -51,34 +51,11 @@
             <!--Diva para la barra lateral 3-->
             <div class="col-lg-9 row">
                 
-           <div class="row titulos col-md-12">
-                <div class="col-md-10 bordert" id="SERIES_DESTACAS">
-                    <h5><i class="far fa-star"></i> SERIES DESTACADAS</h5>
-                </div>
-                <div class="text-right col-md-2">
-                    <a href="<?php base_url();?>home/mas?tipo=2&pagina=1&categoria=Todas&genero=Todas&desde=1900&hasta=2099">
-                        <button class="btn mas btn-dark" style=""><b><i class="fas fa-plus"></i></b>
-                        </button>
-                    </a>
-                </div>
-            </div>
-                <?php foreach ($series as $key){?>
-                <div class="col-md-3 series">
-                    <div class="" id='destacadas'>
-                        <a class="hovere" href="<?php echo base_url();?>home/detalle_series/<?=$key->id?>" data-toggle="tooltip" title="<?=$key->nombre;?>"> <img src="<?=base_url().$key->imagen2;?>" class="img-fluid imgsm"></a>
-                        <span class="spanhovertag">
-                  DESTACA <i class="far fa-star"></i>
-                  </span>
-                       <span class="spanhovertilte">
-                  <?=$key->nombre;?> 
-                  </span>
-                    </div>
-                </div>
-                <?php } ?>
+      
 
 <div class="row titulos col-md-12">
                 <div class="col-md-10 bordert" id="SERIES_DESTACAS">
-                    <h5><i class="fas fa-tv"></i> ULTIMOS CAPITULOS</h5>
+                    <h5><i class="fas fa-tv"></i> NUEVOS CAPITULOS</h5>
                 </div>
                 <div class="text-right col-md-2">
                     <a href="<?php base_url();?>home/mas?tipo=3&pagina=1&categoria=Todas&genero=Todas&desde=1900&hasta=2099">
@@ -100,9 +77,55 @@
                         </div>
                     </div>
                     <?php } ?>
-                    <div class="col-12">
+
+                    <div class="col-xs-12">
                     <img style="width:100%;" class="pd" src="<?=base_url();?>plantilla/website/img/1534667129353.jpg">
                     </div>
+                         <div class="row titulos col-md-12">
+                <div class="col-md-10 bordert" id="SERIES_DESTACAS">
+                    <h5><i class="far fa-star"></i> SERIES DESTACADAS</h5>
+                </div>
+                <div class="text-right col-md-2">
+                    <a href="<?php base_url();?>home/mas?tipo=2&pagina=1&categoria=Todas&genero=Todas&desde=1900&hasta=2099">
+                        <button class="btn mas btn-dark" style=""><b><i class="fas fa-plus"></i></b>
+                        </button>
+                    </a>
+                </div>
+            </div>
+                <?php $i=0; foreach ($series as $key){
+                if($i==0){
+                    ?>
+              <div class="col-md-6 series">
+                    <div class="" id='destacadas'>
+                        <a class="hovere" href="<?php echo base_url();?>home/detalle_series/<?=$key->id?>" data-toggle="tooltip" title="<?=$key->nombre;?>">
+                         <img src="<?=base_url().$key->imagen2;?>" class="img-fluid imglg"></a>
+                        <span class="spanhovertag">
+                  DESTACA <i class="far fa-star"></i>
+                  </span>
+                       <span class="spanhovertilte">
+                  <?=$key->nombre;?> 
+                  </span>
+                    </div>
+             </div>
+                <div class="col-md-6">
+                <div class="row">
+                <?php }else{ ?>
+                <div class="col-md-4 series">
+                    <div class="" id='destacadas'>
+                        <a class="hovere" href="<?php echo base_url();?>home/detalle_series/<?=$key->id?>" data-toggle="tooltip" title="<?=$key->nombre;?>"> <img src="<?=base_url().$key->imagen2;?>" class="img-fluid imgsm"></a>
+                        <span class="spanhovertag">
+                  DESTACA <i class="far fa-star"></i>
+                  </span>
+                       <span class="spanhovertilte">
+                  <?=$key->nombre;?> 
+                  </span>
+                    </div>
+                </div>
+            <?php } ?>
+                <?php $i++;} ?>
+                </div>
+                </div>
+
                 <div class="row titulos col-md-12">
                 <div class="col-md-10 bordert" id="TEMPORADAS_RECIENTES">
                     <h5><i class="fab fa-cloudscale"></i> TEMPORADAS RECIENTES</h5>
@@ -152,16 +175,16 @@
                     </div>
                 </div>
                 <?php } ?>
-                <div class="col-12">
+                <div class="col-xs-12">
                  <img style="width:100%;" class="pd" src="<?=base_url();?>plantilla/website/img/1534667129353.jpg">
                     </div>
 
             </div>
             <div class="col-lg-3 news panel">
             <div class="row titulos ">
-                <div class="col-8 bordert" id="NOTICIAS">
+                <div class="col-xs-8 bordert" id="NOTICIAS">
                     <h5><i class="far fa-newspaper"></i> NOTICIAS</h5> </div>
-                <div class=" col-2">
+                <div class=" col-xs-2">
                     <a href="<?php base_url();?>home/noticias">
                         <button class="btn mas btn-dark" style=""><b><i class="fas fa-plus"></i></b>
                         </button>
@@ -169,7 +192,7 @@
                 </div>
             </div>
 
-<div class="row  card-body">
+<div class="row  panel-body">
 <?php foreach ($noticias as $key){?>
     <a class="link row" href="<?php echo base_url();?>home/noticia/<?=$key->id?>" data-toggle="tooltip" title="<?=$key->titulo;?>">
           
