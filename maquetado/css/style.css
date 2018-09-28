@@ -443,6 +443,16 @@ top: -2em;
 .replicas{padding-right: 15px;}
 .genero{padding-right: 15px; width:80px; display: inline-block;}
 .photo-user{margin-bottom: 1em;}
+.img-recomendaciones{display: inline-block; width: 130px; height:150px;}
+.recomend-title{
+  display: inline-block; 
+  font-weight: bold; 
+  width:50%;
+  margin-top:0;
+  top:-1em; 
+}
+.text-title{color:#000;}
+.dis{display: inline-block;}
 /*########Para las nav responsive##########*/
 
 #input-nav.form-control{
