@@ -145,13 +145,14 @@ padding: 0;
   line-height: 1px;
 }
 #cabezera .generos{
-  margin-top: 35px;
+  line-height:35px;
+  margin-top: 10px;
 }
 #cabezera .descripcion{
-  margin-top: 35px;
+  margin-top: 0px;
 }
 #cabezera .datos{
-  margin-top: 35px;
+  margin-top: 10px;
 }
 #cabezera .borde_center {
   border-left: 2px solid #fff;
@@ -180,7 +181,7 @@ border: 1px solid #000;
 }
 #cabezera .opciones {
     margin-left:3px;
-    margin-top: 35px;
+    margin-top: 0px;
     padding:15px;
     width:auto;
     background-color: #22272c;
@@ -215,7 +216,7 @@ border: 1px solid #000;
   border-bottom: 0px solid #54c8f0;
 }
 .secciones {
-   margin-top: 35px;
+   margin-top: 25px;
 }
 #capitulos{
  
@@ -237,6 +238,13 @@ border: 1px solid #000;
 font-size: 10px;
 background-color: #f2f2f2;
 height:70px;
+}
+.lateral {
+  margin-top: 25px;
+}
+.lateral button{
+  font-size:12px;
+  margin-top: 15px;
 }
 /*###########PERFIL#################*/
 .bgi{
@@ -435,6 +443,97 @@ top: -2em;
 .replicas{padding-right: 15px;}
 .genero{padding-right: 15px; width:80px; display: inline-block;}
 .photo-user{margin-bottom: 1em;}
+.img-recomendaciones{display: inline-block; width: 130px; height:150px;}
+.recomend-title{
+  display: inline-block; 
+  font-weight: bold; 
+  width:50%;
+  margin-top:0;
+  top:-1em; 
+}
+.text-title{color:#000;}
+.dis{display: inline-block;}
+/*Perfil Logros*/
+#logros-perfil{background-color:#f2f2f2; }
+.perfil-logros{
+  background-color: #fff;
+  padding-bottom: 1.5em;
+  margin-bottom: 1.5em;
+}
+.logritos{color:#838383; background-color:#f2f2f2; padding-bottom: 1em;}
+.logros-text{color:#000; font-weight: bold;}
+.back-logros{
+  background-color: #fff;
+  margin-bottom: 1em;
+}
+.logros-title{color:#000; font-weight: bold;}
+.margin-t{margin-top:1em;}
+.progreso{height:89px;}
+.logros-descrip{font-weight: normal;}
+/*Perfil /Anime */
+.anime-side{background-color:#fff; padding-top: 1.5em;}
+.nav-anime{background-color: #f2f2f2; margin-bottom: 1em;}
+.nav-anime nav ul li a { color:#000; }
+.nav-anime nav ul li a:visited{color:#0575ff;}
+.navAnime{margin-bottom: 0;}
+.colorgrey{color:#838383;}
+.publi-text{
+  color: #fff;
+ font-weight:bold;
+  text-align:center;
+   width: 100%;
+   padding: 50px;
+ }
+.noti-publi{background-color: #838383; height: 180px; margin-bottom: 1.5em;}
+.like-button{background-color: #fff; padding-top:10px; margin-bottom: 1em;}
+.btn-button{ 
+  background-color: #0d52ba; 
+  color:#fff; 
+  width: 100%; 
+  border-top-right-radius:0;
+  border-top-left-radius: 0;
+  margin-bottom: 0.5em;
+   }
+.border-buton{
+  border:solid 1px #0d52ba; 
+  width: 100%; 
+  height:35px;
+  padding: 8px;
+  text-align: center;
+  border-bottom-width:0; 
+}
+.btn-share{
+  background-color: #0d52ba; 
+  color:#fff; 
+  width: 100%;
+  margin-bottom: 1em;
+}
+.pill-noti{background-color: #fff; padding: 15px;}
+.pill-noti ul li a{color:#000;}
+/*############### Para la Noticias#####################*/
+#noticias{ background-color: #f2f2f2;}
+.noticia-view{background-color: #fff; margin-bottom: 1.5em;} 
+.noti-titles{color:#000; font-weight:bold; padding-left: 15px;}
+.img-noti{margin-bottom: 1.5em;}
+.descrip-noti{padding-left:15px;}
+.padding-l{padding-left:15px;}
+.nav-pills > li.active > a, .nav-pills > li.active > a:focus, .nav-pills > li.active > a:hover{
+  background-color: #f2f2f2;
+  border-left-style: solid;
+  border-left-width: 5px;
+  border-left-color:#337AB7;
+  color: #000;
+  font-weight: bold;
+}
+.publi-lateral{
+  background-color: #838383;
+  height: 250px;
+  margin-bottom: 1.5em;
+}
+.publi-text-late{color: #fff; text-align: center; padding: 3.5em;}
+.usdiv{background-color:#fff; padding: 15px; height:200px;}
+.usdiv ul li {list-style: none; padding:0.5em;}
+.usdiv ul {padding: 1.5em;}
 /*########Para las nav responsive##########*/
 
 #input-nav.form-control{

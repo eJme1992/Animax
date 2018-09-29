@@ -1,222 +1,460 @@
 
-<section id="home">
-    <div class="container">
-        <div class="row mg">
-            <div class="col-lg-5">
-                <!--Slider-->
-                <div id="demo" class="carousel slide" data-ride="carousel">
-                    <!-- Indicators -->
-                    <ul class="carousel-indicators">
-                        <?php $i=0; foreach ($carrusel as $key) { ?>
-                        <li data-target="#demo" data-slide-to="<?=$i?>" <?php if($i==0) echo 'class="active"';?> > </li>
-                        <?php $i++; } ?>
-                    </ul>
-                    <!-- The slideshow -->
-
-                    <div class="carousel-inner">
-                        <?php $i=0; foreach ($carrusel as $key) { ?>
-                        <div class="carousel-item <?php if($i==0) echo 'active';?>">
-                            <a href="#">
-                     <img class="carrusel" src="<?=base_url().$key->imagen;?>" alt="Los Angeles">
-                     </a>
-                        </div>
-                        <?php $i++; } ?>
-                    </div>
-                    <!-- Left and right controls -->
-                    <a class="carousel-control-prev" href="#demo" data-slide="prev">
-                        <span class="carousel-control-prev-icon"></span>
-                    </a>
-                    <a class="carousel-control-next" href="#demo" data-slide="next">
-                        <span class="carousel-control-next-icon"></span>
-                    </a>
-                </div>
+       <div class="">
+            <div class="banner">
+               <img src="http://placehold.it/1400x250" class="img-responsive" style="width:100%">
             </div>
-            <div class="col-lg-7">
-                <div class="row">
-                    <?php foreach ($capitulo as $key){?>
-                    <div class="col-md-4" id="cap">
-                        <div class="">
-                            <a href="<?php echo base_url();?>home/capitulo/<?=$key->id?>" data-toggle="tooltip" title="<?=$key->name;?> <?=$key->temporada;?>-<?=$key->numero;?>"> <img src="<?=base_url().$key->imagen2;?>" class="img-fluid imgssm"></a>
-                            <span class="spanhovertag">
-                     <b>Temp:</b><?=$key->temporada;?>-<b>Cap:</b><?=$key->numero;?> <i class="far fa-clock"></i>
-                     </span>
-                            <span class="spanhovertag">
-                     <?=$key->name;?> 
-                     </span>
-                        </div>
-                    </div>
-                    <?php } ?>
-                </div>
-            </div>
-            <!--Diva para la barra lateral 3-->
-            <div class="col-lg-9 row">
-                
-      
+      </div>
+      <nav class="text-center">
+         
+      </nav>
+      <div class="container-fluid">
+         <!-- Banner 900 x 150 -->
+         <!-- FIN Banner 900 x 150 --> 
+         <div class="container">
+            <!-- Ultimos Carrousel -->
+            <div class="row">
+               <div class="col-md-6" style="margin-bottom:15px;">
+                  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+   <?php $i=0; foreach ($carrusel as $key) { ?>
+    <li data-target="#myCarousel" data-slide-to="<?=$i;?>" <?php if($i==0) echo 'class="active"';?> ></li>
+   <?php $i++; } ?>
+  </ol>
 
-<div class="row titulos col-md-12">
-                <div class="col-md-10 bordert" id="SERIES_DESTACAS">
-                    <h5><i class="fas fa-tv"></i> NUEVOS CAPITULOS</h5>
-                </div>
-                <div class="text-right col-md-2">
-                    <a href="<?php base_url();?>home/mas?tipo=3&pagina=1&categoria=Todas&genero=Todas&desde=1900&hasta=2099">
-                        <button class="btn mas btn-dark" style=""><b><i class="fas fa-plus"></i></b>
-                        </button>
-                    </a>
-                </div>
-            </div>
-               <?php foreach ($capitulo as $key){?>
-                    <div class="col-md-3 series" id="cap">
-                        <div class="">
-                            <a href="<?php echo base_url();?>home/capitulo/<?=$key->id?>" data-toggle="tooltip" title="<?=$key->name;?> <?=$key->temporada;?>-<?=$key->numero;?>"> <img src="<?=base_url().$key->imagen2;?>" class="img-fluid imgsm"></a>
-                            <span class="spanhovertag">
-                     <b>Temp:</b><?=$key->temporada;?>-<b>Cap:</b><?=$key->numero;?> <i class="far fa-clock"></i>
-                     </span>
-                            <span class="spanhovertilte">
-                     <?=$key->name;?> 
-                     </span>
-                        </div>
-                    </div>
-                    <?php } ?>
-
-                    <div class="col-xs-12">
-                    <img style="width:100%;" class="pd" src="<?=base_url();?>plantilla/website/img/1534667129353.jpg">
-                    </div>
-                         <div class="row titulos col-md-12">
-                <div class="col-md-10 bordert" id="SERIES_DESTACAS">
-                    <h5><i class="far fa-star"></i> SERIES DESTACADAS</h5>
-                </div>
-                <div class="text-right col-md-2">
-                    <a href="<?php base_url();?>home/mas?tipo=2&pagina=1&categoria=Todas&genero=Todas&desde=1900&hasta=2099">
-                        <button class="btn mas btn-dark" style=""><b><i class="fas fa-plus"></i></b>
-                        </button>
-                    </a>
-                </div>
-            </div>
-                <?php $i=0; foreach ($series as $key){
-                if($i==0){
-                    ?>
-              <div class="col-md-6 series">
-                    <div class="" id='destacadas'>
-                        <a class="hovere" href="<?php echo base_url();?>home/detalle_series/<?=$key->id?>" data-toggle="tooltip" title="<?=$key->nombre;?>">
-                         <img src="<?=base_url().$key->imagen2;?>" class="img-fluid imglg"></a>
-                        <span class="spanhovertag">
-                  DESTACA <i class="far fa-star"></i>
-                  </span>
-                       <span class="spanhovertilte">
-                  <?=$key->nombre;?> 
-                  </span>
-                    </div>
-             </div>
-                <div class="col-md-6">
-                <div class="row">
-                <?php }else{ ?>
-                <div class="col-md-4 series">
-                    <div class="" id='destacadas'>
-                        <a class="hovere" href="<?php echo base_url();?>home/detalle_series/<?=$key->id?>" data-toggle="tooltip" title="<?=$key->nombre;?>"> <img src="<?=base_url().$key->imagen2;?>" class="img-fluid imgsm"></a>
-                        <span class="spanhovertag">
-                  DESTACA <i class="far fa-star"></i>
-                  </span>
-                       <span class="spanhovertilte">
-                  <?=$key->nombre;?> 
-                  </span>
-                    </div>
-                </div>
-            <?php } ?>
-                <?php $i++;} ?>
-                </div>
-                </div>
-
-                <div class="row titulos col-md-12">
-                <div class="col-md-10 bordert" id="TEMPORADAS_RECIENTES">
-                    <h5><i class="fab fa-cloudscale"></i> TEMPORADAS RECIENTES</h5>
-                </div>
-                <div class="text-right col-md-2">
-                    <a href="<?php base_url();?>home/mas?tipo=2&pagina=1&categoria=Todas&genero=Todas&desde=1900&hasta=2099">
-                        <button class="btn mas btn-dark" style=""><b><i class="fas fa-plus"></i></b>
-                        </button>
-                    </a>
-
-                </div>
-            </div>
-                <?php foreach ($Temporadar as $key){?>
-                <div class="col-md-3 series">
-                    <div class="" id='temporadas_recientes'>
-                        <a href="<?php echo base_url();?>home/detalle_series/<?=$key->id_serie?>" data-toggle="tooltip" title="<?=$key->nombre;?>"> <img src="<?=base_url().$key->imagen2;?>" class="img-fluid imgsm"></a>
-                        <span class="spanhovertag">
-                  ESTRENO <i class="far fa-clock"></i>
-                  </span>
-                       <span class="spanhovertilte">
-                  <?=$key->nombre;?> 
-                  </span>
-                    </div>
-                </div>
-                <?php } ?>
-<div class="row titulos col-md-12">
-                <div class="col-md-10 bordert" id="PELICULAS_RECIENTES">
-                    <h5><i class="fas fa-film"></i> PELÍCULAS RECIENTES</h5>
-                </div>
-                <div class="text-right col-md-2">
-                    <a href="<?php base_url();?>home/mas?tipo=4&pagina=1&categoria=Todas&genero=Todas&desde=1900&hasta=2099">
-                        <button class="btn mas btn-dark" style=""><b><i class="fas fa-plus"></i></b>
-                        </button>
-                    </a>
-                </div>
-            </div>
-                <?php foreach ($peliculas as $key){?>
-                <div class="col-lg-3 series">
-                    <div class="" id='pelicula_recientes'>
-                        <a href="<?php echo base_url();?>home/pelicula/<?=$key->id?>" data-toggle="tooltip" title="<?=$key->nombre;?>"> <img src="<?=base_url().$key->imagen;?>" class="img-fluid imglg"></a>
-                        <span class="spanhovertag">
-                  ESTRENO <i class="far fa-clock"></i>
-                  </span>
-                       <span class="spanhovertilte">
-                  <?=$key->nombre;?> 
-                  </span>
-                    </div>
-                </div>
-                <?php } ?>
-                <div class="col-xs-12">
-                 <img style="width:100%;" class="pd" src="<?=base_url();?>plantilla/website/img/1534667129353.jpg">
-                    </div>
-
-            </div>
-            <div class="col-lg-3 news panel">
-            <div class="row titulos ">
-                <div class="col-xs-8 bordert" id="NOTICIAS">
-                    <h5><i class="far fa-newspaper"></i> NOTICIAS</h5> </div>
-                <div class=" col-xs-2">
-                    <a href="<?php base_url();?>home/noticias">
-                        <button class="btn mas btn-dark" style=""><b><i class="fas fa-plus"></i></b>
-                        </button>
-                    </a>
-                </div>
-            </div>
-
-<div class="row  panel-body">
-<?php foreach ($noticias as $key){?>
-    <a class="link row" href="<?php echo base_url();?>home/noticia/<?=$key->id?>" data-toggle="tooltip" title="<?=$key->titulo;?>">
-          
-               <div class="col-md-12  imgssm" style="background: url('<?=base_url().$key->imagen;?>');background-repeat: no-repeat;background-size: cover;">
-                  
-               </div>
-                 <div class="col-12 titulares">
-                <?=$key->titulo;?>
-            </div>
-
-             <!--  <div class="col-md-12" style="max-height:140px;overflow:hidden;">
-                  <p  class="padding"><?=$key->descripcion_corta;?> </p>
-               </div> -->
-           </a>
-                <?php } ?>
-</div>
-
-            </div>
-
-        </div>
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner">
+   <?php $i=0; foreach ($carrusel as $key) { ?>
+    <div class="item  <?php if($i==0) echo 'active';?>">
+      <img src="<?=base_url().$key->imagen;?>" style="height:247px;width:100%;">
     </div>
-</section>
-<script>
-$(document).ready(function() {
-    $('[data-toggle="tooltip"]').tooltip();
-});
-</script>
+   <?php $i++; } ?>
+  </div>
+
+  <!-- Left and right controls -->
+  <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#myCarousel" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+               </div>
+               <div class="col-md-6">
+                  <div class="row">
+                      <?php $i=0; foreach ($series as $key){ ?>
+                     <div class="col-sm-4 mb-3">
+                     <a href="<?php echo base_url();?>home/capitulo/<?=$key->id?>" data-toggle="tooltip" title="<?=$key->nombre;?>"> 
+                     <div style="height:113px; background:url('<?=base_url().$key->imagen2;?>');background-size:cover;overflow:hidden;border-radius:3px;" >
+                     <div class="fondo panel-boby" style="background-color: rgba(0,0,0,0.3);height:100%;color:#fff;">
+                     <span class="spanhovertag" style="position:absolute;bottom:3px;margin-left:3px;">
+                     <?=$key->nombre;?>  <i class="far fa-clock"></i>
+                     </span>
+                     </div>
+                     </div>
+                     </a>
+                     </div>
+                    <?php } ?>
+                    
+                
+                  </div>
+               </div>
+            </div>
+            <div class="row">
+               <!-- contenido -->
+               <div id="Content" class="col-md-9">
+                  <!-- noticias -->
+                  <div class="row">
+                     <div class="col-sm-12">
+                        <h5 class="my-2"><i class="fas fa-award"></i>  Noticias Anime</h5>
+                     </div>
+                     <?php foreach ($noticias as $key){?>
+                     <div class="col-md-3 col-sm-6 mb-4">
+                         <a class="link row" href="<?php echo base_url();?>home/noticia/<?=$key->id?>" data-toggle="tooltip" title="<?=$key->titulo;?>">
+                        <img class="img-responsive img-rounded" src="<?=base_url().$key->imagen;?>" style="height:105px;width:100%" alt="">
+                        <div>
+                           <b class="card-title"><?=$key->titulo;?></b>
+                           <p class="card-text"><small class="text-muted">Descripción text anime</small></p>
+                        </div>
+                        </a>
+                     </div>
+                      <?php } ?>
+                     
+                  </div>
+                  <div class="programacion">
+                     <h5 class="my-2"><i class="far fa-star"></i> Progrmacion</h5>
+                     <table width="100%">
+                        <tr>
+                           <th>
+                              Lunes
+                           </th>
+                           <th>
+                              Martes
+                           </th>
+                           <th>
+                              Miercoles
+                           </th>
+                           <th>
+                              Jueves
+                           </th>
+                           <th>
+                              Viernes
+                           </th>
+                           <th>
+                              Sabado
+                           </th>
+                           <th>
+                              Domingo
+                           </th>
+                        </tr>
+                        <tr>
+                           <td>
+                              <img class="img-responsive mb-3 mb-md-0" src="http://placehold.it/750x340" alt="">
+                           </td>
+                           <td>
+                              <img class="img-responsive mb-3 mb-md-0" src="http://placehold.it/750x340" alt="">
+                           </td>
+                           <td>
+                              <img class="img-responsive mb-3 mb-md-0" src="http://placehold.it/750x340" alt="">
+                           </td>
+                           <td>
+                              <img class="img-responsive mb-3 mb-md-0" src="http://placehold.it/750x340" alt="">
+                           </td>
+                           <td>
+                              <img class="img-responsive mb-3 mb-md-0" src="http://placehold.it/750x340" alt="">
+                           </td>
+                           <td>
+                              <img class="img-responsive mb-3 mb-md-0" src="http://placehold.it/750x340" alt="">
+                           </td>
+                           <td>
+                              <img class="img-responsive mb-3 mb-md-0" src="http://placehold.it/750x340" alt="">
+                           </td>
+                        </tr>
+                        <tr>
+                           <td>
+                              Purbea
+                           </td>
+                           <td>
+                              Purbea
+                           </td>
+                           <td>
+                              Purbea
+                           </td>
+                           <td>
+                              Purbea
+                           </td>
+                           <td>
+                              Purbea
+                           </td>
+                           <td>
+                              Purbea
+                           </td>
+                           <td>
+                              Purbea
+                           </td>
+                        </tr>
+                     </table>
+                  </div>
+                  <div class="row">
+                     <div class="col-sm-12">
+                        <h5 class="my-2"><i class="fas fa-award"></i>  Nuevos capitulos</h5>
+                     </div>
+                     <?php foreach ($capitulo as $key){?>
+                     <div class="col-md-3 col-sm-6 mb-4">
+                        <a href="<?php echo base_url();?>home/capitulo/<?=$key->id?>" data-toggle="tooltip" title="<?=$key->name;?> <?=$key->temporada;?>-<?=$key->numero;?>"> 
+                        <img style="height:105px;width:100%" class="img-responsive img-rounded" src="<?=base_url().$key->imagen2;?>">
+                        
+                        <div class="card-body" style="width: 18rem;">
+                           <b class="card-title"><?=$key->name;?></b>
+                           <p class="card-text">Temp:<?=$key->temporada;?>-Cap:<?=$key->numero;?></p>
+                        </div>
+                        </a>
+                     </div>
+                     <?php } ?>
+                  
+                  </div>
+                  <div class="public row">
+                     <div class="col-sm-12">
+                        <img src="http://placehold.it/1400x250" class="img-responsive" style="width:100%">
+                     </div>
+                  </div>
+                  <!-- Series Destacadas -->
+                  <div class="row">
+                     <div class="col-md-6">
+                        <h5 class="my-2"><i class="far fa-star"></i> PELÍCULAS DESTACADAS</h5>
+                     </div>
+                     <div class="col-md-6 text-right">
+                        Ver mas
+                     </div>
+                     <div class="col-lg-12">
+                        <div class="row">
+                           <div class="col-lg-6">
+                              <div class="">
+                                 <img  height="600" class="img-responsive mb-3 mb-md-0 cuadro" src="http://placehold.it/750x340">
+                              </div>
+                           </div>
+                           <div class="col-lg-6">
+                              <div class="row">
+                                 <div class="col-md-4 col-sm-6 mb-4">
+                                    <a href="#">
+                                    <img class="img-responsive" src="http://placehold.it/500x300" alt="">
+                                    </a>
+                                    <div class="card-body" style="width: 18rem;">
+                                       <h6 class="card-title">Anime Title</h6>
+                                       <p class="card-text"><small class="text-muted">Descripción text anime</small></p>
+                                    </div>
+                                 </div>
+                                 <div class="col-md-4 col-sm-6 mb-4">
+                                    <a href="#">
+                                    <img class="img-responsive" src="http://placehold.it/500x300" alt="">
+                                    </a>
+                                    <div class="card-body" style="width: 18rem;">
+                                       <h6 class="card-title">Anime Title</h6>
+                                       <p class="card-text"><small class="text-muted">Descripción text anime</small></p>
+                                    </div>
+                                 </div>
+                                 <div class="col-md-4 col-sm-6 mb-4">
+                                    <a href="#">
+                                    <img class="img-responsive" src="http://placehold.it/500x300" alt="">
+                                    </a>
+                                    <div class="card-body" style="width: 18rem;">
+                                       <h6 class="card-title">Anime Title</h6>
+                                       <p class="card-text"><small class="text-muted">Descripción text anime</small></p>
+                                    </div>
+                                 </div>
+                                 <div class="col-md-4 col-sm-6 mb-4">
+                                    <a href="#">
+                                    <img class="img-responsive" src="http://placehold.it/500x300" alt="">
+                                    </a>
+                                    <div class="card-body" style="width: 18rem;">
+                                       <h6 class="card-title">Anime Title</h6>
+                                       <p class="card-text"><small class="text-muted">Descripción text anime</small></p>
+                                    </div>
+                                 </div>
+                                 <div class="col-md-4 col-sm-6 mb-4">
+                                    <a href="#">
+                                    <img class="img-responsive" src="http://placehold.it/500x300" alt="">
+                                    </a>
+                                    <div class="card-body" style="width: 18rem;">
+                                       <h6 class="card-title">Anime Title</h6>
+                                       <p class="card-text"><small class="text-muted">Descripción text anime</small></p>
+                                    </div>
+                                 </div>
+                                 <div class="col-md-4 col-sm-6 mb-4">
+                                    <a href="#">
+                                    <img class="img-responsive" src="http://placehold.it/500x300" alt="">
+                                    </a>
+                                    <div class="card-body" style="width: 18rem;">
+                                       <h6 class="card-title">Anime Title</h6>
+                                       <p class="card-text"><small class="text-muted">Descripción text anime</small></p>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-md-3 col-sm-6 mb-4">
+                              <a href="#">
+                              <img class="img-responsive" src="http://placehold.it/500x300" alt="">
+                              </a>
+                              <div class="card-body" style="width: 18rem;">
+                                 <h6 class="card-title">Anime Title</h6>
+                                 <p class="card-text"><small class="text-muted">Descripción text anime</small></p>
+                              </div>
+                           </div>
+                           <div class="col-md-3 col-sm-6 mb-4">
+                              <a href="#">
+                              <img class="img-responsive" src="http://placehold.it/500x300" alt="">
+                              </a>
+                              <div class="card-body" style="width: 18rem;">
+                                 <h6 class="card-title">Anime Title</h6>
+                                 <p class="card-text"><small class="text-muted">Descripción text anime</small></p>
+                              </div>
+                           </div>
+                           <div class="col-md-3 col-sm-6 mb-4">
+                              <a href="#">
+                              <img class="img-responsive" src="http://placehold.it/500x300" alt="">
+                              </a>
+                              <div class="card-body" style="width: 18rem;">
+                                 <h6 class="card-title">Anime Title</h6>
+                                 <p class="card-text"><small class="text-muted">Descripción text anime</small></p>
+                              </div>
+                           </div>
+                           <div class="col-md-3 col-sm-6 mb-4">
+                              <a href="#">
+                              <img class="img-responsive" src="http://placehold.it/500x300" alt="">
+                              </a>
+                              <div class="card-body" style="width: 18rem;">
+                                 <h6 class="card-title">Anime Title</h6>
+                                 <p class="card-text"><small class="text-muted">Descripción text anime</small></p>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="row">
+                     <div class="col-md-6">
+                        <h5 class="my-2"><i class="far fa-star"></i> PELÍCULAS DESTACADAS</h5>
+                     </div>
+                     <div class="col-md-6 text-right">
+                        Ver mas
+                     </div>
+                     <div class="col-lg-12">
+                        <div class="row">
+                           <div class="col-lg-6">
+                              <div class="">
+                                 <img  height="600" class="img-responsive mb-3 mb-md-0 cuadro" src="http://placehold.it/750x340">
+                              </div>
+                           </div>
+                           <div class="col-lg-6">
+                              <div class="row">
+                                 <div class="col-md-4 col-sm-6 mb-4">
+                                    <a href="#">
+                                    <img class="img-responsive" src="http://placehold.it/500x300" alt="">
+                                    </a>
+                                    <div class="card-body" style="width: 18rem;">
+                                       <h6 class="card-title">Anime Title</h6>
+                                       <p class="card-text"><small class="text-muted">Descripción text anime</small></p>
+                                    </div>
+                                 </div>
+                                 <div class="col-md-4 col-sm-6 mb-4">
+                                    <a href="#">
+                                    <img class="img-responsive" src="http://placehold.it/500x300" alt="">
+                                    </a>
+                                    <div class="card-body" style="width: 18rem;">
+                                       <h6 class="card-title">Anime Title</h6>
+                                       <p class="card-text"><small class="text-muted">Descripción text anime</small></p>
+                                    </div>
+                                 </div>
+                                 <div class="col-md-4 col-sm-6 mb-4">
+                                    <a href="#">
+                                    <img class="img-responsive" src="http://placehold.it/500x300" alt="">
+                                    </a>
+                                    <div class="card-body" style="width: 18rem;">
+                                       <h6 class="card-title">Anime Title</h6>
+                                       <p class="card-text"><small class="text-muted">Descripción text anime</small></p>
+                                    </div>
+                                 </div>
+                                 <div class="col-md-4 col-sm-6 mb-4">
+                                    <a href="#">
+                                    <img class="img-responsive" src="http://placehold.it/500x300" alt="">
+                                    </a>
+                                    <div class="card-body" style="width: 18rem;">
+                                       <h6 class="card-title">Anime Title</h6>
+                                       <p class="card-text"><small class="text-muted">Descripción text anime</small></p>
+                                    </div>
+                                 </div>
+                                 <div class="col-md-4 col-sm-6 mb-4">
+                                    <a href="#">
+                                    <img class="img-responsive" src="http://placehold.it/500x300" alt="">
+                                    </a>
+                                    <div class="card-body" style="width: 18rem;">
+                                       <h6 class="card-title">Anime Title</h6>
+                                       <p class="card-text"><small class="text-muted">Descripción text anime</small></p>
+                                    </div>
+                                 </div>
+                                 <div class="col-md-4 col-sm-6 mb-4">
+                                    <a href="#">
+                                    <img class="img-responsive" src="http://placehold.it/500x300" alt="">
+                                    </a>
+                                    <div class="card-body" style="width: 18rem;">
+                                       <h6 class="card-title">Anime Title</h6>
+                                       <p class="card-text"><small class="text-muted">Descripción text anime</small></p>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-md-3 col-sm-6 mb-4">
+                              <a href="#">
+                              <img class="img-responsive" src="http://placehold.it/500x300" alt="">
+                              </a>
+                              <div class="card-body" style="width: 18rem;">
+                                 <h6 class="card-title">Anime Title</h6>
+                                 <p class="card-text"><small class="text-muted">Descripción text anime</small></p>
+                              </div>
+                           </div>
+                           <div class="col-md-3 col-sm-6 mb-4">
+                              <a href="#">
+                              <img class="img-responsive" src="http://placehold.it/500x300" alt="">
+                              </a>
+                              <div class="card-body" style="width: 18rem;">
+                                 <h6 class="card-title">Anime Title</h6>
+                                 <p class="card-text"><small class="text-muted">Descripción text anime</small></p>
+                              </div>
+                           </div>
+                           <div class="col-md-3 col-sm-6 mb-4">
+                              <a href="#">
+                              <img class="img-responsive" src="http://placehold.it/500x300" alt="">
+                              </a>
+                              <div class="card-body" style="width: 18rem;">
+                                 <h6 class="card-title">Anime Title</h6>
+                                 <p class="card-text"><small class="text-muted">Descripción text anime</small></p>
+                              </div>
+                           </div>
+                           <div class="col-md-3 col-sm-6 mb-4">
+                              <a href="#">
+                              <img class="img-responsive" src="http://placehold.it/500x300" alt="">
+                              </a>
+                              <div class="card-body" style="width: 18rem;">
+                                 <h6 class="card-title">Anime Title</h6>
+                                 <p class="card-text"><small class="text-muted">Descripción text anime</small></p>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <!-- /.row -->
+                  <!-- FIN Series -->
+               </div>
+               <!-- sidebar -->
+               <div id="sidebar" class="col-md-3">
+                <div class="public2">
+                  <a href="#">
+                        <img class="img-responsive" src="http://placehold.it/500x300" alt="">
+                  </a>
+               </div>
+               <div class="recomendar_lateral">
+               <div class="titlelateral"><b>Te recomendamos Ver </b></div>
+                    <div class="recomendar_lateral_u">
+                              <a href="#">
+                              <img class="img-responsive" src="http://placehold.it/500x300" alt="">
+                              </a>
+                              <div class="card-body" style="width: 18rem;">
+                                 <h6 class="card-title">Anime Title</h6>
+                                 <p class="card-text"><small class="text-muted">Descripción text anime</small></p>
+                              </div>
+                     </div>
+                       <div class="recomendar_lateral_u">
+                              <a href="#">
+                              <img class="img-responsive" src="http://placehold.it/500x300" alt="">
+                              </a>
+                              <div class="card-body" style="width: 18rem;">
+                                 <h6 class="card-title">Anime Title</h6>
+                                 <p class="card-text"><small class="text-muted">Descripción text anime</small></p>
+                              </div>
+                     </div>
+                       <div class="recomendar_lateral_u">
+                              <a href="#">
+                              <img class="img-responsive" src="http://placehold.it/500x300" alt="">
+                              </a>
+                              <div class="card-body" style="width: 18rem;">
+                                 <h6 class="card-title">Anime Title</h6>
+                                 <p class="card-text"><small class="text-muted">Descripción text anime</small></p>
+                              </div>
+                     </div>
+               </div>
+
+                  </div>
+               </div> <!-- FIN DE LA BARRA LATERA -->
+            </div>
+         </div>
+      </div>
+      <!-- /.container -->
+      <!-- Footer -->
+   
+      <!-- Bootstrap core JavaScript -->
+      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+   </body>
+</html>

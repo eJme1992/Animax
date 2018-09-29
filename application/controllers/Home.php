@@ -34,7 +34,7 @@ class Home extends CI_Controller
         $DATOS['peliculas']  = $this->MPelicula->recientes('LIMIT 10');
         $DATOS['noticias']   = $this->MNoticia->listanot('LIMIT 30');
         
-        $this->load->view('website/header2');
+         //$this->load->view('website/header2');
         $this->load->view('website/nav');
         $this->load->view('website/cuerpo-home', $DATOS);
         $this->load->view('website/footer');
@@ -107,7 +107,7 @@ class Home extends CI_Controller
         $DATOS['total_paginas'] = $paginas['total_paginas'];
         $DATOS['url']           = base_url() . "Home/noticias";
         $DATOS['capitulos']     = $this->MCapitulo->listacap('LIMIT 6');
-        $this->load->view('website/header2');
+        //$this->load->view('website/header2');
         $this->load->view('website/nav');
         $this->load->view('website/noticias', $DATOS);
         $this->load->view('website/footer');
@@ -254,7 +254,7 @@ class Home extends CI_Controller
         $DATOS['pagina']        = $paginas['pagina'];
         $DATOS['total_paginas'] = $paginas['total_paginas'];
         $DATOS['url']           = base_url() . "Home/mas/$tipo/$genero/$desde/$hasta/$categoria/$orden/$buscar";
-        $this->load->view('website/header2');
+        //$this->load->view('website/header2');
         $this->load->view('website/nav');
         
         $this->load->view('website/mas', $DATOS);

@@ -1,4 +1,26 @@
-</section>
+
+   <footer class="footer">
+         <div class="container">
+         <div class="row">
+            <div class="col-md-offset-1 col-md-10 col-md-offset-1">
+               <hr class="hr">
+               <div class="col-md-6">
+                  <p class="unir"> Unete a nuestras redes sociales! ©  AEx 2018<br>Ningún vídeo se encuentra alojado en nuestros servidores</p>
+               </div>
+               <div class="col-md-6">
+                  <ul class="nav navbar-nav footer-social pull-right">
+                     <li class="active"><a href="#"><i class="fab fa-google-plus-square fa-lg"></i></a></li>
+                     <li><a href="#"><i class="fab fa-facebook-f fa-lg"></i></a></li>
+                     <li><a href="#"><i class="fab fa-youtube fa-lg"></i></a></li>
+                     <li><a href="#"><i class="fab fa-twitter fa-lg"></i></a></li>
+                     <li><a href="#"><i class="fab fa-flickr fa-lg"></i></a></li>
+                     <li><a href="#"><i class="fab fa-tumblr-square fa-lg"></i></a></li>
+                  </ul>
+               </div>
+            </div>
+         </div>
+      </footer>
+<!--</section>
 <footer>
     <section id="tope">
         <div class="container">
@@ -52,4 +74,4 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-</html>
+</html> -->
