@@ -534,6 +534,21 @@ top: -2em;
 .usdiv{background-color:#fff; padding: 15px; height:200px;}
 .usdiv ul li {list-style: none; padding:0.5em;}
 .usdiv ul {padding: 1.5em;}
+.ul-progress li {list-style: none;}
+.ul-progress .circulo{
+  height: 15px; 
+  width:15px; 
+  border-radius: 15px; 
+display: inline-block;
+margin-right: 0.5em; 
+}
+.ul-progress .visto{background-color:#5cb85c;}
+.ul-progress .pendiente{background-color:#337ab7;}
+.ul-progress .siguiendo{background-color:#f0ad4e;}
+.ul-progress .favorito{background-color:#FF0000;}
+em;}
+.colorblack{color:#000 !important; padding-left: 1em;}
+.entradas-ul{list-style: none;}
 /*########Para las nav responsive##########*/
 
 #input-nav.form-control{
