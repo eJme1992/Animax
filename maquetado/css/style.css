@@ -579,3 +579,32 @@ display: inline-flex !important;
     display: block !important;
     width: 100% !important;
 }
+/*#############Capitulo*##########*/
+#capitulo-body{background-color: #181818;}
+.capi-body{padding-top: 2em; padding-bottom: 2em;}
+.capi-publicidad{
+  background-color: #fff;
+  position: relative;
+  top:-30em;
+  left:18.5em;
+  width: 320px;
+  height: 250px;
+  z-index: 1000;
+}
+.btn-over{
+  background-color: rgba(0, 0, 0, .6);
+  border-radius: 15px;
+  color:#fff;
+  margin:5px;
+}
+.anuncion-title{
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  top:100px;
+  text-align: center;
+}
+.controles-cap{
+  background-color:#1A1A22;
+}
+.control-fonts{color:#fff;}
