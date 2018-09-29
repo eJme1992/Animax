@@ -168,6 +168,8 @@
                         
                         <div class="card-body" style="width: 18rem;">
                            <b class="card-title"><?=$key->name;?></b>
+                         </div>
+                         <div class="card-body" style="width: 18rem;">                            
                            <p class="card-text">Temp:<?=$key->temporada;?>-Cap:<?=$key->numero;?></p>
                         </div>
                         </a>
@@ -183,226 +185,84 @@
                   <!-- Series Destacadas -->
                   <div class="row">
                      <div class="col-md-6">
-                        <h5 class="my-2"><i class="far fa-star"></i> PELÍCULAS DESTACADAS</h5>
+                        <h5 class="my-2"><i class="far fa-star"></i> Series Destacadas</h5>
                      </div>
                      <div class="col-md-6 text-right">
                         Ver mas
                      </div>
                      <div class="col-lg-12">
                         <div class="row">
+                           <?php $i=0; foreach ($series as $key){
+                           if($i==0){ ?>
                            <div class="col-lg-6">
                               <div class="">
                                  <img  height="600" class="img-responsive mb-3 mb-md-0 cuadro" src="http://placehold.it/750x340">
                               </div>
                            </div>
-                           <div class="col-lg-6">
+
+                            <div class="col-lg-6">
                               <div class="row">
-                                 <div class="col-md-4 col-sm-6 mb-4">
+                           <?php }else{ ?>
+                          
+                                 <div class="col-md-<?php if($i<6){echo '4';}else{echo '3';}?> col-sm-6 mb-4">
                                     <a href="#">
-                                    <img class="img-responsive" src="http://placehold.it/500x300" alt="">
+                                    <img class="img-responsive" src="<?=base_url().$key->imagen2;?>" alt="">
                                     </a>
                                     <div class="card-body" style="width: 18rem;">
                                        <h6 class="card-title">Anime Title</h6>
                                        <p class="card-text"><small class="text-muted">Descripción text anime</small></p>
                                     </div>
                                  </div>
-                                 <div class="col-md-4 col-sm-6 mb-4">
-                                    <a href="#">
-                                    <img class="img-responsive" src="http://placehold.it/500x300" alt="">
-                                    </a>
-                                    <div class="card-body" style="width: 18rem;">
-                                       <h6 class="card-title">Anime Title</h6>
-                                       <p class="card-text"><small class="text-muted">Descripción text anime</small></p>
-                                    </div>
-                                 </div>
-                                 <div class="col-md-4 col-sm-6 mb-4">
-                                    <a href="#">
-                                    <img class="img-responsive" src="http://placehold.it/500x300" alt="">
-                                    </a>
-                                    <div class="card-body" style="width: 18rem;">
-                                       <h6 class="card-title">Anime Title</h6>
-                                       <p class="card-text"><small class="text-muted">Descripción text anime</small></p>
-                                    </div>
-                                 </div>
-                                 <div class="col-md-4 col-sm-6 mb-4">
-                                    <a href="#">
-                                    <img class="img-responsive" src="http://placehold.it/500x300" alt="">
-                                    </a>
-                                    <div class="card-body" style="width: 18rem;">
-                                       <h6 class="card-title">Anime Title</h6>
-                                       <p class="card-text"><small class="text-muted">Descripción text anime</small></p>
-                                    </div>
-                                 </div>
-                                 <div class="col-md-4 col-sm-6 mb-4">
-                                    <a href="#">
-                                    <img class="img-responsive" src="http://placehold.it/500x300" alt="">
-                                    </a>
-                                    <div class="card-body" style="width: 18rem;">
-                                       <h6 class="card-title">Anime Title</h6>
-                                       <p class="card-text"><small class="text-muted">Descripción text anime</small></p>
-                                    </div>
-                                 </div>
-                                 <div class="col-md-4 col-sm-6 mb-4">
-                                    <a href="#">
-                                    <img class="img-responsive" src="http://placehold.it/500x300" alt="">
-                                    </a>
-                                    <div class="card-body" style="width: 18rem;">
-                                       <h6 class="card-title">Anime Title</h6>
-                                       <p class="card-text"><small class="text-muted">Descripción text anime</small></p>
-                                    </div>
-                                 </div>
-                              </div>
-                           </div>
-                           <div class="col-md-3 col-sm-6 mb-4">
-                              <a href="#">
-                              <img class="img-responsive" src="http://placehold.it/500x300" alt="">
-                              </a>
-                              <div class="card-body" style="width: 18rem;">
-                                 <h6 class="card-title">Anime Title</h6>
-                                 <p class="card-text"><small class="text-muted">Descripción text anime</small></p>
-                              </div>
-                           </div>
-                           <div class="col-md-3 col-sm-6 mb-4">
-                              <a href="#">
-                              <img class="img-responsive" src="http://placehold.it/500x300" alt="">
-                              </a>
-                              <div class="card-body" style="width: 18rem;">
-                                 <h6 class="card-title">Anime Title</h6>
-                                 <p class="card-text"><small class="text-muted">Descripción text anime</small></p>
-                              </div>
-                           </div>
-                           <div class="col-md-3 col-sm-6 mb-4">
-                              <a href="#">
-                              <img class="img-responsive" src="http://placehold.it/500x300" alt="">
-                              </a>
-                              <div class="card-body" style="width: 18rem;">
-                                 <h6 class="card-title">Anime Title</h6>
-                                 <p class="card-text"><small class="text-muted">Descripción text anime</small></p>
-                              </div>
-                           </div>
-                           <div class="col-md-3 col-sm-6 mb-4">
-                              <a href="#">
-                              <img class="img-responsive" src="http://placehold.it/500x300" alt="">
-                              </a>
-                              <div class="card-body" style="width: 18rem;">
-                                 <h6 class="card-title">Anime Title</h6>
-                                 <p class="card-text"><small class="text-muted">Descripción text anime</small></p>
-                              </div>
-                           </div>
+                              
+                          <?php } ?>
+                         <?php $i++;} ?>
                         </div>
                      </div>
                   </div>
+               </div>
+            </div>
                   <div class="row">
                      <div class="col-md-6">
-                        <h5 class="my-2"><i class="far fa-star"></i> PELÍCULAS DESTACADAS</h5>
+                        <h5 class="my-2"><i class="far fa-star"></i> Peliculas Destacadas</h5>
                      </div>
                      <div class="col-md-6 text-right">
                         Ver mas
                      </div>
                      <div class="col-lg-12">
                         <div class="row">
-                           <div class="col-lg-6">
+                           <?php $i=0; foreach ($peliculas as $key){
+                           if($i==0){ ?>
+                           <div class="col-lg-5">
                               <div class="">
-                                 <img  height="600" class="img-responsive mb-3 mb-md-0 cuadro" src="http://placehold.it/750x340">
+                                  <a href="<?php echo base_url();?>home/pelicula/<?=$key->id?>" data-toggle="tooltip" title="<?=$key->nombre;?>">
+                                 <img  class="img-responsive img-rounded cuadro" src="<?=base_url().$key->imagen;?>">
+                                 </a>
+                                 <div class="card-body" style="width: 18rem;">
+                                     <?=$key->nombre;?> 
+                                    </div>
                               </div>
                            </div>
-                           <div class="col-lg-6">
+
+                            <div class="col-lg-7">
                               <div class="row">
-                                 <div class="col-md-4 col-sm-6 mb-4">
-                                    <a href="#">
-                                    <img class="img-responsive" src="http://placehold.it/500x300" alt="">
+                           <?php }else{ ?>
+                          
+                                 <div class="col-md-<?php if($i<6){echo '4';}else{echo '3';}?> col-sm-6 mb-4">
+                                    <a href="<?php echo base_url();?>home/pelicula/<?=$key->id?>" data-toggle="tooltip" title="<?=$key->nombre;?>">
+                                    <img class="img-responsive img-rounded" src="<?=base_url().$key->imagen;?>">
                                     </a>
                                     <div class="card-body" style="width: 18rem;">
-                                       <h6 class="card-title">Anime Title</h6>
-                                       <p class="card-text"><small class="text-muted">Descripción text anime</small></p>
+                                     <?=$key->nombre;?> 
                                     </div>
                                  </div>
-                                 <div class="col-md-4 col-sm-6 mb-4">
-                                    <a href="#">
-                                    <img class="img-responsive" src="http://placehold.it/500x300" alt="">
-                                    </a>
-                                    <div class="card-body" style="width: 18rem;">
-                                       <h6 class="card-title">Anime Title</h6>
-                                       <p class="card-text"><small class="text-muted">Descripción text anime</small></p>
-                                    </div>
-                                 </div>
-                                 <div class="col-md-4 col-sm-6 mb-4">
-                                    <a href="#">
-                                    <img class="img-responsive" src="http://placehold.it/500x300" alt="">
-                                    </a>
-                                    <div class="card-body" style="width: 18rem;">
-                                       <h6 class="card-title">Anime Title</h6>
-                                       <p class="card-text"><small class="text-muted">Descripción text anime</small></p>
-                                    </div>
-                                 </div>
-                                 <div class="col-md-4 col-sm-6 mb-4">
-                                    <a href="#">
-                                    <img class="img-responsive" src="http://placehold.it/500x300" alt="">
-                                    </a>
-                                    <div class="card-body" style="width: 18rem;">
-                                       <h6 class="card-title">Anime Title</h6>
-                                       <p class="card-text"><small class="text-muted">Descripción text anime</small></p>
-                                    </div>
-                                 </div>
-                                 <div class="col-md-4 col-sm-6 mb-4">
-                                    <a href="#">
-                                    <img class="img-responsive" src="http://placehold.it/500x300" alt="">
-                                    </a>
-                                    <div class="card-body" style="width: 18rem;">
-                                       <h6 class="card-title">Anime Title</h6>
-                                       <p class="card-text"><small class="text-muted">Descripción text anime</small></p>
-                                    </div>
-                                 </div>
-                                 <div class="col-md-4 col-sm-6 mb-4">
-                                    <a href="#">
-                                    <img class="img-responsive" src="http://placehold.it/500x300" alt="">
-                                    </a>
-                                    <div class="card-body" style="width: 18rem;">
-                                       <h6 class="card-title">Anime Title</h6>
-                                       <p class="card-text"><small class="text-muted">Descripción text anime</small></p>
-                                    </div>
-                                 </div>
-                              </div>
-                           </div>
-                           <div class="col-md-3 col-sm-6 mb-4">
-                              <a href="#">
-                              <img class="img-responsive" src="http://placehold.it/500x300" alt="">
-                              </a>
-                              <div class="card-body" style="width: 18rem;">
-                                 <h6 class="card-title">Anime Title</h6>
-                                 <p class="card-text"><small class="text-muted">Descripción text anime</small></p>
-                              </div>
-                           </div>
-                           <div class="col-md-3 col-sm-6 mb-4">
-                              <a href="#">
-                              <img class="img-responsive" src="http://placehold.it/500x300" alt="">
-                              </a>
-                              <div class="card-body" style="width: 18rem;">
-                                 <h6 class="card-title">Anime Title</h6>
-                                 <p class="card-text"><small class="text-muted">Descripción text anime</small></p>
-                              </div>
-                           </div>
-                           <div class="col-md-3 col-sm-6 mb-4">
-                              <a href="#">
-                              <img class="img-responsive" src="http://placehold.it/500x300" alt="">
-                              </a>
-                              <div class="card-body" style="width: 18rem;">
-                                 <h6 class="card-title">Anime Title</h6>
-                                 <p class="card-text"><small class="text-muted">Descripción text anime</small></p>
-                              </div>
-                           </div>
-                           <div class="col-md-3 col-sm-6 mb-4">
-                              <a href="#">
-                              <img class="img-responsive" src="http://placehold.it/500x300" alt="">
-                              </a>
-                              <div class="card-body" style="width: 18rem;">
-                                 <h6 class="card-title">Anime Title</h6>
-                                 <p class="card-text"><small class="text-muted">Descripción text anime</small></p>
-                              </div>
-                           </div>
+                              
+                          <?php } ?>
+                         <?php $i++;} ?>
                         </div>
                      </div>
                   </div>
+               </div>
+            </div>
                   <!-- /.row -->
                   <!-- FIN Series -->
                </div>
