@@ -111,25 +111,25 @@
                         </tr>
                         <tr>
                            <td>
-                              <img class="img-responsive mb-3 mb-md-0" src="http://placehold.it/750x340" alt="">
+                              <img class="img-responsive mb-3 mb-md-0 imgcan" src="<?=base_url();?>plantilla/sitioweb/img/lunes.png" >
                            </td>
                            <td>
-                              <img class="img-responsive mb-3 mb-md-0" src="http://placehold.it/750x340" alt="">
+                              <img  class="img-responsive mb-3 mb-md-0 imgcan" src="<?=base_url();?>plantilla/sitioweb/img/martes.gif">
                            </td>
                            <td>
-                              <img class="img-responsive mb-3 mb-md-0" src="http://placehold.it/750x340" alt="">
+                              <img  class="img-responsive mb-3 mb-md-0 imgcan" src="<?=base_url();?>plantilla/sitioweb/img/miercoles.jpg">
                            </td>
                            <td>
-                              <img class="img-responsive mb-3 mb-md-0" src="http://placehold.it/750x340" alt="">
+                              <img  class="img-responsive mb-3 mb-md-0 imgcan" src="<?=base_url();?>plantilla/sitioweb/img/jueves.png">
                            </td>
                            <td>
-                              <img class="img-responsive mb-3 mb-md-0" src="http://placehold.it/750x340" alt="">
+                              <img  class="img-responsive mb-3 mb-md-0 imgcan" src="<?=base_url();?>plantilla/sitioweb/img/viernes.gif">
                            </td>
                            <td>
-                              <img class="img-responsive mb-3 mb-md-0" src="http://placehold.it/750x340" alt="">
+                              <img  class="img-responsive mb-3 mb-md-0 imgcan" src="<?=base_url();?>plantilla/sitioweb/img/sabados.jpg">
                            </td>
                            <td>
-                              <img class="img-responsive mb-3 mb-md-0" src="http://placehold.it/750x340" alt="">
+                              <img  class="img-responsive mb-3 mb-md-0 imgcan" src="<?=base_url();?>plantilla/sitioweb/img/domingo.png">
                            </td>
                         </tr>
                         <tr>
@@ -158,8 +158,11 @@
                      </table>
                   </div>
                   <div class="row">
-                     <div class="col-sm-12">
+                     <div class="col-sm-6">
                         <h5 class="my-2"><i class="fas fa-award"></i>  Nuevos capitulos</h5>
+                    </div>
+                     <div class="col-sm-6 text-right">
+                         <h5><a href="" class="mas">Mas <i class="fas fa-chevron-right"></i></a></h5>
                      </div>
                      <?php foreach ($capitulo as $key){?>
                      <div class="col-md-3 col-sm-6 mb-4">
@@ -188,29 +191,33 @@
                         <h5 class="my-2"><i class="far fa-star"></i> Series Destacadas</h5>
                      </div>
                      <div class="col-md-6 text-right">
-                        Ver mas
+                         <h5><a href="" class="mas">Mas <i class="fas fa-chevron-right"></i></a></h5>
                      </div>
                      <div class="col-lg-12">
                         <div class="row">
                            <?php $i=0; foreach ($series as $key){
                            if($i==0){ ?>
-                           <div class="col-lg-6">
+                           <div class="col-md-6">
                               <div class="">
-                                 <img  height="600" class="img-responsive mb-3 mb-md-0 cuadro" src="http://placehold.it/750x340">
+                               <a href="<?php echo base_url();?>home/detalle_series/<?=$key->id_serie?>" data-toggle="tooltip" title="<?=$key->nombre;?>"> 
+                                 <img  height="600" class="img-responsive img-rounded cuadro" src="<?=base_url().$key->imagen2;?>">
+</a>
+                                 <div class="card-body">
+                                       <h6 class="card-title"><?=$key->nombre;?></h6>
+                                  </div>
                               </div>
                            </div>
 
-                            <div class="col-lg-6">
+                            <div class="col-md-6">
                               <div class="row">
                            <?php }else{ ?>
                           
-                                 <div class="col-md-<?php if($i<6){echo '4';}else{echo '3';}?> col-sm-6 mb-4">
-                                    <a href="#">
-                                    <img class="img-responsive" src="<?=base_url().$key->imagen2;?>" alt="">
+                                 <div class="col-sm-<?php if($i<6){echo '4';}else{echo '3';}?> col-sm-6 mb-4">
+                                    <a href="<?php echo base_url();?>home/detalle_series/<?=$key->id_serie?>" data-toggle="tooltip" title="<?=$key->nombre;?>"> 
+                                    <img class="img-responsive img-rounded" src="<?=base_url().$key->imagen2;?>" style="height:75px">
                                     </a>
-                                    <div class="card-body" style="width: 18rem;">
-                                       <h6 class="card-title">Anime Title</h6>
-                                       <p class="card-text"><small class="text-muted">Descripción text anime</small></p>
+                                    <div class="card-body">
+                                       <h6 class="card-title"><?=$key->nombre;?></h6>
                                     </div>
                                  </div>
                               
@@ -226,7 +233,7 @@
                         <h5 class="my-2"><i class="far fa-star"></i> Peliculas Destacadas</h5>
                      </div>
                      <div class="col-md-6 text-right">
-                        Ver mas
+                        <h5><a href="" class="mas">Mas <i class="fas fa-chevron-right"></i></a></h5>
                      </div>
                      <div class="col-lg-12">
                         <div class="row">

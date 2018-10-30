@@ -1,277 +1,382 @@
-<section id="detalle-seriexdxd">
-    <div class="container detas">
-        <div class="row">
-            <div class="col-md-8">
-
+ <section id="cabezera" style="background: url('img/portada2.jpeg');">
+        <div class="cabezera_degradado">
+            <div class="container">
                 <div class="row">
-                    <div class="col-md-5">
-                        <img src="<?=base_url().$serie->imagen;?>" class="img-fluid img-serie" />
-                        <?php if(isset($user->id)){ ?>
-
-
-                        <div class="reaccion">
-                            <ul class="nav nav-bar fav">
-                                <form id="me_gusta">
-                                    <li class="nav-item">
-                                        <button class="<?php if (isset($favoritos->id)) echo 'btn' ?> nav-link" id="favorite" title="Favorito" data-toggle="tooltip" type='submit'><i class="fas fa-heart" style="color:#FF0000;"></i></button>
-                                        <input type="hidden" name="id_serie" id='id_serie' value="<?=$serie->id?>">
-                                        <input type="hidden" name="id_user" id='id_user' value="<?=$user->id?>">
-                                        <input type="hidden" name="<?=$csrf['name'];?>" value="<?=$csrf['hash'];?>">
-                                        <?php if (isset($favoritos->id)) { ?>
-                                        <input type="hidden" name="favoritos" id='favoritos' value="<?=$favoritos->id?>">
-                                        <?php  }else{ ?>
-                                        <input type="hidden" name="favoritos" id='favoritos' value="false">
-                                        <?php  } ?>
-                                    </li>
-                                </form>
-
-
-
-
-
-
-                                <li class="nav-item">
-
-                                    <span class="navbar-text">
-                                      <a href="#"  title="Calificacion" data-toggle="tooltip"><i class="fas fa-star" ></i>
-                                      </a>
-                                    </span>
-
-                                    <span class="navbar-text">
-                                      <a href="#" title="Calificacion" data-toggle="tooltip"  onclick="cambio(1)"><i class="fas fa-star" id="star"></i>
-                                      </a>
-                                    </span>
-
-                                    <span class="navbar-text">
-                                      <a href="#" title="Calificacion" data-toggle="tooltip"><i class="fas fa-star" ></i>
-                                      </a>
-                                    </span>
-
-                                    <span class="navbar-text">
-                                      <a href="#" title="Calificacion" data-toggle="tooltip"><i class="fas fa-star"></i>
-                                      </a>
-                                    </span>
-
-                                    <span class="navbar-text"><a href="#" title="Calificacion" data-toggle="tooltip"><i class="fas fa-star" ></i></a></span>
-
-                                </li>
-                                    <form id="Lista">
-                                    <li class="nav-item">
-                                        <button class="<?php if (isset($id->id)) echo 'btn' ?> nav-link" id="Listas" title="Favorito" data-toggle="tooltip" type='submit'>Agregar a mi lista</button>
-                                        <input type="hidden" name="id_serie" id='id_serie' value="<?=$serie->id?>">
-                                        <input type="hidden" name="id_user" id='id_user' value="<?=$user->id?>">
-                                        <input type="hidden" name="<?=$csrf['name'];?>" value="<?=$csrf['hash'];?>">
-                                        <?php if (isset($id->id)) { ?>
-                                        <input type="hidden" name="id" id='id' value="<?=$id->id?>">
-                                        <?php  }else{ ?>
-                                        <input type="hidden" name="id" id='id' value="false">
-                                        <?php  } ?>
-                                    </li>
-                                </form>
-                                </li>
-                            </ul>
-                            <script>
-                                function cambio(number,var){
-                                   var series = <?=$serie->id?>;
-                                   var user = <?=$user->id?>;
-                                   var parametros = {
-                                   "series": series,
-                                   "user": user,
-                                   "var" : var,
-                                   "number": number
-                                   };
-                                  $.ajax({
-                                  data: parametros, //datos que se envian a traves de ajax
-                                  url: '<?=base_url();?>Interanciones/califica_serie', 
-                                  type: 'post', //método de envio
-                                  success: function ( response ) { //una vez que el archivo recibe el request lo procesa y lo devuelve
-                                  $( "#resultado" ).html( response );
-                                  document.getElementById("star").style.color="#FFFF00";
-                                  }
-                                  });
-                                   
-                                }
-                            </script>
-                            <?php } ?>
-                        </div>
-
+                    <div class="col-md-3">
+                        <img class="img-responsive portada" src="img/portada.jpg">
                     </div>
-                    <div class="col-md-7" id="descripcion-p">
-                        <div class="text-nun">
-                            <h2 class="tit-anun">
-                                <?=$serie->nombre;?>
-                            </h2>
+                    <div class="col-md-9 row" style="margin-right:0px;">
+                        <div class="titulo panel-body">
+                            <h2><b>Titulo</b></h2>
                         </div>
-                        <p><b>Categorias:</b><br>
-                            <?=$serie->categoria?>
-                        </p>
-
-                        <p class="status"><b>Estado:</b><br>
-                            <?=$serie->estado?>
-                        </p>
-
-                        <p class="sipnosis"><b>Sinopsis:</b><br>
-                            <?=$serie->descripcion;?>
-                        </p>
-                        <p><b>Dias de estreno de nuevos capitulos:</b><br>
-                            <?=$serie->dias;?>
-                        </p>
-                        <p><b>Fecha de estreno de la serie:</b><br>
-                            <?=$serie->fecha_estreno;?>
-                        </p>
-                        <p><b>Duración de los cápitulos:</b><br>
-                            <?=$serie->duracion;?>
-                        </p>
-
-
-
-
-
-                    </div>
-
-                </div>
-            </div>
-            <div class="col-md-4 anun">
-                <div class="capitulos card">
-                    <h3>Lista de capitulo</h3>
-
-                    <div class="row text-center" style="color:#ff6414;margin-bottom:20px;">
-                        <div class="col-6">
-                            <b>#Capitulo / #Temporada</b>
+                        <div class="generos panel-body">
+                            <span class="well well-sm">Comedia</span> <span class="well well-sm">Comedia</span> <span class="well well-sm">Comedia</span> <span class="well well-sm">Comedia</span>
                         </div>
-                        <div class="col-6">
-                            <b> Nombre </b>
-                        </div>
-
-                    </div>
-                    <div>
-                        <?php $cond=0; 
-                  foreach ($capitulo as $key) {
-                     if($cond!=$key->temporada){ $cond=$key->temporada; ?>
-                        <div class="text-center col-12" id="temporada<?=$key->temporada;?>">
-                            <b>Temporada numero <?=$key->temporada;?></b>
-                        </div>
-                        <?php } ?>
-                        <div class="">
-                            <a href="<?php echo base_url();?>home/capitulo/<?=$key->id?>"> 
-                           <span class="col-6">
-                           
-                           <i class="fas fa-check-double"></i>Cap.<?=$key->numero;?>/Tem.<?=$key->temporada;?> 
-                      
-                           </span> 
-                           <span class="col-6">
-                            
-                            <?=$key->nombre;?>   
-                          
-                           </span>
-                          </a>
-
-                        </div>
-                        <?php } ?>
-                    </div>
-
-
-
-                </div>
-
-            </div>
-
-
-        </div>
-    </div>
-</section>
-<section id="second-part-capi">
-    <div class="container grey-capi">
-        <div class="row">
-            <div class="col-md-8">
-                <h3 class="subt-capitulo">Comentarios</h3>
-                <!--<p class="capitulo-text">"La mayoría del anime" mejores programas de comentario literario, compartir historias del hombre detrás de cada ACG trabaja con usted para darle otra forma de decir que la animación! </p>-->
-                <div class="comentarios">
-                    <?php foreach ($comentarios as $key) { ?>
-
-                    <div class="row alert alert-warning" style="margin:10px;">
-                        <div class="col-2">
-                            <?php if($key->foto==''){ ?>
-                            <img src="<?=base_url()?>file/img/user/default.png" class="rounded-circle img-fluid" />
-                            <?php }else{ ?>
-                            <img src="<?=base_url().$key->foto;?>" class="rounded-circle img-fluid" />
-                            <?php } ?>
-                        </div>
-                        <div class="col-10">
-                            <h5><b><?=$key->nombre;?></b></h5>
-                            <p>
-                                <?=$key->comentario;?>
-                            </p>
-                        </div>
-                    </div>
-                    <?php } ?>
-
-
-
-                    <div class="row col-12">
-                        <div class="col-md-3" style="padding:20px;">
-                            <?php if(isset($user->foto)){ ?>
-                            <?php if($user->foto==''){ ?>
-                            <img src="<?=base_url()?>file/img/user/default.png" class="rounded-circle img-fluid" />
-                            <?php }else{ ?>
-                            <img src="<?=base_url().$user->foto;?>" class="rounded-circle img-fluid" />
-                            <?php } ?>
-                            <?php }else{ ?>
-                            <img src="<?=base_url();?>file/img/user/default.png" class="rounded-circle img-fluid" />
-                            <?php } ?>
-                        </div>
-
-                        <?php if(isset($user->id)){ ?>
-                        <div class="col-md-9 comment-box">
-                            <form id="comments">
-                                <div class="form-group">
-                                    <label for="comment">Comment:</label>
-                                    <textarea class="form-control" rows="5" name="comentario" id="comentario"></textarea>
-                                    <input type="hidden" name="id_serie" name="id_serie" value="<?=$serie->id?>">
-                                    <input type="hidden" name="id_user" id="id_user" value="<?=$user->id?>">
-                                    <input type="hidden" name="<?=$csrf['name'];?>" value="<?=$csrf['hash'];?>">
+                        <div class="datos row panel-body">
+                            <div class="col-sm-6 row">
+                                <div class="col-xs-4">
+                                    Estado
+                                    <br><b>En emision</b>
                                 </div>
-                                <div class="col-md-12" id="resultado" style="margin-top:15px;"></div>
-                                <button class="btn btn-comentar " type="submit">Comentar</button>
-                            </form>
+                                <div class="col-xs-4 borde_center">
+                                    Episodios
+                                    <br><b>20</b>
+                                </div>
+                                <div class="col-xs-4">
+                                    Vistas
+                                    <br><b>50k</b>
+                                </div>
+                            </div>
+                            <div class="col-sm-4 col-sm-offset-2 puntos row">
+                                <div class="col-xs-3 col-sm-3 col-md-3 total text-center">
+                                    <h1><b>9.2</b></h1>
+                                </div>
+                                <div class="col-xs-9 col-sm-9 col-md-9 estrellas text-center">
+                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                    <br> 456k VOTOS
+                                </div>
+                            </div>
+                            <div class="col-sm-12 row">
+                                <br>
+                                <div class="col-md-4">Proximo capitulo: 02/09/2019</div>
+                                <div class="col-md-3">Duracion: 20min</div>
+                            </div>
                         </div>
-                        <?php }else{ ?>
-                        <div class="col-md-9 comment-box">
-                            <p> Debe iniciar sección para poder comentar </p>
+                        <div class="descripcion panel-body">
+                            Lorem ipsum dolor sit amet consectetur adipiscing elit vel nibh, parturient odio euismod nam malesuada ultricies ut ante, phasellus congue torquent habitant donec convallis feugiat sem. Libero ornare tortor erat quisque cum curae nec consequat posuere ac tincidunt, rutrum ullamcorper egestas dapibus mauris nullam eu hendrerit aliquam condimentum justo, nulla enim rhoncus sed a fames porttitor nisi aenean neque. Lacinia vivamus bibendum netus vulputate.
                         </div>
-                        <?php } ?>
-                    </div>
-                </div>
-                <!-- <div class="col-md-6">
-                  <ul class="comen-regis">
-                     <li><a href="#">Inciar sesion</a></li>
-                     <li><a href="#">Registrarse</a></li>
-                  </ul>
-               </div>
-               <div class="col-md-6">
-                  <div class="contador"><span>0/300</span></div>
-               </div>-->
-            </div>
-            <div class="col-md-4">
-                <h4 class="subt-capitulo">Ultimos Capitulos</h4>
-                <div class="row">
+                        <div class="opciones row col-xs-6">
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-primary"><i class="far fa-eye"></i> Vistas</button>
+                                <button type="button" class="btn btn-primary"><i class="fas fa-clone"></i> Pendiente</button>
+                                <button type="button" class="btn btn-primary"><i class="fas fa-check"></i> Siguiendo</button>
+                                <button type="button" class="btn btn-primary"><i class="fas fa-heart"></i> Favorito</button>
+                            </div>
+                        </div>
 
-                    <?php foreach ($capitulos as $key) { ?>
-
-                    <div class="col-md-6 img-text">
-                        <a href="<?php echo base_url();?>home/capitulo/<?=$key->id?>" data-toggle="tooltip" title="<?=$key->name;?> <?=$key->temporada;?>-<?=$key->numero;?>"> <img src="<?=base_url().$key->imagen2;?>" class="img-fluid "/></a>
                     </div>
-                    <div class="col-md-6 img-text">
-                        <a href="<?php echo base_url();?>home/capitulo/<?=$key->id?>" data-toggle="tooltip" title="<?=$key->name;?> <?=$key->temporada;?>-<?=$key->numero;?>"><b><?=$key->name;?> </b>
-                  <br><b>Temp:</b><?=$key->temporada;?>-<b>Cap:</b><?=$key->numero;?> <i class="far fa-clock"></i></a>
-                    </div>
-                    <?php } ?>
 
                 </div>
             </div>
         </div>
+    </section>
+    <div id="pestañas_serie">
+        <div class="container">
+            <ul class="nav nav-tabs">
+                <li class="active"><a data-toggle="tab" href="#home">Episodios</a></li>
+                <li><a data-toggle="tab" href="#menu1">Comentarios</a></li>
+                <li><a data-toggle="tab" href="#menu2">Relacionados</a></li>
+            </ul>
+        </div>
     </div>
-</section>
+    <div class="container">
+        <div class="row">
+            <div class="tab-content col-md-9 panel panel-body secciones">
+                <div id="home" class="tab-pane fade in active">
+                    <div class="barra">
+                        <ul class="nav nav-tabs">
+                            <li class="active"><a data-toggle="tab" href="#tem1">Temporada 1</a></li>
+                            <li><a data-toggle="tab" href="#tem2">Temporada 2</a></li>
+                            <li><a data-toggle="tab" href="#tem2">Temporada 3</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="tab-content" id="capitulos">
+
+                        <div id="tem1" class="row tab-pane fade in active">
+
+                            <div class="col-sm-3" style="margin-top:15px;">
+                                <a href="#">
+                                    <div class="capitulo">
+                                        <div class="col-xs-5 col-sm-5 col-md-5 img-cap text-center" style=" background: url('img/portada2.jpeg'); ">
+
+                                        </div>
+                                        <div class="col-xs-7 col-sm-7 col-md-7 contenido panel-body">
+                                            <b>Episodio 1</b>
+                                            <br> prueba jdjdjd
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <div class="col-sm-3" style="margin-top:15px;">
+                                <a href="#">
+                                    <div class="capitulo">
+                                        <div class="col-xs-5 col-sm-5 col-md-5 img-cap text-center" style=" background: url('img/portada2.jpeg'); ">
+
+                                        </div>
+                                        <div class="col-xs-7 col-sm-7 col-md-7 contenido panel-body">
+                                            <b>Episodio 1</b>
+                                            <br> prueba jdjdjd
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <div class="col-sm-3" style="margin-top:15px;">
+                                <a href="#">
+                                    <div class="capitulo">
+                                        <div class="col-xs-5 col-sm-5 col-md-5 img-cap text-center" style=" background: url('img/portada2.jpeg'); ">
+
+                                        </div>
+                                        <div class="col-xs-7 col-sm-7 col-md-7 contenido panel-body">
+                                            <b>Episodio 1</b>
+                                            <br> prueba jdjdjd
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <div class="col-sm-3" style="margin-top:15px;">
+                                <a href="#">
+                                    <div class="capitulo">
+                                        <div class="col-xs-5 col-sm-5 col-md-5 img-cap text-center" style=" background: url('img/portada2.jpeg'); ">
+
+                                        </div>
+                                        <div class="col-xs-7 col-sm-7 col-md-7 contenido panel-body">
+                                            <b>Episodio 1</b>
+                                            <br> prueba jdjdjd
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <div class="col-sm-3" style="margin-top:15px;">
+                                <a href="#">
+                                    <div class="capitulo">
+                                        <div class="col-xs-5 col-sm-5 col-md-5 img-cap text-center" style=" background: url('img/portada2.jpeg'); ">
+
+                                        </div>
+                                        <div class="col-xs-7 col-sm-7 col-md-7 contenido panel-body">
+                                            <b>Episodio 1</b>
+                                            <br> prueba jdjdjd
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <div class="col-sm-3" style="margin-top:15px;">
+                                <a href="#">
+                                    <div class="capitulo">
+                                        <div class="col-xs-5 col-sm-5 col-md-5 img-cap text-center" style=" background: url('img/portada2.jpeg'); ">
+
+                                        </div>
+                                        <div class="col-xs-7 col-sm-7 col-md-7 contenido panel-body">
+                                            <b>Episodio 1</b>
+                                            <br> prueba jdjdjd
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <div class="col-sm-3" style="margin-top:15px;">
+                                <a href="#">
+                                    <div class="capitulo">
+                                        <div class="col-xs-5 col-sm-5 col-md-5 img-cap text-center" style=" background: url('img/portada2.jpeg'); ">
+
+                                        </div>
+                                        <div class="col-xs-7 col-sm-7 col-md-7 contenido panel-body">
+                                            <b>Episodio 1</b>
+                                            <br> prueba jdjdjd
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <div class="col-sm-3" style="margin-top:15px;">
+                                <a href="#">
+                                    <div class="capitulo">
+                                        <div class="col-xs-5 col-sm-5 col-md-5 img-cap text-center" style=" background: url('img/portada2.jpeg'); ">
+
+                                        </div>
+                                        <div class="col-xs-7 col-sm-7 col-md-7 contenido panel-body">
+                                            <b>Episodio 1</b>
+                                            <br> prueba jdjdjd
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+
+                        </div>
+                        <div id="tem2" class="tab-pane fade">
+                            <h3>Menu 1</h3>
+                            <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                        </div>
+                        <div id="tem3" class="tab-pane fade">
+                            <h3>Menu 2</h3>
+                            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+                        </div>
+
+                    </div>
+                    <div class="otros panel-body">
+                     <div class="recomiendo" style="border-top: 1.5px solid #f3f3f3; padding-bottom:5px;padding-top:5px;">   
+                       <div class="row">  
+                   <div class="col-sm-6">  <b>Tambien te puede interesar </b> </div>
+                   <div class="col-sm-6 text-right"> <button class="btn btn-xs btn-default">Ver mas</button> </div>
+                      </div>
+                     <div class="row" style="margin-top:20px;">
+                     <div class="col-md-3">
+                        <a href="#">  
+                          <div class="contenidor">
+                          <img class="img-responsive img-rounded portada4" src="img/img2018_09_20_05.jpg" >
+                          <div class="tituloserie">
+                              Esto es un titulo
+                          </div>
+                          </div>
+                      </a>
+                     </div>
+
+                       <div class="col-md-3">
+                          <div class="contenidor">
+                          <img class="img-responsive img-rounded" src="img/img2018_09_20_05.jpg" >
+                          <div class="tituloserie">
+                              Esto es un titulo
+                          </div>
+                          </div>
+                     </div>
+
+                       <div class="col-md-3">
+                          <div class="contenidor">
+                          <img class="img-responsive img-rounded" src="img/img2018_09_20_05.jpg" >
+                          <div class="tituloserie">
+                              Esto es un titulo
+                          </div>
+                          </div>
+                     </div>
+
+                       <div class="col-md-3">
+                          <div class="contenidor">
+                          <img class="img-responsive img-rounded" src="img/img2018_09_20_05.jpg" >
+                          <div class="tituloserie">
+                              Esto es un titulo
+                          </div>
+                          </div>
+                     </div>
+
+                     </div>
+                     </div>
+                      <div class="noticias" style="margin-top:15px;border-top: 1.5px solid #f3f3f3; padding-bottom:5px;padding-top:5px;"> 
+                      <div class="row">  
+                   <div class="col-sm-6">  <b> Noticias anime </b> </div>
+                   <div class="col-sm-6 text-right"> <button class="btn btn-xs btn-default">Ver mas</button> </div>
+                   <div class="row panel-body" style="margin-top:15px;">
+                    <div class="col-md-3">
+                      <a href="#">  
+                      <div class="contenidor">
+                          <img class="img-responsive img-rounded horizontal4" src="img/portada2.jpeg" >
+                          <div class="titulonoticia" style="padding-top:10px;padding-left:5px;">
+                              Noticia 1
+                          </div>
+                          </div>
+                      </a>
+                    </div>
+                   </div>
+                      </div>
+                     </div>
+
+                    </div>
+                </div>
+                <!-- COMENTARIOS -->
+                <div id="menu1" class="tab-pane fade">
+                    <div class="alert alert-warning alert-dismissible">
+                        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                        <strong>Atencion!</strong> Los comentarios ofensivos, recistas o que contengan span seran eliminados
+                    </div>
+                    <div class="caja_de_comentarios">
+                        <div class="row">
+                            <div class="fotop col-sm-2">
+                                <img src="img/default.png" class="img-responsive img-circle" style="max-height:110px;">
+                            </div>
+                            <div class="inputp col-sm-8">
+                                <textarea rows="4" cols="50" class="form-control" style="width:100%;">
+                                    At w3schools.com you will learn how to make a website. We offer free tutorials in all web development technologies.
+                                </textarea>
+                            </div>
+                            <div class="botonp col-sm-2">
+                                <button class="btn" style="height:110px; width:100%;">
+                                    Enviar
+                                    <br> comentario
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="comentarios">
+                        <div class="row" style="margin-top:35px;">
+                            <div class="fotop col-sm-2">
+                                <img src="img/default.png" class="img-responsive img-circle" style="max-height:110px;">
+                            </div>
+                            <div class="inputp col-sm-10" style="border-top:  2px solid #f3f3f3;">
+                                <div class="mensaje" style="margin-top: 15px;">
+                                    <b>eJme1992xdxd</b> <span class="lv" style="border-radius:2px;background-color:#ff9000;color:#fff;"><b>&ensp;LV:50&ensp;</b></span>
+                                    <br> Coño e su madre no joda la puta
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row" style="margin-top:35px;">
+                            <div class="fotop col-sm-2">
+                                <img src="img/default.png" class="img-responsive img-circle" style="max-height:110px;">
+                            </div>
+                            <div class="inputp col-sm-10" style="border-top:  2px solid #f3f3f3;">
+                                <div class="mensaje" style="margin-top: 15px;">
+                                    <b>eJme1992xdxd</b> <span class="lv" style="border-radius:2px;background-color:#ff9000;color:#fff;"><b>&ensp;LV:50&ensp;</b></span>
+                                    <br> Coño e su madre no joda la puta
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pie_comentarios text-right" style="border-top:2px solid #f3f3f3;margin-top:15px;">
+                        <button type="button" class="btn btn-primary btn-xs" style="margin-top:5px;">Ver mas</button>
+                    </div>
+
+                </div>
+                <div id="menu2" class="tab-pane fade">
+                    <h3>Menu 2</h3>
+                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+                </div>
+
+            </div>
+
+            <div class="col-md-3">
+                <div class="panel panel-body lateral">
+                    <b>Compartir en redes sociales</b>
+                    <div class="row panel-body">
+                        <div class="col-sm-6">
+                            <button class="btn  btn-facebook">
+                                <i class="fab fa-facebook-f fa-lg"></i> Facebook
+                            </button>
+                        </div>
+                        <div class="col-sm-6">
+                            <button class="btn  btn-twitter">
+                                <i class="fab fa-twitter fa-lg"></i> Twitter
+                            </button>
+                        </div>
+                        <div class="col-sm-6">
+                            <button class="btn  btn-facebook">
+                                <i class="fab fa-facebook-f fa-lg"></i> Facebook
+                            </button>
+                        </div>
+                        <div class="col-sm-6">
+                            <button class="btn  btn-twitter">
+                                <i class="fab fa-twitter fa-lg"></i> Twitter
+                            </button>
+                        </div>
+                        <div class="col-sm-6">
+                            <button class="btn  btn-facebook">
+                                <i class="fab fa-facebook-f fa-lg"></i> Facebook
+                            </button>
+                        </div>
+                        <div class="col-sm-6">
+                            <button class="btn  btn-twitter">
+                                <i class="fab fa-twitter fa-lg"></i> Twitter
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+          </section>
 
 <!-- NUEVAS generoS -->
 <script>

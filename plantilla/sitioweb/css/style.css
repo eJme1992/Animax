@@ -534,6 +534,21 @@ top: -2em;
 .usdiv{background-color:#fff; padding: 15px; height:200px;}
 .usdiv ul li {list-style: none; padding:0.5em;}
 .usdiv ul {padding: 1.5em;}
+.ul-progress li {list-style: none;}
+.ul-progress .circulo{
+  height: 15px; 
+  width:15px; 
+  border-radius: 15px; 
+display: inline-block;
+margin-right: 0.5em; 
+}
+.ul-progress .visto{background-color:#5cb85c;}
+.ul-progress .pendiente{background-color:#337ab7;}
+.ul-progress .siguiendo{background-color:#f0ad4e;}
+.ul-progress .favorito{background-color:#FF0000;}
+em;}
+.colorblack{color:#000 !important; padding-left: 1em;}
+.entradas-ul{list-style: none;}
 /*########Para las nav responsive##########*/
 
 #input-nav.form-control{
@@ -564,3 +579,32 @@ display: inline-flex !important;
     display: block !important;
     width: 100% !important;
 }
+/*#############Capitulo*##########*/
+#capitulo-body{background-color: #181818;}
+.capi-body{padding-top: 2em; padding-bottom: 2em;}
+.capi-publicidad{
+  background-color: #fff;
+  position: relative;
+  top:-30em;
+  left:18.5em;
+  width: 320px;
+  height: 250px;
+  z-index: 1000;
+}
+.btn-over{
+  background-color: rgba(0, 0, 0, .6);
+  border-radius: 15px;
+  color:#fff;
+  margin:5px;
+}
+.anuncion-title{
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  top:100px;
+  text-align: center;
+}
+.controles-cap{
+  background-color:#1A1A22;
+}
+.control-fonts{color:#fff;}

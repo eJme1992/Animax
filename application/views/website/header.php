@@ -25,14 +25,17 @@
       margin-bottom:0.99em;
       }
       th {
+         width: 0.7%;
       text-align: center;
+      height: 50px;
       }
       td,th, tr {
-      padding:5px;
-      border-right: 0.5px solid #000;
+      border-right: 1px solid #cccccc;
       }
       table{
-      border-left:  1px solid #000;
+      border-left:  1px solid #cccccc;
+      border-top:  1px solid #cccccc;
+      border-bottom: 1px solid #cccccc;
       }
       table img {
       max-height:50px;
