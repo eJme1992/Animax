@@ -96,11 +96,11 @@
                       <a class="una" href="#" title="Ir a ...">aquí</a> para solicitar una nueva.</p> 
                       <h3>¿Tienes alguna duda?</h3>
                       <p>No te preocupes nosotros te solucionaremos cualquier duda o consulta que tengas, envianos un email <a class="una" href="#" title="Ir a ...">aquí</a> </p>
-                        <h3>Socialanime te informa</h3>
+                        <h3>nombre</h3>
                         <p>Los datos de carácter personal que nos proporciones rellenando el presente formulario serán tratados por Weblab Studio S.C. Como responsable de esta web. La finalidad  de la recogida y tratamiento de los datos personales que te solicitamos es para enviarte nuestras publicaciones, promociones de productos y/o servicios y recursos exclusivos. La legitimación se realiza a través del consetimiento del insteresado. Te informamos que los datos que nos facilitas estarán ubicados en los servicores de OVH a través de su empresa OVH HISPANO, SLU, ubicada dentro de la UE. <a class="una"  href="
                           #" target="_blank"> Ver politica de privacidad de OVH HISPANO</a>. El hecho de que no introduzcas los datos obligatorios que aparecen en el formulario podrá tener como consecuencia que no pueda atender tu solicitud.</p>
                           <p>
-                      Asimismo le informamos de la posibilidad de ejercer los derechos de acceso, rectificación cancelación y oposicion de sus datos en el domicilio fiscal de Weblab Studio S.C. C/ Cañero, 7, 3ºIzq- 41007- Sevilla - info@weblabstudio.net.
+                      ssssssssssssssssss
                     </p>
                   </div>
                  </div>
